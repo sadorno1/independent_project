@@ -1,0 +1,72 @@
+DIGEST faaa54badfe280d3282eac21b4b5538a
+FTokenizer
+R27:32 Stdlib.Strings.String <> <> lib
+R34:37 Stdlib.Lists.List <> <> lib
+R39:43 Stdlib.Strings.Ascii <> <> lib
+R53:65 Stdlib.Lists.List ListNotations <> mod
+def 151:161 <> skip_spaces
+R166:171 Stdlib.Strings.String <> string ind
+binder 164:164 <> s:1
+R176:181 Stdlib.Strings.String <> string ind
+R194:194 Tokenizer <> s:1 var
+R205:215 Stdlib.Strings.String <> EmptyString constr
+R220:230 Stdlib.Strings.String <> EmptyString constr
+R236:241 Stdlib.Strings.String <> String constr
+R262:270 Stdlib.Strings.Ascii <> eqb def
+R310:310 Tokenizer <> s:1 var
+R288:298 Tokenizer <> skip_spaces:2 def
+def 329:344 <> take_until_space
+R349:354 Stdlib.Strings.String <> string ind
+binder 347:347 <> s:4
+R366:368 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R360:365 Stdlib.Strings.String <> string ind
+R369:374 Stdlib.Strings.String <> string ind
+R388:388 Tokenizer <> s:4 var
+R399:409 Stdlib.Strings.String <> EmptyString constr
+R414:414 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R417:418 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R421:421 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R427:432 Stdlib.Strings.String <> String constr
+R453:461 Stdlib.Strings.Ascii <> eqb def
+R528:543 Tokenizer <> take_until_space:5 def
+R514:514 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R518:519 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R523:523 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R561:561 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R574:575 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R579:579 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R562:567 Stdlib.Strings.String <> String constr
+R479:479 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R482:483 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R488:488 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+def 598:609 <> tokenize_aux
+R614:619 Stdlib.Strings.String <> string ind
+binder 612:612 <> s:7
+R628:630 Corelib.Init.Datatypes <> nat ind
+binder 623:626 <> fuel:8
+R635:638 Corelib.Init.Datatypes <> list ind
+R640:645 Stdlib.Strings.String <> string ind
+R658:661 Tokenizer <> fuel:8 var
+R672:672 Corelib.Init.Datatypes <> O constr
+R677:678 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R684:684 Corelib.Init.Datatypes <> S constr
+R711:721 Tokenizer <> skip_spaces def
+R723:723 Tokenizer <> s:7 var
+binder 705:706 <> s1:11
+R740:741 Tokenizer <> s1:11 var
+R756:766 Stdlib.Strings.String <> EmptyString constr
+R771:772 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R816:831 Tokenizer <> take_until_space def
+R833:834 Tokenizer <> s1:11 var
+R802:802 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R806:807 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R811:811 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R852:855 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R856:867 Tokenizer <> tokenize_aux:9 def
+def 908:915 <> tokenize
+R920:925 Stdlib.Strings.String <> string ind
+binder 918:918 <> s:13
+R930:933 Corelib.Init.Datatypes <> list ind
+R935:940 Stdlib.Strings.String <> string ind
+R947:958 Tokenizer <> tokenize_aux def
+R960:960 Tokenizer <> s:13 var

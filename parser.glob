@@ -1,0 +1,1013 @@
+DIGEST b548306a01ba903a0ce656e6a8e34549
+Fparser
+R27:32 Stdlib.Strings.String <> <> lib
+R34:37 Stdlib.Lists.List <> <> lib
+R39:42 Stdlib.Bool.Bool <> <> lib
+R44:48 Stdlib.Strings.Ascii <> <> lib
+R58:70 Stdlib.Lists.List ListNotations <> mod
+R114:124 GuaraniCore <> <> lib
+R134:144 GuaraniCore <> <> mod
+R163:178 LexiconGenerated <> <> lib
+R196:204 Tokenizer <> <> lib
+def 412:418 <> eqb_str
+R425:430 Stdlib.Strings.String <> string ind
+binder 421:421 <> a:1
+binder 423:423 <> b:2
+R435:438 Corelib.Init.Datatypes <> bool ind
+R448:464 Stdlib.Strings.String <> string_dec def
+R466:466 parser <> a:1 var
+R468:468 parser <> b:2 var
+R485:489 Corelib.Init.Datatypes <> false constr
+R475:478 Corelib.Init.Datatypes <> true constr
+def 502:509 <> find_map
+binder 512:512 <> A:3
+binder 514:514 <> B:4
+R526:529 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R525:525 parser <> A:3 var
+R530:535 Corelib.Init.Datatypes <> option ind
+R537:537 parser <> B:4 var
+binder 523:523 <> f:5
+R544:547 Corelib.Init.Datatypes <> list ind
+R549:549 parser <> A:3 var
+binder 541:542 <> xs:6
+R554:559 Corelib.Init.Datatypes <> option ind
+R561:561 parser <> B:4 var
+R574:575 parser <> xs:6 var
+R586:587 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R592:595 Corelib.Init.Datatypes <> None constr
+R602:603 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R624:624 parser <> f:5 var
+R641:644 Corelib.Init.Datatypes <> Some constr
+R651:654 Corelib.Init.Datatypes <> Some constr
+R666:669 Corelib.Init.Datatypes <> None constr
+R674:681 parser <> find_map:7 def
+R683:683 parser <> f:5 var
+rec 907:913 <> pronoun
+proj 922:927 <> p_form
+proj 943:950 <> p_person
+proj 964:971 <> p_number
+R933:938 Stdlib.Strings.String <> string ind
+R954:959 GuaraniCore <> person ind
+R975:980 GuaraniCore <> number ind
+def 997:1004 <> pron_che
+R1008:1014 parser <> pronoun rec
+R1024:1029 parser <> p_form proj
+R1024:1029 parser <> p_form proj
+R1024:1029 parser <> p_form proj
+R1041:1048 parser <> p_person proj
+R1041:1048 parser <> p_person proj
+R1057:1064 parser <> p_number proj
+R1057:1064 parser <> p_number proj
+R1053:1054 GuaraniCore <> P1 constr
+R1069:1070 GuaraniCore <> SG constr
+def 1088:1095 <> pron_nde
+R1099:1105 parser <> pronoun rec
+R1115:1120 parser <> p_form proj
+R1115:1120 parser <> p_form proj
+R1115:1120 parser <> p_form proj
+R1132:1139 parser <> p_person proj
+R1132:1139 parser <> p_person proj
+R1148:1155 parser <> p_number proj
+R1148:1155 parser <> p_number proj
+R1144:1145 GuaraniCore <> P2 constr
+R1160:1161 GuaraniCore <> SG constr
+def 1179:1186 <> pron_hae
+R1190:1196 parser <> pronoun rec
+R1206:1211 parser <> p_form proj
+R1206:1211 parser <> p_form proj
+R1206:1211 parser <> p_form proj
+R1224:1231 parser <> p_person proj
+R1224:1231 parser <> p_person proj
+R1240:1247 parser <> p_number proj
+R1240:1247 parser <> p_number proj
+R1236:1237 GuaraniCore <> P3 constr
+R1252:1253 GuaraniCore <> SG constr
+def 1271:1280 <> pron_nande
+R1284:1290 parser <> pronoun rec
+R1300:1305 parser <> p_form proj
+R1300:1305 parser <> p_form proj
+R1300:1305 parser <> p_form proj
+R1320:1327 parser <> p_person proj
+R1320:1327 parser <> p_person proj
+R1336:1343 parser <> p_number proj
+R1336:1343 parser <> p_number proj
+R1332:1333 GuaraniCore <> P1 constr
+R1348:1354 GuaraniCore <> PL_INCL constr
+def 1372:1379 <> pron_ore
+R1383:1389 parser <> pronoun rec
+R1399:1404 parser <> p_form proj
+R1399:1404 parser <> p_form proj
+R1399:1404 parser <> p_form proj
+R1416:1423 parser <> p_person proj
+R1416:1423 parser <> p_person proj
+R1432:1439 parser <> p_number proj
+R1432:1439 parser <> p_number proj
+R1428:1429 GuaraniCore <> P1 constr
+R1444:1450 GuaraniCore <> PL_EXCL constr
+def 1468:1475 <> pron_pee
+R1479:1485 parser <> pronoun rec
+R1495:1500 parser <> p_form proj
+R1495:1500 parser <> p_form proj
+R1495:1500 parser <> p_form proj
+R1514:1521 parser <> p_person proj
+R1514:1521 parser <> p_person proj
+R1530:1537 parser <> p_number proj
+R1530:1537 parser <> p_number proj
+R1526:1527 GuaraniCore <> P2 constr
+R1542:1545 GuaraniCore <> PL_2 constr
+def 1563:1575 <> pron_haekuera
+R1579:1585 parser <> pronoun rec
+R1595:1600 parser <> p_form proj
+R1595:1600 parser <> p_form proj
+R1595:1600 parser <> p_form proj
+R1619:1626 parser <> p_person proj
+R1619:1626 parser <> p_person proj
+R1635:1642 parser <> p_number proj
+R1635:1642 parser <> p_number proj
+R1631:1632 GuaraniCore <> P3 constr
+R1647:1650 GuaraniCore <> PL_3 constr
+def 1668:1679 <> lex_pronouns
+R1683:1686 Corelib.Init.Datatypes <> list ind
+R1688:1694 parser <> pronoun rec
+R1701:1702 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R1711:1712 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R1721:1722 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R1731:1732 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R1743:1744 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R1753:1754 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R1763:1764 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R1778:1779 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R1703:1710 parser <> pron_che def
+R1713:1720 parser <> pron_nde def
+R1723:1730 parser <> pron_hae def
+R1733:1742 parser <> pron_nande def
+R1745:1752 parser <> pron_ore def
+R1755:1762 parser <> pron_pee def
+R1765:1777 parser <> pron_haekuera def
+def 1792:1803 <> find_pronoun
+R1808:1813 Stdlib.Strings.String <> string ind
+binder 1806:1806 <> s:13
+R1820:1823 Corelib.Init.Datatypes <> list ind
+R1825:1831 parser <> pronoun rec
+binder 1817:1818 <> xs:14
+R1836:1841 Corelib.Init.Datatypes <> option ind
+R1843:1849 parser <> pronoun rec
+R1862:1863 parser <> xs:14 var
+R1874:1875 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R1880:1883 Corelib.Init.Datatypes <> None constr
+R1891:1892 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1904:1910 parser <> eqb_str def
+R1912:1912 parser <> s:13 var
+R1918:1923 parser <> p_form proj
+R1944:1955 parser <> find_pronoun:15 def
+R1957:1957 parser <> s:13 var
+R1931:1934 Corelib.Init.Datatypes <> Some constr
+def 2176:2184 <> lex_verbs
+R2188:2191 Corelib.Init.Datatypes <> list ind
+R2193:2197 GuaraniCore <> vroot rec
+R2202:2220 LexiconGenerated <> lex_verbs_generated def
+def 2235:2240 <> all_pn
+R2244:2247 Corelib.Init.Datatypes <> list ind
+R2256:2258 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2250:2255 GuaraniCore <> person ind
+R2259:2264 GuaraniCore <> number ind
+R2272:2273 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2282:2283 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2292:2293 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2302:2306 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2320:2321 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2335:2336 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2347:2348 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2359:2362 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2274:2274 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2277:2278 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2281:2281 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2275:2276 GuaraniCore <> P1 constr
+R2279:2280 GuaraniCore <> SG constr
+R2284:2284 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2287:2288 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2291:2291 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2285:2286 GuaraniCore <> P2 constr
+R2289:2290 GuaraniCore <> SG constr
+R2294:2294 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2297:2298 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2301:2301 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2295:2296 GuaraniCore <> P3 constr
+R2299:2300 GuaraniCore <> SG constr
+R2307:2307 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2310:2311 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2319:2319 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2308:2309 GuaraniCore <> P1 constr
+R2312:2318 GuaraniCore <> PL_INCL constr
+R2322:2322 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2325:2326 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2334:2334 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2323:2324 GuaraniCore <> P1 constr
+R2327:2333 GuaraniCore <> PL_EXCL constr
+R2337:2337 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2340:2341 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2346:2346 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2338:2339 GuaraniCore <> P2 constr
+R2342:2345 GuaraniCore <> PL_2 constr
+R2349:2349 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2352:2353 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2358:2358 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2350:2351 GuaraniCore <> P3 constr
+R2354:2357 GuaraniCore <> PL_3 constr
+def 2570:2580 <> pron_agrees
+R2586:2592 parser <> pronoun rec
+binder 2583:2584 <> pr:17
+R2598:2603 GuaraniCore <> person ind
+binder 2596:2596 <> p:18
+R2609:2614 GuaraniCore <> number ind
+binder 2607:2607 <> n:19
+R2619:2622 Corelib.Init.Datatypes <> bool ind
+R2668:2668 parser <> n:19 var
+R2665:2665 parser <> p:18 var
+R2654:2661 parser <> p_number proj
+R2650:2651 parser <> pr:17 var
+R2639:2646 parser <> p_person proj
+R2635:2636 parser <> pr:17 var
+R2679:2680 GuaraniCore <> P1 constr
+R2683:2684 GuaraniCore <> SG constr
+R2687:2688 GuaraniCore <> P1 constr
+R2691:2692 GuaraniCore <> SG constr
+R2697:2700 Corelib.Init.Datatypes <> true constr
+R2706:2707 GuaraniCore <> P2 constr
+R2710:2711 GuaraniCore <> SG constr
+R2714:2715 GuaraniCore <> P2 constr
+R2718:2719 GuaraniCore <> SG constr
+R2724:2727 Corelib.Init.Datatypes <> true constr
+R2733:2734 GuaraniCore <> P3 constr
+R2737:2738 GuaraniCore <> SG constr
+R2741:2742 GuaraniCore <> P3 constr
+R2745:2746 GuaraniCore <> SG constr
+R2751:2754 Corelib.Init.Datatypes <> true constr
+R2760:2761 GuaraniCore <> P1 constr
+R2764:2770 GuaraniCore <> PL_INCL constr
+R2773:2774 GuaraniCore <> P1 constr
+R2777:2783 GuaraniCore <> PL_INCL constr
+R2788:2791 Corelib.Init.Datatypes <> true constr
+R2797:2798 GuaraniCore <> P1 constr
+R2801:2807 GuaraniCore <> PL_EXCL constr
+R2810:2811 GuaraniCore <> P1 constr
+R2814:2820 GuaraniCore <> PL_EXCL constr
+R2825:2828 Corelib.Init.Datatypes <> true constr
+R2834:2835 GuaraniCore <> P2 constr
+R2838:2841 GuaraniCore <> PL_2 constr
+R2844:2845 GuaraniCore <> P2 constr
+R2848:2851 GuaraniCore <> PL_2 constr
+R2856:2859 Corelib.Init.Datatypes <> true constr
+R2865:2866 GuaraniCore <> P3 constr
+R2869:2872 GuaraniCore <> PL_3 constr
+R2875:2876 GuaraniCore <> P3 constr
+R2879:2882 GuaraniCore <> PL_3 constr
+R2887:2890 Corelib.Init.Datatypes <> true constr
+R2910:2914 Corelib.Init.Datatypes <> false constr
+ind 3126:3134 <> obj_place
+constr 3139:3145 <> OBJ_PRE
+constr 3149:3156 <> OBJ_POST
+scheme 3126:3134 <> obj_place_rect
+scheme 3126:3134 <> obj_place_ind
+scheme 3126:3134 <> obj_place_rec
+scheme 3126:3134 <> obj_place_sind
+rec 3167:3174 <> obj_pron
+proj 3183:3189 <> op_form
+proj 3205:3212 <> op_place
+proj 3230:3238 <> op_person
+proj 3259:3267 <> op_number
+proj 3288:3307 <> op_requires_1st_subj
+R3195:3200 Stdlib.Strings.String <> string ind
+R3217:3225 parser <> obj_place ind
+R3242:3247 Corelib.Init.Datatypes <> option ind
+R3249:3254 GuaraniCore <> person ind
+R3271:3276 Corelib.Init.Datatypes <> option ind
+R3278:3283 GuaraniCore <> number ind
+R3311:3314 Corelib.Init.Datatypes <> bool ind
+def 3347:3352 <> op_che
+R3357:3364 parser <> obj_pron rec
+R3372:3378 parser <> op_form proj
+R3372:3378 parser <> op_form proj
+R3372:3378 parser <> op_form proj
+R3392:3399 parser <> op_place proj
+R3392:3399 parser <> op_place proj
+R3414:3422 parser <> op_person proj
+R3414:3422 parser <> op_person proj
+R3436:3444 parser <> op_number proj
+R3436:3444 parser <> op_number proj
+R3463:3482 parser <> op_requires_1st_subj proj
+R3463:3482 parser <> op_requires_1st_subj proj
+R3404:3410 parser <> OBJ_PRE constr
+R3427:3430 Corelib.Init.Datatypes <> Some constr
+R3432:3433 GuaraniCore <> P1 constr
+R3449:3452 Corelib.Init.Datatypes <> Some constr
+R3454:3455 GuaraniCore <> SG constr
+R3487:3491 Corelib.Init.Datatypes <> false constr
+def 3508:3513 <> op_nde
+R3518:3525 parser <> obj_pron rec
+R3533:3539 parser <> op_form proj
+R3533:3539 parser <> op_form proj
+R3533:3539 parser <> op_form proj
+R3553:3560 parser <> op_place proj
+R3553:3560 parser <> op_place proj
+R3575:3583 parser <> op_person proj
+R3575:3583 parser <> op_person proj
+R3597:3605 parser <> op_number proj
+R3597:3605 parser <> op_number proj
+R3624:3643 parser <> op_requires_1st_subj proj
+R3624:3643 parser <> op_requires_1st_subj proj
+R3565:3571 parser <> OBJ_PRE constr
+R3588:3591 Corelib.Init.Datatypes <> Some constr
+R3593:3594 GuaraniCore <> P2 constr
+R3610:3613 Corelib.Init.Datatypes <> Some constr
+R3615:3616 GuaraniCore <> SG constr
+R3648:3652 Corelib.Init.Datatypes <> false constr
+def 3669:3673 <> op_ne
+R3679:3686 parser <> obj_pron rec
+R3694:3700 parser <> op_form proj
+R3694:3700 parser <> op_form proj
+R3694:3700 parser <> op_form proj
+R3714:3721 parser <> op_place proj
+R3714:3721 parser <> op_place proj
+R3736:3744 parser <> op_person proj
+R3736:3744 parser <> op_person proj
+R3758:3766 parser <> op_number proj
+R3758:3766 parser <> op_number proj
+R3785:3804 parser <> op_requires_1st_subj proj
+R3785:3804 parser <> op_requires_1st_subj proj
+R3726:3732 parser <> OBJ_PRE constr
+R3749:3752 Corelib.Init.Datatypes <> Some constr
+R3754:3755 GuaraniCore <> P2 constr
+R3771:3774 Corelib.Init.Datatypes <> Some constr
+R3776:3777 GuaraniCore <> SG constr
+R3809:3813 Corelib.Init.Datatypes <> false constr
+def 3830:3834 <> op_ro
+R3840:3847 parser <> obj_pron rec
+R3855:3861 parser <> op_form proj
+R3855:3861 parser <> op_form proj
+R3855:3861 parser <> op_form proj
+R3875:3882 parser <> op_place proj
+R3875:3882 parser <> op_place proj
+R3897:3905 parser <> op_person proj
+R3897:3905 parser <> op_person proj
+R3919:3927 parser <> op_number proj
+R3919:3927 parser <> op_number proj
+R3946:3965 parser <> op_requires_1st_subj proj
+R3946:3965 parser <> op_requires_1st_subj proj
+R3887:3893 parser <> OBJ_PRE constr
+R3910:3913 Corelib.Init.Datatypes <> Some constr
+R3915:3916 GuaraniCore <> P2 constr
+R3932:3935 Corelib.Init.Datatypes <> Some constr
+R3937:3938 GuaraniCore <> SG constr
+R3970:3973 Corelib.Init.Datatypes <> true constr
+def 3991:3998 <> op_nande
+R4001:4008 parser <> obj_pron rec
+R4016:4022 parser <> op_form proj
+R4016:4022 parser <> op_form proj
+R4016:4022 parser <> op_form proj
+R4037:4044 parser <> op_place proj
+R4037:4044 parser <> op_place proj
+R4059:4067 parser <> op_person proj
+R4059:4067 parser <> op_person proj
+R4081:4089 parser <> op_number proj
+R4081:4089 parser <> op_number proj
+R4108:4127 parser <> op_requires_1st_subj proj
+R4108:4127 parser <> op_requires_1st_subj proj
+R4049:4055 parser <> OBJ_PRE constr
+R4072:4075 Corelib.Init.Datatypes <> Some constr
+R4077:4078 GuaraniCore <> P1 constr
+R4094:4097 Corelib.Init.Datatypes <> Some constr
+R4099:4105 GuaraniCore <> PL_INCL constr
+R4132:4136 Corelib.Init.Datatypes <> false constr
+def 4153:4159 <> op_nane
+R4163:4170 parser <> obj_pron rec
+R4178:4184 parser <> op_form proj
+R4178:4184 parser <> op_form proj
+R4178:4184 parser <> op_form proj
+R4199:4206 parser <> op_place proj
+R4199:4206 parser <> op_place proj
+R4221:4229 parser <> op_person proj
+R4221:4229 parser <> op_person proj
+R4243:4251 parser <> op_number proj
+R4243:4251 parser <> op_number proj
+R4270:4289 parser <> op_requires_1st_subj proj
+R4270:4289 parser <> op_requires_1st_subj proj
+R4211:4217 parser <> OBJ_PRE constr
+R4234:4237 Corelib.Init.Datatypes <> Some constr
+R4239:4240 GuaraniCore <> P1 constr
+R4256:4259 Corelib.Init.Datatypes <> Some constr
+R4261:4267 GuaraniCore <> PL_INCL constr
+R4294:4298 Corelib.Init.Datatypes <> false constr
+def 4315:4320 <> op_ore
+R4325:4332 parser <> obj_pron rec
+R4340:4346 parser <> op_form proj
+R4340:4346 parser <> op_form proj
+R4340:4346 parser <> op_form proj
+R4360:4367 parser <> op_place proj
+R4360:4367 parser <> op_place proj
+R4382:4390 parser <> op_person proj
+R4382:4390 parser <> op_person proj
+R4404:4412 parser <> op_number proj
+R4404:4412 parser <> op_number proj
+R4431:4450 parser <> op_requires_1st_subj proj
+R4431:4450 parser <> op_requires_1st_subj proj
+R4372:4378 parser <> OBJ_PRE constr
+R4395:4398 Corelib.Init.Datatypes <> Some constr
+R4400:4401 GuaraniCore <> P1 constr
+R4417:4420 Corelib.Init.Datatypes <> Some constr
+R4422:4428 GuaraniCore <> PL_EXCL constr
+R4455:4459 Corelib.Init.Datatypes <> false constr
+def 4476:4483 <> op_pende
+R4486:4493 parser <> obj_pron rec
+R4501:4507 parser <> op_form proj
+R4501:4507 parser <> op_form proj
+R4501:4507 parser <> op_form proj
+R4521:4528 parser <> op_place proj
+R4521:4528 parser <> op_place proj
+R4543:4551 parser <> op_person proj
+R4543:4551 parser <> op_person proj
+R4565:4573 parser <> op_number proj
+R4565:4573 parser <> op_number proj
+R4592:4611 parser <> op_requires_1st_subj proj
+R4592:4611 parser <> op_requires_1st_subj proj
+R4533:4539 parser <> OBJ_PRE constr
+R4556:4559 Corelib.Init.Datatypes <> Some constr
+R4561:4562 GuaraniCore <> P2 constr
+R4578:4581 Corelib.Init.Datatypes <> Some constr
+R4583:4586 GuaraniCore <> PL_2 constr
+R4616:4620 Corelib.Init.Datatypes <> false constr
+def 4637:4643 <> op_pene
+R4647:4654 parser <> obj_pron rec
+R4662:4668 parser <> op_form proj
+R4662:4668 parser <> op_form proj
+R4662:4668 parser <> op_form proj
+R4682:4689 parser <> op_place proj
+R4682:4689 parser <> op_place proj
+R4704:4712 parser <> op_person proj
+R4704:4712 parser <> op_person proj
+R4726:4734 parser <> op_number proj
+R4726:4734 parser <> op_number proj
+R4753:4772 parser <> op_requires_1st_subj proj
+R4753:4772 parser <> op_requires_1st_subj proj
+R4694:4700 parser <> OBJ_PRE constr
+R4717:4720 Corelib.Init.Datatypes <> Some constr
+R4722:4723 GuaraniCore <> P2 constr
+R4739:4742 Corelib.Init.Datatypes <> Some constr
+R4744:4747 GuaraniCore <> PL_2 constr
+R4777:4781 Corelib.Init.Datatypes <> false constr
+def 4798:4802 <> op_po
+R4808:4815 parser <> obj_pron rec
+R4823:4829 parser <> op_form proj
+R4823:4829 parser <> op_form proj
+R4823:4829 parser <> op_form proj
+R4843:4850 parser <> op_place proj
+R4843:4850 parser <> op_place proj
+R4865:4873 parser <> op_person proj
+R4865:4873 parser <> op_person proj
+R4887:4895 parser <> op_number proj
+R4887:4895 parser <> op_number proj
+R4914:4933 parser <> op_requires_1st_subj proj
+R4914:4933 parser <> op_requires_1st_subj proj
+R4855:4861 parser <> OBJ_PRE constr
+R4878:4881 Corelib.Init.Datatypes <> Some constr
+R4883:4884 GuaraniCore <> P2 constr
+R4900:4903 Corelib.Init.Datatypes <> Some constr
+R4905:4908 GuaraniCore <> PL_2 constr
+R4938:4941 Corelib.Init.Datatypes <> true constr
+def 4977:4984 <> op_chupe
+R4989:4996 parser <> obj_pron rec
+R5004:5010 parser <> op_form proj
+R5004:5010 parser <> op_form proj
+R5004:5010 parser <> op_form proj
+R5025:5032 parser <> op_place proj
+R5025:5032 parser <> op_place proj
+R5047:5055 parser <> op_person proj
+R5047:5055 parser <> op_person proj
+R5069:5077 parser <> op_number proj
+R5069:5077 parser <> op_number proj
+R5093:5112 parser <> op_requires_1st_subj proj
+R5093:5112 parser <> op_requires_1st_subj proj
+R5037:5044 parser <> OBJ_POST constr
+R5060:5063 Corelib.Init.Datatypes <> Some constr
+R5065:5066 GuaraniCore <> P3 constr
+R5082:5085 Corelib.Init.Datatypes <> Some constr
+R5087:5088 GuaraniCore <> SG constr
+R5117:5121 Corelib.Init.Datatypes <> false constr
+def 5138:5146 <> op_ichupe
+R5150:5157 parser <> obj_pron rec
+R5165:5171 parser <> op_form proj
+R5165:5171 parser <> op_form proj
+R5165:5171 parser <> op_form proj
+R5186:5193 parser <> op_place proj
+R5186:5193 parser <> op_place proj
+R5208:5216 parser <> op_person proj
+R5208:5216 parser <> op_person proj
+R5230:5238 parser <> op_number proj
+R5230:5238 parser <> op_number proj
+R5254:5273 parser <> op_requires_1st_subj proj
+R5254:5273 parser <> op_requires_1st_subj proj
+R5198:5205 parser <> OBJ_POST constr
+R5221:5224 Corelib.Init.Datatypes <> Some constr
+R5226:5227 GuaraniCore <> P3 constr
+R5243:5246 Corelib.Init.Datatypes <> Some constr
+R5248:5249 GuaraniCore <> SG constr
+R5278:5282 Corelib.Init.Datatypes <> false constr
+def 5300:5311 <> lex_obj_pron
+R5315:5318 Corelib.Init.Datatypes <> list ind
+R5320:5327 parser <> obj_pron rec
+R5334:5335 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5342:5343 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5350:5351 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5357:5358 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5364:5365 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5374:5375 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5383:5384 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5391:5392 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5401:5402 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5410:5411 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5417:5421 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5430:5431 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5441:5444 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R5336:5341 parser <> op_che def
+R5344:5349 parser <> op_nde def
+R5352:5356 parser <> op_ne def
+R5359:5363 parser <> op_ro def
+R5366:5373 parser <> op_nande def
+R5376:5382 parser <> op_nane def
+R5385:5390 parser <> op_ore def
+R5393:5400 parser <> op_pende def
+R5403:5409 parser <> op_pene def
+R5412:5416 parser <> op_po def
+R5422:5429 parser <> op_chupe def
+R5432:5440 parser <> op_ichupe def
+def 5457:5469 <> find_obj_pron
+R5474:5479 Stdlib.Strings.String <> string ind
+binder 5472:5472 <> s:30
+R5486:5489 Corelib.Init.Datatypes <> list ind
+R5491:5498 parser <> obj_pron rec
+binder 5483:5484 <> xs:31
+R5503:5508 Corelib.Init.Datatypes <> option ind
+R5510:5517 parser <> obj_pron rec
+R5530:5531 parser <> xs:31 var
+R5542:5543 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R5548:5551 Corelib.Init.Datatypes <> None constr
+R5559:5560 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R5572:5578 parser <> eqb_str def
+R5580:5580 parser <> s:30 var
+R5586:5592 parser <> op_form proj
+R5613:5625 parser <> find_obj_pron:32 def
+R5627:5627 parser <> s:30 var
+R5600:5603 Corelib.Init.Datatypes <> Some constr
+def 5653:5672 <> subj_is_first_person
+R5677:5682 GuaraniCore <> person ind
+binder 5675:5675 <> p:34
+R5687:5690 Corelib.Init.Datatypes <> bool ind
+R5703:5703 parser <> p:34 var
+R5710:5711 GuaraniCore <> P1 constr
+R5716:5719 Corelib.Init.Datatypes <> true constr
+R5728:5732 Corelib.Init.Datatypes <> false constr
+def 5751:5767 <> obj_constraint_ok
+R5773:5780 parser <> obj_pron rec
+binder 5770:5771 <> op:36
+R5791:5796 GuaraniCore <> person ind
+binder 5784:5789 <> subj_p:37
+R5801:5804 Corelib.Init.Datatypes <> bool ind
+R5818:5837 parser <> op_requires_1st_subj proj
+R5814:5815 parser <> op:36 var
+R5878:5881 Corelib.Init.Datatypes <> true constr
+R5845:5864 parser <> subj_is_first_person def
+R5866:5871 parser <> subj_p:37 var
+ind 6088:6094 <> verdict
+constr 6101:6102 <> OK
+constr 6106:6108 <> ERR
+R6115:6120 Stdlib.Strings.String <> string ind
+binder 6111:6113 <> msg:40
+scheme 6088:6094 <> verdict_rect
+scheme 6088:6094 <> verdict_ind
+scheme 6088:6094 <> verdict_rec
+scheme 6088:6094 <> verdict_sind
+rec 6132:6139 <> analysis
+proj 6148:6156 <> a_verdict
+proj 6171:6177 <> a_notes
+proj 6198:6203 <> a_subj
+proj 6228:6235 <> a_person
+proj 6257:6264 <> a_number
+proj 6286:6291 <> a_root
+proj 6315:6319 <> a_obj
+proj 6346:6350 <> a_pol
+R6160:6166 parser <> verdict ind
+R6183:6186 Corelib.Init.Datatypes <> list ind
+R6188:6193 Stdlib.Strings.String <> string ind
+R6210:6215 Corelib.Init.Datatypes <> option ind
+R6217:6223 parser <> pronoun rec
+R6240:6245 Corelib.Init.Datatypes <> option ind
+R6247:6252 GuaraniCore <> person ind
+R6269:6274 Corelib.Init.Datatypes <> option ind
+R6276:6281 GuaraniCore <> number ind
+R6298:6303 Corelib.Init.Datatypes <> option ind
+R6305:6310 Stdlib.Strings.String <> string ind
+R6327:6332 Corelib.Init.Datatypes <> option ind
+R6334:6341 parser <> obj_pron rec
+R6358:6365 GuaraniCore <> polarity ind
+def 6382:6386 <> mk_ok
+R6397:6400 Corelib.Init.Datatypes <> list ind
+R6402:6407 Stdlib.Strings.String <> string ind
+binder 6391:6395 <> notes:50
+R6418:6423 Corelib.Init.Datatypes <> option ind
+R6425:6431 parser <> pronoun rec
+binder 6413:6416 <> subj:51
+R6439:6444 Corelib.Init.Datatypes <> option ind
+R6446:6451 GuaraniCore <> person ind
+binder 6437:6437 <> p:52
+R6459:6464 Corelib.Init.Datatypes <> option ind
+R6466:6471 GuaraniCore <> number ind
+binder 6457:6457 <> n:53
+R6482:6487 Corelib.Init.Datatypes <> option ind
+R6489:6494 Stdlib.Strings.String <> string ind
+binder 6477:6480 <> root:54
+R6504:6509 Corelib.Init.Datatypes <> option ind
+R6511:6518 parser <> obj_pron rec
+binder 6500:6502 <> obj:55
+R6528:6535 GuaraniCore <> polarity ind
+binder 6524:6526 <> pol:56
+R6542:6549 parser <> analysis rec
+R6559:6567 parser <> a_verdict proj
+R6559:6567 parser <> a_verdict proj
+R6559:6567 parser <> a_verdict proj
+R6581:6587 parser <> a_notes proj
+R6581:6587 parser <> a_notes proj
+R6604:6609 parser <> a_subj proj
+R6604:6609 parser <> a_subj proj
+R6625:6632 parser <> a_person proj
+R6625:6632 parser <> a_person proj
+R6645:6652 parser <> a_number proj
+R6645:6652 parser <> a_number proj
+R6665:6670 parser <> a_root proj
+R6665:6670 parser <> a_root proj
+R6686:6690 parser <> a_obj proj
+R6686:6690 parser <> a_obj proj
+R6705:6709 parser <> a_pol proj
+R6705:6709 parser <> a_pol proj
+R6572:6573 parser <> OK constr
+R6592:6596 parser <> notes:50 var
+R6614:6617 parser <> subj:51 var
+R6637:6637 parser <> p:52 var
+R6657:6657 parser <> n:53 var
+R6675:6678 parser <> root:54 var
+R6695:6697 parser <> obj:55 var
+R6714:6716 parser <> pol:56 var
+def 6734:6739 <> mk_err
+R6746:6751 Stdlib.Strings.String <> string ind
+binder 6742:6744 <> msg:57
+R6756:6763 parser <> analysis rec
+R6773:6781 parser <> a_verdict proj
+R6773:6781 parser <> a_verdict proj
+R6773:6781 parser <> a_verdict proj
+R6800:6806 parser <> a_notes proj
+R6800:6806 parser <> a_notes proj
+R6820:6825 parser <> a_subj proj
+R6820:6825 parser <> a_subj proj
+R6841:6848 parser <> a_person proj
+R6841:6848 parser <> a_person proj
+R6864:6871 parser <> a_number proj
+R6864:6871 parser <> a_number proj
+R6887:6892 parser <> a_root proj
+R6887:6892 parser <> a_root proj
+R6908:6912 parser <> a_obj proj
+R6908:6912 parser <> a_obj proj
+R6928:6932 parser <> a_pol proj
+R6928:6932 parser <> a_pol proj
+R6786:6788 parser <> ERR constr
+R6790:6792 parser <> msg:57 var
+R6811:6812 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R6830:6833 Corelib.Init.Datatypes <> None constr
+R6853:6856 Corelib.Init.Datatypes <> None constr
+R6876:6879 Corelib.Init.Datatypes <> None constr
+R6897:6900 Corelib.Init.Datatypes <> None constr
+R6917:6920 Corelib.Init.Datatypes <> None constr
+R6937:6939 GuaraniCore <> POS constr
+def 7150:7161 <> maybe_negate
+R7168:7175 GuaraniCore <> polarity ind
+binder 7164:7166 <> pol:58
+R7181:7187 GuaraniCore <> orality ind
+binder 7179:7179 <> o:59
+R7193:7198 GuaraniCore <> person ind
+binder 7191:7191 <> p:60
+R7204:7209 GuaraniCore <> number ind
+binder 7202:7202 <> n:61
+R7218:7223 Stdlib.Strings.String <> string ind
+binder 7213:7216 <> base:62
+R7228:7233 Stdlib.Strings.String <> string ind
+R7246:7248 parser <> pol:58 var
+R7259:7261 GuaraniCore <> POS constr
+R7266:7269 parser <> base:62 var
+R7275:7277 GuaraniCore <> NEG constr
+R7282:7299 GuaraniCore <> negate def
+R7301:7301 parser <> o:59 var
+R7303:7303 parser <> p:60 var
+R7305:7305 parser <> n:61 var
+R7307:7310 parser <> base:62 var
+def 7331:7352 <> check_surface_with_pol
+R7361:7368 GuaraniCore <> polarity ind
+binder 7357:7359 <> pol:64
+R7374:7379 GuaraniCore <> person ind
+binder 7372:7372 <> p:65
+R7385:7390 GuaraniCore <> number ind
+binder 7383:7383 <> n:66
+R7396:7400 GuaraniCore <> vroot rec
+binder 7394:7394 <> r:67
+R7412:7417 Stdlib.Strings.String <> string ind
+binder 7404:7410 <> surface:68
+R7422:7425 Corelib.Init.Datatypes <> bool ind
+R7438:7446 GuaraniCore <> conjugate def
+R7448:7448 parser <> p:65 var
+R7450:7450 parser <> n:66 var
+R7452:7452 parser <> r:67 var
+R7463:7466 Corelib.Init.Datatypes <> None constr
+R7471:7475 Corelib.Init.Datatypes <> false constr
+R7481:7484 Corelib.Init.Datatypes <> Some constr
+R7500:7506 parser <> eqb_str def
+R7509:7520 parser <> maybe_negate def
+R7522:7524 parser <> pol:64 var
+R7529:7537 GuaraniCore <> r_orality proj
+R7526:7526 parser <> r:67 var
+R7540:7540 parser <> p:65 var
+R7542:7542 parser <> n:66 var
+R7550:7556 parser <> surface:68 var
+def 7577:7594 <> try_match_one_root
+R7603:7610 GuaraniCore <> polarity ind
+binder 7599:7601 <> pol:69
+R7622:7627 Stdlib.Strings.String <> string ind
+binder 7614:7620 <> surface:70
+R7633:7637 GuaraniCore <> vroot rec
+binder 7631:7631 <> r:71
+R7644:7649 Corelib.Init.Datatypes <> option ind
+R7667:7669 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R7658:7660 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R7652:7657 GuaraniCore <> person ind
+R7661:7666 GuaraniCore <> number ind
+R7670:7674 GuaraniCore <> vroot rec
+R7682:7689 parser <> find_map def
+R7831:7836 parser <> all_pn def
+binder 7700:7701 <> pn:72
+R7727:7728 parser <> pn:72 var
+R7718:7718 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7720:7720 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7722:7722 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7743:7764 parser <> check_surface_with_pol def
+R7766:7768 parser <> pol:69 var
+R7774:7774 parser <> r:71 var
+R7776:7782 parser <> surface:70 var
+R7821:7824 Corelib.Init.Datatypes <> None constr
+R7796:7799 Corelib.Init.Datatypes <> Some constr
+R7801:7801 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7803:7803 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7805:7805 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7807:7807 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R7806:7806 parser <> r:71 var
+def 7851:7870 <> analyze_verb_surface
+R7879:7886 GuaraniCore <> polarity ind
+binder 7875:7877 <> pol:74
+R7898:7903 Stdlib.Strings.String <> string ind
+binder 7890:7896 <> surface:75
+R7910:7915 Corelib.Init.Datatypes <> option ind
+R7933:7935 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R7924:7926 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R7918:7923 GuaraniCore <> person ind
+R7927:7932 GuaraniCore <> number ind
+R7936:7940 GuaraniCore <> vroot rec
+R7948:7955 parser <> find_map def
+R8001:8009 parser <> lex_verbs def
+binder 7962:7962 <> r:76
+R7967:7984 parser <> try_match_one_root def
+R7986:7988 parser <> pol:74 var
+R7990:7996 parser <> surface:75 var
+R7998:7998 parser <> r:76 var
+def 8217:8223 <> check_1
+R8230:8237 GuaraniCore <> polarity ind
+binder 8226:8228 <> pol:77
+R8244:8249 Stdlib.Strings.String <> string ind
+binder 8241:8242 <> w1:78
+R8254:8261 parser <> analysis rec
+R8274:8293 parser <> analyze_verb_surface def
+R8295:8297 parser <> pol:77 var
+R8299:8300 parser <> w1:78 var
+R8311:8314 Corelib.Init.Datatypes <> None constr
+R8319:8324 parser <> mk_err def
+R8353:8356 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R8357:8358 parser <> w1:78 var
+R8365:8368 Corelib.Init.Datatypes <> Some constr
+R8370:8370 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8372:8372 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8374:8374 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8376:8376 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8387:8391 parser <> mk_ok def
+R8401:8402 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8431:8441 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8472:8481 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8491:8494 Corelib.Init.Datatypes <> None constr
+R8497:8500 Corelib.Init.Datatypes <> Some constr
+R8506:8509 Corelib.Init.Datatypes <> Some constr
+R8515:8518 Corelib.Init.Datatypes <> Some constr
+R8523:8528 GuaraniCore <> r_form proj
+R8532:8535 Corelib.Init.Datatypes <> None constr
+R8537:8539 parser <> pol:77 var
+def 8560:8566 <> check_2
+R8573:8580 GuaraniCore <> polarity ind
+binder 8569:8571 <> pol:79
+R8590:8595 Stdlib.Strings.String <> string ind
+binder 8584:8585 <> w1:80
+binder 8587:8588 <> w2:81
+R8600:8607 parser <> analysis rec
+R8620:8631 parser <> find_pronoun def
+R8633:8634 parser <> w1:80 var
+R8636:8647 parser <> lex_pronouns def
+R8658:8661 Corelib.Init.Datatypes <> None constr
+R8666:8671 parser <> mk_err def
+R8701:8704 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R8705:8706 parser <> w1:80 var
+R8713:8716 Corelib.Init.Datatypes <> Some constr
+R8736:8755 parser <> analyze_verb_surface def
+R8757:8759 parser <> pol:79 var
+R8761:8762 parser <> w2:81 var
+R8777:8780 Corelib.Init.Datatypes <> None constr
+R8785:8790 parser <> mk_err def
+R8819:8822 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R8823:8824 parser <> w2:81 var
+R8835:8838 Corelib.Init.Datatypes <> Some constr
+R8840:8840 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8842:8842 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8844:8844 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8846:8846 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R8864:8874 parser <> pron_agrees def
+R9121:9126 parser <> mk_err def
+R8900:8904 parser <> mk_ok def
+R8920:8921 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R8951:8967 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9008:9023 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9040:9043 Corelib.Init.Datatypes <> Some constr
+R9050:9053 Corelib.Init.Datatypes <> Some constr
+R9059:9062 Corelib.Init.Datatypes <> Some constr
+R9068:9071 Corelib.Init.Datatypes <> Some constr
+R9076:9081 GuaraniCore <> r_form proj
+R9085:9088 Corelib.Init.Datatypes <> None constr
+R9090:9092 parser <> pol:79 var
+def 9200:9210 <> check_3_pre
+R9217:9224 GuaraniCore <> polarity ind
+binder 9213:9215 <> pol:82
+R9237:9242 Stdlib.Strings.String <> string ind
+binder 9228:9229 <> w1:83
+binder 9231:9232 <> w2:84
+binder 9234:9235 <> w3:85
+R9247:9254 parser <> analysis rec
+R9267:9278 parser <> find_pronoun def
+R9280:9281 parser <> w1:83 var
+R9283:9294 parser <> lex_pronouns def
+R9305:9308 Corelib.Init.Datatypes <> None constr
+R9313:9318 parser <> mk_err def
+R9348:9351 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R9352:9353 parser <> w1:83 var
+R9360:9363 Corelib.Init.Datatypes <> Some constr
+R9383:9395 parser <> find_obj_pron def
+R9397:9398 parser <> w2:84 var
+R9400:9411 parser <> lex_obj_pron def
+R9426:9429 Corelib.Init.Datatypes <> None constr
+R9434:9439 parser <> mk_err def
+R9468:9471 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R9472:9473 parser <> w2:84 var
+R9484:9487 Corelib.Init.Datatypes <> Some constr
+R9515:9522 parser <> op_place proj
+R9542:9549 parser <> OBJ_POST constr
+R9554:9559 parser <> mk_err def
+R9630:9636 parser <> OBJ_PRE constr
+R9661:9680 parser <> analyze_verb_surface def
+R9682:9684 parser <> pol:82 var
+R9686:9687 parser <> w3:85 var
+R9710:9713 Corelib.Init.Datatypes <> None constr
+R9718:9723 parser <> mk_err def
+R9752:9755 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R9756:9757 parser <> w3:85 var
+R9776:9779 Corelib.Init.Datatypes <> Some constr
+R9781:9781 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9783:9783 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9785:9785 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9787:9787 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R9813:9823 parser <> pron_agrees def
+R10364:10369 parser <> mk_err def
+R9860:9876 parser <> obj_constraint_ok def
+R10252:10257 parser <> mk_err def
+R9910:9914 parser <> mk_ok def
+R9940:9941 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9981:10007 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R10034:10060 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R10094:10119 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R10146:10149 Corelib.Init.Datatypes <> Some constr
+R10156:10159 Corelib.Init.Datatypes <> Some constr
+R10165:10168 Corelib.Init.Datatypes <> Some constr
+R10174:10177 Corelib.Init.Datatypes <> Some constr
+R10182:10187 GuaraniCore <> r_form proj
+R10192:10195 Corelib.Init.Datatypes <> Some constr
+R10201:10203 parser <> pol:82 var
+def 10475:10486 <> check_3_post
+R10493:10500 GuaraniCore <> polarity ind
+binder 10489:10491 <> pol:86
+R10513:10518 Stdlib.Strings.String <> string ind
+binder 10504:10505 <> w1:87
+binder 10507:10508 <> w2:88
+binder 10510:10511 <> w3:89
+R10523:10530 parser <> analysis rec
+R10543:10554 parser <> find_pronoun def
+R10556:10557 parser <> w1:87 var
+R10559:10570 parser <> lex_pronouns def
+R10581:10584 Corelib.Init.Datatypes <> None constr
+R10589:10594 parser <> mk_err def
+R10624:10627 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R10628:10629 parser <> w1:87 var
+R10636:10639 Corelib.Init.Datatypes <> Some constr
+R10659:10678 parser <> analyze_verb_surface def
+R10680:10682 parser <> pol:86 var
+R10684:10685 parser <> w2:88 var
+R10700:10703 Corelib.Init.Datatypes <> None constr
+R10708:10713 parser <> mk_err def
+R10742:10745 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R10746:10747 parser <> w2:88 var
+R10758:10761 Corelib.Init.Datatypes <> Some constr
+R10763:10763 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R10765:10765 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R10767:10767 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R10769:10769 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R10787:10797 parser <> pron_agrees def
+R11677:11682 parser <> mk_err def
+R10829:10841 parser <> find_obj_pron def
+R10843:10844 parser <> w3:89 var
+R10846:10857 parser <> lex_obj_pron def
+R10878:10881 Corelib.Init.Datatypes <> None constr
+R10886:10891 parser <> mk_err def
+R10920:10923 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R10924:10925 parser <> w3:89 var
+R10942:10945 Corelib.Init.Datatypes <> Some constr
+R10979:10986 parser <> op_place proj
+R11012:11018 parser <> OBJ_PRE constr
+R11023:11028 parser <> mk_err def
+R11116:11123 parser <> OBJ_POST constr
+R11151:11167 parser <> obj_constraint_ok def
+R11545:11550 parser <> mk_err def
+R11201:11205 parser <> mk_ok def
+R11231:11232 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11273:11299 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11326:11352 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11387:11412 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11439:11442 Corelib.Init.Datatypes <> Some constr
+R11449:11452 Corelib.Init.Datatypes <> Some constr
+R11458:11461 Corelib.Init.Datatypes <> Some constr
+R11467:11470 Corelib.Init.Datatypes <> Some constr
+R11475:11480 GuaraniCore <> r_form proj
+R11485:11488 Corelib.Init.Datatypes <> Some constr
+R11494:11496 parser <> pol:86 var
+def 11756:11776 <> check_sentence_tokens
+R11783:11790 GuaraniCore <> polarity ind
+binder 11779:11781 <> pol:90
+R11797:11800 Corelib.Init.Datatypes <> list ind
+R11802:11807 Stdlib.Strings.String <> string ind
+binder 11794:11795 <> ws:91
+R11812:11819 parser <> analysis rec
+R11832:11833 parser <> ws:91 var
+R11844:11844 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R11847:11847 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R11852:11858 parser <> check_1 def
+R11860:11862 parser <> pol:90 var
+R11871:11871 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11874:11875 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11878:11878 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11883:11889 parser <> check_2 def
+R11891:11893 parser <> pol:90 var
+R11905:11905 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11908:11909 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11912:11913 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11916:11916 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R11933:11945 parser <> find_obj_pron def
+R11950:11961 parser <> lex_obj_pron def
+R11976:11979 Corelib.Init.Datatypes <> Some constr
+R12007:12014 parser <> op_place proj
+R12034:12040 parser <> OBJ_PRE constr
+R12045:12055 parser <> check_3_pre def
+R12057:12059 parser <> pol:90 var
+R12082:12089 parser <> OBJ_POST constr
+R12094:12105 parser <> check_3_post def
+R12107:12109 parser <> pol:90 var
+R12142:12145 Corelib.Init.Datatypes <> None constr
+R12150:12161 parser <> check_3_post def
+R12163:12165 parser <> pol:90 var
+R12195:12200 parser <> mk_err def
+def 12283:12296 <> check_sentence
+R12303:12310 GuaraniCore <> polarity ind
+binder 12299:12301 <> pol:93
+R12316:12321 Stdlib.Strings.String <> string ind
+binder 12314:12314 <> s:94
+R12326:12333 parser <> analysis rec
+R12340:12360 parser <> check_sentence_tokens def
+R12362:12364 parser <> pol:93 var
+R12367:12374 Tokenizer <> tokenize def
+R12376:12376 parser <> s:94 var
+R12398:12411 parser <> check_sentence def
+R12413:12415 GuaraniCore <> POS constr
