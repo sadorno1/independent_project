@@ -1,423 +1,116 @@
-DIGEST 36be3e2966b4d026c46b00c52905a281
+DIGEST dbcb4f9d547c270b480b6b57d4b8fe48
 FGuaraniCore
 R27:32 Stdlib.Strings.String <> <> lib
-R34:37 Stdlib.Lists.List <> <> lib
-R39:42 Stdlib.Bool.Bool <> <> lib
-R44:48 Stdlib.Strings.Ascii <> <> lib
-R58:70 Stdlib.Lists.List ListNotations <> mod
-def 304:309 <> concat
-R314:326 Stdlib.Strings.String <> append def
-def 341:347 <> eqb_str
-R354:359 Stdlib.Strings.String <> string ind
-binder 350:350 <> a:1
-binder 352:352 <> b:2
-R364:367 Corelib.Init.Datatypes <> bool ind
-R377:393 Stdlib.Strings.String <> string_dec def
-R395:395 GuaraniCore <> a:1 var
-R397:397 GuaraniCore <> b:2 var
-R414:418 Corelib.Init.Datatypes <> false constr
-R404:407 Corelib.Init.Datatypes <> true constr
-def 431:439 <> last_char
-R444:449 Stdlib.Strings.String <> string ind
-binder 442:442 <> s:3
-R454:458 Stdlib.Strings.Ascii <> ascii ind
-R471:471 GuaraniCore <> s:3 var
-R482:492 Stdlib.Strings.String <> EmptyString constr
-R510:515 Stdlib.Strings.String <> String constr
-R519:529 Stdlib.Strings.String <> EmptyString constr
-R540:545 Stdlib.Strings.String <> String constr
-R557:565 GuaraniCore <> last_char:4 def
-def 591:601 <> ends_with_i
-R606:611 Stdlib.Strings.String <> string ind
-binder 604:604 <> s:6
-R616:619 Corelib.Init.Datatypes <> bool ind
-R626:634 Stdlib.Strings.Ascii <> eqb def
-R637:645 GuaraniCore <> last_char def
-R647:647 GuaraniCore <> s:6 var
-ind 865:870 <> person
-constr 875:876 <> P1
-constr 880:881 <> P2
-constr 885:886 <> P3
-scheme 865:870 <> person_rect
-scheme 865:870 <> person_ind
-scheme 865:870 <> person_rec
-scheme 865:870 <> person_sind
-ind 939:944 <> number
-constr 949:950 <> SG
-constr 954:960 <> PL_INCL
-constr 964:970 <> PL_EXCL
-constr 974:977 <> PL_2
-constr 981:984 <> PL_3
-scheme 939:944 <> number_rect
-scheme 939:944 <> number_ind
-scheme 939:944 <> number_rec
-scheme 939:944 <> number_sind
-ind 998:1004 <> orality
-constr 1009:1012 <> ORAL
-constr 1016:1020 <> NASAL
-scheme 998:1004 <> orality_rect
-scheme 998:1004 <> orality_ind
-scheme 998:1004 <> orality_rec
-scheme 998:1004 <> orality_sind
-ind 1034:1041 <> polarity
-constr 1046:1048 <> POS
-constr 1052:1054 <> NEG
-scheme 1034:1041 <> polarity_rect
-scheme 1034:1041 <> polarity_ind
-scheme 1034:1041 <> polarity_rec
-scheme 1034:1041 <> polarity_sind
-ind 1327:1329 <> pos
-constr 1336:1343 <> POS_NOUN
-constr 1369:1375 <> POS_ADJ
-constr 1404:1410 <> POS_ADV
-constr 1439:1446 <> POS_VERB
-constr 1482:1494 <> POS_VERB_PRED
-constr 1552:1564 <> POS_VERB_ATTR
-constr 1622:1633 <> POS_VERB_AIR
-constr 1677:1684 <> POS_PRON
-constr 1713:1720 <> POS_CONJ
-constr 1749:1758 <> POS_INTERJ
-constr 1787:1793 <> POS_VOC
-constr 1822:1828 <> POS_EXP
-constr 1857:1861 <> POS_H
-constr 1890:1898 <> POS_PROPN
-constr 1926:1930 <> POS_T
-constr 1959:1970 <> POS_SUFFIX_N
-constr 2000:2011 <> POS_SUFFIX_V
-constr 2041:2051 <> POS_UNKNOWN
-scheme 1327:1329 <> pos_rect
-scheme 1327:1329 <> pos_ind
-scheme 1327:1329 <> pos_rec
-scheme 1327:1329 <> pos_sind
-ind 2199:2209 <> adv_subtype
-constr 2216:2222 <> ADV_GEN
-constr 2226:2232 <> ADV_NEG
-constr 2260:2267 <> ADV_TIME
-scheme 2199:2209 <> adv_subtype_rect
-scheme 2199:2209 <> adv_subtype_ind
-scheme 2199:2209 <> adv_subtype_rec
-scheme 2199:2209 <> adv_subtype_sind
-ind 2307:2318 <> pron_subtype
-constr 2325:2332 <> PRON_GEN
-constr 2336:2343 <> PRON_DEM
-constr 2368:2375 <> PRON_IND
-constr 2400:2407 <> PRON_POS
-scheme 2307:2318 <> pron_subtype_rect
-scheme 2307:2318 <> pron_subtype_ind
-scheme 2307:2318 <> pron_subtype_rec
-scheme 2307:2318 <> pron_subtype_sind
-ind 2443:2453 <> adj_subtype
-constr 2460:2466 <> ADJ_GEN
-constr 2470:2476 <> ADJ_IND
-constr 2501:2520 <> ADJ_IND_AND_PRON_IND
-scheme 2443:2453 <> adj_subtype_rect
-scheme 2443:2453 <> adj_subtype_ind
-scheme 2443:2453 <> adj_subtype_rec
-scheme 2443:2453 <> adj_subtype_sind
-ind 2617:2621 <> label
-constr 2628:2633 <> L_NEOL
-scheme 2617:2621 <> label_rect
-scheme 2617:2621 <> label_ind
-scheme 2617:2621 <> label_rec
-scheme 2617:2621 <> label_sind
-ind 2861:2869 <> verb_conj
-constr 2876:2882 <> VPropio
-constr 2915:2923 <> VEspecial
-constr 2955:2964 <> VIrregular
-scheme 2861:2869 <> verb_conj_rect
-scheme 2861:2869 <> verb_conj_ind
-scheme 2861:2869 <> verb_conj_rec
-scheme 2861:2869 <> verb_conj_sind
-ind 3060:3064 <> voice
-constr 3071:3073 <> Act
-constr 3077:3080 <> Pass
-constr 3099:3103 <> Recip
-constr 3121:3125 <> Coact
-constr 3143:3145 <> Obj
-constr 3167:3170 <> Subs
-scheme 3060:3064 <> voice_rect
-scheme 3060:3064 <> voice_ind
-scheme 3060:3064 <> voice_rec
-scheme 3060:3064 <> voice_sind
-rec 3520:3528 <> lex_entry
-proj 3537:3542 <> e_form
-proj 3560:3568 <> e_orality
-proj 3634:3638 <> e_pos
-proj 3705:3712 <> e_labels
-proj 3754:3762 <> e_adv_sub
-proj 3789:3798 <> e_pron_sub
-proj 3825:3833 <> e_adj_sub
-proj 3971:3981 <> e_verb_conj
-R3550:3555 Stdlib.Strings.String <> string ind
-R3573:3579 GuaraniCore <> orality ind
-R3647:3650 Corelib.Init.Datatypes <> list ind
-R3652:3654 GuaraniCore <> pos ind
-R3718:3721 Corelib.Init.Datatypes <> list ind
-R3723:3727 GuaraniCore <> label ind
-R3767:3772 Corelib.Init.Datatypes <> option ind
-R3774:3784 GuaraniCore <> adv_subtype ind
-R3802:3807 Corelib.Init.Datatypes <> option ind
-R3809:3820 GuaraniCore <> pron_subtype ind
-R3838:3843 Corelib.Init.Datatypes <> option ind
-R3845:3855 GuaraniCore <> adj_subtype ind
-R3985:3990 Corelib.Init.Datatypes <> option ind
-R3992:4000 GuaraniCore <> verb_conj ind
-rec 4086:4090 <> vroot
-proj 4099:4104 <> r_form
-proj 4121:4126 <> r_conj
-proj 4146:4154 <> r_orality
-R4111:4116 Stdlib.Strings.String <> string ind
-R4133:4141 GuaraniCore <> verb_conj ind
-R4158:4164 GuaraniCore <> orality ind
-def 4325:4338 <> entry_to_vroot
-R4343:4351 GuaraniCore <> lex_entry rec
-binder 4341:4341 <> e:42
-R4356:4361 Corelib.Init.Datatypes <> option ind
-R4363:4367 GuaraniCore <> vroot rec
-R4383:4393 GuaraniCore <> e_verb_conj proj
-R4380:4380 GuaraniCore <> e:42 var
-R4405:4408 Corelib.Init.Datatypes <> None constr
-R4413:4416 Corelib.Init.Datatypes <> None constr
-R4422:4425 Corelib.Init.Datatypes <> Some constr
-R4432:4435 Corelib.Init.Datatypes <> Some constr
-R4440:4445 GuaraniCore <> r_form proj
-R4440:4445 GuaraniCore <> r_form proj
-R4440:4445 GuaraniCore <> r_form proj
-R4462:4467 GuaraniCore <> r_conj proj
-R4462:4467 GuaraniCore <> r_conj proj
-R4475:4483 GuaraniCore <> r_orality proj
-R4475:4483 GuaraniCore <> r_orality proj
-R4453:4458 GuaraniCore <> e_form proj
-R4450:4450 GuaraniCore <> e:42 var
-R4491:4499 GuaraniCore <> e_orality proj
-R4488:4488 GuaraniCore <> e:42 var
-def 4718:4726 <> pref_prop
-R4731:4736 GuaraniCore <> person ind
-binder 4729:4729 <> p:43
-R4742:4747 GuaraniCore <> number ind
-binder 4740:4740 <> n:44
-R4752:4757 Corelib.Init.Datatypes <> option ind
-R4759:4764 Stdlib.Strings.String <> string ind
-R4780:4780 GuaraniCore <> n:44 var
-R4777:4777 GuaraniCore <> p:43 var
-R4791:4792 GuaraniCore <> P1 constr
-R4795:4796 GuaraniCore <> SG constr
-R4806:4809 Corelib.Init.Datatypes <> Some constr
-R4819:4820 GuaraniCore <> P2 constr
-R4823:4824 GuaraniCore <> SG constr
-R4834:4837 Corelib.Init.Datatypes <> Some constr
-R4848:4849 GuaraniCore <> P3 constr
-R4852:4853 GuaraniCore <> SG constr
-R4863:4866 Corelib.Init.Datatypes <> Some constr
-R4876:4877 GuaraniCore <> P1 constr
-R4880:4886 GuaraniCore <> PL_INCL constr
-R4891:4894 Corelib.Init.Datatypes <> Some constr
-R4905:4906 GuaraniCore <> P1 constr
-R4909:4915 GuaraniCore <> PL_EXCL constr
-R4920:4923 Corelib.Init.Datatypes <> Some constr
-R4934:4935 GuaraniCore <> P2 constr
-R4938:4941 GuaraniCore <> PL_2 constr
-R4949:4952 Corelib.Init.Datatypes <> Some constr
-R4963:4964 GuaraniCore <> P3 constr
-R4967:4970 GuaraniCore <> PL_3 constr
-R4978:4981 Corelib.Init.Datatypes <> Some constr
-R5006:5009 Corelib.Init.Datatypes <> None constr
-def 5030:5042 <> pref_especial
-R5047:5052 GuaraniCore <> person ind
-binder 5045:5045 <> p:47
-R5058:5063 GuaraniCore <> number ind
-binder 5056:5056 <> n:48
-R5068:5073 Corelib.Init.Datatypes <> option ind
-R5075:5080 Stdlib.Strings.String <> string ind
-R5096:5096 GuaraniCore <> n:48 var
-R5093:5093 GuaraniCore <> p:47 var
-R5107:5108 GuaraniCore <> P1 constr
-R5111:5112 GuaraniCore <> SG constr
-R5122:5125 Corelib.Init.Datatypes <> Some constr
-R5136:5137 GuaraniCore <> P2 constr
-R5140:5141 GuaraniCore <> SG constr
-R5151:5154 Corelib.Init.Datatypes <> Some constr
-R5165:5166 GuaraniCore <> P3 constr
-R5169:5170 GuaraniCore <> SG constr
-R5180:5183 Corelib.Init.Datatypes <> Some constr
-R5194:5195 GuaraniCore <> P1 constr
-R5198:5204 GuaraniCore <> PL_INCL constr
-R5209:5212 Corelib.Init.Datatypes <> Some constr
-R5223:5224 GuaraniCore <> P1 constr
-R5227:5233 GuaraniCore <> PL_EXCL constr
-R5238:5241 Corelib.Init.Datatypes <> Some constr
-R5252:5253 GuaraniCore <> P2 constr
-R5256:5259 GuaraniCore <> PL_2 constr
-R5267:5270 Corelib.Init.Datatypes <> Some constr
-R5281:5282 GuaraniCore <> P3 constr
-R5285:5288 GuaraniCore <> PL_3 constr
-R5296:5299 Corelib.Init.Datatypes <> Some constr
-R5325:5328 Corelib.Init.Datatypes <> None constr
-def 5349:5367 <> conjugate_irregular
-R5372:5377 GuaraniCore <> person ind
-binder 5370:5370 <> p:51
-R5383:5388 GuaraniCore <> number ind
-binder 5381:5381 <> n:52
-R5397:5402 Stdlib.Strings.String <> string ind
-binder 5392:5395 <> stem:53
-R5407:5412 Corelib.Init.Datatypes <> option ind
-R5414:5419 Stdlib.Strings.String <> string ind
-R5441:5441 GuaraniCore <> n:52 var
-R5438:5438 GuaraniCore <> p:51 var
-R5432:5435 GuaraniCore <> stem:53 var
-R5458:5459 GuaraniCore <> P1 constr
-R5462:5463 GuaraniCore <> SG constr
-R5473:5476 Corelib.Init.Datatypes <> Some constr
-R5494:5495 GuaraniCore <> P2 constr
-R5498:5499 GuaraniCore <> SG constr
-R5509:5512 Corelib.Init.Datatypes <> Some constr
-R5531:5532 GuaraniCore <> P3 constr
-R5535:5536 GuaraniCore <> SG constr
-R5546:5549 Corelib.Init.Datatypes <> Some constr
-R5566:5567 GuaraniCore <> P1 constr
-R5570:5576 GuaraniCore <> PL_INCL constr
-R5581:5584 Corelib.Init.Datatypes <> Some constr
-R5603:5604 GuaraniCore <> P1 constr
-R5607:5613 GuaraniCore <> PL_EXCL constr
-R5618:5621 Corelib.Init.Datatypes <> Some constr
-R5640:5641 GuaraniCore <> P2 constr
-R5644:5647 GuaraniCore <> PL_2 constr
-R5655:5658 Corelib.Init.Datatypes <> Some constr
-R5677:5678 GuaraniCore <> P3 constr
-R5681:5684 GuaraniCore <> PL_3 constr
-R5692:5695 Corelib.Init.Datatypes <> Some constr
-R5713:5714 GuaraniCore <> P1 constr
-R5717:5718 GuaraniCore <> SG constr
-R5728:5731 Corelib.Init.Datatypes <> Some constr
-R5749:5750 GuaraniCore <> P2 constr
-R5753:5754 GuaraniCore <> SG constr
-R5764:5767 Corelib.Init.Datatypes <> Some constr
-R5786:5787 GuaraniCore <> P3 constr
-R5790:5791 GuaraniCore <> SG constr
-R5801:5804 Corelib.Init.Datatypes <> Some constr
-R5822:5823 GuaraniCore <> P1 constr
-R5826:5832 GuaraniCore <> PL_INCL constr
-R5837:5840 Corelib.Init.Datatypes <> Some constr
-R5859:5860 GuaraniCore <> P1 constr
-R5863:5869 GuaraniCore <> PL_EXCL constr
-R5874:5877 Corelib.Init.Datatypes <> Some constr
-R5896:5897 GuaraniCore <> P2 constr
-R5900:5903 GuaraniCore <> PL_2 constr
-R5911:5914 Corelib.Init.Datatypes <> Some constr
-R5933:5934 GuaraniCore <> P3 constr
-R5937:5940 GuaraniCore <> PL_3 constr
-R5948:5951 Corelib.Init.Datatypes <> Some constr
-R5970:5971 GuaraniCore <> P1 constr
-R5974:5975 GuaraniCore <> SG constr
-R5985:5988 Corelib.Init.Datatypes <> Some constr
-R6007:6008 GuaraniCore <> P2 constr
-R6011:6012 GuaraniCore <> SG constr
-R6022:6025 Corelib.Init.Datatypes <> Some constr
-R6043:6044 GuaraniCore <> P3 constr
-R6047:6048 GuaraniCore <> SG constr
-R6058:6061 Corelib.Init.Datatypes <> Some constr
-R6080:6081 GuaraniCore <> P1 constr
-R6084:6090 GuaraniCore <> PL_INCL constr
-R6095:6098 Corelib.Init.Datatypes <> Some constr
-R6117:6118 GuaraniCore <> P1 constr
-R6121:6127 GuaraniCore <> PL_EXCL constr
-R6132:6135 Corelib.Init.Datatypes <> Some constr
-R6154:6155 GuaraniCore <> P2 constr
-R6158:6161 GuaraniCore <> PL_2 constr
-R6169:6172 Corelib.Init.Datatypes <> Some constr
-R6191:6192 GuaraniCore <> P3 constr
-R6195:6198 GuaraniCore <> PL_3 constr
-R6206:6209 Corelib.Init.Datatypes <> Some constr
-R6234:6237 Corelib.Init.Datatypes <> None constr
-def 6258:6266 <> conjugate
-R6271:6276 GuaraniCore <> person ind
-binder 6269:6269 <> p:57
-R6282:6287 GuaraniCore <> number ind
-binder 6280:6280 <> n:58
-R6293:6297 GuaraniCore <> vroot rec
-binder 6291:6291 <> r:59
-R6302:6307 Corelib.Init.Datatypes <> option ind
-R6309:6314 Stdlib.Strings.String <> string ind
-R6330:6335 GuaraniCore <> r_conj proj
-R6327:6327 GuaraniCore <> r:59 var
-R6347:6353 GuaraniCore <> VPropio constr
-R6370:6378 GuaraniCore <> pref_prop def
-R6380:6380 GuaraniCore <> p:57 var
-R6382:6382 GuaraniCore <> n:58 var
-R6397:6400 Corelib.Init.Datatypes <> Some constr
-R6410:6413 Corelib.Init.Datatypes <> Some constr
-R6416:6421 GuaraniCore <> concat def
-R6431:6436 GuaraniCore <> r_form proj
-R6428:6428 GuaraniCore <> r:59 var
-R6448:6451 Corelib.Init.Datatypes <> None constr
-R6456:6459 Corelib.Init.Datatypes <> None constr
-R6475:6483 GuaraniCore <> VEspecial constr
-R6500:6512 GuaraniCore <> pref_especial def
-R6514:6514 GuaraniCore <> p:57 var
-R6516:6516 GuaraniCore <> n:58 var
-R6531:6534 Corelib.Init.Datatypes <> Some constr
-R6544:6547 Corelib.Init.Datatypes <> Some constr
-R6550:6555 GuaraniCore <> concat def
-R6565:6570 GuaraniCore <> r_form proj
-R6562:6562 GuaraniCore <> r:59 var
-R6582:6585 Corelib.Init.Datatypes <> None constr
-R6590:6593 Corelib.Init.Datatypes <> None constr
-R6609:6618 GuaraniCore <> VIrregular constr
-R6629:6647 GuaraniCore <> conjugate_irregular def
-R6649:6649 GuaraniCore <> p:57 var
-R6651:6651 GuaraniCore <> n:58 var
-R6656:6661 GuaraniCore <> r_form proj
-R6653:6653 GuaraniCore <> r:59 var
-def 6765:6772 <> neg_pref
-R6777:6783 GuaraniCore <> orality ind
-binder 6775:6775 <> o:60
-R6788:6793 Stdlib.Strings.String <> string ind
-R6806:6806 GuaraniCore <> o:60 var
-R6813:6816 GuaraniCore <> ORAL constr
-R6828:6832 GuaraniCore <> NASAL constr
-def 6858:6870 <> neg_connector
-R6875:6880 GuaraniCore <> person ind
-binder 6873:6873 <> p:62
-R6886:6891 GuaraniCore <> number ind
-binder 6884:6884 <> n:63
-R6896:6901 Stdlib.Strings.String <> string ind
-R6917:6917 GuaraniCore <> n:63 var
-R6914:6914 GuaraniCore <> p:62 var
-R6928:6929 GuaraniCore <> P1 constr
-R6932:6933 GuaraniCore <> SG constr
-R6946:6947 GuaraniCore <> P2 constr
-R6950:6951 GuaraniCore <> SG constr
-R6964:6965 GuaraniCore <> P3 constr
-R6982:6983 GuaraniCore <> P1 constr
-R6986:6992 GuaraniCore <> PL_INCL constr
-R7005:7006 GuaraniCore <> P1 constr
-R7009:7015 GuaraniCore <> PL_EXCL constr
-R7028:7029 GuaraniCore <> P2 constr
-R7032:7035 GuaraniCore <> PL_2 constr
-def 7079:7088 <> neg_suffix
-R7096:7101 Stdlib.Strings.String <> string ind
-binder 7091:7094 <> base:66
-R7106:7111 Stdlib.Strings.String <> string ind
-R7121:7131 GuaraniCore <> ends_with_i def
-R7133:7136 GuaraniCore <> base:66 var
-def 7170:7175 <> negate
-R7180:7186 GuaraniCore <> orality ind
-binder 7178:7178 <> o:67
-R7192:7197 GuaraniCore <> person ind
-binder 7190:7190 <> p:68
-R7203:7208 GuaraniCore <> number ind
-binder 7201:7201 <> n:69
-R7217:7222 Stdlib.Strings.String <> string ind
-binder 7212:7215 <> base:70
-R7227:7232 Stdlib.Strings.String <> string ind
-R7239:7244 GuaraniCore <> concat def
-R7247:7254 GuaraniCore <> neg_pref def
-R7256:7256 GuaraniCore <> o:67 var
-R7260:7265 GuaraniCore <> concat def
-R7268:7280 GuaraniCore <> neg_connector def
-R7282:7282 GuaraniCore <> p:68 var
-R7284:7284 GuaraniCore <> n:69 var
-R7288:7293 GuaraniCore <> concat def
-R7295:7298 GuaraniCore <> base:70 var
-R7301:7310 GuaraniCore <> neg_suffix def
-R7312:7315 GuaraniCore <> base:70 var
+R34:37 Stdlib.Bool.Bool <> <> lib
+def 77:82 <> concat
+R87:99 Stdlib.Strings.String <> append def
+ind 228:234 <> orality
+constr 246:249 <> ORAL
+constr 253:257 <> NASAL
+scheme 228:234 <> orality_rect
+scheme 228:234 <> orality_ind
+scheme 228:234 <> orality_rec
+scheme 228:234 <> orality_sind
+ind 271:278 <> polarity
+constr 290:292 <> POS
+constr 296:298 <> NEG
+scheme 271:278 <> polarity_rect
+scheme 271:278 <> polarity_ind
+scheme 271:278 <> polarity_rec
+scheme 271:278 <> polarity_sind
+ind 312:321 <> verb_class
+constr 333:337 <> Areal
+constr 341:346 <> Attrib
+scheme 312:321 <> verb_class_rect
+scheme 312:321 <> verb_class_ind
+scheme 312:321 <> verb_class_rec
+scheme 312:321 <> verb_class_sind
+ind 399:406 <> agr_slot
+constr 420:423 <> S1SG
+constr 427:430 <> S2SG
+constr 434:437 <> S3SG
+constr 441:449 <> S1PL_INCL
+constr 453:461 <> S1PL_EXCL
+constr 465:468 <> S2PL
+scheme 399:406 <> agr_slot_rect
+scheme 399:406 <> agr_slot_ind
+scheme 399:406 <> agr_slot_rec
+scheme 399:406 <> agr_slot_sind
+ind 597:603 <> pronoun
+constr 617:619 <> Che
+constr 623:625 <> Nde
+constr 629:631 <> Hae
+constr 635:640 <> Ñande
+constr 644:646 <> Ore
+constr 650:652 <> Pee
+scheme 597:603 <> pronoun_rect
+scheme 597:603 <> pronoun_ind
+scheme 597:603 <> pronoun_rec
+scheme 597:603 <> pronoun_sind
+def 667:681 <> slot_of_pronoun
+R688:694 GuaraniCore <> pronoun ind
+binder 684:684 <> p:11
+R699:706 GuaraniCore <> agr_slot ind
+R719:719 GuaraniCore <> p:11 var
+R730:732 GuaraniCore <> Che constr
+R739:742 GuaraniCore <> S1SG constr
+R748:750 GuaraniCore <> Nde constr
+R757:760 GuaraniCore <> S2SG constr
+R766:768 GuaraniCore <> Hae constr
+R775:778 GuaraniCore <> S3SG constr
+R784:789 GuaraniCore <> Ñande constr
+R794:802 GuaraniCore <> S1PL_INCL constr
+R808:810 GuaraniCore <> Ore constr
+R817:825 GuaraniCore <> S1PL_EXCL constr
+R831:833 GuaraniCore <> Pee constr
+R840:843 GuaraniCore <> S2PL constr
+def 864:877 <> pronoun_string
+R884:890 GuaraniCore <> pronoun ind
+binder 880:880 <> p:13
+R895:900 Stdlib.Strings.String <> string ind
+R913:913 GuaraniCore <> p:13 var
+R924:926 GuaraniCore <> Che constr
+R943:945 GuaraniCore <> Nde constr
+R962:964 GuaraniCore <> Hae constr
+R982:987 GuaraniCore <> Ñande constr
+R1005:1007 GuaraniCore <> Ore constr
+R1024:1026 GuaraniCore <> Pee constr
+def 1230:1238 <> conj_pref
+R1245:1251 GuaraniCore <> orality ind
+binder 1241:1241 <> o:15
+R1259:1266 GuaraniCore <> agr_slot ind
+binder 1255:1255 <> s:16
+R1271:1276 Stdlib.Strings.String <> string ind
+R1292:1292 GuaraniCore <> s:16 var
+R1289:1289 GuaraniCore <> o:15 var
+R1303:1306 GuaraniCore <> ORAL constr
+R1310:1313 GuaraniCore <> S1SG constr
+R1331:1334 GuaraniCore <> ORAL constr
+R1338:1341 GuaraniCore <> S2SG constr
+R1360:1363 GuaraniCore <> ORAL constr
+R1367:1370 GuaraniCore <> S3SG constr
+R1388:1391 GuaraniCore <> ORAL constr
+R1395:1403 GuaraniCore <> S1PL_INCL constr
+R1417:1420 GuaraniCore <> ORAL constr
+R1424:1432 GuaraniCore <> S1PL_EXCL constr
+R1446:1449 GuaraniCore <> ORAL constr
+R1453:1456 GuaraniCore <> S2PL constr
+R1475:1479 GuaraniCore <> NASAL constr
+R1482:1485 GuaraniCore <> S1SG constr
+R1503:1507 GuaraniCore <> NASAL constr
+R1510:1513 GuaraniCore <> S2SG constr
+R1532:1536 GuaraniCore <> NASAL constr
+R1539:1542 GuaraniCore <> S3SG constr
+R1560:1564 GuaraniCore <> NASAL constr
+R1567:1575 GuaraniCore <> S1PL_INCL constr
+R1590:1594 GuaraniCore <> NASAL constr
+R1597:1605 GuaraniCore <> S1PL_EXCL constr
+R1619:1623 GuaraniCore <> NASAL constr
+R1626:1629 GuaraniCore <> S2PL constr
+def 1663:1670 <> neg_pref
+R1677:1683 GuaraniCore <> orality ind
+binder 1673:1673 <> o:19
+R1688:1693 Stdlib.Strings.String <> string ind
+R1706:1706 GuaraniCore <> o:19 var
+R1717:1720 GuaraniCore <> ORAL constr
+R1735:1739 GuaraniCore <> NASAL constr

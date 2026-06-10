@@ -57,12 +57,12 @@ Definition conj_pref (o : orality) (s : agr_slot) : string :=
   | ORAL,  S1PL_INCL => "ja"
   | ORAL,  S1PL_EXCL => "ro"
   | ORAL,  S2PL      => "pe"
-  | NASAL, S1SG      => "ã"
-  | NASAL, S2SG      => "rẽ"
-  | NASAL, S3SG      => "õ"
-  | NASAL, S1PL_INCL => "jã"
-  | NASAL, S1PL_EXCL => "rõ"
-  | NASAL, S2PL      => "pẽ"
+  | NASAL, S1SG      => "a"
+  | NASAL, S2SG      => "re"
+  | NASAL, S3SG      => "o"
+  | NASAL, S1PL_INCL => "ña"
+  | NASAL, S1PL_EXCL => "ro"
+  | NASAL, S2PL      => "pe"
   end.
 
 Definition neg_pref (o : orality) : string :=

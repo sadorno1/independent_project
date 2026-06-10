@@ -1,0 +1,8 @@
+*.vo
+*.vos
+*.vok
+
+/suicidio
+LexiconGenerated.vo
+GuaraniLexiconTypes.v
+GuaraniLexiconTypes.vo
