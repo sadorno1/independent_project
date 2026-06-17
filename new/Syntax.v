@@ -1,21 +1,33 @@
 From Stdlib Require Import String.
 Open Scope string_scope.
 
-(*  Primitives.v -- shared grammatical and phonological types   *)
+(* ============================================================ *)
+(*  Primitives.v                                                *)
+(*                                                              *)
+(*  Shared phonological and grammatical atoms used everywhere   *)
+(*  in the formalization. This file has no internal             *)
+(*  dependencies: only the standard library.                    *)
+(* ============================================================ *)
 
-(* --- Phonology --- *)
 
-(* Drives all prefix/suffix allomorphy in Guaraní *)
+(* ============================================================ *)
+(*  1. Phonology                                                *)
+(*  §1.2 "Orality drives all allomorphy."                       *)
+(* ============================================================ *)
+
 Inductive orality : Type :=
   | Oral
   | Nasal.
 
-(* Final vowel class: determines nominal plural suffix *)
+(* §3.1.1: final vowel class selects =eta/=ita multitude *)
 Inductive word_ending : Type :=
-  | EndAEO  (* final a/e/o -> -ita *)
-  | EndIUY. (* final i/u/y -> -eta *)
+  | EndAEO     (* final a/e/o -> -ita *)
+  | EndIUY.    (* final i/u/y -> -eta *)
 
-(* --- Grammar --- *)
+(* ============================================================ *)
+(*  2. Person, number, inclusivity                              *)
+(*  §3.5.1 person system; §4.1.1 inclusivity                    *)
+(* ============================================================ *)
 
 Inductive person : Type :=
   | First
@@ -26,24 +38,26 @@ Inductive number : Type :=
   | Singular
   | Plural.
 
-(* ñande (incl.) vs ore (excl.) *)
+(* §4.1.1: ñande (incl.) vs ore (excl.) *)
 Inductive inclusivity : Type :=
   | Inclusive
   | Exclusive.
 
-(* --- Possessive markers --- *)
-(* Used in NPs (che juru) and later in attributive verb conjugation *)
+(* ============================================================ *)
+(*  3. Possessive markers                                       *)
+(*  §3.6 "che juru" = my mouth                                  *)
+(* ============================================================ *)
 
 Inductive poss_marker : Type :=
-  | Poss1       (* che            *)
-  | Poss2       (* nde / ne       *)
-  | Poss3       (* i / iñ         *)
-  | Poss1Incl   (* ñánde / ñáne   *)
-  | Poss1Excl   (* ore            *)
-  | Poss2Pl     (* pénde / péne   *)
-  | Poss3Pl.    (* i / iñ         *)
+  | Poss1       (* che              *)
+  | Poss2       (* nde / ne         *)
+  | Poss3       (* i / iñ           *)
+  | Poss1Incl   (* ñánde / ñáne     *)
+  | Poss1Excl   (* ore              *)
+  | Poss2Pl     (* pénde / péne     *)
+  | Poss3Pl.    (* i / iñ           *)
 
-(* Oral/nasal allomorphs for possessive markers *)
+(* §1.2 oral / nasal allomorphs of possessive markers *)
 Definition poss_marker_form (o : orality) (pm : poss_marker) : string :=
   match pm with
   | Poss1     => "che"
@@ -55,65 +69,69 @@ Definition poss_marker_form (o : orality) (pm : poss_marker) : string :=
   | Poss3Pl   => match o with Oral => "i"     | Nasal => "iñ"   end
   end.
 
-(* --- Allomorphy functions --- *)
+(* ============================================================ *)
+(*  4. Allomorphy functions                                     *)
+(*  Each one used by either NounPhrases.v or Verb.v (often      *)
+(*  both), so they live here in the shared module.              *)
+(* ============================================================ *)
 
-(* Adjectival plural: karai kuéra, mitãnguéra *)
+(* §3.1.1: adjectival plural — karai kuéra, mitãnguéra *)
 Definition plural_suffix_adj (o : orality) : string :=
   match o with
   | Oral  => "kuéra"
   | Nasal => "nguéra"
   end.
 
-(* Nominal plural: ogaita, ñatĩ'ueta *)
+(* §3.1.1: nominal plural — ogaita, ñatĩ'ueta *)
 Definition plural_suffix_noun (e : word_ending) : string :=
   match e with
   | EndAEO => "ita"
   | EndIUY => "eta"
   end.
 
-(* Superlative: tuichaite / tuichaete *)
+(* §2.2.1.d: superlative — tuichaite / tuichaete *)
 Definition super_suffix (o : orality) : string :=
   match o with
   | Oral  => "ite"
   | Nasal => "ete"
   end.
 
-(* Negative prefix: nd (oral) / n (nasal) *)
+(* §4.9: negative circumfix prefix — nd-/n- *)
 Definition neg_prefix (o : orality) : string :=
   match o with
   | Oral  => "nd"
   | Nasal => "n"
   end.
 
-(* Passive voice: je (oral) / ñe (nasal) *)
+(* §6: voice prefixes *)
 Definition passive_prefix (o : orality) : string :=
   match o with
   | Oral  => "je"
   | Nasal => "ñe"
   end.
 
-(* Reciprocal voice: jo (oral) / ño (nasal) *)
 Definition reciprocal_prefix (o : orality) : string :=
   match o with
   | Oral  => "jo"
   | Nasal => "ño"
   end.
 
-(* Coactive voice: mbo (oral) / mo (nasal) *)
 Definition coactive_prefix (o : orality) : string :=
   match o with
   | Oral  => "mbo"
   | Nasal => "mo"
   end.
 
-(* Totalitative suffix: pa (oral) / mba (nasal) *)
+(* §4.10.1: totalitative suffix — pa / mba *)
 Definition totalitative_suffix (o : orality) : string :=
   match o with
   | Oral  => "pa"
   | Nasal => "mba"
   end.
 
-(* --- Decidable equality --- *)
+(* ============================================================ *)
+(*  5. Decidable equality                                       *)
+(* ============================================================ *)
 
 Scheme Equality for orality.
 Scheme Equality for word_ending.
@@ -122,34 +140,35 @@ Scheme Equality for number.
 Scheme Equality for inclusivity.
 Scheme Equality for poss_marker.
 
-(* --- Theorems --- *)
+(* ============================================================ *)
+(*  6. Theorems                                                 *)
+(* ============================================================ *)
 
-(* oral and nasal adjectival plural are distinct strings *)
+(* Oral and nasal adjectival plurals are distinct surface forms. *)
 Theorem plural_adj_distinct :
     plural_suffix_adj Oral <> plural_suffix_adj Nasal.
 Proof. simpl. discriminate. Qed.
 
-(* -ita and -eta are distinct strings *)
+(* -ita and -eta are distinct. *)
 Theorem plural_noun_distinct :
     plural_suffix_noun EndAEO <> plural_suffix_noun EndIUY.
 Proof. simpl. discriminate. Qed.
 
-(* every orality gives one of the two adjectival plural forms *)
+(* Every orality maps to one of the two adjectival plural forms. *)
 Theorem plural_adj_total : forall o,
     plural_suffix_adj o = "kuéra" \/ plural_suffix_adj o = "nguéra".
 Proof. intros o; destruct o; [left|right]; reflexivity. Qed.
 
-(* every word ending gives one of the two nominal plural forms *)
 Theorem plural_noun_total : forall e,
     plural_suffix_noun e = "ita" \/ plural_suffix_noun e = "eta".
 Proof. intros e; destruct e; [left|right]; reflexivity. Qed.
 
-(* nd and n are distinct *)
+(* nd- and n- are distinct. *)
 Theorem neg_prefix_distinct :
     neg_prefix Oral <> neg_prefix Nasal.
 Proof. simpl. discriminate. Qed.
 
-(* Poss1 (che) and Poss1Excl (ore) are invariant across orality *)
+(* Poss1 (che) and Poss1Excl (ore) are invariant across orality. *)
 Theorem poss1_always_che : forall o,
     poss_marker_form o Poss1 = "che".
 Proof. intros o; destruct o; reflexivity. Qed.
@@ -158,7 +177,6 @@ Theorem poss1excl_always_ore : forall o,
     poss_marker_form o Poss1Excl = "ore".
 Proof. intros o; destruct o; reflexivity. Qed.
 
-(* Poss2 oral/nasal forms are distinct *)
 Theorem poss2_forms_distinct :
     poss_marker_form Oral Poss2 <> poss_marker_form Nasal Poss2.
 Proof. simpl. discriminate. Qed.

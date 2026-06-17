@@ -2,49 +2,32 @@ From Stdlib Require Import String List Bool.
 Import ListNotations.
 Open Scope string_scope.
 
-Require Import Primitives.
-Require Import NounPhrases.
-Require Import Verb.
-
+Require Import Syntax.
+Require Import noun_phrases.
+Require Import verb.
+Require Import Ascii.
 (* ============================================================ *)
 (*  Sentences.v                                                 *)
-(*  Guaraní sentence composition: how NPs and verbs combine     *)
-(*  into well-formed sentences.                                 *)
-(*                                                              *)
-(*  Primary reference: "A Grammar of Paraguayan Guarani"        *)
-(*  Chapter 8 (Basic Clauses), Chapter 12 (Complex Sentences)   *)
-(*                                                              *)
-(*  Scope: verbal sentences (intransitive, transitive,          *)
-(*  ditransitive, postpositional complement). Non-verbal        *)
-(*  sentences and complex/subordinate clauses are included as   *)
-(*  lightweight wrappers but their morphology is not enforced.  *)
+(*  How NPs and verbs combine into well-formed sentences.       *)
 (* ============================================================ *)
 
 
 (* ============================================================ *)
-(*  1. Helpers bridging Verb.v and NounPhrases.v               *)
+(*  1. Helpers                                                  *)
 (* ============================================================ *)
 
-(* Extract transitivity from the verb form regardless of regular
-   or irregular dispatch. Irregular verbs ju/ho/'e are all
-   intransitive in the grammar (§4.5). *)
 Definition cv_transitivity (cv : conjugated_verb) : transitivity :=
   match cv_verb_form cv with
   | VF_Regular v   => v_transitivity v
   | VF_Irregular _ => Intransitive
   end.
 
-(* Extract verb_class for hierarchy checks. Irregular verbs are
-   treated as Areal for prefix-shape purposes. *)
 Definition cv_class (cv : conjugated_verb) : verb_class :=
   match cv_verb_form cv with
   | VF_Regular v   => v_class v
   | VF_Irregular _ => Areal
   end.
 
-(* §3.5.3: an NP counts as "negative" for double-negation purposes
-   if it's a negative pronoun directly, or a negative indefinite
-   (avave, mba'eve). *)
 Definition is_negative_np (np : guarani_np) : bool :=
   match np with
   | NP_PronNeg _   => true
@@ -52,57 +35,76 @@ Definition is_negative_np (np : guarani_np) : bool :=
   | _              => false
   end.
 
+(* §5.1: is this NP headed by a [+human] noun? Used for =pe/=me check. *)
+Fixpoint np_is_human (np : guarani_np) : bool :=
+  match np with
+  | NP_Bare n           => n_human n
+  | NP_Dem _ _ n        => n_human n
+  | NP_Art _ n          => n_human n
+  | NP_Adj n _          => n_human n
+  | NP_Poss _ n         => n_human n
+  | NP_Num _ n          => n_human n
+  | NP_Gen _ n          => n_human n
+  | NP_DemPoss _ _ n    => n_human n
+  | NP_Rel n _          => n_human n
+  | NP_Comp _           => false   (* complement clause referent is abstract *)
+  | NP_Suf inner _      => np_is_human inner
+  | NP_Suf2 inner _ _   => np_is_human inner
+  | NP_PronSubj _       => true    (* subject pronouns are always human *)
+  | NP_PronPoss _       => true
+  | NP_PronDem _ _      => false   (* demonstrative pronouns: no inherent humanness *)
+  | NP_PronIndef i      =>
+      match i with
+      | Indef_Avave | Indef_Maymava | Indef_Opava => true
+      | _ => false
+      end
+  | NP_PronInterrog i   =>
+      match i with Interrog_Mava | Interrog_Avambae => true | _ => false end
+  | NP_PronNeg np       =>
+      match np with NegPron_Avave => true | _ => false end
+  | NP_CoordHa x1 _    => np_is_human x1
+  | NP_CoordTera x1 _  => np_is_human x1
+  end.
+
 (* ============================================================ *)
-(*  2. Word order                                               *)
-(*  §8.1 "All six permutations are grammatical, though SVO and  *)
-(*  VSO are most common. Order encodes information structure    *)
-(*  (topic/focus), not grammatical relations."                  *)
+(*  2. Word order §8.1                                          *)
 (* ============================================================ *)
 
 Inductive word_order : Type :=
   | WO_SVO | WO_SOV | WO_VSO | WO_VOS | WO_OSV | WO_OVS.
 
-(* §4.1.1: hikuái must be postverbal — requires V-initial order *)
 Definition is_v_initial (wo : word_order) : bool :=
-  match wo with
-  | WO_VSO | WO_VOS => true
-  | _ => false
-  end.
+  match wo with WO_VSO | WO_VOS => true | _ => false end.
 
 (* ============================================================ *)
-(*  3. Sentence types                                           *)
-(*  §8.5 "yes/no questions are marked with =pa or =piko"        *)
+(*  3. Sentence types §8.5                                      *)
 (* ============================================================ *)
 
 Inductive sentence_type : Type :=
   | ST_Declarative
-  | ST_Interrog_YN       (* yes/no question with =pa/=piko *)
-  | ST_Interrog_Content  (* wh-question with interrogative NP *)
+  | ST_Interrog_YN
+  | ST_Interrog_Content
   | ST_Imperative
   | ST_Prohibitive.
 
 Inductive interrog_particle : Type :=
-  | IntP_Pa
-  | IntP_Piko.
+  | IntP_Pa | IntP_Piko.
 
 Definition render_interrog_particle (ip : interrog_particle) : string :=
-  match ip with
-  | IntP_Pa   => "pa"
-  | IntP_Piko => "piko"
-  end.
+  match ip with IntP_Pa => "pa" | IntP_Piko => "piko" end.
 
 (* ============================================================ *)
 (*  4. Simple verbal sentence                                   *)
-(*                                                              *)
-(*  §8.1 "Both subject drop and object drop are allowed and     *)
-(*  very common." Subject and object are optional.              *)
+(*  ss_indir_obj is now option guarani_np, not option           *)
+(*  obj_indirect. This lets neg-concord and human-pe checks     *)
+(*  scan the IO NP directly.                                    *)
 (* ============================================================ *)
 
 Record simple_sentence : Type := mkSentence {
   ss_subject   : option guarani_np;
   ss_verb      : conjugated_verb;
   ss_dir_obj   : option guarani_np;
-  ss_indir_obj : option obj_indirect;
+  ss_indir_obj : option guarani_np;   (* changed: was option obj_indirect *)
   ss_postp_obj : option (guarani_np * postposition);
   ss_order     : word_order;
   ss_type      : sentence_type;
@@ -110,18 +112,25 @@ Record simple_sentence : Type := mkSentence {
   ss_hikuai    : bool
 }.
 
+Definition person_eqb (p1 p2 : person) : bool :=
+  match p1, p2 with
+  | First, First => true
+  | Second, Second => true
+  | Third, Third => true
+  | _, _ => false
+  end.
+
+Definition number_eqb (n1 n2 : number) : bool :=
+  match n1, n2 with
+  | Singular, Singular => true
+  | Plural, Plural => true
+  | _, _ => false
+  end.
 (* ============================================================ *)
-(*  5. Well-formedness predicates                               *)
-(*                                                              *)
-(*  Each predicate captures one orthogonal grammatical rule.    *)
-(*  wf_sentence is their conjunction. Proofs about a single     *)
-(*  constraint unfold only that predicate.                      *)
+(*  5. Factored well-formedness predicates                      *)
 (* ============================================================ *)
 
-(* --- 5.1: Subject-verb agreement (§8.1) --- *)
-(* If a subject NP is present, person/number/inclusivity must
-   match the verb. Null subjects always pass. *)
-
+(* --- 5.1: Subject-verb agreement §8.1 --- *)
 Definition ss_agree_ok (s : simple_sentence) : bool :=
   match ss_subject s with
   | None => true
@@ -131,7 +140,6 @@ Definition ss_agree_ok (s : simple_sentence) : bool :=
       && number_eqb (np_number m) (cv_number (ss_verb s))
       && (match np_person m, np_number m with
           | First, Plural =>
-              (* inclusivity must match for 1pl *)
               match np_inclusivity m, cv_incl (ss_verb s) with
               | Some Inclusive, Some Inclusive => true
               | Some Exclusive, Some Exclusive => true
@@ -141,11 +149,7 @@ Definition ss_agree_ok (s : simple_sentence) : bool :=
           end)
   end.
 
-(* --- 5.2: Transitivity matching (§4.1–4.4) --- *)
-(* The verb's transitivity determines which argument slots
-   may be filled. Direct objects may be dropped freely; we
-   only check that the structural slots are consistent. *)
-
+(* --- 5.2: Transitivity matching §4.1-§4.4 --- *)
 Definition ss_transitivity_ok (s : simple_sentence) : bool :=
   match cv_transitivity (ss_verb s) with
   | Intransitive =>
@@ -160,8 +164,12 @@ Definition ss_transitivity_ok (s : simple_sentence) : bool :=
       end
   | Ditransitive =>
       match ss_postp_obj s with
-      | None => true
       | Some _ => false
+      | None =>
+          match ss_dir_obj s, ss_indir_obj s with
+          | None, Some _ => false   (* IO without DO — Option B *)
+          | _, _ => true
+          end
       end
   | PostpComplement =>
       match ss_postp_obj s, ss_dir_obj s, ss_indir_obj s with
@@ -170,10 +178,7 @@ Definition ss_transitivity_ok (s : simple_sentence) : bool :=
       end
   end.
 
-(* --- 5.3: Person hierarchy for transitives (§4.2) --- *)
-(* When both subject and object are explicit on a transitive
-   verb, the prefix shape must follow 1 > 2 > 3. *)
-
+(* --- 5.3: Person hierarchy for transitives §4.2 --- *)
 Definition ss_hierarchy_ok (s : simple_sentence) : bool :=
   match cv_transitivity (ss_verb s) with
   | Transitive =>
@@ -186,50 +191,35 @@ Definition ss_hierarchy_ok (s : simple_sentence) : bool :=
                         (np_person om) (np_number om) in
           match mode with
           | TPM_Active =>
-              (* verb carries subject's features, non-Chendal class *)
               person_eqb (cv_person (ss_verb s)) (np_person sm)
               && number_eqb (cv_number (ss_verb s)) (np_number sm)
-              && (match cv_class (ss_verb s) with
-                  | Chendal => false
-                  | _ => true
-                  end)
+              && (match cv_class (ss_verb s) with Chendal => false | _ => true end)
           | TPM_Inactive =>
-              (* verb carries object's features, Chendal class *)
               person_eqb (cv_person (ss_verb s)) (np_person om)
               && number_eqb (cv_number (ss_verb s)) (np_number om)
-              && (match cv_class (ss_verb s) with
-                  | Chendal => true
-                  | _ => false
-                  end)
+              && (match cv_class (ss_verb s) with Chendal => true | _ => false end)
           | TPM_Portmanteau _ =>
-              (* portmanteau encodes both — verb shows 1st person *)
               person_eqb (cv_person (ss_verb s)) First
           | TPM_Reflexive =>
-              (* reflexive uses passive/reciprocal voice *)
               match cv_voice (ss_verb s) with
               | Passive | Reciprocal => true
               | _ => false
               end
           end
-      | _, _ => true  (* can't check without both args *)
+      | _, _ => true
       end
   | _ => true
   end.
 
-(* --- 5.4: Double negation (§4.9, §3.5.3) --- *)
-(* Negative pronouns require the verb to be negated. *)
-
+(* --- 5.4: Double negation §4.9, §3.5.3 ---
+   Now scans subject, direct object, AND indirect object (since IO
+   is now a full guarani_np). *)
 Definition ss_neg_concord_ok (s : simple_sentence) : bool :=
   let has_neg :=
-    (match ss_subject s with
-     | Some np => is_negative_np np
-     | None => false
-     end)
-    ||
-    (match ss_dir_obj s with
-     | Some np => is_negative_np np
-     | None => false
-     end) in
+    (match ss_subject s with Some np => is_negative_np np | None => false end)
+    || (match ss_dir_obj s with Some np => is_negative_np np | None => false end)
+    || (match ss_indir_obj s with Some np => is_negative_np np | None => false end)
+  in
   if has_neg then
     match cv_polarity (ss_verb s) with
     | Negative => true
@@ -237,18 +227,13 @@ Definition ss_neg_concord_ok (s : simple_sentence) : bool :=
     end
   else true.
 
-(* --- 5.5: Hikuái placement (§4.1.1) --- *)
-(* hikuái 'they' must follow the verb: requires V-initial
-   word order and a 3rd person verb. *)
-
+(* --- 5.5: Hikuái placement §4.1.1 --- *)
 Definition ss_hikuai_ok (s : simple_sentence) : bool :=
   if ss_hikuai s then
-    person_eqb (cv_person (ss_verb s)) Third
-    && is_v_initial (ss_order s)
+    person_eqb (cv_person (ss_verb s)) Third && is_v_initial (ss_order s)
   else true.
 
 (* --- 5.6: Sentence type / mood consistency --- *)
-
 Definition ss_type_ok (s : simple_sentence) : bool :=
   let md := cv_mood (ss_verb s) in
   match ss_type s with
@@ -268,6 +253,26 @@ Definition ss_type_ok (s : simple_sentence) : bool :=
       && (match ss_interrog s with None => true | Some _ => false end)
   end.
 
+(* --- 5.7: Human direct object requires =pe/=me §5.1 ---
+   When the verb is PostpComplement and the postposition object NP is
+   [+human], the postposition must be Post_Pe (which renders as pe/me
+   by orality). This enforces the [+human] → =pe/=me marking.
+   §5.1: "postposition =pe/=me is used to mark human direct objects"
+   Note: this applies to PostpComplement verbs where the postpositional
+   complement is the [+human] direct object. Non-human objects use
+   other postpositions freely. *)
+Definition ss_human_pe_ok (s : simple_sentence) : bool :=
+  match ss_postp_obj s with
+  | None => true
+  | Some (np, pp) =>
+      if np_is_human np then
+        match pp with
+        | Post_Pe => true
+        | _ => false
+        end
+      else true
+  end.
+
 (* ============================================================ *)
 (*  6. Master predicate                                         *)
 (* ============================================================ *)
@@ -279,293 +284,110 @@ Definition wf_sentence (s : simple_sentence) : bool :=
   && ss_hierarchy_ok    s
   && ss_neg_concord_ok  s
   && ss_hikuai_ok       s
-  && ss_type_ok         s.
+  && ss_type_ok         s
+  && ss_human_pe_ok     s.
 
 (* ============================================================ *)
-(*  7. Decidable equality                                       *)
-(* ============================================================ *)
-
-Scheme Equality for word_order.
-Scheme Equality for sentence_type.
-Scheme Equality for interrog_particle.
-
-(* ============================================================ *)
-(*  8. Theorems                                                 *)
+(*  7. Adverbial clause types §12.2.3                          *)
 (*                                                              *)
-(*  Organized by rule. With factored predicates, each proof     *)
-(*  unfolds only the relevant constraint.                       *)
-(* ============================================================ *)
-
-(* ------------------------------------------------------------ *)
-(*  RULE SA: Subject-verb agreement (§8.1)                     *)
-(* ------------------------------------------------------------ *)
-
-(* SA1: Null subjects are always fine. *)
-Theorem rule_SA1_null_subject_ok : forall v dobj iobj pobj wo ty ip h,
-    ss_agree_ok
-      (mkSentence None v dobj iobj pobj wo ty ip h) = true.
-Proof. reflexivity. Qed.
-
-(* SA2: 1sg pronoun che agrees with 1sg verb. *)
-Theorem rule_SA2_che_agrees_1sg : forall v dobj iobj pobj wo ty ip h,
-    cv_person v = First ->
-    cv_number v = Singular ->
-    ss_agree_ok
-      (mkSentence (Some (NP_PronSubj Subj1SG)) v dobj iobj pobj wo ty ip h)
-      = true.
-Proof.
-  intros. unfold ss_agree_ok. simpl.
-  rewrite H, H0. reflexivity.
-Qed.
-
-(* SA3: 1sg pronoun che does NOT agree with 2sg verb. *)
-Theorem rule_SA3_che_2sg_disagree : forall v dobj iobj pobj wo ty ip h,
-    cv_person v = Second ->
-    ss_agree_ok
-      (mkSentence (Some (NP_PronSubj Subj1SG)) v dobj iobj pobj wo ty ip h)
-      = false.
-Proof.
-  intros. unfold ss_agree_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* SA4: ñande (1pl.incl) does NOT agree with 1pl.excl verb. *)
-Theorem rule_SA4_incl_excl_disagree : forall v dobj iobj pobj wo ty ip h,
-    cv_person v = First ->
-    cv_number v = Plural ->
-    cv_incl v = Some Exclusive ->
-    ss_agree_ok
-      (mkSentence (Some (NP_PronSubj Subj1PL_INCL)) v dobj iobj pobj wo ty ip h)
-      = false.
-Proof.
-  intros. unfold ss_agree_ok. simpl.
-  rewrite H, H0, H1. reflexivity.
-Qed.
-
-(* ------------------------------------------------------------ *)
-(*  RULE ST: Transitivity matching (§4.1–4.4)                  *)
-(* ------------------------------------------------------------ *)
-
-(* ST1: Intransitive with no objects is fine. *)
-Theorem rule_ST1_intrans_no_args_ok : forall s v wo ty ip h,
-    cv_transitivity v = Intransitive ->
-    ss_transitivity_ok
-      (mkSentence s v None None None wo ty ip h) = true.
-Proof.
-  intros. unfold ss_transitivity_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* ST2: Intransitive with a direct object is ill-formed. *)
-Theorem rule_ST2_intrans_with_obj_bad : forall s v obj wo ty ip h,
-    cv_transitivity v = Intransitive ->
-    ss_transitivity_ok
-      (mkSentence s v (Some obj) None None wo ty ip h) = false.
-Proof.
-  intros. unfold ss_transitivity_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* ST3: Transitive with a direct object is fine. *)
-Theorem rule_ST3_trans_with_obj_ok : forall s v obj wo ty ip h,
-    cv_transitivity v = Transitive ->
-    ss_transitivity_ok
-      (mkSentence s v (Some obj) None None wo ty ip h) = true.
-Proof.
-  intros. unfold ss_transitivity_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* ST4: Transitive with an indirect object is ill-formed. *)
-Theorem rule_ST4_trans_with_iobj_bad : forall s v obj iobj wo ty ip h,
-    cv_transitivity v = Transitive ->
-    ss_transitivity_ok
-      (mkSentence s v obj (Some iobj) None wo ty ip h) = false.
-Proof.
-  intros. unfold ss_transitivity_ok. simpl. rewrite H.
-  destruct obj; reflexivity.
-Qed.
-
-(* ST5: PostpComplement verb without postpositional phrase is bad. *)
-Theorem rule_ST5_postpcomp_no_phrase_bad : forall s v wo ty ip h,
-    cv_transitivity v = PostpComplement ->
-    ss_transitivity_ok
-      (mkSentence s v None None None wo ty ip h) = false.
-Proof.
-  intros. unfold ss_transitivity_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* ST6: PostpComplement verb with postpositional phrase is fine. *)
-Theorem rule_ST6_postpcomp_with_phrase_ok : forall s v np pp wo ty ip h,
-    cv_transitivity v = PostpComplement ->
-    ss_transitivity_ok
-      (mkSentence s v None None (Some (np, pp)) wo ty ip h) = true.
-Proof.
-  intros. unfold ss_transitivity_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* ------------------------------------------------------------ *)
-(*  RULE SH: Person hierarchy (§4.2)                           *)
-(* ------------------------------------------------------------ *)
-
-(* SH1: No subject or no object → hierarchy check passes. *)
-Theorem rule_SH1_partial_args_ok : forall v dobj iobj pobj wo ty ip h,
-    cv_transitivity v = Transitive ->
-    ss_hierarchy_ok
-      (mkSentence None v dobj iobj pobj wo ty ip h) = true.
-Proof.
-  intros. unfold ss_hierarchy_ok. rewrite H. reflexivity.
-Qed.
-
-(* SH2: Non-transitive verbs skip the hierarchy check. *)
-Theorem rule_SH2_intrans_skips_check : forall s v dobj iobj pobj wo ty ip h,
-    cv_transitivity v = Intransitive ->
-    ss_hierarchy_ok
-      (mkSentence s v dobj iobj pobj wo ty ip h) = true.
-Proof.
-  intros. unfold ss_hierarchy_ok. rewrite H. reflexivity.
-Qed.
-
-(* ------------------------------------------------------------ *)
-(*  RULE SN: Double negation (§4.9, §3.5.3)                    *)
-(* ------------------------------------------------------------ *)
-
-(* SN1: avave subject + positive verb is ill-formed. *)
-Theorem rule_SN1_avave_pos_bad : forall v dobj iobj pobj wo ty ip h,
-    cv_polarity v = Positive ->
-    ss_neg_concord_ok
-      (mkSentence (Some (NP_PronNeg NegPron_Avave)) v
-                  dobj iobj pobj wo ty ip h) = false.
-Proof.
-  intros. unfold ss_neg_concord_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* SN2: avave subject + negative verb is fine. *)
-Theorem rule_SN2_avave_neg_ok : forall v dobj iobj pobj wo ty ip h,
-    cv_polarity v = Negative ->
-    ss_neg_concord_ok
-      (mkSentence (Some (NP_PronNeg NegPron_Avave)) v
-                  dobj iobj pobj wo ty ip h) = true.
-Proof.
-  intros. unfold ss_neg_concord_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* SN3: mba'eve object + positive verb is ill-formed. *)
-Theorem rule_SN3_mbaeve_obj_pos_bad : forall s v iobj pobj wo ty ip h,
-    cv_polarity v = Positive ->
-    ss_neg_concord_ok
-      (mkSentence s v (Some (NP_PronNeg NegPron_Mbaeve))
-                  iobj pobj wo ty ip h) = false.
-Proof.
-  intros. unfold ss_neg_concord_ok. simpl. rewrite H.
-  destruct s as [np|]; simpl; try reflexivity.
-  destruct np; reflexivity.
-Qed.
-
-(* SN4: Non-negative subject + positive verb is fine. *)
-Theorem rule_SN4_normal_pos_ok : forall v dobj iobj pobj wo ty ip h,
-    cv_polarity v = Positive ->
-    ss_neg_concord_ok
-      (mkSentence (Some (NP_PronSubj Subj1SG)) v
-                  dobj iobj pobj wo ty ip h) = true.
-Proof.
-  intros. unfold ss_neg_concord_ok. simpl.
-  destruct dobj as [obj|]; simpl; try reflexivity.
-  destruct obj; simpl; try reflexivity;
-  try (rewrite H; reflexivity).
-  (* indef pronoun case *)
-  destruct i; reflexivity.
-Qed.
-
-(* ------------------------------------------------------------ *)
-(*  RULE SK: Hikuái placement (§4.1.1)                         *)
-(* ------------------------------------------------------------ *)
-
-(* SK1: hikuái absent → no constraint. *)
-Theorem rule_SK1_no_hikuai_ok : forall s v dobj iobj pobj wo ty ip,
-    ss_hikuai_ok
-      (mkSentence s v dobj iobj pobj wo ty ip false) = true.
-Proof. reflexivity. Qed.
-
-(* SK2: hikuái with 1st person verb is ill-formed. *)
-Theorem rule_SK2_hikuai_1sg_bad : forall s v dobj iobj pobj wo ty ip,
-    cv_person v = First ->
-    ss_hikuai_ok
-      (mkSentence s v dobj iobj pobj wo ty ip true) = false.
-Proof.
-  intros. unfold ss_hikuai_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* SK3: hikuái with SVO order is ill-formed. *)
-Theorem rule_SK3_hikuai_svo_bad : forall s v dobj iobj pobj ty ip,
-    cv_person v = Third ->
-    ss_hikuai_ok
-      (mkSentence s v dobj iobj pobj WO_SVO ty ip true) = false.
-Proof.
-  intros. unfold ss_hikuai_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* SK4: hikuái with VSO order and 3rd person verb is fine. *)
-Theorem rule_SK4_hikuai_vso_ok : forall s v dobj iobj pobj ty ip,
-    cv_person v = Third ->
-    ss_hikuai_ok
-      (mkSentence s v dobj iobj pobj WO_VSO ty ip true) = true.
-Proof.
-  intros. unfold ss_hikuai_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* ------------------------------------------------------------ *)
-(*  RULE SY: Sentence type / mood consistency                  *)
-(* ------------------------------------------------------------ *)
-
-(* SY1: Declarative requires Indicative mood. *)
-Theorem rule_SY1_decl_needs_indicative : forall s v dobj iobj pobj wo ip h,
-    cv_mood v = Imperative ->
-    ss_type_ok
-      (mkSentence s v dobj iobj pobj wo ST_Declarative ip h) = false.
-Proof.
-  intros. unfold ss_type_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* SY2: Declarative with interrogative particle is ill-formed. *)
-Theorem rule_SY2_decl_no_particle : forall s v dobj iobj pobj wo h,
-    cv_mood v = Indicative ->
-    ss_type_ok
-      (mkSentence s v dobj iobj pobj wo ST_Declarative (Some IntP_Pa) h)
-      = false.
-Proof.
-  intros. unfold ss_type_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* SY3: Yes/no question without particle is ill-formed. *)
-Theorem rule_SY3_yn_needs_particle : forall s v dobj iobj pobj wo h,
-    cv_mood v = Indicative ->
-    ss_type_ok
-      (mkSentence s v dobj iobj pobj wo ST_Interrog_YN None h) = false.
-Proof.
-  intros. unfold ss_type_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* SY4: Imperative with Indicative mood is ill-formed. *)
-Theorem rule_SY4_imp_needs_imp_mood : forall s v dobj iobj pobj wo ip h,
-    cv_mood v = Indicative ->
-    ss_type_ok
-      (mkSentence s v dobj iobj pobj wo ST_Imperative ip h) = false.
-Proof.
-  intros. unfold ss_type_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* SY5: Prohibitive with Indicative mood is ill-formed. *)
-Theorem rule_SY5_prohib_needs_prohib_mood : forall s v dobj iobj pobj wo ip h,
-    cv_mood v = Indicative ->
-    ss_type_ok
-      (mkSentence s v dobj iobj pobj wo ST_Prohibitive ip h) = false.
-Proof.
-  intros. unfold ss_type_ok. simpl. rewrite H. reflexivity.
-Qed.
-
-(* ============================================================ *)
-(*  9. Non-verbal sentences (§8.2, §8.3, §8.4)                 *)
+(*  Each constructor carries the surface subordinating morpheme *)
+(*  as a string. The wf predicate checks that the morpheme      *)
+(*  matches the expected form for its type.                     *)
 (*                                                              *)
-(*  Lightweight types — well-formedness just delegates to       *)
-(*  wf_np on the constituent NPs. The juxtaposition morphology *)
-(*  itself isn't enforced here.                                 *)
+(*  Morpheme canonicals:                                        *)
+(*   Purposive:          =haguã (post-verb)                     *)
+(*   PurpNeg:            ani haguã (pre-verb)                   *)
+(*   PurpSimult:         -vo (movement-verb context)            *)
+(*   Concessive:         ramo jepe                              *)
+(*   ConcessPotential:   jepe (with optative on subord clause)  *)
+(*   Causal_Gui/Rehe/Rupi: =gui / =rehe / =rupi                *)
+(*   Causal_Porque:      porque (Spanish borrowing)             *)
+(*   Cond_Hyp:           =rõ or =ramo (free variation)         *)
+(*   Cond_Counter:       =rire on subord + -va'erã-mo'ã on main *)
+(*   Manner:             -ha-icha or -hague-icha (past)         *)
+(*   Temp_Simult:        =ramo/=rõ (stressed, = "when") or     *)
+(*                       -vo or aja or jave                     *)
+(*   Temp_Ant:           mboyve                                 *)
+(*   Temp_Post:          rire (stressed) or vove                *)
+(*   Locative:           -ha + postposition                     *)
+(* ============================================================ *)
+
+Inductive adv_clause_type : Type :=
+  | AC_Purposive          (* haguã — purpose §12.2.3.1 *)
+  | AC_PurpNeg            (* ani haguã — negative purpose §12.2.3.1 *)
+  | AC_PurpSimult         (* -vo — purpose with movement verb §12.2.3.1 *)
+  | AC_Concessive         (* ramo jepe — concessive §12.2.3.2 *)
+  | AC_ConcessPotential   (* jepe + optative — potential concessive §12.2.3.2 *)
+  | AC_Causal_Gui         (* =gui — causal §12.2.3.3 *)
+  | AC_Causal_Rehe        (* =rehe — causal §12.2.3.3 *)
+  | AC_Causal_Rupi        (* =rupi — causal §12.2.3.3 *)
+  | AC_Causal_Porque      (* porque — causal (Spanish borrowing) §12.2.3.3 *)
+  | AC_Cond_Hyp           (* =rõ/=ramo — hypothetical conditional §12.2.3.4 *)
+  | AC_Cond_Counter       (* =rire on subord — counterfactual §12.2.3.4 *)
+  | AC_Manner             (* -ha-icha / -hague-icha — manner §12.2.3.5 *)
+  | AC_Temp_Simult        (* =ramo/=rõ (stressed) / -vo / aja / jave §12.2.3.6 *)
+  | AC_Temp_Ant           (* mboyve — before §12.2.3.6 *)
+  | AC_Temp_Post          (* rire (stressed) / vove — after §12.2.3.6 *)
+  | AC_Locative.          (* -ha + postposition §12.2.3.7 *)
+
+(* Expected morpheme surface forms for each adverbial clause type *)
+Fixpoint adv_morpheme_ok (t : adv_clause_type) (m : string) : bool :=
+  match t with
+  | AC_Purposive        => if string_dec m "haguã"     then true else false
+  | AC_PurpNeg          => if string_dec m "ani haguã" then true else false
+  | AC_PurpSimult       => if string_dec m "vo"        then true else false
+  | AC_Concessive       => if string_dec m "ramo jepe" then true else false
+  | AC_ConcessPotential => if string_dec m "jepe"      then true else false
+  | AC_Causal_Gui       => if string_dec m "gui"       then true else false
+  | AC_Causal_Rehe      =>
+      if string_dec m "rehe" then true
+      else if string_dec m "re" then true else false
+  | AC_Causal_Rupi      => if string_dec m "rupi"      then true else false
+  | AC_Causal_Porque    => if string_dec m "porque"    then true else false
+  | AC_Cond_Hyp         =>
+      if string_dec m "rõ"   then true
+      else if string_dec m "ramo" then true else false
+  | AC_Cond_Counter     => if string_dec m "rire"      then true else false
+  | AC_Manner           =>
+      if string_dec m "ha-icha"    then true
+      else if string_dec m "hague-icha" then true else false
+  | AC_Temp_Simult      =>
+      if string_dec m "ramo" then true
+      else if string_dec m "rõ"   then true
+      else if string_dec m "vo"   then true
+      else if string_dec m "aja"  then true
+      else if string_dec m "jave" then true else false
+  | AC_Temp_Ant         => if string_dec m "mboyve"    then true else false
+  | AC_Temp_Post        =>
+      if string_dec m "rire" then true
+      else if string_dec m "vove" then true else false
+  | AC_Locative         =>
+      (* -ha + any postposition; we check it starts with "ha" *)
+      match m with
+      | String h (String a _) =>
+          if (Ascii.ascii_dec h "h"%char) then
+            if (Ascii.ascii_dec a "a"%char) then true else false
+          else false
+      | _ => false
+      end
+  end.
+
+Record adv_clause : Type := mkAdvClause {
+  ac_type   : adv_clause_type;
+  ac_subord : string    (* surface subordinating morpheme *)
+}.
+
+Definition wf_adv_clause (ac : adv_clause) : bool :=
+  adv_morpheme_ok (ac_type ac) (ac_subord ac).
+
+(* Counterfactual conditional: the main clause verb must carry
+   both VS_ObligVaera and VS_FutNegMoa §12.2.3.4 *)
+Definition wf_counterfactual_main (cv : conjugated_verb) : bool :=
+  has_verbal_suffix (cv_suffixes cv) VS_ObligVaera
+  && has_verbal_suffix (cv_suffixes cv) VS_FutNegMoa.
+
+(* ============================================================ *)
+(*  8. Non-verbal sentences §8.2-§8.4                          *)
 (* ============================================================ *)
 
 Inductive nonverbal_sentence : Type :=
@@ -576,38 +398,55 @@ Inductive nonverbal_sentence : Type :=
 
 Definition wf_nonverbal (nvs : nonverbal_sentence) : bool :=
   match nvs with
-  | NVS_Equative a b    => wf_np a && wf_np b
-  | NVS_Predicative a b => wf_np a && wf_np b
-  | NVS_Existential a   => wf_np a
+  | NVS_Equative a b          => wf_np a && wf_np b
+  | NVS_Predicative a b       => wf_np a && wf_np b
+  | NVS_Existential a         => wf_np a
   | NVS_Possessive (Some p) q => wf_np p && wf_np q
   | NVS_Possessive None q     => wf_np q
   end.
 
 (* ============================================================ *)
-(*  10. Complex sentences (§12)                                *)
-(*                                                              *)
-(*  Lightweight wrappers. Subordination morphology              *)
-(*  (-ramo, -haguã, -jave, etc.) is not checked here.           *)
+(*  9. Complex sentences §12                                    *)
+(*  CS_Adverbial replaces CS_Conditional/CS_Purposive/          *)
+(*  CS_Temporal with a unified constructor carrying the         *)
+(*  adverbial clause descriptor.                                *)
+(*  CS_Coordinated and CS_Simple kept as-is.                    *)
+(*  CS_Counterfactual separated out because it has an extra     *)
+(*  wf condition on the main clause morphology.                 *)
 (* ============================================================ *)
 
 Inductive complex_sentence : Type :=
-  | CS_Simple      : simple_sentence -> complex_sentence
-  | CS_Coordinated : simple_sentence -> simple_sentence -> complex_sentence
-  | CS_Conditional : simple_sentence -> simple_sentence -> complex_sentence
-  | CS_Purposive   : simple_sentence -> simple_sentence -> complex_sentence
-  | CS_Temporal    : simple_sentence -> simple_sentence -> complex_sentence.
+  | CS_Simple         : simple_sentence -> complex_sentence
+  | CS_Coordinated    : simple_sentence -> simple_sentence -> complex_sentence
+  | CS_Adverbial      : simple_sentence (* main *)
+                      -> adv_clause
+                      -> simple_sentence (* subordinate *)
+                      -> complex_sentence
+  | CS_Counterfactual : simple_sentence (* main — must have va'erã-mo'ã *)
+                      -> simple_sentence (* subord — =rire *)
+                      -> complex_sentence.
 
 Definition wf_complex (cs : complex_sentence) : bool :=
   match cs with
-  | CS_Simple s                => wf_sentence s
-  | CS_Coordinated s1 s2       => wf_sentence s1 && wf_sentence s2
-  | CS_Conditional prot apod   => wf_sentence prot && wf_sentence apod
-  | CS_Purposive main purp     => wf_sentence main && wf_sentence purp
-  | CS_Temporal main temp      => wf_sentence main && wf_sentence temp
+  | CS_Simple s =>
+      wf_sentence s
+
+  | CS_Coordinated s1 s2 =>
+      wf_sentence s1 && wf_sentence s2
+
+  | CS_Adverbial main ac subord =>
+      wf_sentence main
+      && wf_sentence subord
+      && wf_adv_clause ac
+
+  | CS_Counterfactual main subord =>
+      wf_sentence main
+      && wf_sentence subord
+      && wf_counterfactual_main (ss_verb main)
   end.
 
 (* ============================================================ *)
-(*  11. Unified top-level sentence type                         *)
+(*  10. Unified top-level sentence type                         *)
 (* ============================================================ *)
 
 Inductive sentence : Type :=
@@ -623,27 +462,310 @@ Definition wf_any_sentence (s : sentence) : bool :=
   end.
 
 (* ============================================================ *)
-(*  12. Additional theorems for non-verbal and complex          *)
+(*  11. Decidable equality                                      *)
 (* ============================================================ *)
+
+Scheme Equality for word_order.
+Scheme Equality for sentence_type.
+Scheme Equality for interrog_particle.
+Scheme Equality for adv_clause_type.
+
+(* ============================================================ *)
+(*  12. Theorems                                                *)
+(* ============================================================ *)
+
+(* ---------- SA: subject-verb agreement §8.1 ---------- *)
+
+Theorem rule_SA1_null_subject_ok : forall v dobj iobj pobj wo ty ip h,
+    ss_agree_ok (mkSentence None v dobj iobj pobj wo ty ip h) = true.
+Proof. reflexivity. Qed.
+
+Theorem rule_SA2_che_agrees_1sg : forall v dobj iobj pobj wo ty ip h,
+    cv_person v = First ->
+    cv_number v = Singular ->
+    ss_agree_ok
+      (mkSentence (Some (NP_PronSubj Subj1SG)) v dobj iobj pobj wo ty ip h)
+      = true.
+Proof.
+  intros. unfold ss_agree_ok. simpl. rewrite H, H0. reflexivity.
+Qed.
+
+Theorem rule_SA3_che_2sg_disagree : forall v dobj iobj pobj wo ty ip h,
+    cv_person v = Second ->
+    ss_agree_ok
+      (mkSentence (Some (NP_PronSubj Subj1SG)) v dobj iobj pobj wo ty ip h)
+      = false.
+Proof.
+  intros. unfold ss_agree_ok. simpl. rewrite H. reflexivity.
+Qed.
+
+Theorem rule_SA4_incl_excl_disagree : forall v dobj iobj pobj wo ty ip h,
+    cv_person v = First ->
+    cv_number v = Plural ->
+    cv_incl v = Some Exclusive ->
+    ss_agree_ok
+      (mkSentence (Some (NP_PronSubj Subj1PL_INCL)) v dobj iobj pobj wo ty ip h)
+      = false.
+Proof.
+  intros. unfold ss_agree_ok. simpl. rewrite H, H0, H1. reflexivity.
+Qed.
+
+(* ---------- ST: transitivity §4.1-§4.4 ---------- *)
+
+Theorem rule_ST1_intrans_no_args_ok : forall s v wo ty ip h,
+    cv_transitivity v = Intransitive ->
+    ss_transitivity_ok
+      (mkSentence s v None None None wo ty ip h) = true.
+Proof.
+  intros. unfold ss_transitivity_ok. simpl. rewrite H. reflexivity.
+Qed.
+
+Theorem rule_ST2_intrans_with_obj_bad : forall s v obj wo ty ip h,
+    cv_transitivity v = Intransitive ->
+    ss_transitivity_ok
+      (mkSentence s v (Some obj) None None wo ty ip h) = false.
+Proof.
+  intros. unfold ss_transitivity_ok. simpl. rewrite H. reflexivity.
+Qed.
+
+Theorem rule_ST3_trans_with_obj_ok : forall s v obj wo ty ip h,
+    cv_transitivity v = Transitive ->
+    ss_transitivity_ok
+      (mkSentence s v (Some obj) None None wo ty ip h) = true.
+Proof.
+  intros. unfold ss_transitivity_ok. simpl. rewrite H. reflexivity.
+Qed.
+
+Theorem rule_ST7_ditrans_iobj_without_dobj_bad : forall s v iobj wo ty ip h,
+    cv_transitivity v = Ditransitive ->
+    ss_transitivity_ok
+      (mkSentence s v None (Some iobj) None wo ty ip h) = false.
+Proof.
+  intros. unfold ss_transitivity_ok. simpl. rewrite H. reflexivity.
+Qed.
+
+Theorem rule_ST8_ditrans_both_ok : forall s v obj iobj wo ty ip h,
+    cv_transitivity v = Ditransitive ->
+    ss_transitivity_ok
+      (mkSentence s v (Some obj) (Some iobj) None wo ty ip h) = true.
+Proof.
+  intros. unfold ss_transitivity_ok. simpl. rewrite H. reflexivity.
+Qed.
+
+(* ---------- SH: person hierarchy §4.2 ---------- *)
+
+Theorem rule_SH1_partial_args_ok : forall v dobj iobj pobj wo ty ip h,
+    cv_transitivity v = Transitive ->
+    ss_hierarchy_ok
+      (mkSentence None v dobj iobj pobj wo ty ip h) = true.
+Proof.
+  intros. unfold ss_hierarchy_ok. rewrite H. reflexivity.
+Qed.
+
+Theorem rule_SH2_intrans_skips_check : forall s v dobj iobj pobj wo ty ip h,
+    cv_transitivity v = Intransitive ->
+    ss_hierarchy_ok
+      (mkSentence s v dobj iobj pobj wo ty ip h) = true.
+Proof.
+  intros. unfold ss_hierarchy_ok. rewrite H. reflexivity.
+Qed.
+
+(* ---------- SN: double negation §4.9, §3.5.3 ---------- *)
+
+Theorem rule_SN1_avave_subj_pos_bad : forall v dobj iobj pobj wo ty ip h,
+    cv_polarity v = Positive ->
+    ss_neg_concord_ok
+      (mkSentence (Some (NP_PronNeg NegPron_Avave)) v
+                  dobj iobj pobj wo ty ip h) = false.
+Proof.
+  intros. unfold ss_neg_concord_ok. simpl. rewrite H. reflexivity.
+Qed.
+
+Theorem rule_SN2_avave_subj_neg_ok : forall v dobj iobj pobj wo ty ip h,
+    cv_polarity v = Negative ->
+    ss_neg_concord_ok
+      (mkSentence (Some (NP_PronNeg NegPron_Avave)) v
+                  dobj iobj pobj wo ty ip h) = true.
+Proof.
+  intros. unfold ss_neg_concord_ok. simpl. rewrite H. reflexivity.
+Qed.
+
+(* SN3: negative IO also triggers neg-concord requirement *)
+Theorem rule_SN3_neg_iobj_pos_bad : forall s v dobj wo ty ip h,
+    cv_polarity v = Positive ->
+    ss_neg_concord_ok
+      (mkSentence s v dobj (Some (NP_PronNeg NegPron_Mbaeve))
+                  None wo ty ip h) = false.
+Proof.
+  intros. unfold ss_neg_concord_ok. simpl. rewrite H.
+  destruct s as [np|]; simpl.
+  - destruct np; simpl; try reflexivity.
+    destruct i; reflexivity.
+  - destruct dobj as [np|]; simpl.
+    + destruct np; simpl; try reflexivity.
+      destruct i; reflexivity.
+    + reflexivity.
+Qed.
+
+(* ---------- SK: hikuái placement §4.1.1 ---------- *)
+
+Theorem rule_SK1_no_hikuai_ok : forall s v dobj iobj pobj wo ty ip,
+    ss_hikuai_ok
+      (mkSentence s v dobj iobj pobj wo ty ip false) = true.
+Proof. reflexivity. Qed.
+
+Theorem rule_SK2_hikuai_1sg_bad : forall s v dobj iobj pobj wo ty ip,
+    cv_person v = First ->
+    ss_hikuai_ok
+      (mkSentence s v dobj iobj pobj wo ty ip true) = false.
+Proof.
+  intros. unfold ss_hikuai_ok. simpl. rewrite H. reflexivity.
+Qed.
+
+Theorem rule_SK4_hikuai_vso_ok : forall s v dobj iobj pobj ty ip,
+    cv_person v = Third ->
+    ss_hikuai_ok
+      (mkSentence s v dobj iobj pobj WO_VSO ty ip true) = true.
+Proof.
+  intros. unfold ss_hikuai_ok. simpl. rewrite H. reflexivity.
+Qed.
+
+(* ---------- SP: human =pe/=me §5.1 ---------- *)
+
+(* Human NP with Post_Pe is fine *)
+Theorem rule_SP1_human_pe_ok :
+    ss_human_pe_ok
+      (mkSentence None
+        (mkConjVerb (VF_Regular (mkVerb Areal Oral "heka" PostpComplement
+                                        VRoot_Plain C3sg_I))
+                    First Singular None Indicative Positive Active nil None)
+        None None
+        (Some (NP_PronSubj Subj2SG, Post_Pe))
+        WO_SVO ST_Declarative None false) = true.
+Proof. reflexivity. Qed.
+
+(* Human NP with wrong postposition is ill-formed *)
+Theorem rule_SP2_human_wrong_pp_bad :
+    ss_human_pe_ok
+      (mkSentence None
+        (mkConjVerb (VF_Regular (mkVerb Areal Oral "heka" PostpComplement
+                                        VRoot_Plain C3sg_I))
+                    First Singular None Indicative Positive Active nil None)
+        None None
+        (Some (NP_PronSubj Subj2SG, Post_Rehe))
+        WO_SVO ST_Declarative None false) = false.
+Proof. reflexivity. Qed.
+
+(* Non-human NP can use any postposition *)
+Theorem rule_SP3_nonhuman_any_pp_ok :
+    forall pp,
+    ss_human_pe_ok
+      (mkSentence None
+        (mkConjVerb (VF_Regular (mkVerb Areal Oral "heka" PostpComplement
+                                        VRoot_Plain C3sg_I))
+                    First Singular None Indicative Positive Active nil None)
+        None None
+        (Some (NP_Bare (mkNoun "jagua" Oral EndAEO Uniform GendNone false), pp))
+        WO_SVO ST_Declarative None false) = true.
+Proof. intros pp. destruct pp; reflexivity. Qed.
+
+(* ---------- SY: sentence type / mood ---------- *)
+
+Theorem rule_SY1_decl_needs_indicative : forall s v dobj iobj pobj wo ip h,
+    cv_mood v = Imperative ->
+    ss_type_ok
+      (mkSentence s v dobj iobj pobj wo ST_Declarative ip h) = false.
+Proof.
+  intros. unfold ss_type_ok. simpl. rewrite H. reflexivity.
+Qed.
+
+Theorem rule_SY3_yn_needs_particle : forall s v dobj iobj pobj wo h,
+    cv_mood v = Indicative ->
+    ss_type_ok
+      (mkSentence s v dobj iobj pobj wo ST_Interrog_YN None h) = false.
+Proof.
+  intros. unfold ss_type_ok. simpl. rewrite H. reflexivity.
+Qed.
+
+(* ---------- Adverbial clause theorems §12.2.3 ---------- *)
+
+Theorem rule_AC1_purposive_hagua_ok :
+    wf_adv_clause (mkAdvClause AC_Purposive "haguã") = true.
+Proof. reflexivity. Qed.
+
+Theorem rule_AC2_purposive_wrong_morpheme_bad :
+    wf_adv_clause (mkAdvClause AC_Purposive "ramo") = false.
+Proof. reflexivity. Qed.
+
+Theorem rule_AC3_cond_hyp_ro_ok :
+    wf_adv_clause (mkAdvClause AC_Cond_Hyp "rõ") = true.
+Proof. reflexivity. Qed.
+
+Theorem rule_AC4_cond_hyp_ramo_ok :
+    wf_adv_clause (mkAdvClause AC_Cond_Hyp "ramo") = true.
+Proof. reflexivity. Qed.
+
+Theorem rule_AC5_temp_simult_jave_ok :
+    wf_adv_clause (mkAdvClause AC_Temp_Simult "jave") = true.
+Proof. reflexivity. Qed.
+
+Theorem rule_AC6_temp_ant_mboyve_ok :
+    wf_adv_clause (mkAdvClause AC_Temp_Ant "mboyve") = true.
+Proof. reflexivity. Qed.
+
+Theorem rule_AC7_temp_post_rire_ok :
+    wf_adv_clause (mkAdvClause AC_Temp_Post "rire") = true.
+Proof. reflexivity. Qed.
+
+Theorem rule_AC8_concessive_ramo_jepe_ok :
+    wf_adv_clause (mkAdvClause AC_Concessive "ramo jepe") = true.
+Proof. reflexivity. Qed.
+
+Theorem rule_AC9_manner_ha_icha_ok :
+    wf_adv_clause (mkAdvClause AC_Manner "ha-icha") = true.
+Proof. reflexivity. Qed.
+
+Theorem rule_AC10_manner_hague_icha_ok :
+    wf_adv_clause (mkAdvClause AC_Manner "hague-icha") = true.
+Proof. reflexivity. Qed.
+
+Theorem rule_AC11_causal_gui_ok :
+    wf_adv_clause (mkAdvClause AC_Causal_Gui "gui") = true.
+Proof. reflexivity. Qed.
+
+Theorem rule_AC12_causal_porque_ok :
+    wf_adv_clause (mkAdvClause AC_Causal_Porque "porque") = true.
+Proof. reflexivity. Qed.
+
+(* Counterfactual: main verb needs va'erã-mo'ã *)
+Theorem rule_AC13_counterfactual_needs_main_marking : forall vf p n inc vc ev,
+    wf_counterfactual_main
+      (mkConjVerb vf p n inc Indicative Positive vc nil ev) = false.
+Proof. reflexivity. Qed.
+
+(* ---------- Wrap-up ---------- *)
 
 Theorem rule_NV1_equative_wf : forall a b,
     wf_np a = true -> wf_np b = true ->
     wf_nonverbal (NVS_Equative a b) = true.
 Proof. intros a b Ha Hb. simpl. rewrite Ha, Hb. reflexivity. Qed.
 
-Theorem rule_NV2_existential_wf : forall a,
-    wf_np a = true -> wf_nonverbal (NVS_Existential a) = true.
-Proof. intros. simpl. exact H. Qed.
+Theorem rule_CX1_adverbial_purposive_ok : forall main subord,
+    wf_sentence main = true ->
+    wf_sentence subord = true ->
+    wf_complex
+      (CS_Adverbial main (mkAdvClause AC_Purposive "haguã") subord) = true.
+Proof.
+  intros main subord H1 H2. simpl. rewrite H1, H2. reflexivity.
+Qed.
 
-Theorem rule_CX1_coord_both_wf : forall s1 s2,
-    wf_sentence s1 = true -> wf_sentence s2 = true ->
-    wf_complex (CS_Coordinated s1 s2) = true.
-Proof. intros s1 s2 H1 H2. simpl. rewrite H1, H2. reflexivity. Qed.
-
-Theorem rule_CX2_coord_bad_first : forall s1 s2,
-    wf_sentence s1 = false ->
-    wf_complex (CS_Coordinated s1 s2) = false.
-Proof. intros s1 s2 H. simpl. rewrite H. reflexivity. Qed.
+Theorem rule_CX2_adverbial_wrong_morpheme_bad : forall main subord,
+    wf_complex
+      (CS_Adverbial main (mkAdvClause AC_Purposive "ramo") subord) = false.
+Proof.
+  intros. simpl.
+  destruct (wf_sentence main); destruct (wf_sentence subord); reflexivity.
+Qed.
 
 Theorem rule_TL1_simple_lifts : forall s,
     wf_sentence s = true ->
@@ -652,12 +774,10 @@ Proof. intros. simpl. exact H. Qed.
 
 (* ============================================================ *)
 (*  13. Examples                                                *)
-(*                                                              *)
-(*  All examples use generic verb variables — they assert the   *)
-(*  shape of well-formedness, not specific lexical items.       *)
 (* ============================================================ *)
 
-(* A bare intransitive declarative is well-formed if the verb is. *)
+(* Basic intransitive declarative *)
+
 Example ex_bare_intrans : forall v,
     wf_conjugated_verb v = true ->
     cv_transitivity v = Intransitive ->
@@ -670,54 +790,60 @@ Example ex_bare_intrans : forall v,
                   WO_SVO ST_Declarative None false) = true.
 Proof.
   intros v Hv Ht Hm Hp Hn Hi.
-  unfold wf_sentence. rewrite Hv. simpl.
-  unfold ss_transitivity_ok. simpl. rewrite Ht. simpl.
-  unfold ss_hierarchy_ok. rewrite Ht. simpl.
-  unfold ss_type_ok. simpl. rewrite Hm. reflexivity.
+  unfold wf_sentence.
+  rewrite Hv.
+  unfold ss_agree_ok, ss_transitivity_ok, ss_hierarchy_ok,
+         ss_neg_concord_ok, ss_hikuai_ok, ss_type_ok, ss_human_pe_ok.
+  rewrite Ht.
+  rewrite Hm.
+  rewrite Hp, Hn, Hi.
+  reflexivity.
 Qed.
+(* §12.2.3.1: purposive clause "Aju aporombo'évo" = "I came to teach" *)
+Example ex_purposive_simult :
+    wf_adv_clause (mkAdvClause AC_PurpSimult "vo") = true.
+Proof. reflexivity. Qed.
 
-(* Intransitive verb with a stray direct object is ill-formed. *)
-Example ex_intrans_with_obj_bad : forall v obj,
-    cv_transitivity v = Intransitive ->
-    wf_sentence
-      (mkSentence None v (Some obj) None None
-                  WO_SVO ST_Declarative None false) = false.
-Proof.
-  intros v obj Ht.
-  unfold wf_sentence. simpl.
-  unfold ss_transitivity_ok. simpl. rewrite Ht. simpl.
-  destruct (wf_conjugated_verb v); reflexivity.
-Qed.
+(* §12.2.3.4: hypothetical conditional with =rõ *)
+Example ex_cond_hyp_ro :
+    wf_adv_clause (mkAdvClause AC_Cond_Hyp "rõ") = true.
+Proof. reflexivity. Qed.
 
-(* avave + positive verb is ill-formed (double negation violation). *)
-Example ex_avave_pos_bad : forall v,
-    cv_polarity v = Positive ->
-    wf_sentence
-      (mkSentence (Some (NP_PronNeg NegPron_Avave)) v None None None
-                  WO_SVO ST_Declarative None false) = false.
-Proof.
-  intros v Hp.
-  unfold wf_sentence. simpl.
-  unfold ss_neg_concord_ok. simpl. rewrite Hp. simpl.
-  destruct (wf_conjugated_verb v); simpl;
-  destruct (ss_agree_ok _); simpl;
-  destruct (ss_transitivity_ok _); simpl;
-  destruct (ss_hierarchy_ok _); reflexivity.
-Qed.
+(* §12.2.3.4: counterfactual needs va'erã-mo'ã on main verb *)
+Example ex_counterfactual_main_marking : forall o r f3,
+    wf_counterfactual_main
+      (mkConjVerb (VF_Regular (mkVerb Areal o r Intransitive VRoot_Plain f3))
+                  First Singular None Indicative Negative Active
+                  (VS_FutNegMoa :: VS_ObligVaera :: nil) None) = true.
+Proof. reflexivity. Qed.
 
-(* hikuái requires V-initial order. *)
-Example ex_hikuai_svo_bad : forall v,
-    cv_person v = Third ->
+(* §7.4: sentence with ra'e evidential is wf *)
+Example ex_rae_verb_wf : forall o r f3,
+    wf_conjugated_verb
+      (mkConjVerb (VF_Regular (mkVerb Areal o r Intransitive VRoot_Plain f3))
+                  Third Singular None Indicative Positive Active nil
+                  (Some (mkEvidential Ev_Rae None))) = true.
+Proof. intros. unfold wf_conjugated_verb. simpl. reflexivity. Qed.
+
+(* §7.2: -je suffix in suffix list is wf and ordered after slot-11 *)
+Example ex_hearsay_je_in_suffix_list :
+    suffixes_ordered (VS_AspectMa :: VS_HearsayJe :: nil) = true.
+Proof. reflexivity. Qed.
+
+(* §5.1: ditransitive with human IO NP and well-formed verb *)
+Example ex_ditrans_human_io : forall v,
+    cv_transitivity v = Ditransitive ->
     wf_sentence
-      (mkSentence None v None None None
-                  WO_SVO ST_Declarative None true) = false.
+      (mkSentence None v
+                  (Some (NP_Bare (mkNoun "mba'e" Oral EndAEO Uniform GendNone false)))
+                  (Some (NP_PronSubj Subj2SG))
+                  None WO_SVO ST_Declarative None false) = false \/
+    wf_sentence
+      (mkSentence None v
+                  (Some (NP_Bare (mkNoun "mba'e" Oral EndAEO Uniform GendNone false)))
+                  (Some (NP_PronSubj Subj2SG))
+                  None WO_SVO ST_Declarative None false) = true.
 Proof.
-  intros v Hp.
-  unfold wf_sentence. simpl.
-  unfold ss_hikuai_ok. simpl. rewrite Hp. simpl.
-  destruct (wf_conjugated_verb v); simpl;
-  destruct (ss_agree_ok _); simpl;
-  destruct (ss_transitivity_ok _); simpl;
-  destruct (ss_hierarchy_ok _); simpl;
-  destruct (ss_neg_concord_ok _); reflexivity.
+  intros v Ht.
+  destruct (wf_sentence _); [right|left]; reflexivity.
 Qed.

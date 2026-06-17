@@ -1,0 +1,555 @@
+"""
+types.py
+
+Python mirror of the Coq types in Primitives.v and Verb.v.
+Every class has a to_coq() method that produces the exact Coq constructor
+string used in `Compute wf_sentence (mkSentence ...)` calls.
+
+Naming convention: Python class names match Coq inductive/record names.
+Enum member names match Coq constructor names exactly.
+"""
+
+from __future__ import annotations
+from dataclasses import dataclass, field
+from enum import Enum
+from typing import Optional
+
+
+# ============================================================
+#  Primitives (mirror Primitives.v)
+# ============================================================
+
+class Orality(Enum):
+    Oral  = "Oral"
+    Nasal = "Nasal"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+class Person(Enum):
+    First  = "First"
+    Second = "Second"
+    Third  = "Third"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+class Number(Enum):
+    Singular = "Singular"
+    Plural   = "Plural"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+class Inclusivity(Enum):
+    Inclusive = "Inclusive"
+    Exclusive = "Exclusive"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+# ============================================================
+#  Verb classification (§1 Verb.v)
+# ============================================================
+
+class VerbClass(Enum):
+    Areal   = "Areal"
+    Aireal  = "Aireal"
+    Chendal = "Chendal"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+# ============================================================
+#  Transitivity (§2 Verb.v)
+# ============================================================
+
+class Transitivity(Enum):
+    Intransitive      = "Intransitive"
+    Transitive        = "Transitive"
+    Ditransitive      = "Ditransitive"
+    PostpComplement   = "PostpComplement"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+# ============================================================
+#  Root class (§3 Verb.v)
+# ============================================================
+
+class VerbRootClass(Enum):
+    VRoot_Plain      = "VRoot_Plain"
+    VRoot_Relational = "VRoot_Relational"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+# ============================================================
+#  Chendal 3sg allomorph (§4 Verb.v)
+# ============================================================
+
+class Chendal3sgForm(Enum):
+    C3sg_I  = "C3sg_I"   # i-/iñ-
+    C3sg_Hi = "C3sg_Hi"  # hi-/hiñ- (most common)
+    C3sg_Ij = "C3sg_Ij"  # ij-/iñ- (before vowel-initial roots)
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+# ============================================================
+#  Voice (§5 Verb.v)
+# ============================================================
+
+class Voice(Enum):
+    Active     = "Active"
+    Passive    = "Passive"
+    Reciprocal = "Reciprocal"
+    Coactive   = "Coactive"
+    Objective  = "Objective"
+    Obj_Guero  = "Obj_Guero"
+    Subsuntive = "Subsuntive"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+# ============================================================
+#  Mood (§6 Verb.v)
+# ============================================================
+
+class Mood(Enum):
+    Indicative  = "Indicative"
+    Imperative  = "Imperative"
+    Optative    = "Optative"
+    Prohibitive = "Prohibitive"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+# ============================================================
+#  Polarity (§7 Verb.v)
+# ============================================================
+
+class Polarity(Enum):
+    Positive = "Positive"
+    Negative = "Negative"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+# ============================================================
+#  Evidential markers (§8 Verb.v)
+# ============================================================
+
+class NikoVariant(Enum):
+    NK_Niko  = "NK_Niko"
+    NK_Ko    = "NK_Ko"
+    NK_Ngo   = "NK_Ngo"
+    NK_Ningo = "NK_Ningo"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+class EvidentialMarker(Enum):
+    Ev_Voi     = "Ev_Voi"
+    Ev_Niko    = "Ev_Niko"
+    Ev_Ndaje   = "Ev_Ndaje"
+    Ev_Jeko    = "Ev_Jeko"
+    Ev_NandEko = "Ev_NandEko"
+    Ev_Kuri    = "Ev_Kuri"
+    Ev_Rae     = "Ev_Rae"
+    Ev_Rakae   = "Ev_Rakae"
+    Ev_MboRae  = "Ev_MboRae"
+    Ev_Nipo    = "Ev_Nipo"
+    Ev_Hina    = "Ev_Hina"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+@dataclass
+class Evidential:
+    marker:     EvidentialMarker
+    niko_v:     Optional[NikoVariant] = None   # only for Ev_Niko
+
+    def to_coq(self) -> str:
+        nv = f"(Some {self.niko_v.to_coq()})" if self.niko_v else "None"
+        return f"(mkEvidential {self.marker.to_coq()} {nv})"
+
+
+# ============================================================
+#  Verbal suffixes (§9 Verb.v) — 31 constructors + 2 new
+# ============================================================
+
+class VerbalSuffix(Enum):
+    VS_CausUka      = "VS_CausUka"
+    VS_AbilKuaa     = "VS_AbilKuaa"
+    VS_TotalPa      = "VS_TotalPa"
+    VS_ImpForce     = "VS_ImpForce"
+    VS_ImpRequest   = "VS_ImpRequest"
+    VS_ImpPlead     = "VS_ImpPlead"
+    VS_ImpUrge      = "VS_ImpUrge"
+    VS_Volitive     = "VS_Volitive"
+    VS_ComparVe     = "VS_ComparVe"
+    VS_FutTa        = "VS_FutTa"
+    VS_FutNe        = "VS_FutNe"
+    VS_FutNegMoa    = "VS_FutNegMoa"
+    VS_ImmFutPota   = "VS_ImmFutPota"
+    VS_ObligVaera   = "VS_ObligVaera"
+    VS_PastVaekue   = "VS_PastVaekue"
+    VS_NegI         = "VS_NegI"
+    VS_NegRi        = "VS_NegRi"
+    VS_NegTei       = "VS_NegTei"
+    VS_Privative    = "VS_Privative"
+    VS_Intensifier  = "VS_Intensifier"
+    VS_NomVa        = "VS_NomVa"
+    VS_NomHa        = "VS_NomHa"
+    VS_AspectMa     = "VS_AspectMa"
+    VS_IterJevy     = "VS_IterJevy"
+    VS_HabitMi      = "VS_HabitMi"
+    VS_HabitVa      = "VS_HabitVa"
+    VS_FrustrRei    = "VS_FrustrRei"
+    VS_InterrogPa   = "VS_InterrogPa"
+    VS_Desiderative = "VS_Desiderative"
+    VS_Simultaneous = "VS_Simultaneous"   # -vo, slot 11
+    VS_HearsayJe    = "VS_HearsayJe"      # -je, slot 13
+
+    def to_coq(self) -> str:
+        return self.value
+
+    @property
+    def slot(self) -> int:
+        """Slot number per §10 Verb.v suffix_slot."""
+        return _SUFFIX_SLOTS[self]
+
+    @property
+    def surface(self) -> dict:
+        """Surface string(s) — keyed by Orality or single string if invariant."""
+        return _SUFFIX_SURFACES[self]
+
+    def render(self, orality: Orality) -> str:
+        s = _SUFFIX_SURFACES[self]
+        if isinstance(s, dict):
+            return s[orality]
+        return s
+
+
+# Slot assignments (mirror suffix_slot in Verb.v §10)
+_SUFFIX_SLOTS: dict[VerbalSuffix, int] = {
+    VerbalSuffix.VS_CausUka:      1,
+    VerbalSuffix.VS_AbilKuaa:     2,
+    VerbalSuffix.VS_TotalPa:      3,
+    VerbalSuffix.VS_ImpForce:     4,
+    VerbalSuffix.VS_ImpRequest:   4,
+    VerbalSuffix.VS_ImpPlead:     4,
+    VerbalSuffix.VS_ImpUrge:      4,
+    VerbalSuffix.VS_Volitive:     5,
+    VerbalSuffix.VS_ComparVe:     6,
+    VerbalSuffix.VS_FutTa:        7,
+    VerbalSuffix.VS_FutNe:        7,
+    VerbalSuffix.VS_FutNegMoa:    7,
+    VerbalSuffix.VS_ImmFutPota:   7,
+    VerbalSuffix.VS_ObligVaera:   7,
+    VerbalSuffix.VS_PastVaekue:   7,
+    VerbalSuffix.VS_NegI:         8,
+    VerbalSuffix.VS_NegRi:        8,
+    VerbalSuffix.VS_NegTei:       8,
+    VerbalSuffix.VS_Privative:    8,
+    VerbalSuffix.VS_Intensifier:  9,
+    VerbalSuffix.VS_NomVa:        10,
+    VerbalSuffix.VS_NomHa:        10,
+    VerbalSuffix.VS_AspectMa:     11,
+    VerbalSuffix.VS_IterJevy:     11,
+    VerbalSuffix.VS_HabitMi:      11,
+    VerbalSuffix.VS_HabitVa:      11,
+    VerbalSuffix.VS_FrustrRei:    11,
+    VerbalSuffix.VS_Desiderative: 11,
+    VerbalSuffix.VS_Simultaneous: 11,
+    VerbalSuffix.VS_InterrogPa:   12,
+    VerbalSuffix.VS_HearsayJe:    13,
+}
+
+# Surface strings (mirror render_verbal_suffix in Verb.v §9b)
+# dict value = {Orality.Oral: str, Orality.Nasal: str} when orality-sensitive
+_SUFFIX_SURFACES: dict[VerbalSuffix, str | dict] = {
+    VerbalSuffix.VS_CausUka:      "uka",
+    VerbalSuffix.VS_AbilKuaa:     "kuaa",
+    VerbalSuffix.VS_TotalPa:      {Orality.Oral: "pa",   Orality.Nasal: "mba"},
+    VerbalSuffix.VS_ImpForce:     "ke",
+    VerbalSuffix.VS_ImpRequest:   "na",
+    VerbalSuffix.VS_ImpPlead:     "mi",
+    VerbalSuffix.VS_ImpUrge:      "py",
+    VerbalSuffix.VS_Volitive:     "se",
+    VerbalSuffix.VS_ComparVe:     "ve",
+    VerbalSuffix.VS_FutTa:        "ta",
+    VerbalSuffix.VS_FutNe:        "ne",
+    VerbalSuffix.VS_FutNegMoa:    "mo'ã",
+    VerbalSuffix.VS_ImmFutPota:   {Orality.Oral: "pota",  Orality.Nasal: "mbota"},
+    VerbalSuffix.VS_ObligVaera:   "va'erã",
+    VerbalSuffix.VS_PastVaekue:   "va'ekue",
+    VerbalSuffix.VS_NegI:         "i",
+    VerbalSuffix.VS_NegRi:        "ri",
+    VerbalSuffix.VS_NegTei:       "tei",
+    VerbalSuffix.VS_Privative:    "'ỹ",
+    VerbalSuffix.VS_Intensifier:  {Orality.Oral: "ite",   Orality.Nasal: "ete"},
+    VerbalSuffix.VS_NomVa:        "va",
+    VerbalSuffix.VS_NomHa:        "ha",
+    VerbalSuffix.VS_AspectMa:     "ma",
+    VerbalSuffix.VS_IterJevy:     "jevy",
+    VerbalSuffix.VS_HabitMi:      "mi",
+    VerbalSuffix.VS_HabitVa:      "va",
+    VerbalSuffix.VS_FrustrRei:    "rei",
+    VerbalSuffix.VS_InterrogPa:   "pa",
+    VerbalSuffix.VS_Desiderative: "nga'u",
+    VerbalSuffix.VS_Simultaneous: "vo",
+    VerbalSuffix.VS_HearsayJe:    "je",
+}
+
+# Suffix stripper index: surface string → list of matching suffixes
+# (one surface can match multiple — e.g. "mi" = VS_ImpPlead or VS_HabitMi)
+# Sorted longest-first so greedier matches win.
+SUFFIX_STRIP_INDEX: list[tuple[str, VerbalSuffix]] = sorted(
+    [
+        (surf if isinstance(surf, str) else surf[Orality.Oral], suf)
+        for suf, surf in _SUFFIX_SURFACES.items()
+    ]
+    + [
+        (surf[Orality.Nasal], suf)
+        for suf, surf in _SUFFIX_SURFACES.items()
+        if isinstance(surf, dict)
+    ],
+    key=lambda t: -len(t[0])
+)
+
+
+# ============================================================
+#  Irregular verbs (§16 Verb.v)
+# ============================================================
+
+class IrregularVerb(Enum):
+    Irreg_Ju = "Irreg_Ju"
+    Irreg_Ho = "Irreg_Ho"
+    Irreg_E  = "Irreg_E"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+# Paradigm table: (IrregularVerb, Person, Number, Optional[Inclusivity]) → surface
+# Mirrors irreg_form in §16 Verb.v exactly.
+IRREG_PARADIGM: dict[tuple, str] = {
+    (IrregularVerb.Irreg_Ju, Person.First,  Number.Singular, None):                    "aju",
+    (IrregularVerb.Irreg_Ju, Person.Second, Number.Singular, None):                    "reju",
+    (IrregularVerb.Irreg_Ju, Person.Third,  Number.Singular, None):                    "ou",
+    (IrregularVerb.Irreg_Ju, Person.Third,  Number.Plural,   None):                    "ou",
+    (IrregularVerb.Irreg_Ju, Person.First,  Number.Plural,   Inclusivity.Inclusive):   "jaju",
+    (IrregularVerb.Irreg_Ju, Person.First,  Number.Plural,   Inclusivity.Exclusive):   "roju",
+    (IrregularVerb.Irreg_Ju, Person.Second, Number.Plural,   None):                    "peju",
+
+    (IrregularVerb.Irreg_Ho, Person.First,  Number.Singular, None):                    "aha",
+    (IrregularVerb.Irreg_Ho, Person.Second, Number.Singular, None):                    "reho",
+    (IrregularVerb.Irreg_Ho, Person.Third,  Number.Singular, None):                    "oho",
+    (IrregularVerb.Irreg_Ho, Person.Third,  Number.Plural,   None):                    "oho",
+    (IrregularVerb.Irreg_Ho, Person.First,  Number.Plural,   Inclusivity.Inclusive):   "jaha",
+    (IrregularVerb.Irreg_Ho, Person.First,  Number.Plural,   Inclusivity.Exclusive):   "roho",
+    (IrregularVerb.Irreg_Ho, Person.Second, Number.Plural,   None):                    "peho",
+
+    (IrregularVerb.Irreg_E,  Person.First,  Number.Singular, None):                    "ha'e",
+    (IrregularVerb.Irreg_E,  Person.Second, Number.Singular, None):                    "ere",
+    (IrregularVerb.Irreg_E,  Person.Third,  Number.Singular, None):                    "he'i",
+    (IrregularVerb.Irreg_E,  Person.Third,  Number.Plural,   None):                    "he'i",
+    (IrregularVerb.Irreg_E,  Person.First,  Number.Plural,   Inclusivity.Inclusive):   "ja'e",
+    (IrregularVerb.Irreg_E,  Person.First,  Number.Plural,   Inclusivity.Exclusive):   "ro'e",
+    (IrregularVerb.Irreg_E,  Person.Second, Number.Plural,   None):                    "peje",
+}
+
+# Reverse index: surface form → (IrregularVerb, Person, Number, Optional[Inclusivity])
+# Used by the analyzer to detect irregular citation forms.
+IRREG_FORM_INDEX: dict[str, tuple] = {
+    surface: key for key, surface in IRREG_PARADIGM.items()
+}
+
+
+# ============================================================
+#  Verb record (§13 Verb.v)
+# ============================================================
+
+@dataclass
+class Verb:
+    v_class:        VerbClass
+    v_orality:      Orality
+    v_root:         str
+    v_transitivity: Transitivity
+    v_root_class:   VerbRootClass      = VerbRootClass.VRoot_Plain
+    v_chendal_3sg:  Chendal3sgForm     = Chendal3sgForm.C3sg_I
+
+    def to_coq(self) -> str:
+        return (
+            f"(mkVerb {self.v_class.to_coq()} {self.v_orality.to_coq()} "
+            f'"{self.v_root}" {self.v_transitivity.to_coq()} '
+            f"{self.v_root_class.to_coq()} {self.v_chendal_3sg.to_coq()})"
+        )
+
+
+# ============================================================
+#  VerbForm (§13 Verb.v)
+# ============================================================
+
+class VerbForm:
+    def to_coq(self) -> str:
+        raise NotImplementedError
+
+
+@dataclass
+class VF_Regular(VerbForm):
+    verb: Verb
+
+    def to_coq(self) -> str:
+        return f"(VF_Regular {self.verb.to_coq()})"
+
+
+@dataclass
+class VF_Irregular(VerbForm):
+    irreg: IrregularVerb
+
+    def to_coq(self) -> str:
+        return f"(VF_Irregular {self.irreg.to_coq()})"
+
+
+# ============================================================
+#  ConjugatedVerb (§17 Verb.v)
+# ============================================================
+
+@dataclass
+class ConjugatedVerb:
+    verb_form:  VerbForm
+    person:     Person
+    number:     Number
+    incl:       Optional[Inclusivity]      = None
+    mood:       Mood                       = Mood.Indicative
+    polarity:   Polarity                   = Polarity.Positive
+    voice:      Voice                      = Voice.Active
+    suffixes:   list[VerbalSuffix]         = field(default_factory=list)
+    evidential: Optional[Evidential]       = None
+
+    @property
+    def orality(self) -> Orality:
+        if isinstance(self.verb_form, VF_Regular):
+            return self.verb_form.verb.v_orality
+        return Orality.Oral   # irregulars are all oral
+
+    def to_coq(self) -> str:
+        incl_coq = (
+            f"(Some {self.incl.to_coq()})" if self.incl else "None"
+        )
+        suffixes_coq = (
+            "[" + "; ".join(s.to_coq() for s in self.suffixes) + "]"
+            if self.suffixes else "nil"
+        )
+        ev_coq = (
+            f"(Some {self.evidential.to_coq()})" if self.evidential else "None"
+        )
+        return (
+            f"(mkConjVerb {self.verb_form.to_coq()} "
+            f"{self.person.to_coq()} {self.number.to_coq()} "
+            f"{incl_coq} {self.mood.to_coq()} {self.polarity.to_coq()} "
+            f"{self.voice.to_coq()} {suffixes_coq} {ev_coq})"
+        )
+
+
+# ============================================================
+#  Lightweight NP (v1: just enough for agreement checking)
+# ============================================================
+
+@dataclass
+class NP:
+    """
+    Lightweight NP for v1 of the analyzer.
+    Full NounPhrases.v structure is out of scope; we only need
+    person/number/human for wf_sentence's agreement predicates.
+    to_coq() produces a minimal well-typed Coq NP term.
+    """
+    surface:  str                       # raw surface string
+    person:   Person       = Person.Third
+    number:   Number       = Number.Singular
+    human:    bool         = False
+    coq_term: Optional[str] = None      # override if you have the full term
+
+    def to_coq(self) -> str:
+        if self.coq_term:
+            return self.coq_term
+        # Minimal placeholder — the analyzer fills this in v2
+        return f'(NP_Raw "{self.surface}")'
+
+
+# ============================================================
+#  Sentence (mirror simple_sentence in Sentences.v)
+# ============================================================
+
+class WordOrder(Enum):
+    WO_SVO = "WO_SVO"
+    WO_SOV = "WO_SOV"
+    WO_VSO = "WO_VSO"
+    WO_VOS = "WO_VOS"
+    WO_OVS = "WO_OVS"
+    WO_OSV = "WO_OSV"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+class SentenceType(Enum):
+    ST_Declarative   = "ST_Declarative"
+    ST_Interrogative = "ST_Interrogative"
+    ST_Exclamative   = "ST_Exclamative"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+@dataclass
+class Sentence:
+    verb:         ConjugatedVerb
+    subject:      Optional[NP]           = None
+    direct_obj:   Optional[NP]           = None
+    indirect_obj: Optional[NP]           = None
+    postp_comp:   Optional[NP]           = None
+    word_order:   WordOrder              = WordOrder.WO_SVO
+    sent_type:    SentenceType           = SentenceType.ST_Declarative
+    interrog:     Optional[str]          = None   # interrogative particle
+    hikuai:       bool                   = False
+
+    def _opt_np(self, np: Optional[NP]) -> str:
+        return f"(Some {np.to_coq()})" if np else "None"
+
+    def _opt_str(self, s: Optional[str]) -> str:
+        return f'(Some "{s}")' if s else "None"
+
+    def to_coq(self) -> str:
+        return (
+            f"(mkSentence\n"
+            f"  {self._opt_np(self.subject)}\n"
+            f"  {self.verb.to_coq()}\n"
+            f"  {self._opt_np(self.direct_obj)}\n"
+            f"  {self._opt_np(self.indirect_obj)}\n"
+            f"  {self._opt_np(self.postp_comp)}\n"
+            f"  {self.word_order.to_coq()}\n"
+            f"  {self.sent_type.to_coq()}\n"
+            f"  {self._opt_str(self.interrog)}\n"
+            f"  {'true' if self.hikuai else 'false'})"
+        )
+
+    def to_coq_compute(self) -> str:
+        """Full `Compute wf_sentence <term>.` string for coqc."""
+        return f"Compute wf_sentence {self.to_coq()}."

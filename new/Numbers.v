@@ -107,6 +107,73 @@ Proof. intros m. reflexivity. Qed.
 Theorem is_one_sua_false : is_one GN_Sua = false.
 Proof. reflexivity. Qed.
 
+From Stdlib Require Import String.
+Open Scope string_scope.
+
+Definition render_digit (d : Digit) : string :=
+  match d with
+  | Peteĩ   => "peteĩ"
+  | Mokõi   => "mokõi"
+  | Mbohapy => "mbohapy"
+  | Irundy  => "irundy"
+  | Po      => "po"
+  | Poteĩ   => "poteĩ"
+  | Pokõi   => "pokõi"
+  | Poapy   => "poapy"
+  | Porundy => "porundy"
+  end.
+
+Definition render_mult (m : Mult) : string :=
+  render_digit (mult_to_digit m).
+
+Definition render_teen (t : Teen) : string :=
+  match t with
+  | Pateĩ    => "pateĩ"
+  | Pakõi    => "pakõi"
+  | Pa'apy   => "pa'apy"
+  | Parundy  => "parundy"
+  | Papo     => "papo"
+  | Papoteĩ  => "papoteĩ"
+  | Papokõi  => "papokõi"
+  | Papoapy  => "papoapy"
+  | Paporundy => "paporundy"
+  end.
+
+Definition render_sub100 (s : Sub100) : string :=
+  match s with
+  | S100_Digit d         => render_digit d
+  | S100_Pa              => "pa"
+  | S100_Teen t          => render_teen t
+  | S100_MultPa m        => render_mult m ++ "pa"
+  | S100_MultPaDigit m d => render_mult m ++ "pa " ++ render_digit d
+  end.
+
+Definition render_sub1000 (s : Sub1000) : string :=
+  match s with
+  | S1000_Small s        => render_sub100 s
+  | S1000_Sa             => "sa"
+  | S1000_SaTail s       => "sa " ++ render_sub100 s
+  | S1000_MultSa m       => render_mult m ++ "sa"
+  | S1000_MultSaTail m s => render_mult m ++ "sa " ++ render_sub100 s
+  end.
+
+Definition render_sub1000su (s : Sub1000Su) : string :=
+  match s with
+  | S1000Su_Small s        => render_sub1000 s
+  | S1000Su_Su             => "su"
+  | S1000Su_SuTail s       => "su " ++ render_sub1000 s
+  | S1000Su_MultSu m       => render_sub1000 m ++ "su"
+  | S1000Su_MultSuTail m s => render_sub1000 m ++ "su " ++ render_sub1000 s
+  end.
+
+Definition render_num (n : GuaraniNum) : string :=
+  match n with
+  | GN_Small s        => render_sub1000su s
+  | GN_Sua            => "sua"
+  | GN_SuaTail s      => "sua " ++ render_sub1000su s
+  | GN_MultSua m      => render_sub1000su m ++ "sua"
+  | GN_MultSuaTail m s => render_sub1000su m ++ "sua " ++ render_sub1000su s
+  end.
 (* ------------------------------------------------------------ *)
 (*  Examples                                                    *)
 (* ------------------------------------------------------------ *)

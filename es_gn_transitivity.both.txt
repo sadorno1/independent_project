@@ -1,0 +1,459 @@
+# 114 words tagged as BOTH tr. and intr.
+# Format: word | tr: <headwords> | intr: <headwords>
+
+guahẽ
+  tr.:   alcanzar
+  intr.: arribar, llegar
+
+guahẽmba
+  tr.:   acometer
+  intr.: irrumpir
+
+gue'ẽ
+  tr.:   regurgitar
+  intr.: eructar
+
+ha
+  tr.:   evacuar
+  intr.: andar, marchar, partir
+
+hasa
+  tr.:   recorrer, sobrepasar, superar
+  intr.: exceder, penetrar, prevalecer, sobresalir
+
+hecha
+  tr.:   atender, averiguar, avistar, conocer, divisar, entrevistar, observar, presenciar, revisar
+  intr.: mirar
+
+heja
+  tr.:   abandonar, dejar, obviar, omitir, permitir, renunciar
+  intr.: desistir
+
+heka
+  tr.:   buscar, inquirir
+  intr.: pesquisar
+
+hekombo'e
+  tr.:   aconsejar, educar, enseñar
+  intr.: legislar
+
+hekýi
+  tr.:   arrancar, desenfundar, extraer, inferir, privar, quitar, retraer, sacar
+  intr.: zafar
+
+hendyvapo
+  tr.:   rasurar
+  intr.: babear
+
+hesape
+  tr.:   esclarecer, iluminar, irradiar
+  intr.: resplandecer
+
+ho
+  tr.:   evacuar
+  intr.: andar, concurrir, marchar, partir
+
+hupyty
+  tr.:   alcanzar, conseguir, lograr, obtener
+  intr.: llegar
+
+hyapu
+  tr.:   sonar
+  intr.: resonar, retumbar, zumbar
+
+iko
+  tr.:   suceder
+  intr.: estar, existir, habitar, morar, permanecer, residir, vivir
+
+ime
+  tr.:   distar
+  intr.: estar, existir, habitar
+
+imo'ã
+  tr.:   elucubrar, pardo, da, proyectar, sospechar, suponer
+  intr.: reflexionar
+
+ja'e
+  tr.:   querer
+  intr.: simpatizar
+
+japi
+  tr.:   cazar, disparar, flechar, herir, lapidar
+  intr.: andar
+
+japo
+  tr.:   confeccionar, construir, crear, efectuar, ejecutar, fabricar, forjar, formar, fraguar, hacer, ocasionar, plasmar, producir, realizar
+  intr.: fingir, obrar, proceder
+
+japysaka
+  tr.:   atender
+  intr.: escuchar
+
+jatapy
+  tr.:   criticar
+  intr.: intrigar
+
+jehekýi
+  tr.:   desocupar, eludir, evacuar, rehuir
+  intr.: expirar, gambetear, sucumbir
+
+jehu
+  tr.:   ocurrir, suceder
+  intr.: acontecer, sobrevenir
+
+jei
+  tr.:   esquivar
+  intr.: zafar
+
+jejapo
+  tr.:   aparentar, simular
+  intr.: fingir, presumir
+
+jepoi
+  tr.:   acometer
+  intr.: arremeter, bajar
+
+jepovyvy
+  tr.:   palpar
+  intr.: hurgar
+
+jepoyhu
+  tr.:   maliciar, respetar, sospechar
+  intr.: recelar
+
+jepy'amongeta
+  tr.:   recapitular
+  intr.: meditar, reflexionar
+
+jepytaso
+  tr.:   resistir
+  intr.: estribar
+
+jerovia
+  tr.:   estimar
+  intr.: confiar
+
+jerure
+  tr.:   interceder, interpelar, mendigar, pedir, peticionar, recabar, reclamar, requerir, solicitar, suplicar
+  intr.: recurrir
+
+jesareko
+  tr.:   atender
+  intr.: mirar, reflexionar
+
+joaju
+  tr.:   enlazar
+  intr.: intimar
+
+joja
+  tr.:   coincidir, uniformar
+  intr.: empatar
+
+jopy
+  tr.:   aplastar, aplicar, apretar, ceñir, estrujar, intimar, oprimir, prensar, presionar, restringir, someter, subyugar, sujetar
+  intr.: beber
+
+jora
+  tr.:   absolver, desamarrar, desatar, desenredar, desunir, liberar, perdonar, redimir, soltar
+  intr.: zafar
+
+jua'o
+  tr.:   discutir
+  intr.: disputar
+
+jupi
+  tr.:   escalar
+  intr.: ascender, despegar, repuntar
+
+jy
+  tr.:   resistir
+  intr.: hervir
+
+kambu
+  tr.:   chupar, sorber, succionar
+  intr.: lactar, mamar
+
+ku'e
+  tr.:   arrancar
+  intr.: rebullir, vacilar
+
+kundaha
+  tr.:   averiguar
+  intr.: recorrer, vagabundear, vagar
+
+kyhyje
+  tr.:   maliciar
+  intr.: recelar
+
+ma'ẽ
+  tr.:   observar, presenciar, revisar
+  intr.: mirar
+
+maña
+  tr.:   observar, presenciar, revisar
+  intr.: curiosear, mirar
+
+mba'apo
+  tr.:   labrar, operar
+  intr.: funcionar, obrar, trabajar
+
+mbo'a
+  tr.:   precipitar
+  intr.: desovar
+
+mbo'e
+  tr.:   educar, enseñar, ilustrar, instruir, persuadir
+  intr.: habituar
+
+mboaje
+  tr.:   cumplir, efectuar, estimar, hacer, realizar, respetar, reverenciar
+  intr.: acceder
+
+mbogua
+  tr.:   colar, zarandear
+  intr.: filtrar, zafar
+
+mbohovái
+  tr.:   afrontar, enfrentar, impugnar, refutar, repeler, replicar, responder
+  intr.: polemizar, protestar, reaccionar
+
+mbotavy
+  tr.:   defraudar, embelesar, embromar, engañar, estafar, joder, seducir
+  intr.: mentir
+
+mboyke
+  tr.:   apartar, inhibir, ladear, marginar, postergar, relegar, reservar, separar, soslayar, vencer
+  intr.: prescindir
+
+me'ẽ
+  tr.:   aportar, conceder, dar, dedicar, entregar, obsequiar, otorgar, propinar, proporcionar
+  intr.: rendir
+
+mindu'u
+  tr.:   masticar, roer
+  intr.: rumiar
+
+moherakuã
+  tr.:   glorificar, proclamar, propalar, publicar
+  intr.: rumorear
+
+momba
+  tr.:   acabar, agotar, anular, completar, concluir, exterminar, finalizar, ultimar
+  intr.: eyacular
+
+mombyte
+  tr.:   centrar, intercalar
+  intr.: mediar
+
+mondýi
+  tr.:   acobardar, ahuyentar, asustar, atemorizar, espantar, pasmar, sorprender
+  intr.: escandalizar
+
+moneĩ
+  tr.:   admitir, aprobar, consentir, permitir, ratificar
+  intr.: asentir
+
+mongeta
+  tr.:   cortejar, entrevistar
+  intr.: charlar, conversar, parlar
+
+motindy
+  tr.:   avergonzar, descorazonar, humillar, rendir
+  intr.: desanimar
+
+moñe'ẽ
+  tr.:   asesorar, formular, leer, pronunciar, requebrar
+  intr.: flexión
+
+moñeĩ
+  tr.:   conceder
+  intr.: acceder
+
+ndyry
+  tr.:   atacar, embestir
+  intr.: arremeter
+
+nepurũ
+  tr.:   empezar
+  intr.: empezar
+
+neĩ
+  tr.:   consentir
+  intr.: acceder, asentir
+
+peju
+  tr.:   abanicar, airear, aventar, soplar, ventilar
+  intr.: resoplar
+
+pia
+  tr.:   evitar
+  intr.: virar
+
+piã
+  tr.:   esquivar
+  intr.: desertar, huir, piar
+
+poi
+  tr.:   aflojar, botar, expeler, lanzar, librar, soltar
+  intr.: parar, zafar
+
+poko
+  tr.:   palpar
+  intr.: tocar
+
+porandu
+  tr.:   averiguar, indagar, inquirir, interrogar
+  intr.: pesquisar
+
+poravo
+  tr.:   elegir, escoger, preferir, seleccionar
+  intr.: optar
+
+poru
+  tr.:   emplear, gastar, prestar, usar, usufructuar, utilizar
+  intr.: recurrir
+
+povyvy
+  tr.:   escudriñar, investigar, palpar, rebuscar, registrar, revisar
+  intr.: hurgar
+
+pu
+  tr.:   explotar, sonar
+  intr.: estallar, tañer
+
+pu'aka
+  tr.:   dominar
+  intr.: prevalecer
+
+pu'akave
+  tr.:   sobrepasar, superar
+  intr.: predominar, prevalecer
+
+pykúi
+  tr.:   remar
+  intr.: andar, caminar
+
+pyrũ
+  tr.:   pisotear, vencer
+  intr.: patalear
+
+pyta
+  tr.:   distar
+  intr.: frenar, parar, permanecer, posar
+
+pytyvõ
+  tr.:   apoyar, asesorar, defender, facilitar, favorecer, patrocinar, propiciar, propugnar, respaldar, salvar, secundar, socorrer
+  intr.: colaborar
+
+rasy
+  tr.:   sentir
+  intr.: sufrir
+
+rojevy
+  tr.:   recuperar
+  intr.: retomar
+
+rovia
+  tr.:   creer
+  intr.: confiar
+
+ry'ái
+  tr.:   exudar
+  intr.: sudar, transpirar
+
+su'u
+  tr.:   mascar, masticar, morder, picar, picotear, soportar
+  intr.: padecer
+
+syry
+  tr.:   manar
+  intr.: arremeter, circular, deslizarse, fluir
+
+syryku
+  tr.:   ingerir, sorber
+  intr.: beber
+
+sẽ
+  tr.:   manar
+  intr.: aparecer, partir, resultar, salir, vencer
+
+typeka
+  tr.:   escarbar, investigar, rebuscar
+  intr.: pesquisar
+
+va
+  tr.:   soler
+  intr.: migrar, variar
+
+ñakãity
+  tr.:   acatar, respetar, reverenciar
+  intr.: asentir
+
+ñamindu'u
+  tr.:   mascar, masticar
+  intr.: rumiar
+
+ñandu
+  tr.:   percibir, sentir, visitar
+  intr.: padecer
+
+ñarõ
+  tr.:   criticar
+  intr.: rabiar
+
+ñatõi
+  tr.:   atizar, instigar, pulsar
+  intr.: beber
+
+ñe'ẽ
+  tr.:   interceder, predicar, pronunciar
+  intr.: charlar, conversar, parlar, platicar, rechinar, rumorear
+
+ñe'ẽngururu
+  tr.:   regañar
+  intr.: mascullar
+
+ñeha'ã
+  tr.:   intentar, procurar
+  intr.: porfiar, pugnar, pujar
+
+ñembogua
+  tr.:   desocupar
+  intr.: gambetear
+
+ñembohory
+  tr.:   burlar
+  intr.: bromear
+
+ñembosarái
+  tr.:   apostar
+  intr.: jugar
+
+ñemohatã
+  tr.:   fraguar
+  intr.: porfiar
+
+ñemotenonde
+  tr.:   aventajar
+  intr.: avanzar, descollar, progresar, prosperar
+
+ñemu
+  tr.:   negociar, vender
+  intr.: comerciar, mercar
+
+ñepia'ã
+  tr.:   rehuir
+  intr.: forcejear
+
+ñepyta'ã
+  tr.:   apuntalar
+  intr.: estribar
+
+ñombohovái
+  tr.:   discutir
+  intr.: litigar
+
+ñyñýi
+  tr.:   reducir
+  intr.: mermar
+

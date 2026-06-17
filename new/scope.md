@@ -6,9 +6,7 @@
 
 A mechanically verified Coq formalization of Paraguayan Guaraní morphology and syntax, used as a constraint-checking backend for LLM-generated Guaraní text. The verifier catches specific categories of morphological and syntactic errors, generates structured feedback, and feeds that back to the LLM in a correction loop. The evaluation compares LLM output quality before and after verification, rated by native Guaraní speakers.
 
-Target venue: ACL Findings or ComputEL (low-resource NLP workshop).  
-Timeline: ~8 weeks to working system + paper draft.
-
+Target venue: ACL Findings or ComputEL (low-resource NLP workshop)
 ---
 
 ## Part 1: Coq grammar files
