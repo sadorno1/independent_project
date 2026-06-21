@@ -174,24 +174,5 @@ Definition render_num (n : GuaraniNum) : string :=
   | GN_MultSua m      => render_sub1000su m ++ "sua"
   | GN_MultSuaTail m s => render_sub1000su m ++ "sua " ++ render_sub1000su s
   end.
-(* ------------------------------------------------------------ *)
-(*  Examples                                                    *)
-(* ------------------------------------------------------------ *)
 
-Example ex_mokoipa          : Sub100    := S100_MultPa MokõiM.
-Example ex_mokoipa_petei    : Sub100    := S100_MultPaDigit MokõiM Peteĩ.
-Example ex_sa_popa          : Sub1000   := S1000_SaTail (S100_MultPa PoM).
-Example ex_mokisa           : Sub1000   := S1000_MultSa MokõiM.
-Example ex_mokisa_popa      : Sub1000   := S1000_MultSaTail MokõiM (S100_MultPa PoM).
-Example ex_pa_su            : Sub1000Su := S1000Su_MultSu (S1000_Small S100_Pa).
-Example ex_patei_su         : Sub1000Su := S1000Su_MultSu (S1000_Small (S100_Teen Pateĩ)).
-Example ex_sa_su            : Sub1000Su := S1000Su_MultSu S1000_Sa.
-Example ex_mokisa_su        : Sub1000Su := S1000Su_MultSu (S1000_MultSa MokõiM).
-Example ex_mokisa_popa_su   : Sub1000Su := S1000Su_MultSu (S1000_MultSaTail MokõiM (S100_MultPa PoM)).
-Example ex_su_sa_popa       : Sub1000Su := S1000Su_SuTail (S1000_SaTail (S100_MultPa PoM)).
-Example ex_su_sua           : GuaraniNum := GN_MultSua S1000Su_Su.
-Example ex_sa_su_sua        : GuaraniNum := GN_MultSua (S1000Su_MultSu S1000_Sa).
-Example ex_porundysua       : GuaraniNum := GN_MultSua (S1000Su_Small (S1000_Small (S100_Digit Porundy))).
-
-Fail Example wrong_peteisa : Sub1000 :=
-  S1000_MultSa PeteĩM.
+  

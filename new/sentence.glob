@@ -1,4 +1,4 @@
-DIGEST 81628cf6ef03d0e5a261ff25227209e3
+DIGEST 3ccf4a86c1f9be68d9acd5da791039f0
 Fsentence
 R27:32 Stdlib.Strings.String <> <> lib
 R34:37 Stdlib.Lists.List <> <> lib
@@ -1162,3 +1162,576 @@ R22147:22148 sentence <> ip:157 var
 R22150:22150 sentence <> h:158 var
 R22155:22158 Corelib.Init.Datatypes <> true constr
 R22185:22199 sentence <> ss_hierarchy_ok def
+prf 22247:22274 <> rule_SH2_intrans_skips_check
+binder 22285:22285 <> s:159
+binder 22287:22287 <> v:160
+binder 22289:22292 <> dobj:161
+binder 22294:22297 <> iobj:162
+binder 22299:22302 <> pobj:163
+binder 22304:22305 <> wo:164
+binder 22307:22308 <> ty:165
+binder 22310:22311 <> ip:166
+binder 22313:22313 <> h:167
+R22352:22359 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R22337:22339 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R22320:22334 sentence <> cv_transitivity def
+R22336:22336 sentence <> v:160 var
+R22340:22351 verb <> Intransitive constr
+R22424:22426 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R22360:22374 sentence <> ss_hierarchy_ok def
+R22383:22392 sentence <> mkSentence constr
+R22394:22394 sentence <> s:159 var
+R22396:22396 sentence <> v:160 var
+R22398:22401 sentence <> dobj:161 var
+R22403:22406 sentence <> iobj:162 var
+R22408:22411 sentence <> pobj:163 var
+R22413:22414 sentence <> wo:164 var
+R22416:22417 sentence <> ty:165 var
+R22419:22420 sentence <> ip:166 var
+R22422:22422 sentence <> h:167 var
+R22427:22430 Corelib.Init.Datatypes <> true constr
+R22457:22471 sentence <> ss_hierarchy_ok def
+prf 22583:22609 <> rule_SN1_avave_subj_pos_bad
+binder 22620:22620 <> v:168
+binder 22622:22625 <> dobj:169
+binder 22627:22630 <> iobj:170
+binder 22632:22635 <> pobj:171
+binder 22637:22638 <> wo:172
+binder 22640:22641 <> ty:173
+binder 22643:22644 <> ip:174
+binder 22646:22646 <> h:175
+R22677:22684 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R22666:22668 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R22653:22663 verb <> cv_polarity proj
+R22665:22665 sentence <> v:168 var
+R22669:22676 verb <> Positive constr
+R22801:22803 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R22685:22701 sentence <> ss_neg_concord_ok def
+R22710:22719 sentence <> mkSentence constr
+R22722:22725 Corelib.Init.Datatypes <> Some constr
+R22728:22737 noun_phrases <> NP_PronNeg constr
+R22739:22751 noun_phrases <> NegPron_Avave constr
+R22755:22755 sentence <> v:168 var
+R22775:22778 sentence <> dobj:169 var
+R22780:22783 sentence <> iobj:170 var
+R22785:22788 sentence <> pobj:171 var
+R22790:22791 sentence <> wo:172 var
+R22793:22794 sentence <> ty:173 var
+R22796:22797 sentence <> ip:174 var
+R22799:22799 sentence <> h:175 var
+R22804:22808 Corelib.Init.Datatypes <> false constr
+R22835:22851 sentence <> ss_neg_concord_ok def
+prf 22899:22924 <> rule_SN2_avave_subj_neg_ok
+binder 22935:22935 <> v:176
+binder 22937:22940 <> dobj:177
+binder 22942:22945 <> iobj:178
+binder 22947:22950 <> pobj:179
+binder 22952:22953 <> wo:180
+binder 22955:22956 <> ty:181
+binder 22958:22959 <> ip:182
+binder 22961:22961 <> h:183
+R22992:22999 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R22981:22983 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R22968:22978 verb <> cv_polarity proj
+R22980:22980 sentence <> v:176 var
+R22984:22991 verb <> Negative constr
+R23116:23118 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23000:23016 sentence <> ss_neg_concord_ok def
+R23025:23034 sentence <> mkSentence constr
+R23037:23040 Corelib.Init.Datatypes <> Some constr
+R23043:23052 noun_phrases <> NP_PronNeg constr
+R23054:23066 noun_phrases <> NegPron_Avave constr
+R23070:23070 sentence <> v:176 var
+R23090:23093 sentence <> dobj:177 var
+R23095:23098 sentence <> iobj:178 var
+R23100:23103 sentence <> pobj:179 var
+R23105:23106 sentence <> wo:180 var
+R23108:23109 sentence <> ty:181 var
+R23111:23112 sentence <> ip:182 var
+R23114:23114 sentence <> h:183 var
+R23119:23122 Corelib.Init.Datatypes <> true constr
+R23149:23165 sentence <> ss_neg_concord_ok def
+prf 23289:23313 <> rule_SN3_neg_iobj_pos_bad
+binder 23324:23324 <> s:184
+binder 23326:23326 <> v:185
+binder 23328:23331 <> dobj:186
+binder 23333:23334 <> wo:187
+binder 23336:23337 <> ty:188
+binder 23339:23340 <> ip:189
+binder 23342:23342 <> h:190
+R23373:23380 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R23362:23364 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23349:23359 verb <> cv_polarity proj
+R23361:23361 sentence <> v:185 var
+R23365:23372 verb <> Positive constr
+R23495:23497 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23381:23397 sentence <> ss_neg_concord_ok def
+R23406:23415 sentence <> mkSentence constr
+R23417:23417 sentence <> s:184 var
+R23419:23419 sentence <> v:185 var
+R23421:23424 sentence <> dobj:186 var
+R23427:23430 Corelib.Init.Datatypes <> Some constr
+R23433:23442 noun_phrases <> NP_PronNeg constr
+R23444:23457 noun_phrases <> NegPron_Mbaeve constr
+R23479:23482 Corelib.Init.Datatypes <> None constr
+R23484:23485 sentence <> wo:187 var
+R23487:23488 sentence <> ty:188 var
+R23490:23491 sentence <> ip:189 var
+R23493:23493 sentence <> h:190 var
+R23498:23502 Corelib.Init.Datatypes <> false constr
+R23556:23572 sentence <> ss_neg_concord_ok def
+R23641:23654 sentence <> is_negative_np def
+R23641:23654 sentence <> is_negative_np def
+R23744:23757 sentence <> is_negative_np def
+R23744:23757 sentence <> is_negative_np def
+R23851:23864 sentence <> is_negative_np def
+R23851:23864 sentence <> is_negative_np def
+prf 23976:23996 <> rule_SK1_no_hikuai_ok
+binder 24007:24007 <> s:191
+binder 24009:24009 <> v:192
+binder 24011:24014 <> dobj:193
+binder 24016:24019 <> iobj:194
+binder 24021:24024 <> pobj:195
+binder 24026:24027 <> wo:196
+binder 24029:24030 <> ty:197
+binder 24032:24033 <> ip:198
+R24105:24107 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24040:24051 sentence <> ss_hikuai_ok def
+R24060:24069 sentence <> mkSentence constr
+R24071:24071 sentence <> s:191 var
+R24073:24073 sentence <> v:192 var
+R24075:24078 sentence <> dobj:193 var
+R24080:24083 sentence <> iobj:194 var
+R24085:24088 sentence <> pobj:195 var
+R24090:24091 sentence <> wo:196 var
+R24093:24094 sentence <> ty:197 var
+R24096:24097 sentence <> ip:198 var
+R24099:24103 Corelib.Init.Datatypes <> false constr
+R24108:24111 Corelib.Init.Datatypes <> true constr
+prf 24148:24170 <> rule_SK2_hikuai_1sg_bad
+binder 24181:24181 <> s:199
+binder 24183:24183 <> v:200
+binder 24185:24188 <> dobj:201
+binder 24190:24193 <> iobj:202
+binder 24195:24198 <> pobj:203
+binder 24200:24201 <> wo:204
+binder 24203:24204 <> ty:205
+binder 24206:24207 <> ip:206
+R24233:24240 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R24225:24227 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24214:24222 verb <> cv_person proj
+R24224:24224 sentence <> v:200 var
+R24228:24232 Syntax <> First constr
+R24305:24307 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24241:24252 sentence <> ss_hikuai_ok def
+R24261:24270 sentence <> mkSentence constr
+R24272:24272 sentence <> s:199 var
+R24274:24274 sentence <> v:200 var
+R24276:24279 sentence <> dobj:201 var
+R24281:24284 sentence <> iobj:202 var
+R24286:24289 sentence <> pobj:203 var
+R24291:24292 sentence <> wo:204 var
+R24294:24295 sentence <> ty:205 var
+R24297:24298 sentence <> ip:206 var
+R24300:24303 Corelib.Init.Datatypes <> true constr
+R24308:24312 Corelib.Init.Datatypes <> false constr
+R24339:24350 sentence <> ss_hikuai_ok def
+prf 24398:24419 <> rule_SK4_hikuai_vso_ok
+binder 24430:24430 <> s:207
+binder 24432:24432 <> v:208
+binder 24434:24437 <> dobj:209
+binder 24439:24442 <> iobj:210
+binder 24444:24447 <> pobj:211
+binder 24449:24450 <> ty:212
+binder 24452:24453 <> ip:213
+R24479:24486 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R24471:24473 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24460:24468 verb <> cv_person proj
+R24470:24470 sentence <> v:208 var
+R24474:24478 Syntax <> Third constr
+R24555:24557 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24487:24498 sentence <> ss_hikuai_ok def
+R24507:24516 sentence <> mkSentence constr
+R24518:24518 sentence <> s:207 var
+R24520:24520 sentence <> v:208 var
+R24522:24525 sentence <> dobj:209 var
+R24527:24530 sentence <> iobj:210 var
+R24532:24535 sentence <> pobj:211 var
+R24537:24542 sentence <> WO_VSO constr
+R24544:24545 sentence <> ty:212 var
+R24547:24548 sentence <> ip:213 var
+R24550:24553 Corelib.Init.Datatypes <> true constr
+R24558:24561 Corelib.Init.Datatypes <> true constr
+R24588:24599 sentence <> ss_hikuai_ok def
+prf 24736:24755 <> rule_SP1_human_pe_ok
+R25118:25120 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24763:24776 sentence <> ss_human_pe_ok def
+R24785:24794 sentence <> mkSentence constr
+R24796:24799 Corelib.Init.Datatypes <> None constr
+R24810:24819 verb <> mkConjVerb constr
+R24822:24831 verb <> VF_Regular constr
+R24834:24839 verb <> mkVerb constr
+R24841:24845 verb <> Areal constr
+R24847:24850 Syntax <> Oral constr
+R24859:24873 verb <> PostpComplement constr
+R24915:24925 verb <> VRoot_Plain constr
+R24927:24932 verb <> C3sg_I constr
+R24956:24960 Syntax <> First constr
+R24962:24969 Syntax <> Singular constr
+R24971:24974 Corelib.Init.Datatypes <> None constr
+R24976:24985 verb <> Indicative constr
+R24987:24994 verb <> Positive constr
+R24996:25001 verb <> Active constr
+R25003:25005 Corelib.Init.Datatypes <> nil constr
+R25007:25010 Corelib.Init.Datatypes <> None constr
+R25021:25024 Corelib.Init.Datatypes <> None constr
+R25026:25029 Corelib.Init.Datatypes <> None constr
+R25040:25043 Corelib.Init.Datatypes <> Some constr
+R25045:25045 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R25065:25066 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R25074:25074 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R25046:25056 noun_phrases <> NP_PronSubj constr
+R25058:25064 noun_phrases <> Subj2SG constr
+R25067:25073 noun_phrases <> Post_Pe constr
+R25085:25090 sentence <> WO_SVO constr
+R25092:25105 sentence <> ST_Declarative constr
+R25107:25110 Corelib.Init.Datatypes <> None constr
+R25112:25116 Corelib.Init.Datatypes <> false constr
+R25121:25124 Corelib.Init.Datatypes <> true constr
+prf 25214:25240 <> rule_SP2_human_wrong_pp_bad
+R25605:25607 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R25248:25261 sentence <> ss_human_pe_ok def
+R25270:25279 sentence <> mkSentence constr
+R25281:25284 Corelib.Init.Datatypes <> None constr
+R25295:25304 verb <> mkConjVerb constr
+R25307:25316 verb <> VF_Regular constr
+R25319:25324 verb <> mkVerb constr
+R25326:25330 verb <> Areal constr
+R25332:25335 Syntax <> Oral constr
+R25344:25358 verb <> PostpComplement constr
+R25400:25410 verb <> VRoot_Plain constr
+R25412:25417 verb <> C3sg_I constr
+R25441:25445 Syntax <> First constr
+R25447:25454 Syntax <> Singular constr
+R25456:25459 Corelib.Init.Datatypes <> None constr
+R25461:25470 verb <> Indicative constr
+R25472:25479 verb <> Positive constr
+R25481:25486 verb <> Active constr
+R25488:25490 Corelib.Init.Datatypes <> nil constr
+R25492:25495 Corelib.Init.Datatypes <> None constr
+R25506:25509 Corelib.Init.Datatypes <> None constr
+R25511:25514 Corelib.Init.Datatypes <> None constr
+R25525:25528 Corelib.Init.Datatypes <> Some constr
+R25530:25530 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R25550:25551 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R25561:25561 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R25531:25541 noun_phrases <> NP_PronSubj constr
+R25543:25549 noun_phrases <> Subj2SG constr
+R25552:25560 noun_phrases <> Post_Rehe constr
+R25572:25577 sentence <> WO_SVO constr
+R25579:25592 sentence <> ST_Declarative constr
+R25594:25597 Corelib.Init.Datatypes <> None constr
+R25599:25603 Corelib.Init.Datatypes <> false constr
+R25608:25612 Corelib.Init.Datatypes <> false constr
+prf 25693:25719 <> rule_SP3_nonhuman_any_pp_ok
+binder 25734:25735 <> pp:214
+R26132:26134 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R25742:25755 sentence <> ss_human_pe_ok def
+R25764:25773 sentence <> mkSentence constr
+R25775:25778 Corelib.Init.Datatypes <> None constr
+R25789:25798 verb <> mkConjVerb constr
+R25801:25810 verb <> VF_Regular constr
+R25813:25818 verb <> mkVerb constr
+R25820:25824 verb <> Areal constr
+R25826:25829 Syntax <> Oral constr
+R25838:25852 verb <> PostpComplement constr
+R25894:25904 verb <> VRoot_Plain constr
+R25906:25911 verb <> C3sg_I constr
+R25935:25939 Syntax <> First constr
+R25941:25948 Syntax <> Singular constr
+R25950:25953 Corelib.Init.Datatypes <> None constr
+R25955:25964 verb <> Indicative constr
+R25966:25973 verb <> Positive constr
+R25975:25980 verb <> Active constr
+R25982:25984 Corelib.Init.Datatypes <> nil constr
+R25986:25989 Corelib.Init.Datatypes <> None constr
+R26000:26003 Corelib.Init.Datatypes <> None constr
+R26005:26008 Corelib.Init.Datatypes <> None constr
+R26019:26022 Corelib.Init.Datatypes <> Some constr
+R26024:26024 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R26084:26085 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R26088:26088 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R26025:26031 noun_phrases <> NP_Bare constr
+R26034:26039 noun_phrases <> mkNoun constr
+R26049:26052 Syntax <> Oral constr
+R26054:26059 Syntax <> EndAEO constr
+R26061:26067 noun_phrases <> Uniform constr
+R26069:26076 noun_phrases <> GendNone constr
+R26078:26082 Corelib.Init.Datatypes <> false constr
+R26086:26087 sentence <> pp:214 var
+R26099:26104 sentence <> WO_SVO constr
+R26106:26119 sentence <> ST_Declarative constr
+R26121:26124 Corelib.Init.Datatypes <> None constr
+R26126:26130 Corelib.Init.Datatypes <> false constr
+R26135:26138 Corelib.Init.Datatypes <> true constr
+prf 26253:26282 <> rule_SY1_decl_needs_indicative
+binder 26293:26293 <> s:215
+binder 26295:26295 <> v:216
+binder 26297:26300 <> dobj:217
+binder 26302:26305 <> iobj:218
+binder 26307:26310 <> pobj:219
+binder 26312:26313 <> wo:220
+binder 26315:26316 <> ip:221
+binder 26318:26318 <> h:222
+R26347:26354 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R26334:26336 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R26325:26331 verb <> cv_mood proj
+R26333:26333 sentence <> v:216 var
+R26337:26346 verb <> Imperative constr
+R26426:26428 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R26355:26364 sentence <> ss_type_ok def
+R26373:26382 sentence <> mkSentence constr
+R26384:26384 sentence <> s:215 var
+R26386:26386 sentence <> v:216 var
+R26388:26391 sentence <> dobj:217 var
+R26393:26396 sentence <> iobj:218 var
+R26398:26401 sentence <> pobj:219 var
+R26403:26404 sentence <> wo:220 var
+R26406:26419 sentence <> ST_Declarative constr
+R26421:26422 sentence <> ip:221 var
+R26424:26424 sentence <> h:222 var
+R26429:26433 Corelib.Init.Datatypes <> false constr
+R26460:26469 sentence <> ss_type_ok def
+prf 26517:26542 <> rule_SY3_yn_needs_particle
+binder 26553:26553 <> s:223
+binder 26555:26555 <> v:224
+binder 26557:26560 <> dobj:225
+binder 26562:26565 <> iobj:226
+binder 26567:26570 <> pobj:227
+binder 26572:26573 <> wo:228
+binder 26575:26575 <> h:229
+R26604:26611 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R26591:26593 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R26582:26588 verb <> cv_mood proj
+R26590:26590 sentence <> v:224 var
+R26594:26603 verb <> Indicative constr
+R26685:26687 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R26612:26621 sentence <> ss_type_ok def
+R26630:26639 sentence <> mkSentence constr
+R26641:26641 sentence <> s:223 var
+R26643:26643 sentence <> v:224 var
+R26645:26648 sentence <> dobj:225 var
+R26650:26653 sentence <> iobj:226 var
+R26655:26658 sentence <> pobj:227 var
+R26660:26661 sentence <> wo:228 var
+R26663:26676 sentence <> ST_Interrog_YN constr
+R26678:26681 Corelib.Init.Datatypes <> None constr
+R26683:26683 sentence <> h:229 var
+R26688:26692 Corelib.Init.Datatypes <> false constr
+R26719:26728 sentence <> ss_type_ok def
+prf 26840:26866 <> rule_AC1_purposive_hagua_ok
+R26923:26925 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R26874:26886 sentence <> wf_adv_clause def
+R26889:26899 sentence <> mkAdvClause constr
+R26901:26912 sentence <> AC_Purposive constr
+R26926:26929 Corelib.Init.Datatypes <> true constr
+prf 26966:27002 <> rule_AC2_purposive_wrong_morpheme_bad
+R27057:27059 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27010:27022 sentence <> wf_adv_clause def
+R27025:27035 sentence <> mkAdvClause constr
+R27037:27048 sentence <> AC_Purposive constr
+R27060:27064 Corelib.Init.Datatypes <> false constr
+prf 27101:27123 <> rule_AC3_cond_hyp_ro_ok
+R27176:27178 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27131:27143 sentence <> wf_adv_clause def
+R27146:27156 sentence <> mkAdvClause constr
+R27158:27168 sentence <> AC_Cond_Hyp constr
+R27179:27182 Corelib.Init.Datatypes <> true constr
+prf 27219:27243 <> rule_AC4_cond_hyp_ramo_ok
+R27297:27299 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27251:27263 sentence <> wf_adv_clause def
+R27266:27276 sentence <> mkAdvClause constr
+R27278:27288 sentence <> AC_Cond_Hyp constr
+R27300:27303 Corelib.Init.Datatypes <> true constr
+prf 27340:27367 <> rule_AC5_temp_simult_jave_ok
+R27424:27426 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27375:27387 sentence <> wf_adv_clause def
+R27390:27400 sentence <> mkAdvClause constr
+R27402:27415 sentence <> AC_Temp_Simult constr
+R27427:27430 Corelib.Init.Datatypes <> true constr
+prf 27467:27493 <> rule_AC6_temp_ant_mboyve_ok
+R27549:27551 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27501:27513 sentence <> wf_adv_clause def
+R27516:27526 sentence <> mkAdvClause constr
+R27528:27538 sentence <> AC_Temp_Ant constr
+R27552:27555 Corelib.Init.Datatypes <> true constr
+prf 27592:27617 <> rule_AC7_temp_post_rire_ok
+R27672:27674 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27625:27637 sentence <> wf_adv_clause def
+R27640:27650 sentence <> mkAdvClause constr
+R27652:27663 sentence <> AC_Temp_Post constr
+R27675:27678 Corelib.Init.Datatypes <> true constr
+prf 27715:27746 <> rule_AC8_concessive_ramo_jepe_ok
+R27807:27809 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27754:27766 sentence <> wf_adv_clause def
+R27769:27779 sentence <> mkAdvClause constr
+R27781:27793 sentence <> AC_Concessive constr
+R27810:27813 Corelib.Init.Datatypes <> true constr
+prf 27850:27875 <> rule_AC9_manner_ha_icha_ok
+R27930:27932 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27883:27895 sentence <> wf_adv_clause def
+R27898:27908 sentence <> mkAdvClause constr
+R27910:27918 sentence <> AC_Manner constr
+R27933:27936 Corelib.Init.Datatypes <> true constr
+prf 27973:28002 <> rule_AC10_manner_hague_icha_ok
+R28060:28062 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28010:28022 sentence <> wf_adv_clause def
+R28025:28035 sentence <> mkAdvClause constr
+R28037:28045 sentence <> AC_Manner constr
+R28063:28066 Corelib.Init.Datatypes <> true constr
+prf 28103:28125 <> rule_AC11_causal_gui_ok
+R28180:28182 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28133:28145 sentence <> wf_adv_clause def
+R28148:28158 sentence <> mkAdvClause constr
+R28160:28172 sentence <> AC_Causal_Gui constr
+R28183:28186 Corelib.Init.Datatypes <> true constr
+prf 28223:28248 <> rule_AC12_causal_porque_ok
+R28309:28311 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28256:28268 sentence <> wf_adv_clause def
+R28271:28281 sentence <> mkAdvClause constr
+R28283:28298 sentence <> AC_Causal_Porque constr
+R28312:28315 Corelib.Init.Datatypes <> true constr
+prf 28404:28446 <> rule_AC13_counterfactual_needs_main_marking
+binder 28457:28458 <> vf:230
+binder 28460:28460 <> p:231
+binder 28462:28462 <> n:232
+binder 28464:28466 <> inc:233
+binder 28468:28469 <> vc:234
+binder 28471:28472 <> ev:235
+R28561:28563 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28479:28500 sentence <> wf_counterfactual_main def
+R28509:28518 verb <> mkConjVerb constr
+R28520:28521 sentence <> vf:230 var
+R28523:28523 sentence <> p:231 var
+R28525:28525 sentence <> n:232 var
+R28527:28529 sentence <> inc:233 var
+R28531:28540 verb <> Indicative constr
+R28542:28549 verb <> Positive constr
+R28551:28552 sentence <> vc:234 var
+R28554:28556 Corelib.Init.Datatypes <> nil constr
+R28558:28559 sentence <> ev:235 var
+R28564:28568 Corelib.Init.Datatypes <> false constr
+prf 28642:28661 <> rule_NV1_equative_wf
+binder 28672:28672 <> a:236
+binder 28674:28674 <> b:237
+R28695:28698 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R28688:28690 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28681:28685 noun_phrases <> wf_np def
+R28687:28687 sentence <> a:236 var
+R28691:28694 Corelib.Init.Datatypes <> true constr
+R28713:28720 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R28706:28708 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28699:28703 noun_phrases <> wf_np def
+R28705:28705 sentence <> b:237 var
+R28709:28712 Corelib.Init.Datatypes <> true constr
+R28752:28754 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28721:28732 sentence <> wf_nonverbal def
+R28735:28746 sentence <> NVS_Equative constr
+R28748:28748 sentence <> a:236 var
+R28750:28750 sentence <> b:237 var
+R28755:28758 Corelib.Init.Datatypes <> true constr
+prf 28836:28866 <> rule_CX1_adverbial_purposive_ok
+binder 28877:28880 <> main:238
+binder 28882:28887 <> subord:239
+R28917:28924 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R28910:28912 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28894:28904 sentence <> wf_sentence def
+R28906:28909 sentence <> main:238 var
+R28913:28916 Corelib.Init.Datatypes <> true constr
+R28950:28957 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R28943:28945 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28925:28935 sentence <> wf_sentence def
+R28937:28942 sentence <> subord:239 var
+R28946:28949 Corelib.Init.Datatypes <> true constr
+R29037:29039 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28958:28967 sentence <> wf_complex def
+R28976:28987 sentence <> CS_Adverbial constr
+R28989:28992 sentence <> main:238 var
+R28995:29005 sentence <> mkAdvClause constr
+R29007:29018 sentence <> AC_Purposive constr
+R29030:29035 sentence <> subord:239 var
+R29040:29043 Corelib.Init.Datatypes <> true constr
+prf 29131:29167 <> rule_CX2_adverbial_wrong_morpheme_bad
+binder 29178:29181 <> main:240
+binder 29183:29188 <> subord:241
+R29272:29274 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29195:29204 sentence <> wf_complex def
+R29213:29224 sentence <> CS_Adverbial constr
+R29226:29229 sentence <> main:240 var
+R29232:29242 sentence <> mkAdvClause constr
+R29244:29255 sentence <> AC_Purposive constr
+R29265:29270 sentence <> subord:241 var
+R29275:29279 Corelib.Init.Datatypes <> false constr
+R29318:29328 sentence <> wf_sentence def
+R29347:29357 sentence <> wf_sentence def
+R29318:29328 sentence <> wf_sentence def
+R29347:29357 sentence <> wf_sentence def
+R29347:29357 sentence <> wf_sentence def
+prf 29395:29415 <> rule_TL1_simple_lifts
+binder 29426:29426 <> s:242
+R29453:29460 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R29446:29448 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29433:29443 sentence <> wf_sentence def
+R29445:29445 sentence <> s:242 var
+R29449:29452 Corelib.Init.Datatypes <> true constr
+R29492:29494 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29461:29475 sentence <> wf_any_sentence def
+R29478:29488 sentence <> Sent_Simple constr
+R29490:29490 sentence <> s:242 var
+R29495:29498 Corelib.Init.Datatypes <> true constr
+def 29786:29800 <> ex_bare_intrans
+binder 29811:29811 <> v:243
+R29845:29852 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R29838:29840 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29818:29835 verb <> wf_conjugated_verb def
+R29837:29837 sentence <> v:243 var
+R29841:29844 Corelib.Init.Datatypes <> true constr
+R29885:29892 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R29870:29872 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29853:29867 sentence <> cv_transitivity def
+R29869:29869 sentence <> v:243 var
+R29873:29884 verb <> Intransitive constr
+R29915:29922 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R29902:29904 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29893:29899 verb <> cv_mood proj
+R29901:29901 sentence <> v:243 var
+R29905:29914 verb <> Indicative constr
+R29942:29949 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R29934:29936 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29923:29931 verb <> cv_person proj
+R29933:29933 sentence <> v:243 var
+R29937:29941 Syntax <> First constr
+R29972:29979 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R29961:29963 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29950:29958 verb <> cv_number proj
+R29960:29960 sentence <> v:243 var
+R29964:29971 Syntax <> Singular constr
+R29996:30003 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R29989:29991 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29980:29986 verb <> cv_incl proj
+R29988:29988 sentence <> v:243 var
+R29992:29995 Corelib.Init.Datatypes <> None constr
+R30107:30109 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R30004:30014 sentence <> wf_sentence def
+R30023:30032 sentence <> mkSentence constr
+R30034:30037 Corelib.Init.Datatypes <> None constr
+R30039:30039 sentence <> v:243 var
+R30041:30044 Corelib.Init.Datatypes <> None constr
+R30046:30049 Corelib.Init.Datatypes <> None constr
+R30051:30054 Corelib.Init.Datatypes <> None constr
+R30074:30079 sentence <> WO_SVO constr
+R30081:30094 sentence <> ST_Declarative constr
+R30096:30099 Corelib.Init.Datatypes <> None constr
+R30101:30105 Corelib.Init.Datatypes <> false constr
+R30110:30113 Corelib.Init.Datatypes <> true constr
+R30162:30172 sentence <> wf_sentence def

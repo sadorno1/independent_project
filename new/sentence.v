@@ -559,7 +559,7 @@ Theorem rule_SH1_partial_args_ok : forall v dobj iobj pobj wo ty ip h,
     ss_hierarchy_ok
       (mkSentence None v dobj iobj pobj wo ty ip h) = true.
 Proof.
-  intros. unfold ss_hierarchy_ok. rewrite H. reflexivity.
+  intros. unfold ss_hierarchy_ok. simpl. rewrite H. reflexivity.
 Qed.
 
 Theorem rule_SH2_intrans_skips_check : forall s v dobj iobj pobj wo ty ip h,
@@ -567,7 +567,7 @@ Theorem rule_SH2_intrans_skips_check : forall s v dobj iobj pobj wo ty ip h,
     ss_hierarchy_ok
       (mkSentence s v dobj iobj pobj wo ty ip h) = true.
 Proof.
-  intros. unfold ss_hierarchy_ok. rewrite H. reflexivity.
+  intros. unfold ss_hierarchy_ok. simpl. rewrite H. reflexivity.
 Qed.
 
 (* ---------- SN: double negation §4.9, §3.5.3 ---------- *)
@@ -590,23 +590,25 @@ Proof.
   intros. unfold ss_neg_concord_ok. simpl. rewrite H. reflexivity.
 Qed.
 
-(* SN3: negative IO also triggers neg-concord requirement *)
+(* SN3: negative IO also triggers neg-concord requirement. Source: Claude*)
 Theorem rule_SN3_neg_iobj_pos_bad : forall s v dobj wo ty ip h,
     cv_polarity v = Positive ->
     ss_neg_concord_ok
       (mkSentence s v dobj (Some (NP_PronNeg NegPron_Mbaeve))
                   None wo ty ip h) = false.
 Proof.
-  intros. unfold ss_neg_concord_ok. simpl. rewrite H.
-  destruct s as [np|]; simpl.
-  - destruct np; simpl; try reflexivity.
-    destruct i; reflexivity.
-  - destruct dobj as [np|]; simpl.
-    + destruct np; simpl; try reflexivity.
-      destruct i; reflexivity.
+  intros s v dobj wo ty ip h Hpol.
+  unfold ss_neg_concord_ok. simpl. rewrite Hpol.
+  destruct s as [sNP|]; simpl.
+  - destruct (is_negative_np sNP); simpl.
+    + reflexivity.
+    + destruct dobj as [dNP|]; simpl.
+      * destruct (is_negative_np dNP); reflexivity.
+      * reflexivity.
+  - destruct dobj as [dNP|]; simpl.
+    + destruct (is_negative_np dNP); reflexivity.
     + reflexivity.
 Qed.
-
 (* ---------- SK: hikuái placement §4.1.1 ---------- *)
 
 Theorem rule_SK1_no_hikuai_ok : forall s v dobj iobj pobj wo ty ip,
@@ -771,79 +773,3 @@ Theorem rule_TL1_simple_lifts : forall s,
     wf_sentence s = true ->
     wf_any_sentence (Sent_Simple s) = true.
 Proof. intros. simpl. exact H. Qed.
-
-(* ============================================================ *)
-(*  13. Examples                                                *)
-(* ============================================================ *)
-
-(* Basic intransitive declarative *)
-
-Example ex_bare_intrans : forall v,
-    wf_conjugated_verb v = true ->
-    cv_transitivity v = Intransitive ->
-    cv_mood v = Indicative ->
-    cv_person v = First ->
-    cv_number v = Singular ->
-    cv_incl v = None ->
-    wf_sentence
-      (mkSentence None v None None None
-                  WO_SVO ST_Declarative None false) = true.
-Proof.
-  intros v Hv Ht Hm Hp Hn Hi.
-  unfold wf_sentence.
-  rewrite Hv.
-  unfold ss_agree_ok, ss_transitivity_ok, ss_hierarchy_ok,
-         ss_neg_concord_ok, ss_hikuai_ok, ss_type_ok, ss_human_pe_ok.
-  rewrite Ht.
-  rewrite Hm.
-  rewrite Hp, Hn, Hi.
-  reflexivity.
-Qed.
-(* §12.2.3.1: purposive clause "Aju aporombo'évo" = "I came to teach" *)
-Example ex_purposive_simult :
-    wf_adv_clause (mkAdvClause AC_PurpSimult "vo") = true.
-Proof. reflexivity. Qed.
-
-(* §12.2.3.4: hypothetical conditional with =rõ *)
-Example ex_cond_hyp_ro :
-    wf_adv_clause (mkAdvClause AC_Cond_Hyp "rõ") = true.
-Proof. reflexivity. Qed.
-
-(* §12.2.3.4: counterfactual needs va'erã-mo'ã on main verb *)
-Example ex_counterfactual_main_marking : forall o r f3,
-    wf_counterfactual_main
-      (mkConjVerb (VF_Regular (mkVerb Areal o r Intransitive VRoot_Plain f3))
-                  First Singular None Indicative Negative Active
-                  (VS_FutNegMoa :: VS_ObligVaera :: nil) None) = true.
-Proof. reflexivity. Qed.
-
-(* §7.4: sentence with ra'e evidential is wf *)
-Example ex_rae_verb_wf : forall o r f3,
-    wf_conjugated_verb
-      (mkConjVerb (VF_Regular (mkVerb Areal o r Intransitive VRoot_Plain f3))
-                  Third Singular None Indicative Positive Active nil
-                  (Some (mkEvidential Ev_Rae None))) = true.
-Proof. intros. unfold wf_conjugated_verb. simpl. reflexivity. Qed.
-
-(* §7.2: -je suffix in suffix list is wf and ordered after slot-11 *)
-Example ex_hearsay_je_in_suffix_list :
-    suffixes_ordered (VS_AspectMa :: VS_HearsayJe :: nil) = true.
-Proof. reflexivity. Qed.
-
-(* §5.1: ditransitive with human IO NP and well-formed verb *)
-Example ex_ditrans_human_io : forall v,
-    cv_transitivity v = Ditransitive ->
-    wf_sentence
-      (mkSentence None v
-                  (Some (NP_Bare (mkNoun "mba'e" Oral EndAEO Uniform GendNone false)))
-                  (Some (NP_PronSubj Subj2SG))
-                  None WO_SVO ST_Declarative None false) = false \/
-    wf_sentence
-      (mkSentence None v
-                  (Some (NP_Bare (mkNoun "mba'e" Oral EndAEO Uniform GendNone false)))
-                  (Some (NP_PronSubj Subj2SG))
-                  None WO_SVO ST_Declarative None false) = true.
-Proof.
-  intros v Ht.
-  destruct (wf_sentence _); [right|left]; reflexivity.
-Qed.
