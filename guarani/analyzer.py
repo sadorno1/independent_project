@@ -25,9 +25,10 @@ from .types import (
     VerbRootClass, Chendal3sgForm, Voice, Mood, Polarity,
     VerbalSuffix, IrregularVerb, Verb, VerbForm, VF_Regular, VF_Irregular,
     ConjugatedVerb, IRREG_FORM_INDEX, IRREG_PARADIGM, SUFFIX_STRIP_INDEX,
-    SubjPronoun, SUBJ_PRONOUN_FORM_INDEX,
-    _SUBJ_PRONOUN_PERSON, _SUBJ_PRONOUN_NUMBER,
-    Noun, NP, WordEnding, RootClass, word_ending_of,
+    SubjPronoun, SUBJ_PRONOUN_FORM_INDEX, _SUBJ_PRONOUN_PERSON, _SUBJ_PRONOUN_NUMBER,
+    Noun, NP, WordEnding, RootClass, word_ending_of, Adjective, PossMarker, DemProximity, Postposition, RootClass,
+    POSS_MARKER_FORM_INDEX, DEM_ADJ_FORM_INDEX, POSTPOSITION_STRIP_INDEX,
+    _POSS_MARKER_PERSON, _POSS_MARKER_NUMBER, _POSS_MARKER_INCLUSIVITY,
 )
 
 
@@ -165,6 +166,35 @@ def lookup_noun(word: str) -> Optional[NounLexEntry]:
 
 
 # ============================================================
+#  Adjective lexicon
+# ============================================================
+
+@dataclass
+class AdjLexEntry:
+    word:    str
+    orality: Orality
+
+
+_ADJ_LEXICON: dict[str, AdjLexEntry] = {}
+
+
+def load_adj_lexicon(enriched_csv: str | Path) -> None:
+    global _ADJ_LEXICON
+    _ADJ_LEXICON = {}
+    path = Path(enriched_csv)
+    with path.open(encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if row.get("primary_pos") != "adj":
+                continue
+            word = row["word"].strip()
+            orality = Orality(row["orality"]) if row.get("orality") else Orality.Oral
+            _ADJ_LEXICON[word] = AdjLexEntry(word=word, orality=orality)
+
+
+def lookup_adj(word: str) -> Optional[AdjLexEntry]:
+    return _ADJ_LEXICON.get(word)
+# ============================================================
 #  Prefix tables (inverse of Verb.v §14)
 # ============================================================
 
@@ -220,6 +250,24 @@ _ALL_PREFIX_TABLES = [
 
 
 # ============================================================
+#  Postposition stripping
+# ============================================================
+
+def _strip_postposition(token: str) -> list[tuple[str, Postposition]]:
+    """
+    Given a surface token like "sype", return all ways it could decompose
+    as (stem, postposition). For "sype" → [("sy", Post_Pe)].
+    For tokens with no recognizable postposition suffix, return [].
+    Each candidate is checked against POSTPOSITION_STRIP_INDEX (longest-first).
+    """
+    results: list[tuple[str, Postposition]] = []
+    for surf, pp, _o in POSTPOSITION_STRIP_INDEX:
+        if token.endswith(surf) and len(token) > len(surf):
+            stem = token[: -len(surf)]
+            results.append((stem, pp))
+    return results
+
+# ============================================================
 #  Suffix stripping (recursive)
 # ============================================================
 
@@ -273,7 +321,7 @@ def analyze(surface: str) -> list[ParseResult]:
         if surface.startswith(neg_pfx):
             after_neg = surface[len(neg_pfx):]
             if after_neg and after_neg[0] in "aeo":
-                inner = after_neg[1:]
+                inner = after_neg        
                 polarity = Polarity.Negative
                 break
 
@@ -344,25 +392,49 @@ def analyze(surface: str) -> list[ParseResult]:
 
 @dataclass
 class NPParseResult:
-    np:         NP
-    confidence: str
+    np:           NP
+    confidence:   str
+    num_consumed: int   # how many tokens this parse used
 
 
-def analyze_np(surface: str) -> list[NPParseResult]:
-    surface = surface.strip().lower()
+def analyze_np_span(tokens: list[str], start: int) -> list[NPParseResult]:
+    """
+    Given a list of tokens and a start index, return all candidate NP
+    parses beginning at that index, each paired with how many tokens
+    it consumed.
+
+    Tier 1 + 2 NP constructors:
+      - NP_PronSubj   (1 token)
+      - NP_Bare       (1 token)
+      - NP_Poss       (2 tokens: possessor + noun)
+      - NP_Dem        (2 tokens: demonstrative + noun)
+      - NP_Adj        (2 tokens: noun + adjective)
+
+    Numeral NPs (NP_Num) handled in a later patch.
+    """
+    if start >= len(tokens):
+        return []
+
     results: list[NPParseResult] = []
+    tok0 = tokens[start].strip().lower()
 
-    pronoun = SUBJ_PRONOUN_FORM_INDEX.get(surface)
+    # ----------------------------------------------------------
+    # Single-token candidates: pronoun, bare noun
+    # ----------------------------------------------------------
+    pronoun = SUBJ_PRONOUN_FORM_INDEX.get(tok0)
     if pronoun is not None:
-        np = NP(
-            surface=surface,
-            person=_SUBJ_PRONOUN_PERSON[pronoun],
-            number=_SUBJ_PRONOUN_NUMBER[pronoun],
-            pronoun=pronoun,
-        )
-        results.append(NPParseResult(np, "exact_pronoun"))
+        results.append(NPParseResult(
+            np=NP(
+                surface=tok0,
+                person=_SUBJ_PRONOUN_PERSON[pronoun],
+                number=_SUBJ_PRONOUN_NUMBER[pronoun],
+                pronoun=pronoun,
+            ),
+            confidence="exact_pronoun",
+            num_consumed=1,
+        ))
 
-    entry = _NOUN_LEXICON.get(surface)
+    entry = _NOUN_LEXICON.get(tok0)
     if entry is not None:
         noun = Noun(
             n_root=entry.word,
@@ -371,13 +443,107 @@ def analyze_np(surface: str) -> list[NPParseResult]:
             n_root_class=entry.root_class,
             n_human=entry.human,
         )
-        np = NP(
-            surface=surface,
-            person=Person.Third,
-            number=Number.Singular,
-            human=entry.human,
-            noun=noun,
-        )
-        results.append(NPParseResult(np, "bare_noun"))
+        results.append(NPParseResult(
+            np=NP(
+                surface=tok0,
+                person=Person.Third,
+                number=Number.Singular,
+                human=entry.human,
+                noun=noun,
+            ),
+            confidence="bare_noun",
+            num_consumed=1,
+        ))
+
+    # ----------------------------------------------------------
+    # Two-token candidates: need a second token
+    # ----------------------------------------------------------
+    if start + 1 < len(tokens):
+        tok1 = tokens[start + 1].strip().lower()
+        noun_entry_2 = _NOUN_LEXICON.get(tok1)
+
+        # NP_Poss: possessor + noun
+        if tok0 in POSS_MARKER_FORM_INDEX and noun_entry_2 is not None:
+            for pm, _o in POSS_MARKER_FORM_INDEX[tok0]:
+                # Orality on the marker is determined by the noun it
+                # attaches to — we use the noun's orality, not the
+                # lookup-table orality, since "che" is invariant anyway
+                # and the others depend on what follows.
+                noun = Noun(
+                    n_root=noun_entry_2.word,
+                    n_orality=noun_entry_2.orality,
+                    n_ending=word_ending_of(noun_entry_2.word),
+                    n_root_class=noun_entry_2.root_class,
+                    n_human=noun_entry_2.human,
+                )
+                results.append(NPParseResult(
+                    np=NP(
+                        surface=f"{tok0} {tok1}",
+                        person=_POSS_MARKER_PERSON[pm],
+                        number=_POSS_MARKER_NUMBER[pm],
+                        human=noun_entry_2.human,
+                        noun=noun,
+                        possessor=pm,
+                    ),
+                    confidence="poss_noun",
+                    num_consumed=2,
+                ))
+
+        # NP_Dem: demonstrative + noun
+        if tok0 in DEM_ADJ_FORM_INDEX and noun_entry_2 is not None:
+            for dp, dem_num in DEM_ADJ_FORM_INDEX[tok0]:
+                noun = Noun(
+                    n_root=noun_entry_2.word,
+                    n_orality=noun_entry_2.orality,
+                    n_ending=word_ending_of(noun_entry_2.word),
+                    n_root_class=noun_entry_2.root_class,
+                    n_human=noun_entry_2.human,
+                )
+                results.append(NPParseResult(
+                    np=NP(
+                        surface=f"{tok0} {tok1}",
+                        person=Person.Third,
+                        number=dem_num,
+                        human=noun_entry_2.human,
+                        noun=noun,
+                        demonstrative=dp,
+                    ),
+                    confidence="dem_noun",
+                    num_consumed=2,
+                ))
+
+        # NP_Adj: noun + adjective
+        adj_entry = _ADJ_LEXICON.get(tok1)
+        if entry is not None and adj_entry is not None:
+            noun = Noun(
+                n_root=entry.word,
+                n_orality=entry.orality,
+                n_ending=word_ending_of(entry.word),
+                n_root_class=entry.root_class,
+                n_human=entry.human,
+            )
+            adj = Adjective(
+                a_form=adj_entry.word,
+                a_orality=adj_entry.orality,
+                a_root_class=RootClass.Uniform,
+            )
+            results.append(NPParseResult(
+                np=NP(
+                    surface=f"{tok0} {tok1}",
+                    person=Person.Third,
+                    number=Number.Singular,
+                    human=entry.human,
+                    noun=noun,
+                    adjective=adj,
+                ),
+                confidence="noun_adj",
+                num_consumed=2,
+            ))
 
     return results
+
+
+# Backwards-compat single-token API — used by check.py's old descriptive output
+def analyze_np(surface: str) -> list[NPParseResult]:
+    """Single-token NP analysis. For multi-token spans, use analyze_np_span."""
+    return analyze_np_span([surface], 0)

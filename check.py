@@ -8,17 +8,25 @@ Usage:
 """
 
 import sys
-from guarani.analyzer import load_lexicon, load_noun_lexicon, analyze, analyze_np
-from guarani.types import Sentence
+from typing import Optional
+from guarani.analyzer import load_lexicon, load_noun_lexicon, analyze, analyze_np_span, load_adj_lexicon
+from guarani.types import Sentence, NP
 from guarani.verifier import Verifier
 
 LEXICON_CSV = "merged.csv"
+load_lexicon(LEXICON_CSV)
+load_noun_lexicon(LEXICON_CSV)
+load_adj_lexicon(LEXICON_CSV)
 
 
 def build_candidate_sentences(tokens: list[str]) -> list[Sentence]:
     """
-    Naive 2-token SVO assembly: find the first token that parses as a verb,
-    treat the other token(s) as subject NP candidates.
+    SVO assembly with multi-token NP spans.
+    For each token position that parses as a verb, partition the
+    remaining tokens into a subject span (before) and object span
+    (after). Each span must be fully consumed by one or more NPs
+    (currently just one NP per span — multi-NP spans deferred).
+    Each non-verb token must be accounted for.
     """
     candidates: list[Sentence] = []
 
@@ -27,22 +35,32 @@ def build_candidate_sentences(tokens: list[str]) -> list[Sentence]:
         if not verb_parses:
             continue
 
-        subj_tokens = tokens[:verb_idx]
-        obj_tokens = tokens[verb_idx + 1:]
+        subj_span = tokens[:verb_idx]
+        obj_span = tokens[verb_idx + 1:]
 
-        subj_candidates = []
-        for st in subj_tokens:
-            subj_candidates.extend(analyze_np(st))
-        obj_candidates = []
-        for ot in obj_tokens:
-            obj_candidates.extend(analyze_np(ot))
+        if not subj_span:
+            subj_candidates: list[Optional[NP]] = [None]
+        else:
+            subj_candidates = [
+                r.np for r in analyze_np_span(subj_span, 0)
+                if r.num_consumed == len(subj_span)
+            ]
+            if not subj_candidates:
+                continue
 
-        subj_list = [r.np for r in subj_candidates] or [None]
-        obj_list = [r.np for r in obj_candidates] or [None]
+        if not obj_span:
+            obj_candidates: list[Optional[NP]] = [None]
+        else:
+            obj_candidates = [
+                r.np for r in analyze_np_span(obj_span, 0)
+                if r.num_consumed == len(obj_span)
+            ]
+            if not obj_candidates:
+                continue
 
         for vp in verb_parses:
-            for s in subj_list:
-                for o in obj_list:
+            for s in subj_candidates:
+                for o in obj_candidates:
                     candidates.append(Sentence(
                         verb=vp.conj_verb,
                         subject=s,
@@ -56,9 +74,6 @@ def main():
     if len(sys.argv) < 2:
         print("usage: python check.py <guarani sentence>", file=sys.stderr)
         sys.exit(2)
-
-    load_lexicon(LEXICON_CSV)
-    load_noun_lexicon(LEXICON_CSV)
 
     sentence = " ".join(sys.argv[1:])
     tokens = sentence.split()

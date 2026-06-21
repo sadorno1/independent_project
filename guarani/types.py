@@ -90,7 +90,64 @@ class Inclusivity(Enum):
 
     def to_coq(self) -> str:
         return self.value
+    
+class PossMarker(Enum):
+    Poss1     = "Poss1"
+    Poss2     = "Poss2"
+    Poss3     = "Poss3"
+    Poss1Incl = "Poss1Incl"
+    Poss1Excl = "Poss1Excl"
+    Poss2Pl   = "Poss2Pl"
+    Poss3Pl   = "Poss3Pl"
 
+    def to_coq(self) -> str:
+        return self.value
+
+
+# Surface forms keyed by (PossMarker, Orality). Mirrors poss_marker_form in Syntax.v.
+POSS_MARKER_SURFACE: dict[tuple[PossMarker, Orality], str] = {
+    (PossMarker.Poss1,     Orality.Oral):  "che",
+    (PossMarker.Poss1,     Orality.Nasal): "che",
+    (PossMarker.Poss2,     Orality.Oral):  "nde",
+    (PossMarker.Poss2,     Orality.Nasal): "ne",
+    (PossMarker.Poss3,     Orality.Oral):  "i",
+    (PossMarker.Poss3,     Orality.Nasal): "iñ",
+    (PossMarker.Poss1Incl, Orality.Oral):  "ñánde",
+    (PossMarker.Poss1Incl, Orality.Nasal): "ñáne",
+    (PossMarker.Poss1Excl, Orality.Oral):  "ore",
+    (PossMarker.Poss1Excl, Orality.Nasal): "ore",
+    (PossMarker.Poss2Pl,   Orality.Oral):  "pénde",
+    (PossMarker.Poss2Pl,   Orality.Nasal): "péne",
+    (PossMarker.Poss3Pl,   Orality.Oral):  "i",
+    (PossMarker.Poss3Pl,   Orality.Nasal): "iñ",
+}
+
+# Reverse index: surface → list of (PossMarker, Orality) candidates
+POSS_MARKER_FORM_INDEX: dict[str, list[tuple[PossMarker, Orality]]] = {}
+for (pm, o), surf in POSS_MARKER_SURFACE.items():
+    POSS_MARKER_FORM_INDEX.setdefault(surf, []).append((pm, o))
+
+
+_POSS_MARKER_PERSON: dict[PossMarker, Person] = {
+    PossMarker.Poss1: Person.First,  PossMarker.Poss1Incl: Person.First,
+    PossMarker.Poss1Excl: Person.First,
+    PossMarker.Poss2: Person.Second, PossMarker.Poss2Pl: Person.Second,
+    PossMarker.Poss3: Person.Third,  PossMarker.Poss3Pl: Person.Third,
+}
+
+_POSS_MARKER_NUMBER: dict[PossMarker, Number] = {
+    PossMarker.Poss1: Number.Singular, PossMarker.Poss2: Number.Singular,
+    PossMarker.Poss3: Number.Singular,
+    PossMarker.Poss1Incl: Number.Plural, PossMarker.Poss1Excl: Number.Plural,
+    PossMarker.Poss2Pl: Number.Plural, PossMarker.Poss3Pl: Number.Plural,
+}
+
+_POSS_MARKER_INCLUSIVITY: dict[PossMarker, Optional[Inclusivity]] = {
+    PossMarker.Poss1Incl: Inclusivity.Inclusive,
+    PossMarker.Poss1Excl: Inclusivity.Exclusive,
+    PossMarker.Poss1: None, PossMarker.Poss2: None, PossMarker.Poss3: None,
+    PossMarker.Poss2Pl: None, PossMarker.Poss3Pl: None,
+}
 class SubjPronoun(Enum):
     Subj1SG      = "Subj1SG"
     Subj2SG      = "Subj2SG"
@@ -138,6 +195,20 @@ SUBJ_PRONOUN_FORM_INDEX: dict[str, SubjPronoun] = {
     surf: p for p, surf in _SUBJ_PRONOUN_SURFACE.items()
 }
 
+#  Adjective
+
+@dataclass
+class Adjective:
+    a_form:       str
+    a_orality:    Orality
+    a_root_class: RootClass = RootClass.Uniform
+
+    def to_coq(self) -> str:
+        return (
+            f"(mkAdj \"{self.a_form}\" {self.a_orality.to_coq()} "
+            f"{self.a_root_class.to_coq()})"
+        )
+    
 # ============================================================
 #  Verb classification (§1 Verb.v)
 # ============================================================
@@ -561,13 +632,20 @@ class ConjugatedVerb:
 
 @dataclass
 class NP:
-    surface:  str
-    person:   Person       = Person.Third
-    number:   Number       = Number.Singular
-    human:    bool         = False
-    pronoun:  Optional[SubjPronoun] = None
-    noun:     Optional[Noun]        = None
-    coq_term: Optional[str]         = None
+    surface:      str
+    person:       Person       = Person.Third
+    number:       Number       = Number.Singular
+    human:        bool         = False
+
+    # Exactly one of these constructor groups is populated:
+    pronoun:      Optional[SubjPronoun]  = None       # NP_PronSubj
+    noun:         Optional[Noun]         = None       # NP_Bare or head of compound
+    possessor:    Optional[PossMarker]   = None       # NP_Poss   (with noun)
+    demonstrative: Optional[DemProximity] = None      # NP_Dem    (with noun, number)
+    adjective:    Optional[Adjective]    = None       # NP_Adj    (with noun)
+    numeral_coq:  Optional[str]          = None       # NP_Num    (with noun), built Coq term
+
+    coq_term:     Optional[str]          = None       # full override
 
     def to_coq(self) -> str:
         if self.coq_term:
@@ -575,6 +653,17 @@ class NP:
         if self.pronoun is not None:
             return f"(NP_PronSubj {self.pronoun.to_coq()})"
         if self.noun is not None:
+            if self.possessor is not None:
+                return f"(NP_Poss {self.possessor.to_coq()} {self.noun.to_coq()})"
+            if self.demonstrative is not None:
+                return (
+                    f"(NP_Dem {self.demonstrative.to_coq()} "
+                    f"{self.number.to_coq()} {self.noun.to_coq()})"
+                )
+            if self.adjective is not None:
+                return f"(NP_Adj {self.noun.to_coq()} {self.adjective.to_coq()})"
+            if self.numeral_coq is not None:
+                return f"(NP_Num {self.numeral_coq} {self.noun.to_coq()})"
             return f"(NP_Bare {self.noun.to_coq()})"
         raise ValueError(f"NP for '{self.surface}' has no valid Coq representation yet")
 
@@ -592,6 +681,95 @@ class WordOrder(Enum):
 
     def to_coq(self) -> str:
         return self.value
+    
+class DemProximity(Enum):
+    DemProxSpeaker  = "DemProxSpeaker"
+    DemProxHearer   = "DemProxHearer"
+    DemDistal       = "DemDistal"
+    DemSharedPerson = "DemSharedPerson"
+    DemSharedEvent  = "DemSharedEvent"
+    DemHearsay      = "DemHearsay"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+# Adjectival demonstrative surface (used before head noun). Mirrors
+# dem_adj_form in noun_phrases.v.
+DEM_ADJ_SURFACE: dict[tuple[DemProximity, Number], str] = {
+    (DemProximity.DemProxSpeaker,  Number.Singular): "ko",
+    (DemProximity.DemProxSpeaker,  Number.Plural):   "ko'ã",
+    (DemProximity.DemProxHearer,   Number.Singular): "pe",
+    (DemProximity.DemProxHearer,   Number.Plural):   "umi",
+    (DemProximity.DemDistal,       Number.Singular): "amo",
+    (DemProximity.DemDistal,       Number.Plural):   "umi",
+    (DemProximity.DemSharedPerson, Number.Singular): "ku",
+    (DemProximity.DemSharedPerson, Number.Plural):   "umi",
+    (DemProximity.DemSharedEvent,  Number.Singular): "ako",
+    (DemProximity.DemSharedEvent,  Number.Plural):   "umi",
+    (DemProximity.DemHearsay,      Number.Singular): "aipo",
+    (DemProximity.DemHearsay,      Number.Plural):   "umi",
+}
+
+DEM_ADJ_FORM_INDEX: dict[str, list[tuple[DemProximity, Number]]] = {}
+for (dp, n), surf in DEM_ADJ_SURFACE.items():
+    DEM_ADJ_FORM_INDEX.setdefault(surf, []).append((dp, n))
+
+
+class Postposition(Enum):
+    Post_Pe    = "Post_Pe"
+    Post_Gui   = "Post_Gui"
+    Post_Gua   = "Post_Gua"
+    Post_Rehe  = "Post_Rehe"
+    Post_Ndive = "Post_Ndive"
+    Post_Guive = "Post_Guive"
+    Post_Peve  = "Post_Peve"
+    Post_Rupi  = "Post_Rupi"
+    Post_Ari   = "Post_Ari"
+    Post_Guy   = "Post_Guy"
+    Post_Guara = "Post_Guara"
+    Post_Hagua = "Post_Hagua"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+# Surface forms by orality. Mirrors postposition_form in noun_phrases.v.
+# Most postpositions are orality-invariant.
+POSTPOSITION_SURFACE: dict[tuple[Postposition, Orality], str] = {
+    (Postposition.Post_Pe,    Orality.Oral):  "pe",
+    (Postposition.Post_Pe,    Orality.Nasal): "me",
+    (Postposition.Post_Gui,   Orality.Oral):  "gui",
+    (Postposition.Post_Gui,   Orality.Nasal): "gui",
+    (Postposition.Post_Gua,   Orality.Oral):  "gua",
+    (Postposition.Post_Gua,   Orality.Nasal): "gua",
+    (Postposition.Post_Rehe,  Orality.Oral):  "rehe",
+    (Postposition.Post_Rehe,  Orality.Nasal): "rehe",
+    (Postposition.Post_Ndive, Orality.Oral):  "ndive",
+    (Postposition.Post_Ndive, Orality.Nasal): "ndie",
+    (Postposition.Post_Guive, Orality.Oral):  "guive",
+    (Postposition.Post_Guive, Orality.Nasal): "guive",
+    (Postposition.Post_Peve,  Orality.Oral):  "peve",
+    (Postposition.Post_Peve,  Orality.Nasal): "peve",
+    (Postposition.Post_Rupi,  Orality.Oral):  "rupi",
+    (Postposition.Post_Rupi,  Orality.Nasal): "rupi",
+    (Postposition.Post_Ari,   Orality.Oral):  "'ári",
+    (Postposition.Post_Ari,   Orality.Nasal): "'ári",
+    (Postposition.Post_Guy,   Orality.Oral):  "guy",
+    (Postposition.Post_Guy,   Orality.Nasal): "guy",
+    (Postposition.Post_Guara, Orality.Oral):  "guarã",
+    (Postposition.Post_Guara, Orality.Nasal): "guarã",
+    (Postposition.Post_Hagua, Orality.Oral):  "haguã",
+    (Postposition.Post_Hagua, Orality.Nasal): "haguã",
+}
+
+# Reverse: surface suffix (longest-first) → list of (Postposition, Orality)
+# Used by the analyzer to strip postpositions from compound surface forms
+# like "sype" = "sy" + "pe".
+POSTPOSITION_STRIP_INDEX: list[tuple[str, Postposition, Orality]] = sorted(
+    [(surf, pp, o) for (pp, o), surf in POSTPOSITION_SURFACE.items()],
+    key=lambda t: -len(t[0])
+)
 
 
 class SentenceType(Enum):
