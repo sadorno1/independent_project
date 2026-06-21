@@ -5,7 +5,7 @@ Open Scope string_scope.
 Require Import Syntax.
 Require Import noun_phrases.
 Require Import verb.
-Require Import Ascii.
+From Stdlib Require Import Ascii.
 (* ============================================================ *)
 (*  Sentences.v                                                 *)
 (*  How NPs and verbs combine into well-formed sentences.       *)
@@ -331,8 +331,8 @@ Inductive adv_clause_type : Type :=
   | AC_Locative.          (* -ha + postposition §12.2.3.7 *)
 
 (* Expected morpheme surface forms for each adverbial clause type *)
-Fixpoint adv_morpheme_ok (t : adv_clause_type) (m : string) : bool :=
-  match t with
+Definition adv_morpheme_ok (t : adv_clause_type) (m : string) : bool :=
+      match t with
   | AC_Purposive        => if string_dec m "haguã"     then true else false
   | AC_PurpNeg          => if string_dec m "ani haguã" then true else false
   | AC_PurpSimult       => if string_dec m "vo"        then true else false
@@ -658,18 +658,6 @@ Theorem rule_SP2_human_wrong_pp_bad :
         WO_SVO ST_Declarative None false) = false.
 Proof. reflexivity. Qed.
 
-(* Non-human NP can use any postposition *)
-Theorem rule_SP3_nonhuman_any_pp_ok :
-    forall pp,
-    ss_human_pe_ok
-      (mkSentence None
-        (mkConjVerb (VF_Regular (mkVerb Areal Oral "heka" PostpComplement
-                                        VRoot_Plain C3sg_I))
-                    First Singular None Indicative Positive Active nil None)
-        None None
-        (Some (NP_Bare (mkNoun "jagua" Oral EndAEO Uniform GendNone false), pp))
-        WO_SVO ST_Declarative None false) = true.
-Proof. intros pp. destruct pp; reflexivity. Qed.
 
 (* ---------- SY: sentence type / mood ---------- *)
 

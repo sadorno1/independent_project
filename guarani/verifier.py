@@ -3,15 +3,19 @@ verifier.py
 
 Coq wf verifier + feedback generator.
 
-Given a Sentence AST:
-1. Renders it as a `Compute wf_sentence (...).` Coq term.
+Given a Sentence AST (or a list of candidate Sentences):
+1. Renders each as a `Compute wf_sentence (...).` Coq term.
 2. Writes a temporary .v file that loads the compiled Guaraní spec.
 3. Runs coqc, parses the boolean output.
 4. If false: runs diagnostic queries to identify which wf predicate failed.
 5. Maps failed predicate → natural-language correction message.
 
-Assumes Primitives.vo, NounPhrases.vo, Verb.vo, Sentences.vo are already
-compiled and live in COQ_LIB_DIR (set via environment or passed explicitly).
+Multi-candidate mode: try each candidate. Accept on first true. If all
+false, return diagnosis from the candidate that got furthest through
+the predicate chain.
+
+Assumes Syntax.vo, noun_phrases.vo, verb.vo, sentence.vo are already
+compiled and live in COQ_LIB_DIR.
 """
 
 from __future__ import annotations
@@ -34,9 +38,7 @@ from .types import (
 #  Configuration
 # ============================================================
 
-# Path to directory containing the compiled .vo files.
-# Override with COQ_LIB_DIR environment variable or pass to Verifier().
-DEFAULT_COQ_LIB_DIR = Path(os.environ.get("COQ_LIB_DIR", "./coq"))
+DEFAULT_COQ_LIB_DIR = Path(os.environ.get("COQ_LIB_DIR", "./new"))
 
 COQ_PREAMBLE = """\
 From Stdlib Require Import String List Bool.
@@ -44,18 +46,15 @@ Import ListNotations.
 Open Scope string_scope.
 Add LoadPath "{lib_dir}" as GuaraniGrammar.
 Require Import GuaraniGrammar.Syntax.
-Require Import GuaraniGrammar.NounPhrases.
-Require Import GuaraniGrammar.Verb.
-Require Import GuaraniGrammar.Sentences.
+Require Import GuaraniGrammar.noun_phrases.
+Require Import GuaraniGrammar.verb.
+Require Import GuaraniGrammar.sentence.
 """
 
 
 # ============================================================
 #  Predicate registry
 # ============================================================
-# Maps Coq predicate name → (query template, feedback template)
-# Query template is the Compute expression used to isolate that predicate.
-# Feedback template uses {verb}, {subject}, {expected} placeholders.
 
 PREDICATES: list[dict] = [
     {
@@ -70,10 +69,8 @@ PREDICATES: list[dict] = [
         "name": "cv_neg_ok",
         "query": "Compute cv_neg_ok ({cv}).",
         "feedback": (
-            "Negation error: polarity is {polarity} but the verb "
-            "'{verb}' {'lacks' if polarity == 'Negative' else 'has'} a negation suffix "
-            "(nd-...-i / n-...-i). "
-            "Expected: nd{verb}i (oral) or n{verb}i (nasal)."
+            "Negation error: polarity is {polarity} but the verb '{verb}' is "
+            "missing or has an extra negation suffix (nd-...-i / n-...-i)."
         ),
     },
     {
@@ -146,8 +143,7 @@ PREDICATES: list[dict] = [
         "query": "Compute ss_agree_ok ({sentence}).",
         "feedback": (
             "Agreement error: subject '{subject}' is {subj_person}/{subj_number} "
-            "but verb '{verb}' has a {verb_person}/{verb_number} prefix. "
-            "Expected prefix: {expected_prefix}."
+            "but verb '{verb}' has a {verb_person}/{verb_number} prefix."
         ),
     },
     {
@@ -155,7 +151,7 @@ PREDICATES: list[dict] = [
         "query": "Compute ss_transitivity_ok ({sentence}).",
         "feedback": (
             "Transitivity error: '{verb}' is {transitivity} but the sentence "
-            "{'has' if transitivity == 'Intransitive' else 'is missing'} a direct object."
+            "object structure doesn't match."
         ),
     },
     {
@@ -192,7 +188,6 @@ PREDICATES: list[dict] = [
     },
 ]
 
-# Fast lookup
 _PRED_BY_NAME = {p["name"]: p for p in PREDICATES}
 
 
@@ -203,10 +198,10 @@ _PRED_BY_NAME = {p["name"]: p for p in PREDICATES}
 @dataclass
 class VerifierResult:
     wf:               bool
-    failed_predicate: Optional[str]   # first failing predicate name, or None
-    feedback:         Optional[str]   # natural-language correction message
-    coq_term:         str             # the full Compute term that was checked
-    raw_output:       str             # raw coqc stdout for debugging
+    failed_predicate: Optional[str]
+    feedback:         Optional[str]
+    coq_term:         str
+    raw_output:       str
 
 
 class Verifier:
@@ -218,10 +213,6 @@ class Verifier:
         return COQ_PREAMBLE.format(lib_dir=str(self.lib_dir))
 
     def _run_coq(self, coq_source: str) -> tuple[bool, str]:
-        """
-        Write coq_source to a temp file, run coqc, return (success, stdout).
-        success = True if coqc exited 0 and produced output.
-        """
         with tempfile.NamedTemporaryFile(
             suffix=".v", mode="w", encoding="utf-8", delete=False
         ) as f:
@@ -243,24 +234,19 @@ class Verifier:
             Path(tmp).unlink(missing_ok=True)
 
     def _parse_bool(self, raw: str) -> Optional[bool]:
-        """Extract the bool from a `= true : bool` or `= false : bool` line."""
         m = re.search(r"=\s*(true|false)\s*:", raw)
         if m:
             return m.group(1) == "true"
         return None
 
     def verify(self, sentence: Sentence) -> VerifierResult:
-        """
-        Check wf_sentence for the given Sentence AST.
-        If false, diagnose which predicate failed and generate feedback.
-        """
+        """Check wf_sentence for a single Sentence."""
         term = sentence.to_coq_compute()
         source = self._preamble() + "\n" + term + "\n"
         _, raw = self._run_coq(source)
         wf = self._parse_bool(raw)
 
         if wf is None:
-            # coqc error (type error in term, missing .vo, etc.)
             return VerifierResult(
                 wf=False,
                 failed_predicate="COQ_ERROR",
@@ -278,8 +264,7 @@ class Verifier:
                 raw_output=raw,
             )
 
-        # wf = false — diagnose
-        failed, feedback = self._diagnose(sentence)
+        _, failed, feedback = self._diagnose(sentence)
         return VerifierResult(
             wf=False,
             failed_predicate=failed,
@@ -288,15 +273,72 @@ class Verifier:
             raw_output=raw,
         )
 
-    def _diagnose(self, sentence: Sentence) -> tuple[Optional[str], Optional[str]]:
+    def verify_candidates(self, candidates: list[Sentence]) -> VerifierResult:
         """
-        Run each predicate query in order. Return the first that evaluates
-        to false, with a natural-language feedback message.
+        Try each candidate Sentence. Accept on first true.
+        If all false, return diagnosis from the candidate that got
+        furthest through the predicate chain.
+        """
+        if not candidates:
+            return VerifierResult(
+                wf=False,
+                failed_predicate=None,
+                feedback="No candidate parses to verify.",
+                coq_term="",
+                raw_output="",
+            )
+
+        best_index = -1
+        best_result: Optional[VerifierResult] = None
+
+        for sentence in candidates:
+            term = sentence.to_coq_compute()
+            source = self._preamble() + "\n" + term + "\n"
+            _, raw = self._run_coq(source)
+            wf = self._parse_bool(raw)
+
+            if wf is True:
+                return VerifierResult(
+                    wf=True,
+                    failed_predicate=None,
+                    feedback=None,
+                    coq_term=term,
+                    raw_output=raw,
+                )
+
+            if wf is None:
+                if best_result is None:
+                    best_result = VerifierResult(
+                        wf=False,
+                        failed_predicate="COQ_ERROR",
+                        feedback=f"Coq type-checking failed. Raw output:\n{raw[:500]}",
+                        coq_term=term,
+                        raw_output=raw,
+                    )
+                continue
+
+            idx, failed, feedback = self._diagnose(sentence)
+            if idx > best_index:
+                best_index = idx
+                best_result = VerifierResult(
+                    wf=False,
+                    failed_predicate=failed,
+                    feedback=feedback,
+                    coq_term=term,
+                    raw_output=raw,
+                )
+
+        return best_result
+
+    def _diagnose(self, sentence: Sentence) -> tuple[int, Optional[str], Optional[str]]:
+        """
+        Run each predicate in order. Return (index_of_failure, name, feedback).
+        Index lets callers compare which candidate got furthest.
         """
         cv_coq = sentence.verb.to_coq()
         sent_coq = sentence.to_coq()
 
-        for pred in PREDICATES:
+        for i, pred in enumerate(PREDICATES):
             query_template = pred["query"]
             if "{cv}" in query_template:
                 query = query_template.format(cv=cv_coq)
@@ -309,20 +351,15 @@ class Verifier:
 
             if result is False:
                 feedback = self._build_feedback(pred["name"], pred["feedback"], sentence)
-                return pred["name"], feedback
+                return i, pred["name"], feedback
 
-        return None, "Well-formedness check failed but no specific predicate identified."
+        return len(PREDICATES), None, None
 
     def _build_feedback(
         self, pred_name: str, template: str, sentence: Sentence
     ) -> str:
-        """
-        Fill feedback template with surface-form details from the AST.
-        Keeps it readable for the LLM correction prompt.
-        """
         cv = sentence.verb
 
-        # Verb surface (best-effort — render prefix + root for regular verbs)
         from .types import VF_Regular, VF_Irregular
         if isinstance(cv.verb_form, VF_Regular):
             verb_str = cv.verb_form.verb.v_root
@@ -339,8 +376,6 @@ class Verifier:
         polarity = cv.polarity.value
         np_str = sentence.direct_obj.surface if sentence.direct_obj else ""
 
-        # Simple string interpolation — templates use Python f-string-like syntax
-        # but are plain strings, so we use .format() with all possible keys.
         try:
             return template.format(
                 verb=verb_str,
@@ -352,7 +387,6 @@ class Verifier:
                 polarity=polarity,
                 transitivity=transitivity,
                 np=np_str,
-                expected_prefix="[see prefix table]",
             )
         except (KeyError, IndexError):
             return f"Well-formedness predicate '{pred_name}' failed for '{verb_str}'."

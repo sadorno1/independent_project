@@ -1,4 +1,4 @@
-DIGEST f74834ce52840f929b8e4ff403ba0d00
+DIGEST a8416676c0a022085c2fee6f726e95e5
 FNumbers
 R27:32 Stdlib.Strings.String <> <> lib
 ind 316:320 <> Digit
@@ -333,79 +333,3 @@ R5639:5642 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
 R5621:5636 Numbers <> render_sub1000su def
 R5649:5652 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
 R5653:5668 Numbers <> render_sub1000su def
-def 5889:5898 <> ex_mokoipa
-R5911:5916 Numbers <> Sub100 ind
-R5924:5934 Numbers <> S100_MultPa constr
-R5936:5942 Numbers <> MokõiM constr
-def 5953:5968 <> ex_mokoipa_petei
-R5975:5980 Numbers <> Sub100 ind
-R5988:6003 Numbers <> S100_MultPaDigit constr
-R6005:6011 Numbers <> MokõiM constr
-R6013:6018 Numbers <> Peteĩ constr
-def 6029:6038 <> ex_sa_popa
-R6051:6057 Numbers <> Sub1000 ind
-R6064:6075 Numbers <> S1000_SaTail constr
-R6078:6088 Numbers <> S100_MultPa constr
-R6090:6092 Numbers <> PoM constr
-def 6104:6112 <> ex_mokisa
-R6126:6132 Numbers <> Sub1000 ind
-R6139:6150 Numbers <> S1000_MultSa constr
-R6152:6158 Numbers <> MokõiM constr
-def 6169:6182 <> ex_mokisa_popa
-R6191:6197 Numbers <> Sub1000 ind
-R6204:6219 Numbers <> S1000_MultSaTail constr
-R6221:6227 Numbers <> MokõiM constr
-R6230:6240 Numbers <> S100_MultPa constr
-R6242:6244 Numbers <> PoM constr
-def 6256:6263 <> ex_pa_su
-R6278:6286 Numbers <> Sub1000Su ind
-R6291:6304 Numbers <> S1000Su_MultSu constr
-R6307:6317 Numbers <> S1000_Small constr
-R6319:6325 Numbers <> S100_Pa constr
-def 6337:6347 <> ex_patei_su
-R6359:6367 Numbers <> Sub1000Su ind
-R6372:6385 Numbers <> S1000Su_MultSu constr
-R6388:6398 Numbers <> S1000_Small constr
-R6401:6409 Numbers <> S100_Teen constr
-R6411:6416 Numbers <> Pateĩ constr
-def 6429:6436 <> ex_sa_su
-R6451:6459 Numbers <> Sub1000Su ind
-R6464:6477 Numbers <> S1000Su_MultSu constr
-R6479:6486 Numbers <> S1000_Sa constr
-def 6497:6508 <> ex_mokisa_su
-R6519:6527 Numbers <> Sub1000Su ind
-R6532:6545 Numbers <> S1000Su_MultSu constr
-R6548:6559 Numbers <> S1000_MultSa constr
-R6561:6567 Numbers <> MokõiM constr
-def 6579:6595 <> ex_mokisa_popa_su
-R6601:6609 Numbers <> Sub1000Su ind
-R6614:6627 Numbers <> S1000Su_MultSu constr
-R6630:6645 Numbers <> S1000_MultSaTail constr
-R6647:6653 Numbers <> MokõiM constr
-R6656:6666 Numbers <> S100_MultPa constr
-R6668:6670 Numbers <> PoM constr
-def 6683:6695 <> ex_su_sa_popa
-R6705:6713 Numbers <> Sub1000Su ind
-R6718:6731 Numbers <> S1000Su_SuTail constr
-R6734:6745 Numbers <> S1000_SaTail constr
-R6748:6758 Numbers <> S100_MultPa constr
-R6760:6762 Numbers <> PoM constr
-def 6775:6783 <> ex_su_sua
-R6797:6806 Numbers <> GuaraniNum ind
-R6811:6820 Numbers <> GN_MultSua constr
-R6822:6831 Numbers <> S1000Su_Su constr
-def 6842:6853 <> ex_sa_su_sua
-R6864:6873 Numbers <> GuaraniNum ind
-R6878:6887 Numbers <> GN_MultSua constr
-R6890:6903 Numbers <> S1000Su_MultSu constr
-R6905:6912 Numbers <> S1000_Sa constr
-def 6924:6936 <> ex_porundysua
-R6946:6955 Numbers <> GuaraniNum ind
-R6960:6969 Numbers <> GN_MultSua constr
-R6972:6984 Numbers <> S1000Su_Small constr
-R6987:6997 Numbers <> S1000_Small constr
-R7000:7009 Numbers <> S100_Digit constr
-R7011:7017 Numbers <> Porundy constr
-def 7037:7049 <> wrong_peteisa
-R7053:7059 Numbers <> Sub1000 ind
-R7066:7077 Numbers <> S1000_MultSa constr

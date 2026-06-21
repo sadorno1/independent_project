@@ -66,26 +66,15 @@ Definition poss_context_of_marker (pm : poss_marker) : poss_context :=
 (*  §3.1                                                        *)
 (* ============================================================ *)
 
-(* §3.1.2: Gender marking. Most nouns are GendNone.
-   Fem = kuña modifier; Masc = kuimba'e modifier. *)
-Inductive noun_gender : Type :=
-  | GendNone
-  | GendFem
-  | GendMasc.
 
 Record noun : Type := mkNoun {
   n_root       : string;
   n_orality    : orality;
   n_ending     : word_ending;
   n_root_class : root_class;
-  n_gender     : noun_gender;  (* §3.1.2 *)
   n_human      : bool           (* §5.1: [+human] -> =pe/=me *)
 }.
 
-(* Backward-compat constructor for non-human genderless nouns *)
-Definition mkNoun' (r : string) (o : orality) (e : word_ending)
-                   (rc : root_class) : noun :=
-  mkNoun r o e rc GendNone false.
 
 Definition noun_surface (n : noun) (ctx : poss_context) : string :=
   root_prefix (n_root_class n) ctx ++ n_root n.
@@ -425,7 +414,7 @@ Fixpoint is_noun_headed (x : guarani_np) : bool :=
   | _ => false
   end.
 
-Fixpoint has_suffix (x : guarani_np) : bool :=
+Definition has_suffix (x : guarani_np) : bool :=
   match x with
   | NP_Suf _ _    => true
   | NP_Suf2 _ _ _ => true

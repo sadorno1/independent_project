@@ -36,6 +36,33 @@ class Person(Enum):
         return self.value
 
 
+class WordEnding(Enum):
+    EndAEO = "EndAEO"
+    EndIUY = "EndIUY"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+def word_ending_of(root: str) -> WordEnding:
+    if not root:
+        return WordEnding.EndAEO
+    return WordEnding.EndIUY if root[-1] in "iuyĩũỹ" else WordEnding.EndAEO
+
+
+@dataclass
+class Noun:
+    n_root:    str
+    n_orality: Orality
+    n_ending:  WordEnding
+    n_human:   bool = False
+
+    def to_coq(self) -> str:
+        return (
+            f"(mkNoun \"{self.n_root}\" {self.n_orality.to_coq()} "
+            f"{self.n_ending.to_coq()} {'true' if self.n_human else 'false'})"
+        )
+
 class Number(Enum):
     Singular = "Singular"
     Plural   = "Plural"
@@ -51,6 +78,52 @@ class Inclusivity(Enum):
     def to_coq(self) -> str:
         return self.value
 
+class SubjPronoun(Enum):
+    Subj1SG      = "Subj1SG"
+    Subj2SG      = "Subj2SG"
+    Subj3SG      = "Subj3SG"
+    Subj1PL_INCL = "Subj1PL_INCL"
+    Subj1PL_EXCL = "Subj1PL_EXCL"
+    Subj2PL      = "Subj2PL"
+    Subj3PL      = "Subj3PL"
+
+    def to_coq(self) -> str:
+        return self.value
+
+
+_SUBJ_PRONOUN_SURFACE: dict[SubjPronoun, str] = {
+    SubjPronoun.Subj1SG:      "che",
+    SubjPronoun.Subj2SG:      "nde",
+    SubjPronoun.Subj3SG:      "ha'e",
+    SubjPronoun.Subj1PL_INCL: "ñande",
+    SubjPronoun.Subj1PL_EXCL: "ore",
+    SubjPronoun.Subj2PL:      "peẽ",
+    SubjPronoun.Subj3PL:      "ha'ekuéra",
+}
+
+_SUBJ_PRONOUN_PERSON: dict[SubjPronoun, Person] = {
+    SubjPronoun.Subj1SG: Person.First,
+    SubjPronoun.Subj1PL_INCL: Person.First,
+    SubjPronoun.Subj1PL_EXCL: Person.First,
+    SubjPronoun.Subj2SG: Person.Second,
+    SubjPronoun.Subj2PL: Person.Second,
+    SubjPronoun.Subj3SG: Person.Third,
+    SubjPronoun.Subj3PL: Person.Third,
+}
+
+_SUBJ_PRONOUN_NUMBER: dict[SubjPronoun, Number] = {
+    SubjPronoun.Subj1SG: Number.Singular,
+    SubjPronoun.Subj2SG: Number.Singular,
+    SubjPronoun.Subj3SG: Number.Singular,
+    SubjPronoun.Subj1PL_INCL: Number.Plural,
+    SubjPronoun.Subj1PL_EXCL: Number.Plural,
+    SubjPronoun.Subj2PL: Number.Plural,
+    SubjPronoun.Subj3PL: Number.Plural,
+}
+
+SUBJ_PRONOUN_FORM_INDEX: dict[str, SubjPronoun] = {
+    surf: p for p, surf in _SUBJ_PRONOUN_SURFACE.items()
+}
 
 # ============================================================
 #  Verb classification (§1 Verb.v)
@@ -145,6 +218,7 @@ class Polarity(Enum):
 
     def to_coq(self) -> str:
         return self.value
+
 
 
 # ============================================================
@@ -474,24 +548,22 @@ class ConjugatedVerb:
 
 @dataclass
 class NP:
-    """
-    Lightweight NP for v1 of the analyzer.
-    Full NounPhrases.v structure is out of scope; we only need
-    person/number/human for wf_sentence's agreement predicates.
-    to_coq() produces a minimal well-typed Coq NP term.
-    """
-    surface:  str                       # raw surface string
+    surface:  str
     person:   Person       = Person.Third
     number:   Number       = Number.Singular
     human:    bool         = False
-    coq_term: Optional[str] = None      # override if you have the full term
+    pronoun:  Optional[SubjPronoun] = None
+    noun:     Optional[Noun]        = None
+    coq_term: Optional[str]         = None
 
     def to_coq(self) -> str:
         if self.coq_term:
             return self.coq_term
-        # Minimal placeholder — the analyzer fills this in v2
-        return f'(NP_Raw "{self.surface}")'
-
+        if self.pronoun is not None:
+            return f"(NP_PronSubj {self.pronoun.to_coq()})"
+        if self.noun is not None:
+            return f"(NP_Bare {self.noun.to_coq()})"
+        raise ValueError(f"NP for '{self.surface}' has no valid Coq representation yet")
 
 # ============================================================
 #  Sentence (mirror simple_sentence in Sentences.v)

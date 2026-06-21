@@ -78,8 +78,8 @@ Inductive chendal_3sg_form : Type :=
 
 (* ============================================================ *)
 (*  5. Voice                                                    *)
-(*  §6: Added Objective_Guero for the guero- variant (§17.2)  "gue-/re- verbal increments" and "(gue)ro- sociative        *)
-(*  causative voice" from the paradigm list.                    *)
+(*  §6: Added Objective_Guero for the guero- variant (§17.2)    *)
+(*  causative voice from the paradigm list.                    *)
 (*  Objective   = ro-  (first person singular agent in          *)
 (*                       sociative causative)                   *)
 (*  Obj_Guero   = guero- (variant of sociative causative with   *)
