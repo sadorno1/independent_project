@@ -27,7 +27,7 @@ from .types import (
     ConjugatedVerb, IRREG_FORM_INDEX, IRREG_PARADIGM, SUFFIX_STRIP_INDEX,
     SubjPronoun, SUBJ_PRONOUN_FORM_INDEX,
     _SUBJ_PRONOUN_PERSON, _SUBJ_PRONOUN_NUMBER,
-    Noun, NP, WordEnding, word_ending_of,
+    Noun, NP, WordEnding, RootClass, word_ending_of,
 )
 
 
@@ -124,9 +124,10 @@ def lookup(root: str) -> Optional[LexEntry]:
 
 @dataclass
 class NounLexEntry:
-    word:    str
-    orality: Orality
-    human:   bool
+    word:       str
+    orality:    Orality
+    root_class: RootClass
+    human:      bool
 
 
 _NOUN_LEXICON: dict[str, NounLexEntry] = {}
@@ -143,14 +144,21 @@ def load_noun_lexicon(enriched_csv: str | Path) -> None:
                 continue
             word = row["word"].strip()
             orality = Orality(row["orality"]) if row.get("orality") else Orality.Oral
+
+            rc_str = row.get("root_class", "")
+            try:
+                root_class = RootClass(rc_str) if rc_str else RootClass.Uniform
+            except ValueError:
+                root_class = RootClass.Uniform  # unrecognized value, default
+
             human = row.get("human", "").strip().lower() == "true"
 
             _NOUN_LEXICON[word] = NounLexEntry(
                 word=word,
                 orality=orality,
+                root_class=root_class,
                 human=human,
             )
-
 
 def lookup_noun(word: str) -> Optional[NounLexEntry]:
     return _NOUN_LEXICON.get(word)
@@ -360,6 +368,7 @@ def analyze_np(surface: str) -> list[NPParseResult]:
             n_root=entry.word,
             n_orality=entry.orality,
             n_ending=word_ending_of(entry.word),
+            n_root_class=entry.root_class,
             n_human=entry.human,
         )
         np = NP(

@@ -38,17 +38,16 @@ from .types import (
 #  Configuration
 # ============================================================
 
-DEFAULT_COQ_LIB_DIR = Path(os.environ.get("COQ_LIB_DIR", "./new"))
+DEFAULT_COQ_LIB_DIR = Path(os.environ.get("COQ_LIB_DIR", "./rocq"))
 
 COQ_PREAMBLE = """\
 From Stdlib Require Import String List Bool.
 Import ListNotations.
 Open Scope string_scope.
-Add LoadPath "{lib_dir}" as GuaraniGrammar.
-Require Import GuaraniGrammar.Syntax.
-Require Import GuaraniGrammar.noun_phrases.
-Require Import GuaraniGrammar.verb.
-Require Import GuaraniGrammar.sentence.
+Require Import Syntax.
+Require Import noun_phrases.
+Require Import verb.
+Require Import sentence.
 """
 
 
@@ -210,7 +209,8 @@ class Verifier:
         self.timeout = timeout
 
     def _preamble(self) -> str:
-        return COQ_PREAMBLE.format(lib_dir=str(self.lib_dir))
+        lib_dir_str = str(self.lib_dir).replace("\\", "/")
+        return COQ_PREAMBLE.format(lib_dir=lib_dir_str)
 
     def _run_coq(self, coq_source: str) -> tuple[bool, str]:
         with tempfile.NamedTemporaryFile(
@@ -220,7 +220,7 @@ class Verifier:
             tmp = f.name
         try:
             result = subprocess.run(
-                ["coqc", tmp],
+                ["coqc", "-R", str(self.lib_dir), "", tmp],
                 capture_output=True,
                 text=True,
                 timeout=self.timeout,

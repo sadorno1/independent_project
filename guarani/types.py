@@ -43,6 +43,16 @@ class WordEnding(Enum):
     def to_coq(self) -> str:
         return self.value
 
+class RootClass(Enum):
+    Uniform    = "Uniform"
+    Triform    = "Triform"
+    TriformNoT = "TriformNoT"
+    Biform     = "Biform"
+    Quadriform = "Quadriform"
+
+    def to_coq(self) -> str:
+        return self.value
+
 
 def word_ending_of(root: str) -> WordEnding:
     if not root:
@@ -52,16 +62,19 @@ def word_ending_of(root: str) -> WordEnding:
 
 @dataclass
 class Noun:
-    n_root:    str
-    n_orality: Orality
-    n_ending:  WordEnding
-    n_human:   bool = False
+    n_root:       str
+    n_orality:    Orality
+    n_ending:     WordEnding
+    n_root_class: RootClass = RootClass.Uniform
+    n_human:      bool      = False
 
     def to_coq(self) -> str:
         return (
             f"(mkNoun \"{self.n_root}\" {self.n_orality.to_coq()} "
-            f"{self.n_ending.to_coq()} {'true' if self.n_human else 'false'})"
+            f"{self.n_ending.to_coq()} {self.n_root_class.to_coq()} "
+            f"{'true' if self.n_human else 'false'})"
         )
+
 
 class Number(Enum):
     Singular = "Singular"
