@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import csv
-import json
 import re
 import unicodedata
 from pathlib import Path
@@ -12,11 +11,10 @@ import pdfplumber
 # =========================
 # CONFIG
 # =========================
-PDF_PATH = "dictionary_with_types.pdf"
+PDF_PATH = "references/dictionary_with_types.pdf"
 START_PAGE = 1
 END_PAGE = None
 
-OUT_JSON = "word_types.json"
 OUT_CSV = "word_types.csv"
 
 MUST_HAVE = ["aipo", "achegety", "ãga", "aguyje"]
@@ -28,7 +26,7 @@ MUST_HAVE = ["aipo", "achegety", "ãga", "aguyje"]
 KNOWN_TAGS = {
     # core POS-ish
     "s.", "adj.", "adv.", "conj.", "pron.", "interj.", "voc.", "exp.", "h.",
-    "neol.", "p. n.", "t.",
+    "neol.", "p. n.", "t.", "bif."
 
     # verbs
     "v.", "v. pr.", "v. atr.", "v. air.",
@@ -295,8 +293,6 @@ def extract_types_from_entry_body(body: str) -> List[str]:
 # =========================
 # OUTPUT
 # =========================
-def save_json(data: List[Dict[str, List[str]]], path: str) -> None:
-    Path(path).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 def save_csv(data: List[Dict[str, List[str]]], path: str) -> None:
     with open(path, "w", encoding="utf-8", newline="") as f:
@@ -330,10 +326,8 @@ if __name__ == "__main__":
         if types:
             parsed.append({"word": e["word"], "types": types})
 
-    save_json(parsed, OUT_JSON)
     save_csv(parsed, OUT_CSV)
 
     print(f"Parsed entries: {len(parsed)}")
-    print(f"Wrote {OUT_JSON}")
     print(f"Wrote {OUT_CSV}")
     debug_check(parsed, MUST_HAVE)

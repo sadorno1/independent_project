@@ -21,7 +21,6 @@ aguĩgua,adj.
 águio,adv.
 aguive,adv.
 aguyje,exp.
-aha,v.
 ahẽ,adj.|s.
 ãho,s.|v. atr.
 ahoja,s.
@@ -59,10 +58,10 @@ akãndu,s.
 akãngao,s.
 akãngata,s.
 akãngatu,s.
-akãnga'u,s.|v.
+akãnga'u,s.
 akãngyta,s.
 akãnundu,adj.|s.
-akã'o,s.|v.
+akã'o,s.
 akãperõ,adj.
 akãpicha'ĩ,s.
 akãporã,adj.|s.
@@ -179,7 +178,6 @@ apĩ,adj.
 apicha'ĩ,adj.
 apiku'i,s.
 apiru'a,s.
-apo,v.
 apoha,s.
 apohára,s.
 apohare,s.
@@ -403,18 +401,14 @@ churi,adj.
 churugue,s.
 chyryry,adj.|v. pr.
 de,s.
-'e,v.
-'ẽ,v.
 eha,adj.|exp.
 eichu,s.
 eira,s.
 eíra,s.
 eiraity,s.
 eirete,s.
-eju,v.
 epyta,exp.
 erado,adj.
-ere,v.
 eta,suf. a. n.
 ete,suf. a. n.
 real,suf. a. v.
@@ -462,8 +456,8 @@ guejyha,s.
 guenda,s.
 gueraha,v. pr.
 guereko,v. pr.
-guerohory,s.|v.
-guerombyasy,s.|v.
+guerohory,s.
+guerombyasy,s.
 guerosapukái,v. pr.
 guerova,v. pr.
 guerovia,v. pr.
@@ -478,7 +472,7 @@ guio,p. n.
 guive,p. n.
 guy,s.
 guyguy,adv.|v. pr.
-guyhai,neol.|v.|adv.
+guyhai,neol.|adv.
 guyra,s.
 guyrajetapa,s.
 guyraju,s.
@@ -492,21 +486,20 @@ guyryry,s.
 guy'u,v. air.
 gy,suf. a. n.
 ha,s.
-tanda,v.|conj.
-ha'a,v.
+tanda,conj.
 ha'ã,t.|s.|v. pr.
 ha'ãha,t.|s.
-ha'ãmba,t.|v.
-ha'anga,t.|v.
+ha'ãmba,t.
+ha'anga,t.
 ha'angahai,neol.|t.|s.
 ha'ãra,s.
 ha'ãrã'ỹ,t.|adj.
-ha'arõ,t.|v.
+ha'arõ,t.
 ha'e,pron.
 ha'éicha,adv.
 ha'entese,s.
 ha'eño,adj.
-ha'ete,pron.|adv.|v.
+ha'ete,pron.|adv.
 ha'etegua,adj.
 ha'eteícha,adv.
 ha'etépe,adv.
@@ -516,7 +509,7 @@ capaz,s.
 ha'eve'ỹ,adj.|s.
 hagẽ,t.|adj.
 hague,t.|adj.|s.
-hague'o,t.|v.
+hague'o,t.
 haguyno,t.|adj.|s.
 haguyrõ,t.|adj.
 hai,s.|v. pr.
@@ -540,12 +533,12 @@ haipyre,neol.|adj.
 haipyvo,neol.|s.
 haysyry,neol.
 haitĩ,neol.|s.
-haitypo,t.|v.
+haitypo,t.
 hajy,t.|s.
 hajygue,t.|adj.
 hakã,t.|s.
-hakãkytĩ,t.|v.
-haka'o,t.|v.
+hakãkytĩ,t.
+haka'o,t.
 hakate'ỹ,t.|adj.
 háke,interj.
 haku,adj.
@@ -554,12 +547,12 @@ hakuchi,t.|adj.
 hauvy,t.|adj.
 hakykuerigua,t.|adj.
 ha'o,t.|adj.
-hapejoko,t.|v.
-hapera'arõ,t.|v.
-hapereka,t.|v.
+hapejoko,t.
+hapera'arõ,t.
+hapereka,t.
 hapi'u,v. pr.
-hapo'o,t.|v.
-hapy,t.|v.
+hapo'o,t.
+hapy,t.
 hapykuerigua,t.|adj.
 hapypyre,t.|adj.
 hara,v. pr.
@@ -570,7 +563,7 @@ harúva,adj.
 hary,v. pr.
 harypyre,adj.
 haryvo,v. pr.
-hasa,t.|v.
+hasa,t.
 hasaha,t.|s.
 hasaha'i,t.|s.
 hasahára,t.|s.
@@ -579,79 +572,76 @@ hasẽ,v. atr.
 háse,h.|s.
 hasy,t.|adj.
 hasykatúva,t.|adj.
-hasymombia,t.|neol.|v.
+hasymombia,t.|neol.
 hasy'ỹ,t.|adj.|s.
 hatã,t.|adj.|adv.
 hatãkue,t.|s.
-hatapyña,t.|v.
+hatapyña,t.
 hatapyñaha,t.|s.
-hatatĩ,t.|v.
+hatatĩ,t.
 hatã'ỹva,t.|adj.
 hatĩ,t.|adj.
-hati'õ,t.|v.
+hati'õ,t.
 hatĩpẽva,t.
 hatĩva,t.|adj.
-ha'u,v.
 ha'uvõ,t.|s.|v. pr.
 havara,adj.
 havẽ,t.|adj.
 havere,t.|s.|v. pr.
 havía,s.
 haviju,t.|adj.
-havira,t.|v.
+havira,t.
 haviru,t.|adj.
 havi'u,t.|s.|v. pr.
 havõ,h.|s.
 havyka,v. pr.
-hayhu,t.|v.
+hayhu,t.
 hayhuha,t.|s.
 hayhupy,t.|s.
 hayhupyre,t.|adj.
-hayhuve,t.|v.
-hayhu'ỹ,t.|v.
-ha'ỹijo,t.|v.
-ha'ỹi'o,t.|v.|v. pr.
+hayhuve,t.
+hayhu'ỹ,t.
+ha'ỹijo,t.
+ha'ỹi'o,t.|v. pr.
 he,adj.
-hecha,t.|v.
-hechaga'u,t.|v.
+hecha,t.
+hechaga'u,t.
 hechga'úva,t.|adj.
 hechahare,t.|s.
-hechakuaha,t.|v.
+hechakuaha,t.
 hechauaha'ỹ,t.|s.
 hechambyky,t.|adj.
 hechapy,t.|adj.
 hechapyrã,t.|adj.
 hechapyrãite,t.|adj.
 hechapyre,t.|adj.
-hecharamo,t.|v.
+hecharamo,t.
 hecharamomby,t.|adj.
-hecharei,t.|v.
-hechauka,t.|v.
-hechavy,t.|v.
+hecharei,t.
+hechauka,t.
+hechavy,t.
 hecha'ỹ,adj.
 heẽ,adv.
 he'ẽ,adj.
-he'i,v.
 heindy,t.|s.
-he'ise,v.
 he'iséva,s.
 he'iva,s.
-heja,t.|v.
+heja,t.
 hejapyra'ỹ,t.|adj.
-heka,t.|v.
+heka,t.
 hekoatã,t.|adj.
 hekojoja,t.|adj.
 hekokatu,t.|adj.
-hekombo'e,t.|v.
-hekombyai,t.|v.
-hekome'ẽ,t.|v.
+hekombo'e,t.
+hekombyai,t.
+hekome'ẽ,t.
 hekópe,t.|adv.
 hekopegua,t.|adj.
 hekopegua'ỹ,t.|adj.
 hekope'ỹ,t.|adj.
 incorrecto,adv.
 hekoporã,t.|adj.
-hekora'ã,t.|v.
+hekora'ã,t.
 hekorei,t.|adj.
 hekovai,t.|adj.
 hekovia,t.|s.
@@ -662,35 +652,34 @@ hekue,s.
 hembe'yva,t.|adj.
 hembiayhu,t.|adj.
 hembireko'ỹva,t.|adj.
-hembi'u'apo,t.|v.
-hembi'ume'ẽ,t.|v.
-hemby,t.|v.
-hemói,t.|v.
+hembi'u'apo,t.
+hembi'ume'ẽ,t.
+hemby,t.
+hemói,t.
 hendape'ỹ,t.|adv.
 hendave'ỹ,t.|adj.
 henda'ỹ,t.|adj.
 henda'ỹme,t.|adv.
-hendu,t.|v.
+hendu,t.
 henduha,t.|s.
 henduhára,t.|s.
 henduhare,t.|s.
-henduka,t.|v.
+henduka,t.
 hendupyrã,t.|adj.|s.
 hendupyre,t.|adj.
 hendypu,t.|adj.
-henói,t.|v.
+henói,t.
 henoypyre,t.|adj.
-henonde'a,t.|v.
+henonde'a,t.
 henyhẽ,t.|adj.
 henyhẽmba,t.|adj.
 henypy'ãvã,t.|adj.
-heñói,v.
 heñóiva,t.|adj.
 he'õ,t.|adj.
 hepy,t.|adj.
-hepyguejy,t.|v.
+hepyguejy,t.
 hepy'íva,t.|adj.
-hepyme'ẽ,t.|v.
+hepyme'ẽ,t.
 hepyme'ẽva,t.|s.
 héra,s.
 heraitépe,t.|adv.
@@ -704,23 +693,23 @@ herunguã,adj.|s.
 hesaguasu,t.|adj.
 hesãi,t.|adj.
 hesaite,t.|adj.
-hesaite'o,t.|v.
+hesaite'o,t.
 hesakã,t.|adj.
 hesakuaguyry,t.|adj.
 hesakuape,t.|adj.
-hesamo'ã,t.|v.
+hesamo'ã,t.
 hesangy,t.|adj.
-hesape,t.|v.
-hesape'a,t.|v.
-hesapirĩ,t.|v.
-hesarái,t.|v.
+hesape,t.
+hesape'a,t.
+hesapirĩ,t.
+hesarái,t.
 hesaraipyre,t.|adj.
 hesarai'ỹva,t.|adj.
-hesarea,t.|v.
+hesarea,t.
 hesareaha,t.|adj.
 hesavã,t.|adj.
 hesayva,t.|adj.
-hesy,t.|v.
+hesy,t.
 hesyha,t.|s.
 hesypyre,t.|adj.
 heta,t.|adj.|adv.
@@ -730,11 +719,10 @@ hetave,t.|adv.
 hete,t.|s.
 heteỹ,t.|adj.
 hetia'e,t.|adj.
-hetũ,t.|v.
+hetũ,t.
 hetyma,t.|s.
 he'ỹ,adj.
-he'ỹi,t.|v.
-hi'ã,v.
+he'ỹi,t.
 hi'aragua,adj.
 hi'are,adj.
 hi'ari,adv.
@@ -744,11 +732,11 @@ hikuái,pron.
 hína,adv.
 hi'upy,s.
 hi'yva,adj.
-ho,s.|v.
+ho,s.
 ho'ẽ,s.
-hogue'o,t.|v.
+hogue'o,t.
 hoja'o,v. pr.
-hoky'o,t.|v.
+hoky'o,t.
 hory,t.|adj.
 hory'ỹva,t.|adj.
 hosã,t.|adj.
@@ -758,10 +746,10 @@ hovaigua,t.|adj.
 hovaju,t.|adj.
 hovamokõi,t.|adj.
 hovana,s.
-hovapete,t.|v.
-hovapoi,t.|v.
+hovapete,t.
+hovapoi,t.
 hovapuku,t.|adj.
-hovasa,t.|v.
+hovasa,t.
 hovasapyre,t.|adj.
 hovasy,t.|adj.
 hovatavy,t.|adj.
@@ -772,17 +760,16 @@ hũ,adj.
 hua'ĩ,v. pr.
 hugua,t.|s.
 huguái,t.|s.
-huguaitĩ,t.|v.
-hugua'o,t.|v.
+huguaitĩ,t.
+hugua'o,t.
 huguy,t.|adj.
 huguypáva,t.|adj.
 hu'utĩ,s.
 humbiri,v. pr.
-hunga,v.|t.
 hũngy,adj.
-hupi,t.|v.
+hupi,t.
 hupiha,t.|s.
-hupyty,t.|v.
+hupyty,t.
 hupytypyrã,t.|s.
 hu'ũ,t.|adj.
 hu'y,s.
@@ -791,15 +778,14 @@ hy'a,s.
 hyakuã,t.|adj.|v. atr.
 hyakuãvu,t.|adj.
 hyakuã'ỹva,t.|adj.
-hyapu,t.|v.
-hyekuekytĩ,t.|v.
+hyapu,t.
+hyekuekytĩ,t.
 hyepy,t.|s.
 hyepypegua,t.|adj.
 hyguatã,t.|adj.
 hyguatã'ỹ,t.|adj.
 hyjúi,t.|adj.
-hykuavo,v.
-hykue'o,t.|v.
+hykue'o,t.
 hykuéva,t.|adj.
 hypa,t.|adj.
 hypa'ỹ,t.|adj.
@@ -807,13 +793,12 @@ hypy,t.|adj.
 hypy'ũ,t.|adj.
 hyru,t.|s.
 hyvi,adj.|s.|v. pr.
-a,v.
 'i,suf. a. n.
 icha,p. n.
 ichagua,p. n.
 ichupe,pron.
 iguypegua,adj.
-ikatu,v.|adv.
+ikatu,adv.
 ikatúne,adv.
 ikatupáva,adj.
 ikatúva,adj.
@@ -877,7 +862,6 @@ jaguarete,s.
 jaguarete'i,s.
 jaguaru,s.
 jaguary'e,s.
-jaha,v.
 jahapa,s.
 jahape,s.
 jahéi,s.|v. pr.
@@ -966,7 +950,6 @@ jatyka,v. pr.
 jatykaha,s.
 jatyko,v. pr.
 jatyta,s.
-ja'u,v.
 ja'upyrã,adj.
 ja'úva,adj.
 jave,adj.|s.
@@ -1096,7 +1079,7 @@ jekakue,adj.
 jeka'u,s.
 jeko,v. pr.
 jekoha,s.
-jekopyty,s.|v.
+jekopyty,s.
 jekuahapyre,adj.
 jekuahauka,s.
 jekuahave,v. pr.
@@ -1167,7 +1150,7 @@ jepuru'a,v. pr.
 jepuruypy,s.
 jepy,s.|v. pr.
 jepy'ajoko,v. pr.
-jepy'ajopy,adj.|v.
+jepy'ajopy,adj.
 jepy'amongeta,s.|v. pr.
 jepy'añopũ,v. pr.
 jepy'apy,adj.|s.|v. pr.
@@ -1193,7 +1176,7 @@ jerepyre,adj.
 jerére,adv.
 jerereko,s.|v. pr.
 jerekoha,s.
-jererohory,s.|v.
+jererohory,s.
 jererova,v. pr.
 jero,adj.
 erguido,v. pr.
@@ -1314,7 +1297,7 @@ jopi,s.|v. pr.
 jopoi,s.|v. pr.
 jopói,s.|v. pr.
 joporu,v. pr.
-jora,s.|v.
+jora,s.
 jorapyrã'ỹ,adj.
 joso,v. pr.
 josoha,s.
@@ -1323,7 +1306,7 @@ jovái,adj.|adv.|v. pr.
 oponerse,p. n.
 joyke'y,s.
 joyvy,adj.|s.
-ju,adj.|s.|v.
+ju,adj.|s.
 ju'ái,s.
 juaju,adj.|s.|v. pr.
 juaju'ỹ,s.
@@ -1414,7 +1397,7 @@ kaguai,s.|v. pr.
 kaguaka,s.
 kaguyjy,s.
 kái,adj.|s.|v. pr.
-ka'i,s.|v.
+ka'i,s.
 kaigue,adj.
 lento,s.
 ka'irãi,s.
@@ -1509,7 +1492,7 @@ kavure,s.
 kavure'i,adj.|s.
 ka'ygua,s.
 kay'u,v. pr.
-ke,s.|v.
+ke,s.
 pr,suf. a. v.
 kechẽ,adj.
 keha,s.
@@ -1573,7 +1556,7 @@ kokue,s.
 kokueguára,s.
 kokuehe,adv.
 koli,h.|adj.
-ko'o,s.|v.
+ko'o,s.
 ko'õi,v. atr.
 ko'õiha,s.
 ko'õ'ỹ,adj.
@@ -1600,13 +1583,12 @@ kotypy,s.
 kóva,pron. dem.
 kovi,s.
 ku,adj.
-a,v.
 kũ,s.
 kua,s.
 kuã,s.
 kũ'ã,s.
 kuãcha'ĩ,v. atr.
-kuaha,s.|v. air.|v.
+kuaha,s.|v. air.
 kuahaha,adj.
 kuahahápe,adv.
 kuaapavẽ,neol.|s.
@@ -1820,14 +1802,13 @@ mimi,adj.|adv.
 mimói,adj.
 mindu'u,v. pr.
 mínga,s.
-minga,v.
 mingáu,s.
 mini,adj.
 mitã,s.
 mitã'i,s.
 mitarã,s.
 mo,suf. a. v.
-mo'ã,v. pr.|v.
+mo'ã,v. pr.
 mo'ãha,s.
 mocha'ĩ,v. pr.
 mohe'ẽ,v. pr.
@@ -1865,7 +1846,7 @@ mongaru,v. pr.
 mongavaju,v. pr.
 mongele'e,v. pr.
 mongeta,s.
-mongora,h.|v.
+mongora,h.
 mongovia,v. pr.
 mongu'e,v. pr.
 monguera,v. pr.
@@ -2014,7 +1995,6 @@ narãhái,h.|s.
 ne,adj.|s.|pron.
 sing,v. atr.
 neg,suf. a. v.
-a,v.
 neaño,exp.
 neĩ,adv.|v. pr.
 néi,interj.
@@ -2024,7 +2004,6 @@ nemba'e,pron.
 nevu,adj.|s.|v. atr.
 niko,adv.
 nipo,adv.
-nohẽ,v.
 no'õ,s.|v. pr.
 notĩvai,adj.
 nundu,v. pr.
@@ -2049,7 +2028,6 @@ nte,s.
 ña'ẽmbe,s.
 ñaha'arõ'ỹre,adv.
 ñahatĩ,s.
-ñaimo'ã,v.
 ñai'ũ,s.
 ñakãity,s.|v. pr.
 ñakanina,s.
@@ -2183,7 +2161,7 @@ impresión,v. pr.
 ñekañyha,s.
 ñekarãi,s.
 ñeke'a,s.
-ñekoni,s.|v.
+ñekoni,s.
 ñeko'õi,s.
 ñekuã,s.|v. atr.
 ñekuave'ẽ,s.
@@ -2216,7 +2194,7 @@ proposición,v. pr.
 ñembohory,s.|v. pr.
 ñembohova'atã,v. pr.
 ñembohovái,s.
-ñembohovake,s.|v.
+ñembohovake,s.
 ñembohupa,v. pr.
 ñembohypy'a,v. pr.
 ñemboi,v. pr.
@@ -2258,7 +2236,7 @@ alargamiento,v. pr.
 treta,v. pr.
 ñembotove,s.
 veto,v. pr.
-ñembotuicha,s.|v.
+ñembotuicha,s.
 ñembotuja,adj.
 ñemboty,adj.|s.|v. pr.
 ñembotyvyro,s.
@@ -2275,7 +2253,7 @@ veto,v. pr.
 ñembuai,s.|v. pr.
 ñembuasy,s.
 ñembuaty,s.
-ñembuekovia,v. pr.|s.|v.
+ñembuekovia,v. pr.|s.
 ñembyaipyre,adj.
 ñembyai'ỹva,adj.
 ñembyaju,s.
@@ -2304,14 +2282,13 @@ transfiguración,v. pr.
 ñemoatã,v. pr.
 ñemoguahẽ,s.
 ñemohakamby,v. pr.
-ñemohatã,s.|v.
+ñemohatã,s.
 ñemohenda,s.
 clasificación,v. pr.
 ñemohesãi,s.
 ñemohesakã,s.
 ñemohu'ũ,s.
 ñemoĩ,s.
-levantamiento,v.
 ñemoirũ,v. pr.
 ñemoĩva,adj.
 ñemokunu'ũ,s.
@@ -2333,7 +2310,7 @@ levantamiento,v.
 ñemona,v. pr.
 ñemonandi,s.
 ñemonda,s.
-ñemonde,s.|v. pr.|v.
+ñemonde,s.|v. pr.
 ñemoneĩ,s.
 ñemongarai,s.
 ñemongaru,s.
@@ -2343,12 +2320,12 @@ levantamiento,v.
 ñemongu'i,s.
 ñemongy'a,s.
 ñemongyhyje,s.
-ñemono'õ,s.|v.
+ñemono'õ,s.
 ñemoña,s.|v. pr.
 ñemoñanga,s.
 ñemoñarã,s.
 ñemoñare,s.
-ñemoñe'ẽ,s.|v.
+ñemoñe'ẽ,s.
 ñemoperõ,s.
 ñemopirĩ,v. pr.
 ñemoporã,v. pr.
@@ -2359,13 +2336,12 @@ purificación,v. pr.
 ñemopu'ã,s.
 ñemopytã,v. pr.
 ñemopytũ,v. pr.
-ñemosarambi,s.|v.
+ñemosarambi,s.
 ñemosãso,s.
 ñemosẽ,s.|v. pr.
 ñemotenonde,s.
 prosperidad,v. pr.
 ñemotĩ,s.
-ñemotĩcha'ĩ,v.
 ñemotimbo,v. pr.
 ñemotĩñe'ẽ,s.
 ñemovã,v. pr.
@@ -2460,7 +2436,7 @@ desliz,v. pr.
 ñoñe'ẽme'ẽ,v. pr.
 ñoñyrõ,v. pr.
 ñopẽ,adj.|s.|v. pr.
-ñopehẽngue,s.|v.
+ñopehẽngue,s.
 ñopytyvõ,v. pr.
 ñorairõ,s.|v. pr.
 ñorairõ'ỹ,s.
@@ -2519,8 +2495,6 @@ ohechakuaháva,adj.
 ohechapukúva,s.
 ohecháva,s.
 ohendúva,s.
-oho,v.
-oĩ,v.
 oikereíva,adj.
 oikéva,adj.
 oikoporãva,adj.
@@ -2529,7 +2503,6 @@ oikóva,s.
 oikovéva,adj.
 oikuaháva,adj.
 oĩmbáva,adj.
-oime,v.
 oimeháicha,adv.
 oimehaichagua,adj.
 oimehápe,adv.
@@ -2558,7 +2531,6 @@ ojuehegui,adv.
 ojukáva,adj.
 ojupe,exp.
 ojupíva,adj.
-okái,v.
 okápe,adv.
 okára,adj.
 okay'úva,s.
@@ -2583,7 +2555,7 @@ oñondive,adv.
 oñoñe'ẽ,s.
 oñoñe'ẽme,adv.
 oñopehẽngue,adj.
-opa,s.|v.|adj.
+opa,s.|adj.
 opa'ãva,adj.
 opaha,s.
 opáicha,adv.
@@ -2612,7 +2584,6 @@ osẽva,adj.
 osõva,adj.
 otĩva,adj.
 otĩ'ỹva,adj.
-ova,v.
 ováva,adj.
 ovaváva,adj.
 ova'ỹ,adj.
@@ -2667,7 +2638,7 @@ pave'ỹ,adj.
 páy,s.|v. pr.
 pe,adj.|s.|p. n.
 pẽ,s.|v. pr.
-pe'a,v. air.|v.
+pe'a,v. air.
 pe'aha,neol.
 pe'apyre,adj.
 pegua,p. n.
@@ -2682,9 +2653,7 @@ peichagua,adj.
 peichaite,exp.
 peína,exp.|adv.
 péina,exp.
-peje,v.
 peju,s.|v. air.
-ventilar,v.
 pejuha,s.
 pekõi,adj.
 pekue,s.
@@ -2744,7 +2713,7 @@ pirarembi'u,s.
 pire,s.
 pireguy,adj.
 pire'o,s.|v. air.
-preporã,adj.|v.|s.
+preporã,adj.|s.
 piri,s.
 pirĩ,s.|v. atr.
 pirĩmba,adj.
@@ -2757,14 +2726,14 @@ piro'yha,s.
 piru,adj.|s.|v. atr.
 piru'ã,s.
 piruchĩ,adj.
-pita,h.|v.
+pita,h.
 pitarã,neol.
 pitikiri'ĩ,s.
 pitikiri'ĩgua,adj.
 pititi,adj.|s.
 pitogue,s.
 pituva,adj.|s.
-po,s.|adj.|v.
+po,s.|adj.
 po'a,s.
 po'apy,s.
 poapẽ,s.
@@ -2774,7 +2743,6 @@ po'areka,s.|v. air.
 poasu,adj.
 po'a'ỹ,adj.|s.
 pochy,adj.|s.|v. atr.
-po'ẽ,v.
 poepy,s.|v. air.
 poguasu,adj.
 poguasukue,s.
@@ -2845,7 +2813,7 @@ porundyha,neol.|adj.
 porundypa,neol.|adj.
 poruvai,v. air.
 posa,neol.|adj.
-pota,s.|v. air.|v.
+pota,s.|v. air.
 potaha,s.
 potapyre,adj.
 potave,v. air.
@@ -2854,7 +2822,7 @@ pota'ỹme,adv.
 poteĩ,neol.|adj.
 poteĩha,neol.|adj.
 poteĩpa,neol.|adj.
-poti,s.|v.
+poti,s.
 potĩ,adj.
 potingue,s.
 poty,s.|v. atr.
@@ -2874,7 +2842,7 @@ puapy,neol.|s.
 pujojáva,neol.|adj.
 puka,s.|v. pr.
 pukarã,adj.
-pukavy,s.|v.
+pukavy,s.
 puku,adj.|adv.
 pukukue,s.
 pumbyry,neol.|s.
@@ -2948,7 +2916,7 @@ pykúi,v. air.
 pynandi,adj.
 pyno,s.
 pype,adv.
-pype,p. n.|v.
+pype,p. n.
 pypegua,adj.
 pypo,adj.
 pypore,s.
@@ -2961,7 +2929,7 @@ pyruru,s.
 pysã,s.
 pysãpe,s.
 pyso,adj.|v. air.
-pysyrõ,s.|v.
+pysyrõ,s.
 pysyry,s.|v. atr.
 pysyrỹi,v. atr.
 pyta,s.
@@ -3045,18 +3013,18 @@ rasẽngy,t.|adj.|v. atr.
 raso,t.|s.|v. atr.
 rasy,t.|adj.|s.|v. atr.
 rata,t.|s.
-rataindy,t.|v.
+rataindy,t.
 ratĩ,t.|s.
 ratypykua,t.|s.
 ravẽ,t.|s.|v. atr.
 ravel,h.|s.
 ravichãi,t.|adj.
 raviju,t.|adj.
-ravira,t.|v.
+ravira,t.
 raviru,t.|adj.
 ra'y,adj.|s.
 ra'yanga,s.
-rayhu,t.|v.
+rayhu,t.
 rayhupára,t.|s.
 rayhu'ỹ,t.|adj.
 ra'ỹi,t.|s.
@@ -3066,7 +3034,6 @@ ra'ymi,t.|adj.
 ra'yranga,s.
 re,p. n.
 per,suf. a. n.
-re'a,v.
 rechapy,t.|s.
 rechaserei,s.
 rehegua,p. n.
@@ -3093,14 +3060,14 @@ rembiayhu,t.|s.
 rembipota,t.|s.
 rembireko,t.|s.
 rembi'u,t.|s.
-remby,t.|v.
+remby,t.
 remiandu,t.|s.
 remiarirõ,t.|s.
 remime'ẽ,t.|s.
 remitỹngue,t.|s.
 remói,t.|s.|v. atr.
 renda'ỹ,t.|adj.
-rendu,t.|v.
+rendu,t.
 rendy,t.|adj.
 renonde,t.|s.
 renondépe,t.
@@ -3109,7 +3076,7 @@ renypy'ã,t.
 reñói,t.|s.
 repy,t.|s.
 réra,t.|s.|v. atr.
-reraguapy,neol.|v.
+reraguapy,neol.
 rerakuãva,t.|adj.
 rerovaha,adj.
 reruha,adj.
@@ -3117,32 +3084,28 @@ reruka,v. pr.
 rerupyre,adj.
 resa,t.|s.
 resa'ãme,t.
-resaho,t.|v.
+resaho,t.
 resãi,t.|adj.|v. atr.
 resake,t.|adj.|s.
-resakuaguyry,t.|s.|v.
+resakuaguyry,t.|s.
 resapirĩ,t.|s.
-resarái,t.|v.
+resarái,t.
 resatĩ,t.|adj.
 resatũ,t.|adj.
 resavã,t.|adj.
 resavi,t.|adj.|v. atr.
 resa'yju,t.|adj.
-resaysyry,t.|v.
+resaysyry,t.
 reta,t.|adj.|s.
 rete,t.|s.
 retia'e,t.|adj.
 humor,s.
 retyma,t.|s.
-reyta,v.
 ri,p. n.|suf. a. v.
 rire,adv.|p. n.
 reiregua,adj.
 riremi,adv.
 ro,adj.|s.|pron.
-a,v.
-ro'a,v.
-ro'e,v.
 roguahẽ,v. pr.
 roguata,v. pr.
 rogue,t.|s.
@@ -3154,7 +3117,6 @@ rojahe'o,v. pr.
 rojere,v. pr.
 rojevy,v. pr.
 rojopói,v. pr.
-roju,v.
 rojy,v. pr.
 rokái,t.|s.|neol.
 rokañy,v. pr.
@@ -3165,10 +3127,9 @@ ropáy,v. pr.
 ropeju,t.|adj.
 ropeky,t.|s.
 ropepi,t.
-ropevy,t.|v.
+ropevy,t.
 ropipi,v. pr.
 ropojái,v. pr.
-ropu'ã,v.
 ropurahéi,v. pr.
 ropyta,t.|s.
 rora,s.
@@ -3270,7 +3231,7 @@ sapy'ava,adj.
 sapymi,v. pr.
 sapyso,s.|neol.
 sarã,s.
-saraki,adj.|v.
+saraki,adj.
 sarambi,adj.
 desordenado,s.|v. atr.
 sarambihápe,adv.
@@ -3493,7 +3454,6 @@ tave'ỹ,s.
 taviju,t.|s.
 tavusu,s.
 tavy,adj.
-tavy'o,v.
 ta'y,s.
 tayhu,t.|s.
 tayhupápe,t.|adv.
@@ -3522,7 +3482,6 @@ techavai,t.
 techa'ỹ,t.|s.
 tee,adj.
 tei,suf. a. v.
-te'i,v.
 te'ise,s.
 teju,s.
 tejujagua,s.
@@ -3733,7 +3692,7 @@ topea,t.|s.
 topeky,t.|s.
 topepi,t.|s.
 topepireko,t.|s.
-topeta,h.|v.
+topeta,h.
 tororõ,s.
 tory,t.|s.
 toryja,t.|s.
@@ -3762,7 +3721,7 @@ to'ysã,t.|s.
 tu'ã,t.|s.
 tu'ãmengua,t.|s.
 tuanga,s.
-tu'ã'o,t.|v.
+tu'ã'o,t.
 tugua,t.|s.
 tuguái,t.|s.
 tuguare,t.|s.
@@ -3854,8 +3813,6 @@ tyvyo,s.
 tyvyro,v. air.
 tyvyta,s.
 tyvyty,s.
-u,v.
-'u,v.
 uha,s.
 uhéi,s.
 u'i,s.
@@ -3920,7 +3877,7 @@ verapy,neol.|s.
 veve,s.|v. pr.
 vevúi,adj.|v. pr.|adv.
 vevuikue,s.
-vira,h.|v.
+vira,h.
 virãi,adj.
 viravíra,s.
 viru,h.|s.
@@ -3944,7 +3901,6 @@ vy'arenda,neol.
 vy'a'ỹva,s.
 vyrorei,s.
 vyso,v. pr.
-vyvy,v.
 vyvypy,s.
 y,s.
 'ỹ,p. n.
@@ -3961,7 +3917,7 @@ ygáu,s.
 ygua,s.
 yguasu,s.
 ygue,adj.|s.
-yguy,adj.|s.|v.
+yguy,adj.|s.
 yhasa,s.
 yjere,s.
 yjoapy,s.
@@ -4034,7 +3990,6 @@ ysyry,s.
 ysyryha,s.
 ysyrysẽ,s.
 yta,s.
-fundamento,v.
 ytaku,s.
 ytakugua,s.
 ytarã,adj.
@@ -4043,7 +3998,6 @@ ytororõ,s.
 ytu,s.
 yty,s.
 ytyapy,s.
-y'u,v.
 y'uhéi,adj.|s.|v. atr.
 y'upa,s.
 yvága,s.
