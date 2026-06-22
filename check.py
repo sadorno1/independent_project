@@ -1,10 +1,8 @@
 """
 check.py
 
-CLI to test analyzer + Coq verifier end-to-end.
-
-Usage:
-    python check.py "ha'e omano"
+CLI utility to test the parser analyzer and Coq formal verification engine 
+end-to-end on arbitrary Guaraní string sentences.
 """
 
 import sys
@@ -13,21 +11,14 @@ from guarani.analyzer import load_lexicon, load_noun_lexicon, analyze, analyze_n
 from guarani.types import Sentence, NP
 from guarani.verifier import Verifier
 
-LEXICON_CSV = "merged.csv"
+LEXICON_CSV = "data/merged.csv"
 load_lexicon(LEXICON_CSV)
 load_noun_lexicon(LEXICON_CSV)
 load_adj_lexicon(LEXICON_CSV)
 
 
 def build_candidate_sentences(tokens: list[str]) -> list[Sentence]:
-    """
-    SVO assembly with multi-token NP spans.
-    For each token position that parses as a verb, partition the
-    remaining tokens into a subject span (before) and object span
-    (after). Each span must be fully consumed by one or more NPs
-    (currently just one NP per span — multi-NP spans deferred).
-    Each non-verb token must be accounted for.
-    """
+    """Partitions sentence tokens around a verb index to generate SVO candidate structures."""
     candidates: list[Sentence] = []
 
     for verb_idx, tok in enumerate(tokens):
@@ -85,8 +76,7 @@ def main():
     verifier = Verifier()
     result = verifier.verify_candidates(candidates)
 
-    print()
-    print(f"Well-formed: {result.wf}")
+    print(f"\nWell-formed: {result.wf}")
     if result.failed_predicate:
         print(f"Failed predicate: {result.failed_predicate}")
     if result.feedback:

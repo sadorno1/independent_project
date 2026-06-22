@@ -90,9 +90,6 @@ Inductive sentence_type : Type :=
 Inductive interrog_particle : Type :=
   | IntP_Pa | IntP_Piko.
 
-Definition render_interrog_particle (ip : interrog_particle) : string :=
-  match ip with IntP_Pa => "pa" | IntP_Piko => "piko" end.
-
 (* ============================================================ *)
 (*  4. Simple verbal sentence                                   *)
 (*  ss_indir_obj is now option guarani_np, not option           *)
@@ -104,7 +101,7 @@ Record simple_sentence : Type := mkSentence {
   ss_subject   : option guarani_np;
   ss_verb      : conjugated_verb;
   ss_dir_obj   : option guarani_np;
-  ss_indir_obj : option guarani_np;   (* changed: was option obj_indirect *)
+  ss_indir_obj : option guarani_np;
   ss_postp_obj : option (guarani_np * postposition);
   ss_order     : word_order;
   ss_type      : sentence_type;
@@ -374,7 +371,7 @@ Definition adv_morpheme_ok (t : adv_clause_type) (m : string) : bool :=
 
 Record adv_clause : Type := mkAdvClause {
   ac_type   : adv_clause_type;
-  ac_subord : string    (* surface subordinating morpheme *)
+  ac_subord : string   
 }.
 
 Definition wf_adv_clause (ac : adv_clause) : bool :=
@@ -462,16 +459,7 @@ Definition wf_any_sentence (s : sentence) : bool :=
   end.
 
 (* ============================================================ *)
-(*  11. Decidable equality                                      *)
-(* ============================================================ *)
-
-Scheme Equality for word_order.
-Scheme Equality for sentence_type.
-Scheme Equality for interrog_particle.
-Scheme Equality for adv_clause_type.
-
-(* ============================================================ *)
-(*  12. Theorems                                                *)
+(*  11. Theorems                                                *)
 (* ============================================================ *)
 
 (* ---------- SA: subject-verb agreement §8.1 ---------- *)
@@ -590,7 +578,6 @@ Proof.
   intros. unfold ss_neg_concord_ok. simpl. rewrite H. reflexivity.
 Qed.
 
-(* SN3: negative IO also triggers neg-concord requirement. Source: Claude*)
 Theorem rule_SN3_neg_iobj_pos_bad : forall s v dobj wo ty ip h,
     cv_polarity v = Positive ->
     ss_neg_concord_ok
@@ -634,7 +621,6 @@ Qed.
 
 (* ---------- SP: human =pe/=me §5.1 ---------- *)
 
-(* Human NP with Post_Pe is fine *)
 Theorem rule_SP1_human_pe_ok :
     ss_human_pe_ok
       (mkSentence None
@@ -646,7 +632,6 @@ Theorem rule_SP1_human_pe_ok :
         WO_SVO ST_Declarative None false) = true.
 Proof. reflexivity. Qed.
 
-(* Human NP with wrong postposition is ill-formed *)
 Theorem rule_SP2_human_wrong_pp_bad :
     ss_human_pe_ok
       (mkSentence None
@@ -727,7 +712,6 @@ Theorem rule_AC12_causal_porque_ok :
     wf_adv_clause (mkAdvClause AC_Causal_Porque "porque") = true.
 Proof. reflexivity. Qed.
 
-(* Counterfactual: main verb needs va'erã-mo'ã *)
 Theorem rule_AC13_counterfactual_needs_main_marking : forall vf p n inc vc ev,
     wf_counterfactual_main
       (mkConjVerb vf p n inc Indicative Positive vc nil ev) = false.

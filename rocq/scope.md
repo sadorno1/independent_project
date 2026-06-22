@@ -7,148 +7,7 @@
 A mechanically verified Coq formalization of Paraguayan Guaraní morphology and syntax, used as a constraint-checking backend for LLM-generated Guaraní text. The verifier catches specific categories of morphological and syntactic errors, generates structured feedback, and feeds that back to the LLM in a correction loop. The evaluation compares LLM output quality before and after verification, rated by native Guaraní speakers.
 
 Target venue: ACL Findings or ComputEL (low-resource NLP workshop)
----
 
-## Part 1: Coq grammar files
-
-### Primitives.v — done
-
-Shared types and allomorphy functions used by every other file. Nothing to add here.
-
-### Numbers.v — done
-
-Numeral grammar up to millions. Nothing to add here.
-
-### NounPhrases.v — done
-
-Full NP grammar. The one thing still missing is `render_np`, which produces a surface string from a `guarani_np` term. This is needed for the verifier feedback loop (to show the corrected form, not just say what was wrong). Add this before moving on.
-
-Rendering rules:
-- `NP_Bare n` → `noun_surface n PossCtx_None`
-- `NP_Dem prox num n` → `dem_adj_form prox num ++ " " ++ noun_surface n PossCtx_None`
-- `NP_Poss pm n` → `poss_marker_form (n_orality n) pm ++ " " ++ noun_surface n PossCtx_FirstSecond`
-- `NP_Num gn n` → render numeral ++ " " ++ noun_surface
-- `NP_Suf np suf` → render_np np ++ render_nom_suffix suf (np_orality (np_meta_of np))`
-- `NP_PronSubj p` → `render_subj_pronoun p`
-- etc.
-
-### Verb.v — done (refactored)
-
-All verb morphology including the factored `wf_conjugated_verb` predicates and `render_verb` dispatch. Nothing to add before Sentences.v.
-
-### Sentences.v — next file
-
-This is the main remaining Coq work. Scope is intentionally limited to what's needed for the evaluation — see below.
-
----
-
-## Part 2: Sentences.v
-
-### Sentence types in scope
-
-Only verbal sentences. Non-verbal (equative, predicative, existential) are deferred — they're common but the morphological interest is mostly in verbal sentences, and 8 weeks is not enough time to do both well.
-
-```
-Inductive word_order : Type :=
-  | SVO | SOV | VSO | VOS | OSV | OVS.
-
-Inductive sentence_type : Type :=
-  | Declarative
-  | YesNoInterrog    (* adds =pa or =piko *)
-  | ContentInterrog  (* mba'e, máva, etc. in NP position *)
-  | Imperative
-  | Prohibitive.     (* ani + verb + -tei *)
-
-Record simple_sentence : Type := mkSentence {
-  ss_subject  : option guarani_np;   (* null subjects allowed *)
-  ss_verb     : conjugated_verb;
-  ss_object   : option guarani_np;   (* null objects allowed *)
-  ss_ind_obj  : option guarani_np;   (* ditransitive only *)
-  ss_postp    : option (guarani_np * postposition);  (* PostpComp only *)
-  ss_order    : word_order;
-  ss_type     : sentence_type;
-  ss_hikuai   : bool                 (* whether hikuái follows verb *)
-}.
-```
-
-### Grammar rules enforced by `wf_sentence`
-
-**Rule A: Subject-verb agreement (§8.1)**
-
-If a subject NP is present, the verb's person, number, and inclusivity must match `np_meta_of subject`. Null subjects are always ok — the verb carries person/number itself.
-
-Examples:
-- *Che aguata* ✓ — 1sg NP, 1sg prefix
-- *Che reho* ✗ — 1sg NP, 2sg prefix
-
-**Rule B: Transitivity matching (§4.1–4.4)**
-
-The arguments present must match the verb's declared transitivity.
-- `Intransitive` → no direct object, no indirect object
-- `Transitive` → direct object optional, no indirect object
-- `Ditransitive` → direct object required, indirect object required
-- `PostpComplement` → postpositional phrase required, no bare object
-
-**Rule C: Person hierarchy for explicit arguments (§4.2)**
-
-When both subject and object NPs are present in a transitive sentence, the verb prefix must follow 1 > 2 > 3. Checked via `trans_prefix_selection` from Verb.v.
-
-Examples:
-- *Ha'e che-nupã* ✓ — 3sg subject, 1sg object → inactive prefix
-- *Ha'e o-nupã che* ✗ — active o- when object outranks subject
-
-**Rule D: Double negation (§4.9, §3.5.3)**
-
-If any NP in the sentence uses a negative pronoun (checked via `is_negative_pron` and `NP_PronNeg`), the verb must have Negative polarity. This is Guaraní's negative concord — *mba'eve ndajapói* (I don't do anything) requires both the negative pronoun and the negative verb.
-
-**Rule E: Hikuái placement (§4.1.1)**
-
-3rd person plural pronoun *hikuái* must be postverbal. Encoded as: `ss_hikuai = true` requires `ss_order ∈ {VSO, VOS}` (or more precisely, the verb appears before any postverbal pronoun slot). Checked against word order.
-
-**Rule F: Sentence type / mood consistency**
-
-| Sentence type | Required mood |
-|--------------|--------------|
-| Declarative | Indicative |
-| YesNoInterrog | Indicative (=pa is a suffix, not a mood change) |
-| ContentInterrog | Indicative |
-| Imperative | Imperative |
-| Prohibitive | Prohibitive |
-
-**Rule G: Verb well-formedness**
-
-`wf_conjugated_verb cv = true` from Verb.v. This is just a delegation — Sentences.v inherits all 11 morphological constraints automatically.
-
-### What's NOT in scope for Sentences.v
-
-- Non-verbal sentences
-- Subordinate/complex clauses (you have `NP_Rel` and `NP_Comp` as NP-level placeholders, which is enough for the paper)
-- Noun incorporation
-- Information structure / topic-focus marking
-- Evidentiality
-- Full adverb placement
-
-### Theorems to prove in Sentences.v (~25)
-
-Five rule groups, roughly 5 theorems each:
-
-- Rule A: agreement holds for matching NPs; fails for mismatched; null subject always ok
-- Rule B: intransitive with object fails; transitive without object ok; ditransitive needs both
-- Rule C: hierarchy cases — 3rd subj + 1st obj needs inactive; 1st subj + 3rd obj needs active
-- Rule D: negative pronoun + positive verb fails; negative pronoun + negative verb ok
-- Rule E: hikuái + SVO fails; hikuái + VSO ok
-
----
-
-## Part 3: Dictionary.v
-
-A minimal lexicon so examples aren't all generic variables. Only what's needed to run the 50-prompt test suite.
-
-### Target size
-
-- 30 verbs (10 Areal, 10 Aireal, 5 Chendal, 5 relational roots)
-- 50 nouns (mix of Uniform, Triform, TriformNoT, Biform)
-- 10 adjectives
 
 ### Priority verbs to include
 
@@ -172,7 +31,7 @@ These come up directly in the test prompts:
 
 ---
 
-## Part 4: The verifier pipeline
+## The verifier pipeline
 
 ### Architecture
 
@@ -390,7 +249,7 @@ Target: 3–5 native Guaraní speakers. Paraguay has ~6 million speakers so find
 - Reach out through Universidad Nacional de Asunción linguistics department
 - Contact Ateneo de Lengua y Cultura Guaraní
 - Reddit/Facebook Guaraní language communities
-- Your own contacts in Paraguay
+- My own contacts in Paraguay
 
 What you need from them:
 1. Gold-standard translations for all 50 prompts (one speaker sufficient, others rate)
@@ -443,15 +302,13 @@ If grammaticality improvement is small: check whether LLMs are already getting t
 
 ## Timeline
 
-| Week | Work |
-|------|------|
-| 1 | Add `render_np` to NounPhrases.v. Write Sentences.v types and `wf_sentence`. |
-| 2 | Theorems for Sentences.v. Write Dictionary.v (30 verbs, 50 nouns). |
-| 3 | Python parser + coqc integration. Get one end-to-end example working. |
-| 4 | Build full verifier pipeline. Run on 50 prompts manually to check for bugs. |
-| 5 | Automated evaluation run: all 50 prompts × 2–3 LLMs × 2 conditions. |
-| 6 | Native speaker evaluation (send instrument, collect ratings). Fix parser bugs found in week 5. |
-| 7 | Analyze results. Write paper sections: system description, evaluation setup, results. |
-| 8 | Related work, discussion, limitations. Revise. Submit. |
+| Work |
+|------|
+| Thereoms |
+| Python parser + coqc integration. Get one end-to-end example working. |
+| Build full verifier pipeline. Run on 50 prompts manually to check for bugs. |
+| Automated evaluation run: all 50 prompts × 2–3 LLMs × 2 conditions. |
+| Native speaker evaluation (send instrument, collect ratings). Fix parser bugs found in week 5. |
+| Analyze results, Benchmarks. Write paper sections: system description, evaluation setup, results. |
+| Related work, discussion, limitations. Revise. Submit. |
 
-The parser in week 3–4 is the highest-risk item. If it's taking too long, scope it down: do morpheme segmentation only (verb parsing), skip full NP parsing, and limit the test suite to the prompts where the error is purely verbal morphology. That's still ~35 of the 50 prompts and covers the most interesting grammar.

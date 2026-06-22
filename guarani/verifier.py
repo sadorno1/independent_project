@@ -1,21 +1,13 @@
 """
 verifier.py
 
-Coq wf verifier + feedback generator.
+Coq well‑formedness verifier with diagnostic feedback.
 
-Given a Sentence AST (or a list of candidate Sentences):
-1. Renders each as a `Compute wf_sentence (...).` Coq term.
-2. Writes a temporary .v file that loads the compiled Guaraní spec.
-3. Runs coqc, parses the boolean output.
-4. If false: runs diagnostic queries to identify which wf predicate failed.
-5. Maps failed predicate → natural-language correction message.
-
-Multi-candidate mode: try each candidate. Accept on first true. If all
-false, return diagnosis from the candidate that got furthest through
-the predicate chain.
-
-Assumes Syntax.vo, noun_phrases.vo, verb.vo, sentence.vo are already
-compiled and live in COQ_LIB_DIR.
+Renders a Sentence AST as a `Compute wf_sentence (...).` term, runs coqc,
+parses the boolean result, and—if false—runs individual predicate queries
+to pinpoint the failure and generate a natural‑language correction message.
+Supports multi‑candidate fallback: accepts the first valid parse, otherwise
+returns the diagnosis from the candidate that progressed furthest.
 """
 
 from __future__ import annotations
@@ -28,15 +20,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
-from .types import (
-    Sentence, ConjugatedVerb, NP,
-    Person, Number, Polarity, Transitivity,
-)
+from .types import Sentence
 
-
-# ============================================================
-#  Configuration
-# ============================================================
 
 DEFAULT_COQ_LIB_DIR = Path(os.environ.get("COQ_LIB_DIR", "./rocq"))
 
@@ -50,11 +35,7 @@ Require Import verb.
 Require Import sentence.
 """
 
-
-# ============================================================
-#  Predicate registry
-# ============================================================
-
+# Predicates are checked in order; the first that returns `false` triggers feedback.
 PREDICATES: list[dict] = [
     {
         "name": "cv_structure_ok",
@@ -68,7 +49,7 @@ PREDICATES: list[dict] = [
         "name": "cv_neg_ok",
         "query": "Compute cv_neg_ok ({cv}).",
         "feedback": (
-            "Negation error: polarity is {polarity} but the verb '{verb}' is "
+            "Negation error: polarity is {polarity} but '{verb}' is "
             "missing or has an extra negation suffix (nd-...-i / n-...-i)."
         ),
     },
@@ -130,14 +111,6 @@ PREDICATES: list[dict] = [
         ),
     },
     {
-        "name": "cv_evidential_ok",
-        "query": "Compute cv_evidential_ok ({cv}).",
-        "feedback": (
-            "Evidential error: 'kuri' (direct evidence) requires Indicative mood. "
-            "'{verb}' uses kuri with a different mood."
-        ),
-    },
-    {
         "name": "ss_agree_ok",
         "query": "Compute ss_agree_ok ({sentence}).",
         "feedback": (
@@ -190,17 +163,13 @@ PREDICATES: list[dict] = [
 _PRED_BY_NAME = {p["name"]: p for p in PREDICATES}
 
 
-# ============================================================
-#  Verifier
-# ============================================================
-
 @dataclass
 class VerifierResult:
-    wf:               bool
+    wf: bool
     failed_predicate: Optional[str]
-    feedback:         Optional[str]
-    coq_term:         str
-    raw_output:       str
+    feedback: Optional[str]
+    coq_term: str
+    raw_output: str
 
 
 class Verifier:
@@ -240,7 +209,6 @@ class Verifier:
         return None
 
     def verify(self, sentence: Sentence) -> VerifierResult:
-        """Check wf_sentence for a single Sentence."""
         term = sentence.to_coq_compute()
         source = self._preamble() + "\n" + term + "\n"
         _, raw = self._run_coq(source)
@@ -274,11 +242,6 @@ class Verifier:
         )
 
     def verify_candidates(self, candidates: list[Sentence]) -> VerifierResult:
-        """
-        Try each candidate Sentence. Accept on first true.
-        If all false, return diagnosis from the candidate that got
-        furthest through the predicate chain.
-        """
         if not candidates:
             return VerifierResult(
                 wf=False,
@@ -331,10 +294,6 @@ class Verifier:
         return best_result
 
     def _diagnose(self, sentence: Sentence) -> tuple[int, Optional[str], Optional[str]]:
-        """
-        Run each predicate in order. Return (index_of_failure, name, feedback).
-        Index lets callers compare which candidate got furthest.
-        """
         cv_coq = sentence.verb.to_coq()
         sent_coq = sentence.to_coq()
 

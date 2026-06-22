@@ -1,13 +1,7 @@
 From Stdlib Require Import String.
 Open Scope string_scope.
 
-(* ============================================================ *)
-(*  Primitives.v                                                *)
-(*                                                              *)
-(*  Shared phonological and grammatical atoms used everywhere   *)
-(*  in the formalization. This file has no internal             *)
-(*  dependencies: only the standard library.                    *)
-(* ============================================================ *)
+(* Primitives.v: shared phonological/grammatical atoms; no internal deps. *)
 
 
 (* ============================================================ *)
@@ -130,31 +124,17 @@ Definition totalitative_suffix (o : orality) : string :=
   end.
 
 (* ============================================================ *)
-(*  5. Decidable equality                                       *)
+(*  5. Theorems                                                 *)
 (* ============================================================ *)
 
-Scheme Equality for orality.
-Scheme Equality for word_ending.
-Scheme Equality for person.
-Scheme Equality for number.
-Scheme Equality for inclusivity.
-Scheme Equality for poss_marker.
-
-(* ============================================================ *)
-(*  6. Theorems                                                 *)
-(* ============================================================ *)
-
-(* Oral and nasal adjectival plurals are distinct surface forms. *)
 Theorem plural_adj_distinct :
     plural_suffix_adj Oral <> plural_suffix_adj Nasal.
 Proof. simpl. discriminate. Qed.
 
-(* -ita and -eta are distinct. *)
 Theorem plural_noun_distinct :
     plural_suffix_noun EndAEO <> plural_suffix_noun EndIUY.
 Proof. simpl. discriminate. Qed.
 
-(* Every orality maps to one of the two adjectival plural forms. *)
 Theorem plural_adj_total : forall o,
     plural_suffix_adj o = "kuéra" \/ plural_suffix_adj o = "nguéra".
 Proof. intros o; destruct o; [left|right]; reflexivity. Qed.
@@ -163,12 +143,10 @@ Theorem plural_noun_total : forall e,
     plural_suffix_noun e = "ita" \/ plural_suffix_noun e = "eta".
 Proof. intros e; destruct e; [left|right]; reflexivity. Qed.
 
-(* nd- and n- are distinct. *)
 Theorem neg_prefix_distinct :
     neg_prefix Oral <> neg_prefix Nasal.
 Proof. simpl. discriminate. Qed.
 
-(* Poss1 (che) and Poss1Excl (ore) are invariant across orality. *)
 Theorem poss1_always_che : forall o,
     poss_marker_form o Poss1 = "che".
 Proof. intros o; destruct o; reflexivity. Qed.

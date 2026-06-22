@@ -1,4 +1,4 @@
-DIGEST a8416676c0a022085c2fee6f726e95e5
+DIGEST 9ce2dca1b9818fa3176c96ec342f5a37
 FNumbers
 R27:32 Stdlib.Strings.String <> <> lib
 ind 316:320 <> Digit
@@ -192,144 +192,143 @@ R3097:3104 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
 R3091:3096 Numbers <> GN_Sua constr
 R3105:3114 Numbers <> GN_SuaTail constr
 R3116:3116 Numbers <> s:44 var
-prf 3215:3226 <> is_one_petei
-R3301:3303 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R3234:3239 Numbers <> is_one def
-R3242:3249 Numbers <> GN_Small constr
-R3252:3264 Numbers <> S1000Su_Small constr
-R3267:3277 Numbers <> S1000_Small constr
-R3280:3289 Numbers <> S100_Digit constr
-R3291:3296 Numbers <> Peteĩ constr
-R3304:3307 Corelib.Init.Datatypes <> true constr
-prf 3379:3395 <> is_one_mult_false
-binder 3406:3406 <> m:45
-R3476:3478 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R3413:3418 Numbers <> is_one def
-R3421:3428 Numbers <> GN_Small constr
-R3431:3443 Numbers <> S1000Su_Small constr
-R3446:3456 Numbers <> S1000_Small constr
-R3459:3469 Numbers <> S100_MultPa constr
-R3471:3471 Numbers <> m:45 var
-R3479:3483 Corelib.Init.Datatypes <> false constr
-prf 3560:3575 <> is_one_sua_false
-R3592:3594 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R3579:3584 Numbers <> is_one def
-R3586:3591 Numbers <> GN_Sua constr
-R3595:3599 Corelib.Init.Datatypes <> false constr
-R3655:3660 Stdlib.Strings.String <> <> lib
-def 3700:3711 <> render_digit
-R3718:3722 Numbers <> Digit ind
-binder 3714:3714 <> d:46
-R3727:3732 Stdlib.Strings.String <> string ind
-R3745:3745 Numbers <> d:46 var
-R3756:3761 Numbers <> Peteĩ constr
-R3781:3786 Numbers <> Mokõi constr
-R3806:3812 Numbers <> Mbohapy constr
-R3831:3836 Numbers <> Irundy constr
-R3855:3856 Numbers <> Po constr
-R3875:3880 Numbers <> Poteĩ constr
-R3900:3905 Numbers <> Pokõi constr
-R3925:3929 Numbers <> Poapy constr
-R3948:3954 Numbers <> Porundy constr
-def 3988:3998 <> render_mult
-R4005:4008 Numbers <> Mult ind
-binder 4001:4001 <> m:48
-R4013:4018 Stdlib.Strings.String <> string ind
-R4025:4036 Numbers <> render_digit def
-R4039:4051 Numbers <> mult_to_digit def
-R4053:4053 Numbers <> m:48 var
-def 4069:4079 <> render_teen
-R4086:4089 Numbers <> Teen ind
-binder 4082:4082 <> t:49
-R4094:4099 Stdlib.Strings.String <> string ind
-R4112:4112 Numbers <> t:49 var
-R4123:4128 Numbers <> Pateĩ constr
-R4149:4154 Numbers <> Pakõi constr
-R4175:4180 Numbers <> Pa'apy constr
-R4200:4206 Numbers <> Parundy constr
-R4226:4229 Numbers <> Papo constr
-R4249:4256 Numbers <> Papoteĩ constr
-R4277:4284 Numbers <> Papokõi constr
-R4305:4311 Numbers <> Papoapy constr
-R4331:4339 Numbers <> Paporundy constr
-def 4375:4387 <> render_sub100
-R4394:4399 Numbers <> Sub100 ind
-binder 4390:4390 <> s:51
-R4404:4409 Stdlib.Strings.String <> string ind
-R4422:4422 Numbers <> s:51 var
-R4433:4442 Numbers <> S100_Digit constr
-R4457:4468 Numbers <> render_digit def
-R4476:4482 Numbers <> S100_Pa constr
-R4509:4517 Numbers <> S100_Teen constr
-R4533:4543 Numbers <> render_teen def
-R4551:4561 Numbers <> S100_MultPa constr
-R4588:4591 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R4575:4585 Numbers <> render_mult def
-R4601:4616 Numbers <> S100_MultPaDigit constr
-R4638:4641 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R4625:4635 Numbers <> render_mult def
-R4647:4650 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R4651:4662 Numbers <> render_digit def
-def 4685:4698 <> render_sub1000
-R4705:4711 Numbers <> Sub1000 ind
-binder 4701:4701 <> s:53
-R4716:4721 Stdlib.Strings.String <> string ind
-R4734:4734 Numbers <> s:53 var
-R4745:4755 Numbers <> S1000_Small constr
-R4769:4781 Numbers <> render_sub100 def
-R4783:4783 Numbers <> s:53 var
-R4789:4796 Numbers <> S1000_Sa constr
-R4822:4833 Numbers <> S1000_SaTail constr
-R4851:4854 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R4855:4867 Numbers <> render_sub100 def
-R4869:4869 Numbers <> s:53 var
-R4875:4886 Numbers <> S1000_MultSa constr
-R4912:4915 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R4899:4909 Numbers <> render_mult def
-R4925:4940 Numbers <> S1000_MultSaTail constr
-R4962:4965 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R4949:4959 Numbers <> render_mult def
-R4971:4974 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R4975:4987 Numbers <> render_sub100 def
-R4989:4989 Numbers <> s:53 var
-def 5010:5025 <> render_sub1000su
-R5032:5040 Numbers <> Sub1000Su ind
-binder 5028:5028 <> s:55
-R5045:5050 Stdlib.Strings.String <> string ind
-R5063:5063 Numbers <> s:55 var
-R5074:5086 Numbers <> S1000Su_Small constr
-R5100:5113 Numbers <> render_sub1000 def
-R5115:5115 Numbers <> s:55 var
-R5121:5130 Numbers <> S1000Su_Su constr
-R5156:5169 Numbers <> S1000Su_SuTail constr
-R5187:5190 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R5191:5204 Numbers <> render_sub1000 def
-R5206:5206 Numbers <> s:55 var
-R5212:5225 Numbers <> S1000Su_MultSu constr
-R5254:5257 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R5238:5251 Numbers <> render_sub1000 def
-R5267:5284 Numbers <> S1000Su_MultSuTail constr
-R5309:5312 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R5293:5306 Numbers <> render_sub1000 def
-R5318:5321 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R5322:5335 Numbers <> render_sub1000 def
-R5337:5337 Numbers <> s:55 var
-def 5358:5367 <> render_num
-R5374:5383 Numbers <> GuaraniNum ind
-binder 5370:5370 <> n:57
-R5388:5393 Stdlib.Strings.String <> string ind
-R5406:5406 Numbers <> n:57 var
-R5417:5424 Numbers <> GN_Small constr
-R5438:5453 Numbers <> render_sub1000su def
-R5461:5466 Numbers <> GN_Sua constr
-R5492:5501 Numbers <> GN_SuaTail constr
-R5519:5522 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R5523:5538 Numbers <> render_sub1000su def
-R5546:5555 Numbers <> GN_MultSua constr
-R5585:5588 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R5567:5582 Numbers <> render_sub1000su def
-R5599:5612 Numbers <> GN_MultSuaTail constr
-R5639:5642 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R5621:5636 Numbers <> render_sub1000su def
-R5649:5652 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R5653:5668 Numbers <> render_sub1000su def
+prf 3166:3177 <> is_one_petei
+R3252:3254 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3185:3190 Numbers <> is_one def
+R3193:3200 Numbers <> GN_Small constr
+R3203:3215 Numbers <> S1000Su_Small constr
+R3218:3228 Numbers <> S1000_Small constr
+R3231:3240 Numbers <> S100_Digit constr
+R3242:3247 Numbers <> Peteĩ constr
+R3255:3258 Corelib.Init.Datatypes <> true constr
+prf 3295:3311 <> is_one_mult_false
+binder 3322:3322 <> m:45
+R3392:3394 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3329:3334 Numbers <> is_one def
+R3337:3344 Numbers <> GN_Small constr
+R3347:3359 Numbers <> S1000Su_Small constr
+R3362:3372 Numbers <> S1000_Small constr
+R3375:3385 Numbers <> S100_MultPa constr
+R3387:3387 Numbers <> m:45 var
+R3395:3399 Corelib.Init.Datatypes <> false constr
+prf 3446:3461 <> is_one_sua_false
+R3478:3480 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3465:3470 Numbers <> is_one def
+R3472:3477 Numbers <> GN_Sua constr
+R3481:3485 Corelib.Init.Datatypes <> false constr
+def 3551:3562 <> render_digit
+R3569:3573 Numbers <> Digit ind
+binder 3565:3565 <> d:46
+R3578:3583 Stdlib.Strings.String <> string ind
+R3596:3596 Numbers <> d:46 var
+R3607:3612 Numbers <> Peteĩ constr
+R3632:3637 Numbers <> Mokõi constr
+R3657:3663 Numbers <> Mbohapy constr
+R3682:3687 Numbers <> Irundy constr
+R3706:3707 Numbers <> Po constr
+R3726:3731 Numbers <> Poteĩ constr
+R3751:3756 Numbers <> Pokõi constr
+R3776:3780 Numbers <> Poapy constr
+R3799:3805 Numbers <> Porundy constr
+def 3839:3849 <> render_mult
+R3856:3859 Numbers <> Mult ind
+binder 3852:3852 <> m:48
+R3864:3869 Stdlib.Strings.String <> string ind
+R3876:3887 Numbers <> render_digit def
+R3890:3902 Numbers <> mult_to_digit def
+R3904:3904 Numbers <> m:48 var
+def 3920:3930 <> render_teen
+R3937:3940 Numbers <> Teen ind
+binder 3933:3933 <> t:49
+R3945:3950 Stdlib.Strings.String <> string ind
+R3963:3963 Numbers <> t:49 var
+R3974:3979 Numbers <> Pateĩ constr
+R4000:4005 Numbers <> Pakõi constr
+R4026:4031 Numbers <> Pa'apy constr
+R4051:4057 Numbers <> Parundy constr
+R4077:4080 Numbers <> Papo constr
+R4100:4107 Numbers <> Papoteĩ constr
+R4128:4135 Numbers <> Papokõi constr
+R4156:4162 Numbers <> Papoapy constr
+R4182:4190 Numbers <> Paporundy constr
+def 4226:4238 <> render_sub100
+R4245:4250 Numbers <> Sub100 ind
+binder 4241:4241 <> s:51
+R4255:4260 Stdlib.Strings.String <> string ind
+R4273:4273 Numbers <> s:51 var
+R4284:4293 Numbers <> S100_Digit constr
+R4308:4319 Numbers <> render_digit def
+R4327:4333 Numbers <> S100_Pa constr
+R4360:4368 Numbers <> S100_Teen constr
+R4384:4394 Numbers <> render_teen def
+R4402:4412 Numbers <> S100_MultPa constr
+R4439:4442 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R4426:4436 Numbers <> render_mult def
+R4452:4467 Numbers <> S100_MultPaDigit constr
+R4489:4492 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R4476:4486 Numbers <> render_mult def
+R4498:4501 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R4502:4513 Numbers <> render_digit def
+def 4536:4549 <> render_sub1000
+R4556:4562 Numbers <> Sub1000 ind
+binder 4552:4552 <> s:53
+R4567:4572 Stdlib.Strings.String <> string ind
+R4585:4585 Numbers <> s:53 var
+R4596:4606 Numbers <> S1000_Small constr
+R4620:4632 Numbers <> render_sub100 def
+R4634:4634 Numbers <> s:53 var
+R4640:4647 Numbers <> S1000_Sa constr
+R4673:4684 Numbers <> S1000_SaTail constr
+R4702:4705 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R4706:4718 Numbers <> render_sub100 def
+R4720:4720 Numbers <> s:53 var
+R4726:4737 Numbers <> S1000_MultSa constr
+R4763:4766 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R4750:4760 Numbers <> render_mult def
+R4776:4791 Numbers <> S1000_MultSaTail constr
+R4813:4816 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R4800:4810 Numbers <> render_mult def
+R4822:4825 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R4826:4838 Numbers <> render_sub100 def
+R4840:4840 Numbers <> s:53 var
+def 4861:4876 <> render_sub1000su
+R4883:4891 Numbers <> Sub1000Su ind
+binder 4879:4879 <> s:55
+R4896:4901 Stdlib.Strings.String <> string ind
+R4914:4914 Numbers <> s:55 var
+R4925:4937 Numbers <> S1000Su_Small constr
+R4951:4964 Numbers <> render_sub1000 def
+R4966:4966 Numbers <> s:55 var
+R4972:4981 Numbers <> S1000Su_Su constr
+R5007:5020 Numbers <> S1000Su_SuTail constr
+R5038:5041 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R5042:5055 Numbers <> render_sub1000 def
+R5057:5057 Numbers <> s:55 var
+R5063:5076 Numbers <> S1000Su_MultSu constr
+R5105:5108 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R5089:5102 Numbers <> render_sub1000 def
+R5118:5135 Numbers <> S1000Su_MultSuTail constr
+R5160:5163 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R5144:5157 Numbers <> render_sub1000 def
+R5169:5172 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R5173:5186 Numbers <> render_sub1000 def
+R5188:5188 Numbers <> s:55 var
+def 5209:5218 <> render_num
+R5225:5234 Numbers <> GuaraniNum ind
+binder 5221:5221 <> n:57
+R5239:5244 Stdlib.Strings.String <> string ind
+R5257:5257 Numbers <> n:57 var
+R5268:5275 Numbers <> GN_Small constr
+R5289:5304 Numbers <> render_sub1000su def
+R5312:5317 Numbers <> GN_Sua constr
+R5343:5352 Numbers <> GN_SuaTail constr
+R5370:5373 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R5374:5389 Numbers <> render_sub1000su def
+R5397:5406 Numbers <> GN_MultSua constr
+R5436:5439 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R5418:5433 Numbers <> render_sub1000su def
+R5450:5463 Numbers <> GN_MultSuaTail constr
+R5490:5493 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R5472:5487 Numbers <> render_sub1000su def
+R5500:5503 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R5504:5519 Numbers <> render_sub1000su def

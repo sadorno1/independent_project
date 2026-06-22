@@ -6,13 +6,8 @@ Require Import Syntax.
 Require Import Numbers.
 Require Import verb.
 
-(* ============================================================ *)
-(*  NounPhrases.v                                               *)
-(*  Guaraní noun phrase grammar: nouns, adjectives, pronouns,   *)
-(*  demonstratives, determiners, postpositions, nominalizing    *)
-(*  suffixes, relative and complement clauses, well-formedness, *)
-(*  metadata inference, and surface rendering.                  *)
-(* ============================================================ *)
+(* NounPhrases.v: noun phrase grammar — nouns, pronouns, demonstratives,
+   postpositions, nominal suffixes, well-formedness, metadata, rendering. *)
 
 
 (* ============================================================ *)
@@ -24,11 +19,11 @@ Require Import verb.
 (* ============================================================ *)
 
 Inductive root_class : Type :=
-  | Uniform       (* no alternation: jagua *)
-  | Triform       (* t-/r-/h-: tova/rova/hova *)
-  | TriformNoT    (* no t- form: óga/róga/hóga *)
-  | Biform        (* túva/ru: kinship with i- for 3rd *)
-  | Quadriform.   (* to'o/ro'o/ho'o/so'o *)
+  | Uniform       
+  | Triform       
+  | TriformNoT    
+  | Biform        
+  | Quadriform.   
 
 Inductive poss_context : Type :=
   | PossCtx_None           (* non-possessed: t- *)
@@ -115,10 +110,6 @@ Definition render_subj_pronoun (p : subj_pronoun) : string :=
 (*  §3.4.2                                                      *)
 (* ============================================================ *)
 
-Inductive dem_set : Type :=
-  | DemPresent
-  | DemRemoved.
-
 Inductive dem_proximity : Type :=
   | DemProxSpeaker     (* ko *)
   | DemProxHearer      (* pe, upe *)
@@ -126,12 +117,6 @@ Inductive dem_proximity : Type :=
   | DemSharedPerson    (* ku *)
   | DemSharedEvent     (* ako *)
   | DemHearsay.        (* aipo *)
-
-Definition dem_set_of (prox : dem_proximity) : dem_set :=
-  match prox with
-  | DemProxSpeaker | DemProxHearer | DemDistal => DemPresent
-  | _ => DemRemoved
-  end.
 
 Definition dem_adj_form (prox : dem_proximity) (n : number) : string :=
   match prox, n with
@@ -672,22 +657,7 @@ Fixpoint render_np (x : guarani_np) : string :=
   end.
 
 (* ============================================================ *)
-(*  18. Decidable equality                                      *)
-(* ============================================================ *)
-
-Scheme Equality for root_class.
-Scheme Equality for poss_context.
-Scheme Equality for dem_set.
-Scheme Equality for dem_proximity.
-Scheme Equality for subj_pronoun.
-Scheme Equality for indef_pron.
-Scheme Equality for interrog_pron.
-Scheme Equality for neg_pron.
-Scheme Equality for nominal_suffix.
-Scheme Equality for postposition.
-
-(* ============================================================ *)
-(*  19. Theorems                                                *)
+(*  18. Theorems                                                *)
 (* ============================================================ *)
 
 (* ---------- NP-A: Root-class prefix selection §3.1.3 ---------- *)

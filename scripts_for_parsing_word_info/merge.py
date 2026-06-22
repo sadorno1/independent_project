@@ -1,43 +1,25 @@
 """
 merge.py
 
-Merges es_gn_transitivity.csv (output of parse_es_gn.py) into
-enriched.csv (output of enrich_lexicon.py).
-
-For each verb row in enriched.csv:
-  - If transitivity is already filled → leave it (Guaraní side is authoritative).
-  - If blank → look up the word in the transitivity index.
-    - Exactly one value (Transitive or Intransitive) → fill it in.
-    - Both tr. and intr. found → set to "Ambitransitive", flag for review.
-    - Not found → leave blank.
-  - Also fills spanish_gloss column from the first matching Spanish headword.
-
-Usage:
-    python merge.py enriched.csv es_gn_transitivity.csv merged.csv
+Merges transitivity values and Spanish glosses from a transitivity mapping CSV
+into an enriched lexicon CSV.
 """
 
 import csv
 import sys
-from pathlib import Path
 from collections import defaultdict
+from pathlib import Path
 
 
-def load_transitivity_index(
-    transitivity_csv: Path,
-) -> dict[str, dict]:
-    """
-    Build index: guarani_word → {
-        "transitivities": set of "Transitive" / "Intransitive",
-        "glosses": list of spanish_headword strings,
-    }
-    """
-    index: dict[str, dict] = defaultdict(lambda: {"transitivities": set(), "glosses": []})
+def load_transitivity_index(transitivity_csv: Path) -> dict[str, dict]:
+    """Builds index mapping a guarani_word to its transitivities and glosses."""
+    index = defaultdict(lambda: {"transitivities": set(), "glosses": []})
 
     with transitivity_csv.open(encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             word = row["guarani_word"].strip().lower()
-            tr   = row["transitivity"].strip()
+            tr = row["transitivity"].strip()
             gloss = row["spanish_headword"].strip()
             if word and tr:
                 index[word]["transitivities"].add(tr)
@@ -47,30 +29,20 @@ def load_transitivity_index(
     return dict(index)
 
 
-def merge(
-    enriched_csv: Path,
-    transitivity_csv: Path,
-    output_csv: Path,
-) -> dict:
+def merge(enriched_csv: Path, transitivity_csv: Path, output_csv: Path) -> dict:
+    """Merges missing transitivity descriptors and gloss attributes into verb entries."""
     index = load_transitivity_index(transitivity_csv)
 
     stats = {
-        "rows_total":        0,
-        "verb_rows":         0,
-        "filled_from_merge": 0,
-        "ambitransitive":    0,
-        "still_blank":       0,
-        "already_filled":    0,
-        "gloss_filled":      0,
+        "rows_total": 0, "verb_rows": 0, "filled_from_merge": 0,
+        "ambitransitive": 0, "still_blank": 0, "already_filled": 0, "gloss_filled": 0,
     }
 
-    # Read all rows first to get fieldnames
     with enriched_csv.open(encoding="utf-8") as f:
         reader = csv.DictReader(f)
         original_fields = reader.fieldnames or []
         rows = list(reader)
 
-    # Add new columns if not present
     new_fields = list(original_fields)
     if "spanish_gloss" not in new_fields:
         new_fields.append("spanish_gloss")
@@ -91,7 +63,7 @@ def merge(
             word = row["word"].strip().lower()
             entry = index.get(word)
 
-            # Fill transitivity
+            # Evaluate and fill transitivity status
             current_tr = row.get("transitivity", "").strip()
             if current_tr:
                 stats["already_filled"] += 1
@@ -102,7 +74,6 @@ def merge(
                     stats["filled_from_merge"] += 1
                 elif len(trs) > 1:
                     row["transitivity"] = "Ambitransitive"
-                    # Add flag
                     flags = row.get("flags", "")
                     flag_list = [f for f in flags.split("|") if f]
                     if "CHECK_AMBITRANSITIVE" not in flag_list:
@@ -114,7 +85,7 @@ def merge(
             else:
                 stats["still_blank"] += 1
 
-            # Fill Spanish gloss (first headword only)
+            # Match first found headword as Spanish gloss
             if not row.get("spanish_gloss") and entry and entry["glosses"]:
                 row["spanish_gloss"] = entry["glosses"][0]
                 stats["gloss_filled"] += 1
@@ -126,17 +97,11 @@ def merge(
 
 def main():
     if len(sys.argv) < 4:
-        print(
-            "usage: merge.py enriched.csv es_gn_transitivity.csv output.csv",
-            file=sys.stderr,
-        )
+        print("usage: merge.py enriched.csv es_gn_transitivity.csv output.csv", file=sys.stderr)
         sys.exit(2)
 
-    enriched     = Path(sys.argv[1])
-    transitivity = Path(sys.argv[2])
-    output       = Path(sys.argv[3])
-
-    stats = merge(enriched, transitivity, output)
+    output = Path(sys.argv[3])
+    stats = merge(Path(sys.argv[1]), Path(sys.argv[2]), output)
 
     print(f"rows total:          {stats['rows_total']}")
     print(f"verb rows:           {stats['verb_rows']}")

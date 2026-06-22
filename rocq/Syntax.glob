@@ -1,204 +1,192 @@
-DIGEST 5b9720e92589ee88f43bda1a33e6e2b1
+DIGEST 15a28ffe90759f05ccad23fce28dbfe9
 FSyntax
 R27:32 Stdlib.Strings.String <> <> lib
-ind 812:818 <> orality
-constr 834:837 <> Oral
-constr 843:847 <> Nasal
-scheme 812:818 <> orality_rect
-scheme 812:818 <> orality_ind
-scheme 812:818 <> orality_rec
-scheme 812:818 <> orality_sind
-ind 922:932 <> word_ending
-constr 948:953 <> EndAEO
-constr 989:994 <> EndIUY
-scheme 922:932 <> word_ending_rect
-scheme 922:932 <> word_ending_ind
-scheme 922:932 <> word_ending_rec
-scheme 922:932 <> word_ending_sind
-ind 1308:1313 <> person
-constr 1329:1333 <> First
-constr 1339:1344 <> Second
-constr 1350:1354 <> Third
-scheme 1308:1313 <> person_rect
-scheme 1308:1313 <> person_ind
-scheme 1308:1313 <> person_rec
-scheme 1308:1313 <> person_sind
-ind 1368:1373 <> number
-constr 1389:1396 <> Singular
-constr 1402:1407 <> Plural
-scheme 1368:1373 <> number_rect
-scheme 1368:1373 <> number_ind
-scheme 1368:1373 <> number_rec
-scheme 1368:1373 <> number_sind
-ind 1466:1476 <> inclusivity
-constr 1492:1500 <> Inclusive
-constr 1506:1514 <> Exclusive
-scheme 1466:1476 <> inclusivity_rect
-scheme 1466:1476 <> inclusivity_ind
-scheme 1466:1476 <> inclusivity_rec
-scheme 1466:1476 <> inclusivity_sind
-ind 1798:1808 <> poss_marker
-constr 1824:1828 <> Poss1
-constr 1863:1867 <> Poss2
-constr 1902:1906 <> Poss3
-constr 1942:1950 <> Poss1Incl
-constr 1985:1993 <> Poss1Excl
-constr 2024:2030 <> Poss2Pl
-constr 2065:2071 <> Poss3Pl
-scheme 1798:1808 <> poss_marker_rect
-scheme 1798:1808 <> poss_marker_ind
-scheme 1798:1808 <> poss_marker_rec
-scheme 1798:1808 <> poss_marker_sind
-def 2171:2186 <> poss_marker_form
-R2193:2199 Syntax <> orality ind
-binder 2189:2189 <> o:13
-R2208:2218 Syntax <> poss_marker ind
-binder 2203:2204 <> pm:14
-R2223:2228 Stdlib.Strings.String <> string ind
-R2241:2242 Syntax <> pm:14 var
-R2253:2257 Syntax <> Poss1 constr
-R2276:2280 Syntax <> Poss2 constr
-R2295:2295 Syntax <> o:13 var
-R2302:2305 Syntax <> Oral constr
-R2320:2324 Syntax <> Nasal constr
-R2344:2348 Syntax <> Poss3 constr
-R2363:2363 Syntax <> o:13 var
-R2370:2373 Syntax <> Oral constr
-R2388:2392 Syntax <> Nasal constr
-R2413:2421 Syntax <> Poss1Incl constr
-R2432:2432 Syntax <> o:13 var
-R2439:2442 Syntax <> Oral constr
-R2459:2463 Syntax <> Nasal constr
-R2485:2493 Syntax <> Poss1Excl constr
-R2508:2514 Syntax <> Poss2Pl constr
-R2527:2527 Syntax <> o:13 var
-R2534:2537 Syntax <> Oral constr
-R2553:2557 Syntax <> Nasal constr
-R2578:2584 Syntax <> Poss3Pl constr
-R2597:2597 Syntax <> o:13 var
-R2604:2607 Syntax <> Oral constr
-R2622:2626 Syntax <> Nasal constr
-def 3062:3078 <> plural_suffix_adj
-R3085:3091 Syntax <> orality ind
-binder 3081:3081 <> o:21
-R3096:3101 Stdlib.Strings.String <> string ind
-R3114:3114 Syntax <> o:21 var
-R3125:3128 Syntax <> Oral constr
-R3147:3151 Syntax <> Nasal constr
-def 3239:3256 <> plural_suffix_noun
-R3263:3273 Syntax <> word_ending ind
-binder 3259:3259 <> e:23
-R3278:3283 Stdlib.Strings.String <> string ind
-R3296:3296 Syntax <> e:23 var
-R3307:3312 Syntax <> EndAEO constr
-R3327:3332 Syntax <> EndIUY constr
-def 3417:3428 <> super_suffix
-R3435:3441 Syntax <> orality ind
-binder 3431:3431 <> o:25
-R3446:3451 Stdlib.Strings.String <> string ind
-R3464:3464 Syntax <> o:25 var
-R3475:3478 Syntax <> Oral constr
-R3494:3498 Syntax <> Nasal constr
-def 3578:3587 <> neg_prefix
-R3594:3600 Syntax <> orality ind
-binder 3590:3590 <> o:27
-R3605:3610 Stdlib.Strings.String <> string ind
-R3623:3623 Syntax <> o:27 var
-R3634:3637 Syntax <> Oral constr
-R3652:3656 Syntax <> Nasal constr
-def 3710:3723 <> passive_prefix
-R3730:3736 Syntax <> orality ind
-binder 3726:3726 <> o:29
-R3741:3746 Stdlib.Strings.String <> string ind
-R3759:3759 Syntax <> o:29 var
-R3770:3773 Syntax <> Oral constr
-R3788:3792 Syntax <> Nasal constr
-def 3822:3838 <> reciprocal_prefix
-R3845:3851 Syntax <> orality ind
-binder 3841:3841 <> o:31
-R3856:3861 Stdlib.Strings.String <> string ind
-R3874:3874 Syntax <> o:31 var
-R3885:3888 Syntax <> Oral constr
-R3903:3907 Syntax <> Nasal constr
-def 3937:3951 <> coactive_prefix
-R3958:3964 Syntax <> orality ind
-binder 3954:3954 <> o:33
-R3969:3974 Stdlib.Strings.String <> string ind
-R3987:3987 Syntax <> o:33 var
-R3998:4001 Syntax <> Oral constr
-R4017:4021 Syntax <> Nasal constr
-def 4099:4117 <> totalitative_suffix
-R4124:4130 Syntax <> orality ind
-binder 4120:4120 <> o:35
-R4135:4140 Stdlib.Strings.String <> string ind
-R4153:4153 Syntax <> o:35 var
-R4164:4167 Syntax <> Oral constr
-R4182:4186 Syntax <> Nasal constr
-R4427:4433 Syntax <> orality ind
-scheme 4407:4434 <> orality_eq_dec
-R4456:4466 Syntax <> word_ending ind
-scheme 4436:4467 <> word_ending_eq_dec
-R4489:4494 Syntax <> person ind
-scheme 4469:4495 <> person_eq_dec
-R4517:4522 Syntax <> number ind
-scheme 4497:4523 <> number_eq_dec
-R4545:4555 Syntax <> inclusivity ind
-scheme 4525:4556 <> inclusivity_eq_dec
-R4578:4588 Syntax <> poss_marker ind
-scheme 4558:4589 <> poss_marker_eq_dec
-prf 4870:4888 <> plural_adj_distinct
-R4918:4921 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
-R4896:4912 Syntax <> plural_suffix_adj def
-R4914:4917 Syntax <> Oral constr
-R4922:4938 Syntax <> plural_suffix_adj def
-R4940:4944 Syntax <> Nasal constr
-prf 5023:5042 <> plural_noun_distinct
-R5075:5078 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
-R5050:5067 Syntax <> plural_suffix_noun def
-R5069:5074 Syntax <> EndAEO constr
-R5079:5096 Syntax <> plural_suffix_noun def
-R5098:5103 Syntax <> EndIUY constr
-prf 5216:5231 <> plural_adj_total
-binder 5242:5242 <> o:37
-R5279:5282 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
-R5268:5270 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R5249:5265 Syntax <> plural_suffix_adj def
-R5267:5267 Syntax <> o:37 var
-R5302:5304 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R5283:5299 Syntax <> plural_suffix_adj def
-R5301:5301 Syntax <> o:37 var
-prf 5386:5402 <> plural_noun_total
-binder 5413:5413 <> e:38
-R5448:5451 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
-R5440:5442 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R5420:5437 Syntax <> plural_suffix_noun def
-R5439:5439 Syntax <> e:38 var
-R5472:5474 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R5452:5469 Syntax <> plural_suffix_noun def
-R5471:5471 Syntax <> e:38 var
-prf 5583:5601 <> neg_prefix_distinct
-R5624:5627 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
-R5609:5618 Syntax <> neg_prefix def
-R5620:5623 Syntax <> Oral constr
-R5628:5637 Syntax <> neg_prefix def
-R5639:5643 Syntax <> Nasal constr
-prf 5756:5771 <> poss1_always_che
-binder 5782:5782 <> o:39
-R5813:5815 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R5789:5804 Syntax <> poss_marker_form def
-R5806:5806 Syntax <> o:39 var
-R5808:5812 Syntax <> Poss1 constr
-prf 5879:5898 <> poss1excl_always_ore
-binder 5909:5909 <> o:40
-R5944:5946 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R5916:5931 Syntax <> poss_marker_form def
-R5933:5933 Syntax <> o:40 var
-R5935:5943 Syntax <> Poss1Excl constr
-prf 6010:6029 <> poss2_forms_distinct
-R6064:6067 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
-R6037:6052 Syntax <> poss_marker_form def
-R6054:6057 Syntax <> Oral constr
-R6059:6063 Syntax <> Poss2 constr
-R6068:6083 Syntax <> poss_marker_form def
-R6085:6089 Syntax <> Nasal constr
-R6091:6095 Syntax <> Poss2 constr
+ind 420:426 <> orality
+constr 442:445 <> Oral
+constr 451:455 <> Nasal
+scheme 420:426 <> orality_rect
+scheme 420:426 <> orality_ind
+scheme 420:426 <> orality_rec
+scheme 420:426 <> orality_sind
+ind 530:540 <> word_ending
+constr 556:561 <> EndAEO
+constr 597:602 <> EndIUY
+scheme 530:540 <> word_ending_rect
+scheme 530:540 <> word_ending_ind
+scheme 530:540 <> word_ending_rec
+scheme 530:540 <> word_ending_sind
+ind 916:921 <> person
+constr 937:941 <> First
+constr 947:952 <> Second
+constr 958:962 <> Third
+scheme 916:921 <> person_rect
+scheme 916:921 <> person_ind
+scheme 916:921 <> person_rec
+scheme 916:921 <> person_sind
+ind 976:981 <> number
+constr 997:1004 <> Singular
+constr 1010:1015 <> Plural
+scheme 976:981 <> number_rect
+scheme 976:981 <> number_ind
+scheme 976:981 <> number_rec
+scheme 976:981 <> number_sind
+ind 1074:1084 <> inclusivity
+constr 1100:1108 <> Inclusive
+constr 1114:1122 <> Exclusive
+scheme 1074:1084 <> inclusivity_rect
+scheme 1074:1084 <> inclusivity_ind
+scheme 1074:1084 <> inclusivity_rec
+scheme 1074:1084 <> inclusivity_sind
+ind 1406:1416 <> poss_marker
+constr 1432:1436 <> Poss1
+constr 1471:1475 <> Poss2
+constr 1510:1514 <> Poss3
+constr 1550:1558 <> Poss1Incl
+constr 1593:1601 <> Poss1Excl
+constr 1632:1638 <> Poss2Pl
+constr 1673:1679 <> Poss3Pl
+scheme 1406:1416 <> poss_marker_rect
+scheme 1406:1416 <> poss_marker_ind
+scheme 1406:1416 <> poss_marker_rec
+scheme 1406:1416 <> poss_marker_sind
+def 1779:1794 <> poss_marker_form
+R1801:1807 Syntax <> orality ind
+binder 1797:1797 <> o:13
+R1816:1826 Syntax <> poss_marker ind
+binder 1811:1812 <> pm:14
+R1831:1836 Stdlib.Strings.String <> string ind
+R1849:1850 Syntax <> pm:14 var
+R1861:1865 Syntax <> Poss1 constr
+R1884:1888 Syntax <> Poss2 constr
+R1903:1903 Syntax <> o:13 var
+R1910:1913 Syntax <> Oral constr
+R1928:1932 Syntax <> Nasal constr
+R1952:1956 Syntax <> Poss3 constr
+R1971:1971 Syntax <> o:13 var
+R1978:1981 Syntax <> Oral constr
+R1996:2000 Syntax <> Nasal constr
+R2021:2029 Syntax <> Poss1Incl constr
+R2040:2040 Syntax <> o:13 var
+R2047:2050 Syntax <> Oral constr
+R2067:2071 Syntax <> Nasal constr
+R2093:2101 Syntax <> Poss1Excl constr
+R2116:2122 Syntax <> Poss2Pl constr
+R2135:2135 Syntax <> o:13 var
+R2142:2145 Syntax <> Oral constr
+R2161:2165 Syntax <> Nasal constr
+R2186:2192 Syntax <> Poss3Pl constr
+R2205:2205 Syntax <> o:13 var
+R2212:2215 Syntax <> Oral constr
+R2230:2234 Syntax <> Nasal constr
+def 2670:2686 <> plural_suffix_adj
+R2693:2699 Syntax <> orality ind
+binder 2689:2689 <> o:21
+R2704:2709 Stdlib.Strings.String <> string ind
+R2722:2722 Syntax <> o:21 var
+R2733:2736 Syntax <> Oral constr
+R2755:2759 Syntax <> Nasal constr
+def 2847:2864 <> plural_suffix_noun
+R2871:2881 Syntax <> word_ending ind
+binder 2867:2867 <> e:23
+R2886:2891 Stdlib.Strings.String <> string ind
+R2904:2904 Syntax <> e:23 var
+R2915:2920 Syntax <> EndAEO constr
+R2935:2940 Syntax <> EndIUY constr
+def 3025:3036 <> super_suffix
+R3043:3049 Syntax <> orality ind
+binder 3039:3039 <> o:25
+R3054:3059 Stdlib.Strings.String <> string ind
+R3072:3072 Syntax <> o:25 var
+R3083:3086 Syntax <> Oral constr
+R3102:3106 Syntax <> Nasal constr
+def 3186:3195 <> neg_prefix
+R3202:3208 Syntax <> orality ind
+binder 3198:3198 <> o:27
+R3213:3218 Stdlib.Strings.String <> string ind
+R3231:3231 Syntax <> o:27 var
+R3242:3245 Syntax <> Oral constr
+R3260:3264 Syntax <> Nasal constr
+def 3318:3331 <> passive_prefix
+R3338:3344 Syntax <> orality ind
+binder 3334:3334 <> o:29
+R3349:3354 Stdlib.Strings.String <> string ind
+R3367:3367 Syntax <> o:29 var
+R3378:3381 Syntax <> Oral constr
+R3396:3400 Syntax <> Nasal constr
+def 3430:3446 <> reciprocal_prefix
+R3453:3459 Syntax <> orality ind
+binder 3449:3449 <> o:31
+R3464:3469 Stdlib.Strings.String <> string ind
+R3482:3482 Syntax <> o:31 var
+R3493:3496 Syntax <> Oral constr
+R3511:3515 Syntax <> Nasal constr
+def 3545:3559 <> coactive_prefix
+R3566:3572 Syntax <> orality ind
+binder 3562:3562 <> o:33
+R3577:3582 Stdlib.Strings.String <> string ind
+R3595:3595 Syntax <> o:33 var
+R3606:3609 Syntax <> Oral constr
+R3625:3629 Syntax <> Nasal constr
+def 3707:3725 <> totalitative_suffix
+R3732:3738 Syntax <> orality ind
+binder 3728:3728 <> o:35
+R3743:3748 Stdlib.Strings.String <> string ind
+R3761:3761 Syntax <> o:35 var
+R3772:3775 Syntax <> Oral constr
+R3790:3794 Syntax <> Nasal constr
+prf 4023:4041 <> plural_adj_distinct
+R4071:4074 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R4049:4065 Syntax <> plural_suffix_adj def
+R4067:4070 Syntax <> Oral constr
+R4075:4091 Syntax <> plural_suffix_adj def
+R4093:4097 Syntax <> Nasal constr
+prf 4142:4161 <> plural_noun_distinct
+R4194:4197 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R4169:4186 Syntax <> plural_suffix_noun def
+R4188:4193 Syntax <> EndAEO constr
+R4198:4215 Syntax <> plural_suffix_noun def
+R4217:4222 Syntax <> EndIUY constr
+prf 4267:4282 <> plural_adj_total
+binder 4293:4293 <> o:37
+R4330:4333 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R4319:4321 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4300:4316 Syntax <> plural_suffix_adj def
+R4318:4318 Syntax <> o:37 var
+R4353:4355 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4334:4350 Syntax <> plural_suffix_adj def
+R4352:4352 Syntax <> o:37 var
+prf 4437:4453 <> plural_noun_total
+binder 4464:4464 <> e:38
+R4499:4502 Corelib.Init.Logic <> ::type_scope:x_'\/'_x not
+R4491:4493 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4471:4488 Syntax <> plural_suffix_noun def
+R4490:4490 Syntax <> e:38 var
+R4523:4525 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4503:4520 Syntax <> plural_suffix_noun def
+R4522:4522 Syntax <> e:38 var
+prf 4603:4621 <> neg_prefix_distinct
+R4644:4647 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R4629:4638 Syntax <> neg_prefix def
+R4640:4643 Syntax <> Oral constr
+R4648:4657 Syntax <> neg_prefix def
+R4659:4663 Syntax <> Nasal constr
+prf 4708:4723 <> poss1_always_che
+binder 4734:4734 <> o:39
+R4765:4767 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4741:4756 Syntax <> poss_marker_form def
+R4758:4758 Syntax <> o:39 var
+R4760:4764 Syntax <> Poss1 constr
+prf 4831:4850 <> poss1excl_always_ore
+binder 4861:4861 <> o:40
+R4896:4898 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4868:4883 Syntax <> poss_marker_form def
+R4885:4885 Syntax <> o:40 var
+R4887:4895 Syntax <> Poss1Excl constr
+prf 4962:4981 <> poss2_forms_distinct
+R5016:5019 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R4989:5004 Syntax <> poss_marker_form def
+R5006:5009 Syntax <> Oral constr
+R5011:5015 Syntax <> Poss2 constr
+R5020:5035 Syntax <> poss_marker_form def
+R5037:5041 Syntax <> Nasal constr
+R5043:5047 Syntax <> Poss2 constr

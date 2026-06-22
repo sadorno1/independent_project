@@ -1,3 +1,10 @@
+"""
+extract_word_types.py
+
+Extracts word entries and their associated grammatical tags from a two-column 
+dictionary PDF, exporting the results to a pipe-separated types CSV.
+"""
+
 from __future__ import annotations
 
 import csv
@@ -8,58 +15,39 @@ from typing import Dict, List, Tuple
 
 import pdfplumber
 
-# =========================
-# CONFIG
-# =========================
+# ===========================================================================
+# Configuration & Tag definitions
+# ===========================================================================
+
 PDF_PATH = "references/dictionary_with_types.pdf"
 START_PAGE = 1
 END_PAGE = None
-
 OUT_CSV = "word_types.csv"
 
 MUST_HAVE = ["aipo", "achegety", "ãga", "aguyje"]
 
-# =========================
-# TAGS (case-insensitive parsing)
-# =========================
-# Put the MOST SPECIFIC / LONGEST tags here (we will sort by length anyway).
 KNOWN_TAGS = {
-    # core POS-ish
     "s.", "adj.", "adv.", "conj.", "pron.", "interj.", "voc.", "exp.", "h.",
-    "neol.", "p. n.", "t.", "bif."
-
-    # verbs
-    "v.", "v. pr.", "v. atr.", "v. air.",
-
-    # affixes
-    "suf. a. n.", "suf. a. v.",
-
-    # pronoun/adjective subtypes
-    "pron. dem.", "pron. ind.", "pron. pos.",
-    "adj. ind.", "adj. ind. y pron. ind.",
-
-    # adverb subtypes
-    "adv. de neg.", "adv. de tiempo",
+    "neol.", "p. n.", "t.", "bif.", "v.", "v. pr.", "v. atr.", "v. air.",
+    "suf. a. n.", "suf. a. v.", "pron. dem.", "pron. ind.", "pron. pos.",
+    "adj. ind.", "adj. ind. y pron. ind.", "adv. de neg.", "adv. de tiempo",
 }
 
-# Normalize tags for robust matching:
-# - lowercase
-# - single spaces
 def norm_space(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 def norm_tag(s: str) -> str:
     return norm_space(s).lower()
 
-# We match combined tags (multi-word) first
+# Longest matching multi-word sequences take priority during parsing
 COMBINED_TAGS = sorted([t for t in KNOWN_TAGS if " " in t], key=len, reverse=True)
 SIMPLE_TAGS = sorted([t for t in KNOWN_TAGS if " " not in t], key=len, reverse=True)
+KNOWN_TAGS_NORM = {norm_tag(t): t for t in KNOWN_TAGS}
 
-KNOWN_TAGS_NORM = {norm_tag(t): t for t in KNOWN_TAGS}  # map normalized -> canonical
+# ===========================================================================
+# Normalization Helpers
+# ===========================================================================
 
-# =========================
-# NORMALIZATION
-# =========================
 APOSTROPHE_VARIANTS = ["’", "ʼ", "‘", "´", "`"]
 
 def normalize_apostrophes(s: str) -> str:
@@ -70,18 +58,14 @@ def normalize_apostrophes(s: str) -> str:
 def normalize_text_noise(s: str) -> str:
     s = unicodedata.normalize("NFC", s)
     s = normalize_apostrophes(s)
-
-    # fix "2.v." -> "2. v."
     s = re.sub(r"(\d+)\.\s*([A-Za-zÁÉÍÓÚÜÑñ])", r"\1. \2", s)
-
-    # remove page-number-only lines
     s = re.sub(r"^\s*\d+\s*$", "", s)
-
     return norm_space(s)
 
-# =========================
-# 2-COLUMN LINE EXTRACTION
-# =========================
+# ===========================================================================
+# Two-Column Layout Extractor
+# ===========================================================================
+
 def _group_words_into_lines(words: List[dict], y_tol: float = 2.2) -> List[List[dict]]:
     words_sorted = sorted(words, key=lambda w: (round(w["top"], 1), w["x0"]))
     lines: List[List[dict]] = []
@@ -103,8 +87,9 @@ def _group_words_into_lines(words: List[dict], y_tol: float = 2.2) -> List[List[
 
 def _line_to_text(words_line: List[dict]) -> str:
     txt = " ".join(w["text"] for w in words_line)
-    txt = txt.replace(" ,", ",").replace(" .", ".").replace(" ;", ";").replace(" :", ":")
-    txt = txt.replace(" )", ")").replace("( ", "(")
+    for target in [",", ".", ";", ":", ")"]:
+        txt = txt.replace(f" {target}", target)
+    txt = txt.replace("( ", "(")
     return normalize_text_noise(txt)
 
 def extract_lines_from_pdf_two_column(pdf_path: str, start_page: int = 1, end_page: int | None = None) -> List[str]:
@@ -118,10 +103,7 @@ def extract_lines_from_pdf_two_column(pdf_path: str, start_page: int = 1, end_pa
         for p in range(sp - 1, ep):
             page = pdf.pages[p]
             words = page.extract_words(
-                x_tolerance=2,
-                y_tolerance=2,
-                keep_blank_chars=False,
-                use_text_flow=False,
+                x_tolerance=2, y_tolerance=2, keep_blank_chars=False, use_text_flow=False
             ) or []
 
             if not words:
@@ -138,7 +120,7 @@ def extract_lines_from_pdf_two_column(pdf_path: str, start_page: int = 1, end_pa
                     if text:
                         all_lines.append(text)
 
-    # Merge hyphenated end-of-line fragments
+    # Reconstruct soft hyphenations spanning line-breaks
     merged: List[str] = []
     i = 0
     while i < len(all_lines):
@@ -152,14 +134,12 @@ def extract_lines_from_pdf_two_column(pdf_path: str, start_page: int = 1, end_pa
 
     return merged
 
-# =========================
-# ENTRY SPLIT
-# =========================
+# ===========================================================================
+# Parsing Engine
+# ===========================================================================
+
 WORD_CHARS = r"A-Za-zÁÉÍÓÚÜÑñãõÃÕáéíóúüẽĩũẼĨŨỹỸ'\-"
-HEADWORD_LINE_RE = re.compile(
-    rf"^\s*(?P<word>[{WORD_CHARS}]+)\.\s*(?P<rest>.*)$",
-    re.UNICODE
-)
+HEADWORD_LINE_RE = re.compile(rf"^\s*(?P<word>[{WORD_CHARS}]+)\.\s*(?P<rest>.*)$", re.UNICODE)
 
 def split_entries(lines: List[str]) -> List[Dict[str, str]]:
     entries: List[Dict[str, str]] = []
@@ -175,7 +155,7 @@ def split_entries(lines: List[str]) -> List[Dict[str, str]]:
         if m:
             if cur_word is not None:
                 entries.append({"word": cur_word, "body": norm_space(" ".join(cur_parts))})
-            cur_word = normalize_text_noise(m.group("word"))  # normalize apostrophes in headword too
+            cur_word = normalize_text_noise(m.group("word"))
             rest = m.group("rest").strip()
             cur_parts = [rest] if rest else []
         else:
@@ -187,18 +167,9 @@ def split_entries(lines: List[str]) -> List[Dict[str, str]]:
 
     return entries
 
-# =========================
-# TAG PARSING
-# =========================
-def canonicalize_tag(candidate: str) -> str | None:
-    c = norm_tag(candidate)
-    return KNOWN_TAGS_NORM.get(c)
 
 def strip_leading_separators(s: str) -> str:
-    # allow tags separated by commas
-    s = s.lstrip()
-    s = re.sub(r"^[,;]+\s*", "", s)
-    return s
+    return re.sub(r"^[,;]+\s*", "", s.lstrip())
 
 def consume_combined_prefix_tags(s: str) -> Tuple[List[str], str]:
     out: List[str] = []
@@ -208,18 +179,15 @@ def consume_combined_prefix_tags(s: str) -> Tuple[List[str], str]:
     while changed:
         changed = False
         low = s.lower()
-
         for ct in COMBINED_TAGS:
             ctl = ct.lower()
             if low.startswith(ctl):
                 after = s[len(ct):]
-                # next char should be separator/space or end
                 if after == "" or after[0].isspace() or after.startswith(",") or after.startswith(";"):
                     out.append(ct)
                     s = strip_leading_separators(after)
                     changed = True
                     break
-
     return out, s
 
 def consume_simple_prefix_tags(s: str, max_tags: int = 6) -> Tuple[List[str], str]:
@@ -227,14 +195,10 @@ def consume_simple_prefix_tags(s: str, max_tags: int = 6) -> Tuple[List[str], st
     s = strip_leading_separators(normalize_text_noise(s))
     count = 0
 
-    # simple tags typically look like "s." "adj." "v." etc (with dots)
     while count < max_tags:
-        # take a token that ends in a dot, possibly with internal dots/spaces handled elsewhere
-        m = re.match(r"^([A-Za-zÁÉÍÓÚÜÑñ]+(?:\.)?)", s)
-        if not m:
+        if not re.match(r"^([A-Za-zÁÉÍÓÚÜÑñ]+(?:\.)?)", s):
             break
 
-        # We want to match against SIMPLE_TAGS by trying all known tags first
         matched = None
         for tag in SIMPLE_TAGS:
             if s.lower().startswith(tag.lower()):
@@ -252,16 +216,12 @@ def consume_simple_prefix_tags(s: str, max_tags: int = 6) -> Tuple[List[str], st
 
 def extract_tags_from_chunk(chunk: str) -> List[str]:
     s = normalize_text_noise(chunk)
-
     ctags, rem = consume_combined_prefix_tags(s)
     stags, _ = consume_simple_prefix_tags(rem, max_tags=6)
 
-    tags = ctags + stags
-
-    # dedup keep order
     seen = set()
     out = []
-    for t in tags:
+    for t in (ctags + stags):
         if t not in seen:
             out.append(t)
             seen.add(t)
@@ -269,15 +229,14 @@ def extract_tags_from_chunk(chunk: str) -> List[str]:
 
 def extract_types_from_entry_body(body: str) -> List[str]:
     types: List[str] = []
-
     body = normalize_text_noise(body)
 
-    # A) entry-level prefix tags
+    # Global headword level tags
     for t in extract_tags_from_chunk(body):
         if t not in types:
             types.append(t)
 
-    # B) sense-level tags: "1. ...", "2. ...", etc.
+    # Internal sub-sense tags ("1. ...", "2. ...")
     senses = re.split(r"(?=\b\d+\.\s*)", body)
     for s in senses:
         s = s.strip()
@@ -290,16 +249,15 @@ def extract_types_from_entry_body(body: str) -> List[str]:
 
     return types
 
-# =========================
-# OUTPUT
-# =========================
+# ===========================================================================
+# I/O Execution Block
+# ===========================================================================
 
 def save_csv(data: List[Dict[str, List[str]]], path: str) -> None:
     with open(path, "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
         w.writerow(["word", "types"])
         for r in data:
-            # normalize types separators to |
             w.writerow([r["word"], "|".join(r["types"])])
 
 def debug_check(data: List[Dict[str, List[str]]], must_have: List[str]) -> None:
@@ -307,15 +265,9 @@ def debug_check(data: List[Dict[str, List[str]]], must_have: List[str]) -> None:
     print("\n=== DEBUG CHECK ===")
     for w in must_have:
         k = normalize_text_noise(w).lower()
-        if k in idx:
-            print(f"OK: {w} -> {idx[k]}")
-        else:
-            print(f"MISSING: {w}")
+        print(f"OK: {w} -> {idx[k]}" if k in idx else f"MISSING: {w}")
     print("===================\n")
 
-# =========================
-# MAIN
-# =========================
 if __name__ == "__main__":
     lines = extract_lines_from_pdf_two_column(PDF_PATH, start_page=START_PAGE, end_page=END_PAGE)
     entries = split_entries(lines)
@@ -327,7 +279,5 @@ if __name__ == "__main__":
             parsed.append({"word": e["word"], "types": types})
 
     save_csv(parsed, OUT_CSV)
-
-    print(f"Parsed entries: {len(parsed)}")
-    print(f"Wrote {OUT_CSV}")
+    print(f"Parsed entries: {len(parsed)}\nWrote {OUT_CSV}")
     debug_check(parsed, MUST_HAVE)

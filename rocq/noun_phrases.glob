@@ -1,4 +1,4 @@
-DIGEST e4bd603c1d9f3d5d916f5cfe25b67ff4
+DIGEST a712dcd23f684fcf5fc7be04d7f23b99
 Fnoun_phrases
 R27:32 Stdlib.Strings.String <> <> lib
 R34:37 Stdlib.Lists.List <> <> lib
@@ -7,1658 +7,1619 @@ R52:64 Stdlib.Lists.List ListNotations <> mod
 R108:113 Syntax <> <> lib
 R131:137 Numbers <> <> lib
 R155:158 verb <> <> lib
-ind 1115:1124 <> root_class
-constr 1140:1146 <> Uniform
-constr 1186:1192 <> Triform
-constr 1235:1244 <> TriformNoT
-constr 1288:1293 <> Biform
-constr 1346:1355 <> Quadriform
-scheme 1115:1124 <> root_class_rect
-scheme 1115:1124 <> root_class_ind
-scheme 1115:1124 <> root_class_rec
-scheme 1115:1124 <> root_class_sind
-ind 1397:1408 <> poss_context
-constr 1424:1435 <> PossCtx_None
-constr 1475:1493 <> PossCtx_FirstSecond
-constr 1543:1555 <> PossCtx_Third
-scheme 1397:1408 <> poss_context_rect
-scheme 1397:1408 <> poss_context_ind
-scheme 1397:1408 <> poss_context_rec
-scheme 1397:1408 <> poss_context_sind
-def 1665:1675 <> root_prefix
-R1683:1692 noun_phrases <> root_class ind
-binder 1678:1679 <> rc:5
-R1702:1713 noun_phrases <> poss_context ind
-binder 1696:1698 <> ctx:6
-R1718:1723 Stdlib.Strings.String <> string ind
-R1740:1742 noun_phrases <> ctx:6 var
-R1736:1737 noun_phrases <> rc:5 var
-R1753:1759 noun_phrases <> Uniform constr
-R1795:1801 noun_phrases <> Triform constr
-R1807:1818 noun_phrases <> PossCtx_None constr
-R1838:1844 noun_phrases <> Triform constr
-R1850:1868 noun_phrases <> PossCtx_FirstSecond constr
-R1881:1887 noun_phrases <> Triform constr
-R1893:1905 noun_phrases <> PossCtx_Third constr
-R1924:1933 noun_phrases <> TriformNoT constr
-R1936:1947 noun_phrases <> PossCtx_None constr
-R1966:1975 noun_phrases <> TriformNoT constr
-R1978:1996 noun_phrases <> PossCtx_FirstSecond constr
-R2009:2018 noun_phrases <> TriformNoT constr
-R2021:2033 noun_phrases <> PossCtx_Third constr
-R2052:2057 noun_phrases <> Biform constr
-R2064:2075 noun_phrases <> PossCtx_None constr
-R2094:2099 noun_phrases <> Biform constr
-R2106:2124 noun_phrases <> PossCtx_FirstSecond constr
-R2137:2142 noun_phrases <> Biform constr
-R2149:2161 noun_phrases <> PossCtx_Third constr
-R2179:2188 noun_phrases <> Quadriform constr
-R2191:2202 noun_phrases <> PossCtx_None constr
-R2222:2231 noun_phrases <> Quadriform constr
-R2234:2252 noun_phrases <> PossCtx_FirstSecond constr
-R2265:2274 noun_phrases <> Quadriform constr
-R2277:2289 noun_phrases <> PossCtx_Third constr
-def 2449:2470 <> poss_context_of_marker
-R2478:2488 Syntax <> poss_marker ind
-binder 2473:2474 <> pm:9
-R2493:2504 noun_phrases <> poss_context ind
-R2517:2518 noun_phrases <> pm:9 var
-R2529:2533 Syntax <> Poss1 constr
-R2537:2545 Syntax <> Poss1Incl constr
-R2549:2557 Syntax <> Poss1Excl constr
-R2561:2565 Syntax <> Poss2 constr
-R2569:2575 Syntax <> Poss2Pl constr
-R2580:2598 noun_phrases <> PossCtx_FirstSecond constr
-R2580:2598 noun_phrases <> PossCtx_FirstSecond constr
-R2580:2598 noun_phrases <> PossCtx_FirstSecond constr
-R2580:2598 noun_phrases <> PossCtx_FirstSecond constr
-R2580:2598 noun_phrases <> PossCtx_FirstSecond constr
-R2604:2608 Syntax <> Poss3 constr
-R2612:2618 Syntax <> Poss3Pl constr
-R2623:2635 noun_phrases <> PossCtx_Third constr
-R2623:2635 noun_phrases <> PossCtx_Third constr
-rec 2923:2926 <> noun
-proj 2949:2954 <> n_root
-proj 2974:2982 <> n_orality
-proj 3000:3007 <> n_ending
-proj 3030:3041 <> n_root_class
-proj 3059:3065 <> n_human
-R2964:2969 Stdlib.Strings.String <> string ind
-R2989:2995 Syntax <> orality ind
-R3015:3025 Syntax <> word_ending ind
-R3045:3054 noun_phrases <> root_class ind
-R3074:3077 Corelib.Init.Datatypes <> bool ind
-def 3138:3149 <> noun_surface
-R3156:3159 noun_phrases <> noun rec
-binder 3152:3152 <> n:17
-R3169:3180 noun_phrases <> poss_context ind
-binder 3163:3165 <> ctx:18
-R3185:3190 Stdlib.Strings.String <> string ind
-R3229:3232 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R3197:3207 noun_phrases <> root_prefix def
-R3210:3221 noun_phrases <> n_root_class proj
-R3223:3223 noun_phrases <> n:17 var
-R3226:3228 noun_phrases <> ctx:18 var
-R3233:3238 noun_phrases <> n_root proj
-R3240:3240 noun_phrases <> n:17 var
-rec 3521:3529 <> adjective
-proj 3551:3556 <> a_form
-proj 3576:3584 <> a_orality
-proj 3602:3613 <> a_root_class
-R3566:3571 Stdlib.Strings.String <> string ind
-R3591:3597 Syntax <> orality ind
-R3617:3626 noun_phrases <> root_class ind
-ind 3912:3923 <> subj_pronoun
-constr 3939:3945 <> Subj1SG
-constr 3949:3955 <> Subj2SG
-constr 3959:3965 <> Subj3SG
-constr 3971:3982 <> Subj1PL_INCL
-constr 3986:3997 <> Subj1PL_EXCL
-constr 4001:4007 <> Subj2PL
-constr 4011:4017 <> Subj3PL
-scheme 3912:3923 <> subj_pronoun_rect
-scheme 3912:3923 <> subj_pronoun_ind
-scheme 3912:3923 <> subj_pronoun_rec
-scheme 3912:3923 <> subj_pronoun_sind
-def 4032:4050 <> render_subj_pronoun
-R4057:4068 noun_phrases <> subj_pronoun ind
-binder 4053:4053 <> p:25
-R4073:4078 Stdlib.Strings.String <> string ind
-R4091:4091 noun_phrases <> p:25 var
-R4102:4108 noun_phrases <> Subj1SG constr
-R4128:4134 noun_phrases <> Subj2SG constr
-R4154:4160 noun_phrases <> Subj3SG constr
-R4181:4192 noun_phrases <> Subj1PL_INCL constr
-R4210:4221 noun_phrases <> Subj1PL_EXCL constr
-R4236:4242 noun_phrases <> Subj2PL constr
-R4264:4270 noun_phrases <> Subj3PL constr
-ind 4581:4587 <> dem_set
-constr 4603:4612 <> DemPresent
-constr 4618:4627 <> DemRemoved
-scheme 4581:4587 <> dem_set_rect
-scheme 4581:4587 <> dem_set_ind
-scheme 4581:4587 <> dem_set_rec
-scheme 4581:4587 <> dem_set_sind
-ind 4641:4653 <> dem_proximity
-constr 4669:4682 <> DemProxSpeaker
-constr 4701:4713 <> DemProxHearer
-constr 4738:4746 <> DemDistal
-constr 4771:4785 <> DemSharedPerson
-constr 4803:4816 <> DemSharedEvent
-constr 4836:4845 <> DemHearsay
-scheme 4641:4653 <> dem_proximity_rect
-scheme 4641:4653 <> dem_proximity_ind
-scheme 4641:4653 <> dem_proximity_rec
-scheme 4641:4653 <> dem_proximity_sind
-def 4878:4887 <> dem_set_of
-R4897:4909 noun_phrases <> dem_proximity ind
-binder 4890:4893 <> prox:31
-R4914:4920 noun_phrases <> dem_set ind
-R4933:4936 noun_phrases <> prox:31 var
-R4947:4960 noun_phrases <> DemProxSpeaker constr
-R4964:4976 noun_phrases <> DemProxHearer constr
-R4980:4988 noun_phrases <> DemDistal constr
-R4993:5002 noun_phrases <> DemPresent constr
-R4993:5002 noun_phrases <> DemPresent constr
-R4993:5002 noun_phrases <> DemPresent constr
-R5013:5022 noun_phrases <> DemRemoved constr
-def 5043:5054 <> dem_adj_form
-R5064:5076 noun_phrases <> dem_proximity ind
-binder 5057:5060 <> prox:33
-R5084:5089 Syntax <> number ind
-binder 5080:5080 <> n:34
-R5094:5099 Stdlib.Strings.String <> string ind
-R5118:5118 noun_phrases <> n:34 var
-R5112:5115 noun_phrases <> prox:33 var
-R5129:5142 noun_phrases <> DemProxSpeaker constr
-R5146:5153 Syntax <> Singular constr
-R5167:5180 noun_phrases <> DemProxSpeaker constr
-R5184:5189 Syntax <> Plural constr
-R5208:5220 noun_phrases <> DemProxHearer constr
-R5225:5232 Syntax <> Singular constr
-R5246:5258 noun_phrases <> DemProxHearer constr
-R5263:5268 Syntax <> Plural constr
-R5285:5293 noun_phrases <> DemDistal constr
-R5302:5309 Syntax <> Singular constr
-R5324:5332 noun_phrases <> DemDistal constr
-R5341:5346 Syntax <> Plural constr
-R5363:5377 noun_phrases <> DemSharedPerson constr
-R5380:5387 Syntax <> Singular constr
-R5401:5415 noun_phrases <> DemSharedPerson constr
-R5418:5423 Syntax <> Plural constr
-R5440:5453 noun_phrases <> DemSharedEvent constr
-R5457:5464 Syntax <> Singular constr
-R5479:5492 noun_phrases <> DemSharedEvent constr
-R5496:5501 Syntax <> Plural constr
-R5518:5527 noun_phrases <> DemHearsay constr
-R5535:5542 Syntax <> Singular constr
-R5558:5567 noun_phrases <> DemHearsay constr
-R5575:5580 Syntax <> Plural constr
-def 5672:5684 <> dem_pron_form
-R5694:5706 noun_phrases <> dem_proximity ind
-binder 5687:5690 <> prox:37
-R5714:5719 Syntax <> number ind
-binder 5710:5710 <> n:38
-R5724:5729 Stdlib.Strings.String <> string ind
-R5748:5748 noun_phrases <> n:38 var
-R5742:5745 noun_phrases <> prox:37 var
-R5759:5772 noun_phrases <> DemProxSpeaker constr
-R5776:5783 Syntax <> Singular constr
-R5800:5813 noun_phrases <> DemProxSpeaker constr
-R5817:5822 Syntax <> Plural constr
-R5843:5855 noun_phrases <> DemProxHearer constr
-R5860:5867 Syntax <> Singular constr
-R5884:5896 noun_phrases <> DemProxHearer constr
-R5901:5906 Syntax <> Plural constr
-R5926:5934 noun_phrases <> DemDistal constr
-R5943:5950 Syntax <> Singular constr
-R5968:5976 noun_phrases <> DemDistal constr
-R5985:5990 Syntax <> Plural constr
-R6010:6024 noun_phrases <> DemSharedPerson constr
-R6027:6034 Syntax <> Singular constr
-R6048:6062 noun_phrases <> DemSharedPerson constr
-R6065:6070 Syntax <> Plural constr
-R6090:6103 noun_phrases <> DemSharedEvent constr
-R6107:6114 Syntax <> Singular constr
-R6129:6142 noun_phrases <> DemSharedEvent constr
-R6146:6151 Syntax <> Plural constr
-R6171:6180 noun_phrases <> DemHearsay constr
-R6188:6195 Syntax <> Singular constr
-R6214:6223 noun_phrases <> DemHearsay constr
-R6231:6236 Syntax <> Plural constr
-ind 6540:6549 <> indef_pron
-constr 6565:6577 <> Indef_Maymava
-constr 6583:6593 <> Indef_Opava
-constr 6599:6609 <> Indef_Avave
-constr 6654:6665 <> Indef_Mbaeve
-constr 6709:6723 <> Indef_Oimeraeva
-constr 6729:6741 <> Indef_Mokoive
-constr 6747:6759 <> Indef_Ambueva
-constr 6765:6779 <> Indef_PeteiMbae
-scheme 6540:6549 <> indef_pron_rect
-scheme 6540:6549 <> indef_pron_ind
-scheme 6540:6549 <> indef_pron_rec
-scheme 6540:6549 <> indef_pron_sind
-def 6794:6810 <> render_indef_pron
-R6817:6826 noun_phrases <> indef_pron ind
-binder 6813:6813 <> i:43
-R6831:6836 Stdlib.Strings.String <> string ind
-R6849:6849 noun_phrases <> i:43 var
-R6860:6872 noun_phrases <> Indef_Maymava constr
-R6894:6904 noun_phrases <> Indef_Opava constr
-R6926:6936 noun_phrases <> Indef_Avave constr
-R6957:6968 noun_phrases <> Indef_Mbaeve constr
-R6990:7004 noun_phrases <> Indef_Oimeraeva constr
-R7027:7039 noun_phrases <> Indef_Mokoive constr
-R7061:7073 noun_phrases <> Indef_Ambueva constr
-R7095:7109 noun_phrases <> Indef_PeteiMbae constr
-def 7212:7227 <> is_negative_pron
-R7234:7243 noun_phrases <> indef_pron ind
-binder 7230:7230 <> i:45
-R7248:7251 Corelib.Init.Datatypes <> bool ind
-R7264:7264 noun_phrases <> i:45 var
-R7275:7285 noun_phrases <> Indef_Avave constr
-R7289:7300 noun_phrases <> Indef_Mbaeve constr
-R7305:7308 Corelib.Init.Datatypes <> true constr
-R7305:7308 Corelib.Init.Datatypes <> true constr
-R7319:7323 Corelib.Init.Datatypes <> false constr
-ind 7613:7625 <> interrog_pron
-constr 7641:7653 <> Interrog_Mbae
-constr 7659:7671 <> Interrog_Mava
-constr 7677:7693 <> Interrog_Mbaeicha
-constr 7699:7711 <> Interrog_Mamo
-constr 7717:7731 <> Interrog_Arakae
-constr 7737:7751 <> Interrog_Mbaera
-constr 7757:7771 <> Interrog_Mbaere
-constr 7777:7792 <> Interrog_Mbaegui
-constr 7798:7811 <> Interrog_Mbovy
-constr 7817:7832 <> Interrog_Avambae
-scheme 7613:7625 <> interrog_pron_rect
-scheme 7613:7625 <> interrog_pron_ind
-scheme 7613:7625 <> interrog_pron_rec
-scheme 7613:7625 <> interrog_pron_sind
-def 7847:7866 <> render_interrog_pron
-R7873:7885 noun_phrases <> interrog_pron ind
-binder 7869:7869 <> i:49
-R7890:7895 Stdlib.Strings.String <> string ind
-R7908:7908 noun_phrases <> i:49 var
-R7919:7931 noun_phrases <> Interrog_Mbae constr
-R7952:7964 noun_phrases <> Interrog_Mava constr
-R7985:8001 noun_phrases <> Interrog_Mbaeicha constr
-R8023:8035 noun_phrases <> Interrog_Mamo constr
-R8055:8069 noun_phrases <> Interrog_Arakae constr
-R8090:8104 noun_phrases <> Interrog_Mbaera constr
-R8126:8140 noun_phrases <> Interrog_Mbaere constr
-R8162:8177 noun_phrases <> Interrog_Mbaegui constr
-R8199:8212 noun_phrases <> Interrog_Mbovy constr
-R8232:8247 noun_phrases <> Interrog_Avambae constr
-ind 8552:8559 <> neg_pron
-constr 8575:8588 <> NegPron_Mbaeve
-constr 8594:8606 <> NegPron_Avave
-constr 8612:8626 <> NegPron_NiPetei
-constr 8632:8645 <> NegPron_Mamove
-constr 8651:8665 <> NegPron_Arakeve
-constr 8671:8684 <> NegPron_Maramo
-scheme 8552:8559 <> neg_pron_rect
-scheme 8552:8559 <> neg_pron_ind
-scheme 8552:8559 <> neg_pron_rec
-scheme 8552:8559 <> neg_pron_sind
-def 8699:8713 <> render_neg_pron
-R8721:8728 noun_phrases <> neg_pron ind
-binder 8716:8717 <> np:53
-R8733:8738 Stdlib.Strings.String <> string ind
-R8751:8752 noun_phrases <> np:53 var
-R8763:8776 noun_phrases <> NegPron_Mbaeve constr
-R8796:8808 noun_phrases <> NegPron_Avave constr
-R8827:8841 noun_phrases <> NegPron_NiPetei constr
-R8862:8875 noun_phrases <> NegPron_Mamove constr
-R8894:8908 noun_phrases <> NegPron_Arakeve constr
-R8929:8942 noun_phrases <> NegPron_Maramo constr
-ind 9317:9330 <> nominal_suffix
-constr 9362:9370 <> NS_Plural
-constr 9376:9387 <> NS_Multitude
-constr 9393:9405 <> NS_Collective
-constr 9425:9434 <> NS_PastKue
-constr 9440:9450 <> NS_FutureRa
-constr 9474:9484 <> NS_ComparVe
-constr 9490:9497 <> NS_Super
-constr 9528:9539 <> NS_Privative
-constr 9545:9557 <> NS_Diminutive
-constr 9563:9576 <> NS_Attenuative
-constr 9600:9607 <> NS_NomHA
-constr 9613:9620 <> NS_NomVA
-constr 9626:9633 <> NS_NomPY
-constr 9639:9647 <> NS_NomKue
-constr 9669:9680 <> NS_OrdinalHA
-scheme 9317:9330 <> nominal_suffix_rect
-scheme 9317:9330 <> nominal_suffix_ind
-scheme 9317:9330 <> nominal_suffix_rec
-scheme 9317:9330 <> nominal_suffix_sind
-def 9695:9711 <> render_nom_suffix
-R9718:9731 noun_phrases <> nominal_suffix ind
-binder 9714:9714 <> s:57
-R9739:9745 Syntax <> orality ind
-binder 9735:9735 <> o:58
-R9750:9755 Stdlib.Strings.String <> string ind
-R9768:9768 noun_phrases <> s:57 var
-R9779:9787 noun_phrases <> NS_Plural constr
-R9797:9813 Syntax <> plural_suffix_adj def
-R9815:9815 noun_phrases <> o:58 var
-R9821:9832 noun_phrases <> NS_Multitude constr
-R9849:9861 noun_phrases <> NS_Collective constr
-R9873:9873 noun_phrases <> o:58 var
-R9880:9883 Syntax <> Oral constr
-R9895:9899 Syntax <> Nasal constr
-R9918:9927 noun_phrases <> NS_PastKue constr
-R9942:9942 noun_phrases <> o:58 var
-R9949:9952 Syntax <> Oral constr
-R9965:9969 Syntax <> Nasal constr
-R9989:9999 noun_phrases <> NS_FutureRa constr
-R10017:10027 noun_phrases <> NS_ComparVe constr
-R10044:10051 noun_phrases <> NS_Super constr
-R10062:10073 Syntax <> super_suffix def
-R10075:10075 noun_phrases <> o:58 var
-R10081:10092 noun_phrases <> NS_Privative constr
-R10110:10122 noun_phrases <> NS_Diminutive constr
-R10137:10150 noun_phrases <> NS_Attenuative constr
-R10161:10161 noun_phrases <> o:58 var
-R10168:10171 Syntax <> Oral constr
-R10183:10187 Syntax <> Nasal constr
-R10206:10213 noun_phrases <> NS_NomHA constr
-R10233:10240 noun_phrases <> NS_NomVA constr
-R10260:10267 noun_phrases <> NS_NomPY constr
-R10284:10284 noun_phrases <> o:58 var
-R10291:10294 Syntax <> Oral constr
-R10306:10310 Syntax <> Nasal constr
-R10329:10337 noun_phrases <> NS_NomKue constr
-R10353:10353 noun_phrases <> o:58 var
-R10360:10363 Syntax <> Oral constr
-R10376:10380 Syntax <> Nasal constr
-R10400:10411 noun_phrases <> NS_OrdinalHA constr
-def 10495:10508 <> suffix_pair_ok
-R10519:10532 noun_phrases <> nominal_suffix ind
-binder 10511:10512 <> s1:65
-binder 10514:10515 <> s2:66
-R10537:10540 Corelib.Init.Datatypes <> bool ind
-R10557:10558 noun_phrases <> s2:66 var
-R10553:10554 noun_phrases <> s1:65 var
-R10569:10579 noun_phrases <> NS_FutureRa constr
-R10582:10591 noun_phrases <> NS_PastKue constr
-R10597:10600 Corelib.Init.Datatypes <> true constr
-R10642:10649 noun_phrases <> NS_NomPY constr
-R10655:10665 noun_phrases <> NS_FutureRa constr
-R10670:10673 Corelib.Init.Datatypes <> true constr
-R10713:10720 noun_phrases <> NS_NomPY constr
-R10726:10735 noun_phrases <> NS_PastKue constr
-R10741:10744 Corelib.Init.Datatypes <> true constr
-R10781:10788 noun_phrases <> NS_NomHA constr
-R10794:10803 noun_phrases <> NS_PastKue constr
-R10809:10812 Corelib.Init.Datatypes <> true constr
-R10850:10857 noun_phrases <> NS_NomHA constr
-R10863:10873 noun_phrases <> NS_FutureRa constr
-R10878:10881 Corelib.Init.Datatypes <> true constr
-R10930:10934 Corelib.Init.Datatypes <> false constr
-ind 11224:11235 <> postposition
-constr 11251:11257 <> Post_Pe
-constr 11261:11268 <> Post_Gui
-constr 11272:11279 <> Post_Gua
-constr 11283:11291 <> Post_Rehe
-constr 11295:11304 <> Post_Ndive
-constr 11310:11319 <> Post_Guive
-constr 11323:11331 <> Post_Peve
-constr 11335:11343 <> Post_Rupi
-constr 11347:11354 <> Post_Ari
-constr 11358:11365 <> Post_Guy
-constr 11371:11380 <> Post_Guara
-constr 11384:11393 <> Post_Hagua
-scheme 11224:11235 <> postposition_rect
-scheme 11224:11235 <> postposition_ind
-scheme 11224:11235 <> postposition_rec
-scheme 11224:11235 <> postposition_sind
-def 11408:11424 <> postposition_form
-R11431:11437 Syntax <> orality ind
-binder 11427:11427 <> o:71
-R11445:11456 noun_phrases <> postposition ind
-binder 11441:11441 <> p:72
-R11461:11466 Stdlib.Strings.String <> string ind
-R11479:11479 noun_phrases <> p:72 var
-R11490:11496 noun_phrases <> Post_Pe constr
-R11510:11510 noun_phrases <> o:71 var
-R11517:11520 Syntax <> Oral constr
-R11535:11539 Syntax <> Nasal constr
-R11560:11567 noun_phrases <> Post_Gui constr
-R11584:11591 noun_phrases <> Post_Gua constr
-R11608:11616 noun_phrases <> Post_Rehe constr
-R11633:11642 noun_phrases <> Post_Ndive constr
-R11653:11653 noun_phrases <> o:71 var
-R11660:11663 Syntax <> Oral constr
-R11678:11682 Syntax <> Nasal constr
-R11703:11712 noun_phrases <> Post_Guive constr
-R11729:11737 noun_phrases <> Post_Peve constr
-R11754:11762 noun_phrases <> Post_Rupi constr
-R11779:11786 noun_phrases <> Post_Ari constr
-R11805:11812 noun_phrases <> Post_Guy constr
-R11829:11838 noun_phrases <> Post_Guara constr
-R11856:11865 noun_phrases <> Post_Hagua constr
-rec 12096:12102 <> np_meta
-proj 12127:12136 <> np_orality
-proj 12155:12163 <> np_number
-proj 12182:12190 <> np_person
-proj 12209:12222 <> np_inclusivity
-R12144:12150 Syntax <> orality ind
-R12172:12177 Syntax <> number ind
-R12199:12204 Syntax <> person ind
-R12226:12231 Corelib.Init.Datatypes <> option ind
-R12233:12243 Syntax <> inclusivity ind
-def 12600:12614 <> embedded_clause
-R12626:12640 verb <> conjugated_verb rec
-def 12655:12667 <> is_rel_clause
-R12675:12689 verb <> conjugated_verb rec
-binder 12670:12671 <> cv:81
-R12694:12697 Corelib.Init.Datatypes <> bool ind
-R12704:12720 verb <> has_verbal_suffix def
-R12723:12733 verb <> cv_suffixes proj
-R12735:12736 noun_phrases <> cv:81 var
-R12739:12746 verb <> VS_NomVa constr
-def 12761:12774 <> is_comp_clause
-R12782:12796 verb <> conjugated_verb rec
-binder 12777:12778 <> cv:82
-R12801:12804 Corelib.Init.Datatypes <> bool ind
-R12811:12827 verb <> has_verbal_suffix def
-R12830:12840 verb <> cv_suffixes proj
-R12842:12843 noun_phrases <> cv:82 var
-R12846:12853 verb <> VS_NomHa constr
-ind 13271:13280 <> guarani_np
-constr 13324:13330 <> NP_Bare
-constr 13360:13365 <> NP_Dem
-constr 13423:13428 <> NP_Art
-constr 13498:13503 <> NP_Adj
-constr 13547:13553 <> NP_Poss
-constr 13598:13603 <> NP_Num
-constr 13648:13653 <> NP_Gen
-constr 13698:13707 <> NP_DemPoss
-constr 13766:13771 <> NP_Rel
-constr 13821:13827 <> NP_Comp
-constr 13903:13908 <> NP_Suf
-constr 13963:13969 <> NP_Suf2
-constr 14078:14088 <> NP_PronSubj
-constr 14128:14138 <> NP_PronPoss
-constr 14178:14187 <> NP_PronDem
-constr 14238:14249 <> NP_PronIndef
-constr 14288:14302 <> NP_PronInterrog
-constr 14338:14347 <> NP_PronNeg
-constr 14425:14434 <> NP_CoordHa
-constr 14483:14494 <> NP_CoordTera
-R13341:13344 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13337:13340 noun_phrases <> noun rec
-R13345:13354 noun_phrases <> guarani_np:83 ind
-R13386:13389 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13373:13385 noun_phrases <> dem_proximity ind
-R13396:13399 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13390:13395 Syntax <> number ind
-R13404:13407 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13400:13403 noun_phrases <> noun rec
-R13408:13417 noun_phrases <> guarani_np:83 ind
-R13442:13445 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13436:13441 Syntax <> number ind
-R13450:13453 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13446:13449 noun_phrases <> noun rec
-R13454:13463 noun_phrases <> guarani_np:83 ind
-R13515:13518 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13511:13514 noun_phrases <> noun rec
-R13528:13531 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13519:13527 noun_phrases <> adjective rec
-R13532:13541 noun_phrases <> guarani_np:83 ind
-R13571:13574 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13560:13570 Syntax <> poss_marker ind
-R13579:13582 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13575:13578 noun_phrases <> noun rec
-R13583:13592 noun_phrases <> guarani_np:83 ind
-R13621:13624 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13611:13620 Numbers <> GuaraniNum ind
-R13629:13632 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13625:13628 noun_phrases <> noun rec
-R13633:13642 noun_phrases <> guarani_np:83 ind
-R13671:13674 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13661:13670 noun_phrases <> guarani_np:83 ind
-R13679:13682 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13675:13678 noun_phrases <> noun rec
-R13683:13692 noun_phrases <> guarani_np:83 ind
-R13724:13727 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13711:13723 noun_phrases <> dem_proximity ind
-R13739:13742 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13728:13738 Syntax <> poss_marker ind
-R13747:13750 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13743:13746 noun_phrases <> noun rec
-R13751:13760 noun_phrases <> guarani_np:83 ind
-R13783:13786 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13779:13782 noun_phrases <> noun rec
-R13802:13805 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13787:13801 noun_phrases <> embedded_clause def
-R13806:13815 noun_phrases <> guarani_np:83 ind
-R13849:13852 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13834:13848 noun_phrases <> embedded_clause def
-R13853:13862 noun_phrases <> guarani_np:83 ind
-R13926:13929 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13916:13925 noun_phrases <> guarani_np:83 ind
-R13944:13947 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13930:13943 noun_phrases <> nominal_suffix ind
-R13948:13957 noun_phrases <> guarani_np:83 ind
-R13986:13989 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13976:13985 noun_phrases <> guarani_np:83 ind
-R14004:14007 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R13990:14003 noun_phrases <> nominal_suffix ind
-R14022:14025 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R14008:14021 noun_phrases <> nominal_suffix ind
-R14026:14035 noun_phrases <> guarani_np:83 ind
-R14108:14112 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R14096:14107 noun_phrases <> subj_pronoun ind
-R14113:14122 noun_phrases <> guarani_np:83 ind
-R14157:14162 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R14146:14156 Syntax <> poss_marker ind
-R14163:14172 noun_phrases <> guarani_np:83 ind
-R14209:14212 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R14196:14208 noun_phrases <> dem_proximity ind
-R14219:14222 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R14213:14218 Syntax <> number ind
-R14223:14232 noun_phrases <> guarani_np:83 ind
-R14266:14272 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R14256:14265 noun_phrases <> indef_pron ind
-R14273:14282 noun_phrases <> guarani_np:83 ind
-R14319:14322 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R14306:14318 noun_phrases <> interrog_pron ind
-R14323:14332 noun_phrases <> guarani_np:83 ind
-R14364:14372 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R14356:14363 noun_phrases <> neg_pron ind
-R14373:14382 noun_phrases <> guarani_np:83 ind
-R14450:14453 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R14440:14449 noun_phrases <> guarani_np:83 ind
-R14464:14467 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R14454:14463 noun_phrases <> guarani_np:83 ind
-R14468:14477 noun_phrases <> guarani_np:83 ind
-R14508:14511 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R14498:14507 noun_phrases <> guarani_np:83 ind
-R14522:14525 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R14512:14521 noun_phrases <> guarani_np:83 ind
-R14526:14535 noun_phrases <> guarani_np:83 ind
-scheme 13271:13280 <> guarani_np_rect
-scheme 13271:13280 <> guarani_np_ind
-scheme 13271:13280 <> guarani_np_rec
-scheme 13271:13280 <> guarani_np_sind
-def 14750:14763 <> is_noun_headed
-R14770:14779 noun_phrases <> guarani_np ind
-binder 14766:14766 <> x:85
-R14784:14787 Corelib.Init.Datatypes <> bool ind
-R14800:14800 noun_phrases <> x:85 var
-R14811:14817 noun_phrases <> NP_Bare constr
-R14823:14828 noun_phrases <> NP_Dem constr
-R14838:14843 noun_phrases <> NP_Art constr
-R14851:14856 noun_phrases <> NP_Adj constr
-R14866:14872 noun_phrases <> NP_Poss constr
-R14880:14885 noun_phrases <> NP_Num constr
-R14893:14898 noun_phrases <> NP_Gen constr
-R14906:14915 noun_phrases <> NP_DemPoss constr
-R14927:14932 noun_phrases <> NP_Rel constr
-R14940:14946 noun_phrases <> NP_Comp constr
-R14953:14956 Corelib.Init.Datatypes <> true constr
-R14953:14956 Corelib.Init.Datatypes <> true constr
-R14953:14956 Corelib.Init.Datatypes <> true constr
-R14953:14956 Corelib.Init.Datatypes <> true constr
-R14953:14956 Corelib.Init.Datatypes <> true constr
-R14953:14956 Corelib.Init.Datatypes <> true constr
-R14953:14956 Corelib.Init.Datatypes <> true constr
-R14953:14956 Corelib.Init.Datatypes <> true constr
-R14953:14956 Corelib.Init.Datatypes <> true constr
-R14953:14956 Corelib.Init.Datatypes <> true constr
-R14962:14967 noun_phrases <> NP_Suf constr
-R14984:14997 noun_phrases <> is_noun_headed:86 def
-R15009:15015 noun_phrases <> NP_Suf2 constr
-R15031:15044 noun_phrases <> is_noun_headed:86 def
-R15061:15065 Corelib.Init.Datatypes <> false constr
-def 15086:15095 <> has_suffix
-R15102:15111 noun_phrases <> guarani_np ind
-binder 15098:15098 <> x:88
-R15116:15119 Corelib.Init.Datatypes <> bool ind
-R15132:15132 noun_phrases <> x:88 var
-R15143:15148 noun_phrases <> NP_Suf constr
-R15160:15163 Corelib.Init.Datatypes <> true constr
-R15169:15175 noun_phrases <> NP_Suf2 constr
-R15186:15189 Corelib.Init.Datatypes <> true constr
-R15212:15216 Corelib.Init.Datatypes <> false constr
-def 15473:15477 <> wf_np
-R15484:15493 noun_phrases <> guarani_np ind
-binder 15480:15480 <> x:90
-R15498:15501 Corelib.Init.Datatypes <> bool ind
-R15514:15514 noun_phrases <> x:90 var
-R15525:15531 noun_phrases <> NP_Bare constr
-R15537:15542 noun_phrases <> NP_Dem constr
-R15552:15557 noun_phrases <> NP_Art constr
-R15565:15570 noun_phrases <> NP_Adj constr
-R15580:15586 noun_phrases <> NP_Poss constr
-R15594:15599 noun_phrases <> NP_Num constr
-R15607:15616 noun_phrases <> NP_DemPoss constr
-R15627:15630 Corelib.Init.Datatypes <> true constr
-R15627:15630 Corelib.Init.Datatypes <> true constr
-R15627:15630 Corelib.Init.Datatypes <> true constr
-R15627:15630 Corelib.Init.Datatypes <> true constr
-R15627:15630 Corelib.Init.Datatypes <> true constr
-R15627:15630 Corelib.Init.Datatypes <> true constr
-R15627:15630 Corelib.Init.Datatypes <> true constr
-R15637:15642 noun_phrases <> NP_Gen constr
-R15654:15658 noun_phrases <> wf_np:91 def
-R15670:15675 noun_phrases <> NP_Rel constr
-R15707:15710 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R15686:15703 verb <> wf_conjugated_verb def
-R15711:15723 noun_phrases <> is_rel_clause def
-R15733:15739 noun_phrases <> NP_Comp constr
-R15770:15773 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R15749:15766 verb <> wf_conjugated_verb def
-R15774:15787 noun_phrases <> is_comp_clause def
-R15797:15802 noun_phrases <> NP_Suf constr
-R15868:15871 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R15841:15844 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R15821:15834 noun_phrases <> is_noun_headed def
-R15845:15848 Corelib.Init.Datatypes <> negb def
-R15851:15860 noun_phrases <> has_suffix def
-R15872:15876 noun_phrases <> wf_np:91 def
-R15889:15895 noun_phrases <> NP_Suf2 constr
-R15980:15989 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R15965:15968 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R15938:15941 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R15918:15931 noun_phrases <> is_noun_headed def
-R15942:15945 Corelib.Init.Datatypes <> negb def
-R15948:15957 noun_phrases <> has_suffix def
-R15969:15973 noun_phrases <> wf_np:91 def
-R15990:16003 noun_phrases <> suffix_pair_ok def
-R16016:16026 noun_phrases <> NP_PronSubj constr
-R16032:16042 noun_phrases <> NP_PronPoss constr
-R16048:16057 noun_phrases <> NP_PronDem constr
-R16067:16078 noun_phrases <> NP_PronIndef constr
-R16084:16098 noun_phrases <> NP_PronInterrog constr
-R16104:16113 noun_phrases <> NP_PronNeg constr
-R16120:16123 Corelib.Init.Datatypes <> true constr
-R16120:16123 Corelib.Init.Datatypes <> true constr
-R16120:16123 Corelib.Init.Datatypes <> true constr
-R16120:16123 Corelib.Init.Datatypes <> true constr
-R16120:16123 Corelib.Init.Datatypes <> true constr
-R16120:16123 Corelib.Init.Datatypes <> true constr
-R16130:16139 noun_phrases <> NP_CoordHa constr
-R16153:16164 noun_phrases <> NP_CoordTera constr
-R16183:16186 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R16175:16179 noun_phrases <> wf_np:91 def
-R16187:16191 noun_phrases <> wf_np:91 def
-R16183:16186 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R16175:16179 noun_phrases <> wf_np:91 def
-R16187:16191 noun_phrases <> wf_np:91 def
-def 16417:16435 <> inclusivity_of_poss
-R16442:16452 Syntax <> poss_marker ind
-binder 16438:16438 <> p:93
-R16457:16462 Corelib.Init.Datatypes <> option ind
-R16464:16474 Syntax <> inclusivity ind
-R16487:16487 noun_phrases <> p:93 var
-R16498:16506 Syntax <> Poss1Incl constr
-R16511:16514 Corelib.Init.Datatypes <> Some constr
-R16516:16524 Syntax <> Inclusive constr
-R16530:16538 Syntax <> Poss1Excl constr
-R16543:16546 Corelib.Init.Datatypes <> Some constr
-R16548:16556 Syntax <> Exclusive constr
-R16567:16570 Corelib.Init.Datatypes <> None constr
-def 16591:16609 <> inclusivity_of_subj
-R16616:16627 noun_phrases <> subj_pronoun ind
-binder 16612:16612 <> p:95
-R16632:16637 Corelib.Init.Datatypes <> option ind
-R16639:16649 Syntax <> inclusivity ind
-R16662:16662 noun_phrases <> p:95 var
-R16673:16684 noun_phrases <> Subj1PL_INCL constr
-R16689:16692 Corelib.Init.Datatypes <> Some constr
-R16694:16702 Syntax <> Inclusive constr
-R16708:16719 noun_phrases <> Subj1PL_EXCL constr
-R16724:16727 Corelib.Init.Datatypes <> Some constr
-R16729:16737 Syntax <> Exclusive constr
-R16748:16751 Corelib.Init.Datatypes <> None constr
-def 16772:16785 <> person_of_subj
-R16792:16803 noun_phrases <> subj_pronoun ind
-binder 16788:16788 <> p:97
-R16808:16813 Syntax <> person ind
-R16826:16826 noun_phrases <> p:97 var
-R16837:16843 noun_phrases <> Subj1SG constr
-R16847:16858 noun_phrases <> Subj1PL_INCL constr
-R16862:16873 noun_phrases <> Subj1PL_EXCL constr
-R16878:16882 Syntax <> First constr
-R16878:16882 Syntax <> First constr
-R16878:16882 Syntax <> First constr
-R16888:16894 noun_phrases <> Subj2SG constr
-R16898:16904 noun_phrases <> Subj2PL constr
-R16930:16935 Syntax <> Second constr
-R16930:16935 Syntax <> Second constr
-R16941:16947 noun_phrases <> Subj3SG constr
-R16951:16957 noun_phrases <> Subj3PL constr
-R16983:16987 Syntax <> Third constr
-R16983:16987 Syntax <> Third constr
-def 17008:17021 <> number_of_subj
-R17028:17039 noun_phrases <> subj_pronoun ind
-binder 17024:17024 <> p:99
-R17044:17049 Syntax <> number ind
-R17062:17062 noun_phrases <> p:99 var
-R17073:17079 noun_phrases <> Subj1SG constr
-R17083:17089 noun_phrases <> Subj2SG constr
-R17093:17099 noun_phrases <> Subj3SG constr
-R17104:17111 Syntax <> Singular constr
-R17104:17111 Syntax <> Singular constr
-R17104:17111 Syntax <> Singular constr
-R17149:17154 Syntax <> Plural constr
-def 17175:17188 <> person_of_poss
-R17195:17205 Syntax <> poss_marker ind
-binder 17191:17191 <> p:101
-R17210:17215 Syntax <> person ind
-R17228:17228 noun_phrases <> p:101 var
-R17239:17243 Syntax <> Poss1 constr
-R17247:17255 Syntax <> Poss1Incl constr
-R17259:17267 Syntax <> Poss1Excl constr
-R17272:17276 Syntax <> First constr
-R17272:17276 Syntax <> First constr
-R17272:17276 Syntax <> First constr
-R17282:17286 Syntax <> Poss2 constr
-R17290:17296 Syntax <> Poss2Pl constr
-R17315:17320 Syntax <> Second constr
-R17315:17320 Syntax <> Second constr
-R17326:17330 Syntax <> Poss3 constr
-R17334:17340 Syntax <> Poss3Pl constr
-R17359:17363 Syntax <> Third constr
-R17359:17363 Syntax <> Third constr
-def 17384:17397 <> number_of_poss
-R17404:17414 Syntax <> poss_marker ind
-binder 17400:17400 <> p:103
-R17419:17424 Syntax <> number ind
-R17437:17437 noun_phrases <> p:103 var
-R17448:17452 Syntax <> Poss1 constr
-R17456:17460 Syntax <> Poss2 constr
-R17464:17468 Syntax <> Poss3 constr
-R17473:17480 Syntax <> Singular constr
-R17473:17480 Syntax <> Singular constr
-R17473:17480 Syntax <> Singular constr
-R17511:17516 Syntax <> Plural constr
-def 17537:17551 <> number_of_indef
-R17558:17567 noun_phrases <> indef_pron ind
-binder 17554:17554 <> i:105
-R17572:17577 Syntax <> number ind
-R17590:17590 noun_phrases <> i:105 var
-R17601:17611 noun_phrases <> Indef_Avave constr
-R17615:17626 noun_phrases <> Indef_Mbaeve constr
-R17630:17644 noun_phrases <> Indef_PeteiMbae constr
-R17649:17656 Syntax <> Singular constr
-R17649:17656 Syntax <> Singular constr
-R17649:17656 Syntax <> Singular constr
-R17711:17716 Syntax <> Plural constr
-def 17737:17748 <> person_merge
-R17759:17764 Syntax <> person ind
-binder 17751:17752 <> p1:107
-binder 17754:17755 <> p2:108
-R17769:17774 Syntax <> person ind
-R17791:17792 noun_phrases <> p2:108 var
-R17787:17788 noun_phrases <> p1:107 var
-R17803:17807 Syntax <> First constr
-R17817:17821 Syntax <> First constr
-R17828:17832 Syntax <> First constr
-R17828:17832 Syntax <> First constr
-R17838:17843 Syntax <> Second constr
-R17853:17858 Syntax <> Second constr
-R17863:17868 Syntax <> Second constr
-R17863:17868 Syntax <> Second constr
-R17874:17878 Syntax <> Third constr
-R17881:17885 Syntax <> Third constr
-R17899:17903 Syntax <> Third constr
-def 18124:18133 <> np_meta_of
-R18140:18149 noun_phrases <> guarani_np ind
-binder 18136:18136 <> x:111
-R18154:18160 noun_phrases <> np_meta rec
-R18173:18173 noun_phrases <> x:111 var
-R18184:18190 noun_phrases <> NP_Bare constr
-R18203:18210 noun_phrases <> mkNPMeta constr
-R18213:18221 noun_phrases <> n_orality proj
-R18226:18233 Syntax <> Singular constr
-R18235:18239 Syntax <> Third constr
-R18241:18244 Corelib.Init.Datatypes <> None constr
-R18251:18256 noun_phrases <> NP_Dem constr
-R18275:18282 noun_phrases <> mkNPMeta constr
-R18285:18293 noun_phrases <> n_orality proj
-R18302:18306 Syntax <> Third constr
-R18308:18311 Corelib.Init.Datatypes <> None constr
-R18318:18323 noun_phrases <> NP_Art constr
-R18340:18347 noun_phrases <> mkNPMeta constr
-R18350:18358 noun_phrases <> n_orality proj
-R18367:18371 Syntax <> Third constr
-R18373:18376 Corelib.Init.Datatypes <> None constr
-R18383:18388 noun_phrases <> NP_Adj constr
-R18403:18410 noun_phrases <> mkNPMeta constr
-R18413:18421 noun_phrases <> n_orality proj
-R18426:18433 Syntax <> Singular constr
-R18435:18439 Syntax <> Third constr
-R18441:18444 Corelib.Init.Datatypes <> None constr
-R18451:18457 noun_phrases <> NP_Poss constr
-R18473:18480 noun_phrases <> mkNPMeta constr
-R18483:18491 noun_phrases <> n_orality proj
-R18497:18510 noun_phrases <> number_of_poss def
-R18517:18530 noun_phrases <> person_of_poss def
-R18552:18570 noun_phrases <> inclusivity_of_poss def
-R18581:18586 noun_phrases <> NP_Num constr
-R18616:18621 Numbers <> is_one def
-R18645:18650 Syntax <> Plural constr
-R18631:18638 Syntax <> Singular constr
-binder 18606:18608 <> num:114
-R18661:18668 noun_phrases <> mkNPMeta constr
-R18671:18679 noun_phrases <> n_orality proj
-R18684:18686 noun_phrases <> num:114 var
-R18688:18692 Syntax <> Third constr
-R18694:18697 Corelib.Init.Datatypes <> None constr
-R18704:18709 noun_phrases <> NP_Gen constr
-R18724:18731 noun_phrases <> mkNPMeta constr
-R18734:18742 noun_phrases <> n_orality proj
-R18747:18754 Syntax <> Singular constr
-R18756:18760 Syntax <> Third constr
-R18762:18765 Corelib.Init.Datatypes <> None constr
-R18772:18781 noun_phrases <> NP_DemPoss constr
-R18799:18806 noun_phrases <> mkNPMeta constr
-R18809:18817 noun_phrases <> n_orality proj
-R18823:18836 noun_phrases <> number_of_poss def
-R18843:18856 noun_phrases <> person_of_poss def
-R18878:18896 noun_phrases <> inclusivity_of_poss def
-R18907:18912 noun_phrases <> NP_Rel constr
-R18927:18934 noun_phrases <> mkNPMeta constr
-R18937:18945 noun_phrases <> n_orality proj
-R18950:18957 Syntax <> Singular constr
-R18959:18963 Syntax <> Third constr
-R18965:18968 Corelib.Init.Datatypes <> None constr
-R18975:18981 noun_phrases <> NP_Comp constr
-R18995:19002 noun_phrases <> mkNPMeta constr
-R19005:19014 verb <> cv_orality def
-R19020:19027 Syntax <> Singular constr
-R19029:19033 Syntax <> Third constr
-R19035:19038 Corelib.Init.Datatypes <> None constr
-R19045:19050 noun_phrases <> NP_Suf constr
-R19058:19066 noun_phrases <> NS_Plural constr
-R19086:19095 noun_phrases <> np_meta_of:112 def
-binder 19081:19081 <> m:115
-R19112:19119 noun_phrases <> mkNPMeta constr
-R19122:19131 noun_phrases <> np_orality proj
-R19133:19133 noun_phrases <> m:115 var
-R19136:19141 Syntax <> Plural constr
-R19144:19152 noun_phrases <> np_person proj
-R19154:19154 noun_phrases <> m:115 var
-R19158:19171 noun_phrases <> np_inclusivity proj
-R19173:19173 noun_phrases <> m:115 var
-R19180:19185 noun_phrases <> NP_Suf constr
-R19193:19204 noun_phrases <> NS_Multitude constr
-R19224:19233 noun_phrases <> np_meta_of:112 def
-binder 19219:19219 <> m:116
-R19250:19257 noun_phrases <> mkNPMeta constr
-R19260:19269 noun_phrases <> np_orality proj
-R19271:19271 noun_phrases <> m:116 var
-R19274:19279 Syntax <> Plural constr
-R19282:19290 noun_phrases <> np_person proj
-R19292:19292 noun_phrases <> m:116 var
-R19296:19309 noun_phrases <> np_inclusivity proj
-R19311:19311 noun_phrases <> m:116 var
-R19318:19323 noun_phrases <> NP_Suf constr
-R19342:19351 noun_phrases <> np_meta_of:112 def
-R19364:19370 noun_phrases <> NP_Suf2 constr
-R19391:19400 noun_phrases <> np_meta_of:112 def
-R19413:19423 noun_phrases <> NP_PronSubj constr
-R19436:19443 noun_phrases <> mkNPMeta constr
-R19445:19448 Syntax <> Oral constr
-R19451:19464 noun_phrases <> number_of_subj def
-R19470:19483 noun_phrases <> person_of_subj def
-R19504:19522 noun_phrases <> inclusivity_of_subj def
-R19532:19542 noun_phrases <> NP_PronPoss constr
-R19556:19563 noun_phrases <> mkNPMeta constr
-R19565:19568 Syntax <> Oral constr
-R19571:19584 noun_phrases <> number_of_poss def
-R19591:19604 noun_phrases <> person_of_poss def
-R19626:19644 noun_phrases <> inclusivity_of_poss def
-R19655:19664 noun_phrases <> NP_PronDem constr
-R19679:19686 noun_phrases <> mkNPMeta constr
-R19688:19691 Syntax <> Oral constr
-R19695:19699 Syntax <> Third constr
-R19701:19704 Corelib.Init.Datatypes <> None constr
-R19711:19722 noun_phrases <> NP_PronIndef constr
-R19735:19742 noun_phrases <> mkNPMeta constr
-R19744:19747 Syntax <> Oral constr
-R19750:19764 noun_phrases <> number_of_indef def
-R19769:19773 Syntax <> Third constr
-R19775:19778 Corelib.Init.Datatypes <> None constr
-R19785:19799 noun_phrases <> NP_PronInterrog constr
-R19812:19819 noun_phrases <> mkNPMeta constr
-R19821:19824 Syntax <> Oral constr
-R19826:19833 Syntax <> Singular constr
-R19835:19839 Syntax <> Third constr
-R19841:19844 Corelib.Init.Datatypes <> None constr
-R19851:19860 noun_phrases <> NP_PronNeg constr
-R19873:19880 noun_phrases <> mkNPMeta constr
-R19882:19885 Syntax <> Oral constr
-R19887:19894 Syntax <> Singular constr
-R19896:19900 Syntax <> Third constr
-R19902:19905 Corelib.Init.Datatypes <> None constr
-R19912:19921 noun_phrases <> NP_CoordHa constr
-R19948:19957 noun_phrases <> np_meta_of:112 def
-binder 19942:19943 <> m1:117
-R19981:19990 noun_phrases <> np_meta_of:112 def
-binder 19975:19976 <> m2:118
-R20004:20011 noun_phrases <> mkNPMeta constr
-R20014:20023 noun_phrases <> np_orality proj
-R20025:20026 noun_phrases <> m1:117 var
-R20029:20034 Syntax <> Plural constr
-R20052:20063 noun_phrases <> person_merge def
-R20066:20074 noun_phrases <> np_person proj
-R20076:20077 noun_phrases <> m1:117 var
-R20081:20089 noun_phrases <> np_person proj
-R20091:20092 noun_phrases <> m2:118 var
-R20111:20114 Corelib.Init.Datatypes <> None constr
-R20121:20132 noun_phrases <> NP_CoordTera constr
-R20148:20157 noun_phrases <> np_meta_of:112 def
-def 20181:20196 <> np_plural_suffix
-R20203:20212 noun_phrases <> guarani_np ind
-binder 20199:20199 <> x:119
-R20217:20222 Stdlib.Strings.String <> string ind
-R20229:20245 Syntax <> plural_suffix_adj def
-R20248:20257 noun_phrases <> np_orality proj
-R20260:20269 noun_phrases <> np_meta_of def
-R20271:20271 noun_phrases <> x:119 var
-def 20504:20512 <> render_np
-R20519:20528 noun_phrases <> guarani_np ind
-binder 20515:20515 <> x:120
-R20533:20538 Stdlib.Strings.String <> string ind
-R20551:20551 noun_phrases <> x:120 var
-R20562:20568 noun_phrases <> NP_Bare constr
-R20581:20592 noun_phrases <> noun_surface def
-R20596:20607 noun_phrases <> PossCtx_None constr
-R20614:20619 noun_phrases <> NP_Dem constr
-R20662:20665 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R20641:20652 noun_phrases <> dem_adj_form def
-R20669:20672 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R20673:20684 noun_phrases <> noun_surface def
-R20688:20699 noun_phrases <> PossCtx_None constr
-R20706:20711 noun_phrases <> NP_Art constr
-R20726:20737 noun_phrases <> noun_surface def
-R20741:20752 noun_phrases <> PossCtx_None constr
-R20759:20764 noun_phrases <> NP_Adj constr
-R20806:20809 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R20779:20790 noun_phrases <> noun_surface def
-R20794:20805 noun_phrases <> PossCtx_None constr
-R20813:20816 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R20817:20822 noun_phrases <> a_form proj
-R20831:20837 noun_phrases <> NP_Poss constr
-R20886:20895 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R20853:20868 Syntax <> poss_marker_form def
-R20871:20879 noun_phrases <> n_orality proj
-R20899:20908 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R20909:20920 noun_phrases <> noun_surface def
-R20925:20946 noun_phrases <> poss_context_of_marker def
-R20957:20962 noun_phrases <> NP_Num constr
-R20991:20994 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R20978:20987 Numbers <> render_num def
-R20998:21001 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21002:21013 noun_phrases <> noun_surface def
-R21017:21028 noun_phrases <> PossCtx_None constr
-R21035:21040 noun_phrases <> NP_Gen constr
-R21072:21075 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21058:21066 noun_phrases <> render_np:121 def
-R21079:21082 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21083:21094 noun_phrases <> noun_surface def
-R21098:21116 noun_phrases <> PossCtx_FirstSecond constr
-R21123:21132 noun_phrases <> NP_DemPoss constr
-R21179:21188 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21153:21164 noun_phrases <> dem_adj_form def
-R21171:21178 Syntax <> Singular constr
-R21192:21201 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21235:21244 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21202:21217 Syntax <> poss_marker_form def
-R21220:21228 noun_phrases <> n_orality proj
-R21248:21257 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21258:21269 noun_phrases <> noun_surface def
-R21274:21295 noun_phrases <> poss_context_of_marker def
-R21306:21311 noun_phrases <> NP_Rel constr
-R21354:21357 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21327:21338 noun_phrases <> noun_surface def
-R21342:21353 noun_phrases <> PossCtx_None constr
-R21361:21364 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21365:21375 verb <> render_verb def
-R21385:21391 noun_phrases <> NP_Comp constr
-R21405:21415 verb <> render_verb def
-R21425:21430 noun_phrases <> NP_Suf constr
-R21466:21475 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21451:21459 noun_phrases <> render_np:121 def
-R21476:21492 noun_phrases <> render_nom_suffix def
-R21499:21508 noun_phrases <> np_orality proj
-R21511:21520 noun_phrases <> np_meta_of def
-R21535:21541 noun_phrases <> NP_Suf2 constr
-R21573:21582 noun_phrases <> np_orality proj
-R21585:21594 noun_phrases <> np_meta_of def
-binder 21568:21568 <> o:123
-R21627:21636 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21612:21620 noun_phrases <> render_np:121 def
-R21659:21668 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21637:21653 noun_phrases <> render_nom_suffix def
-R21658:21658 noun_phrases <> o:123 var
-R21669:21685 noun_phrases <> render_nom_suffix def
-R21690:21690 noun_phrases <> o:123 var
-R21697:21707 noun_phrases <> NP_PronSubj constr
-R21720:21738 noun_phrases <> render_subj_pronoun def
-R21747:21757 noun_phrases <> NP_PronPoss constr
-R21866:21869 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R21842:21857 Syntax <> poss_marker_form def
-R21859:21862 Syntax <> Oral constr
-R21883:21892 noun_phrases <> NP_PronDem constr
-R21912:21924 noun_phrases <> dem_pron_form def
-R21940:21951 noun_phrases <> NP_PronIndef constr
-R21964:21980 noun_phrases <> render_indef_pron def
-R21989:22003 noun_phrases <> NP_PronInterrog constr
-R22016:22035 noun_phrases <> render_interrog_pron def
-R22044:22053 noun_phrases <> NP_PronNeg constr
-R22067:22081 noun_phrases <> render_neg_pron def
-R22091:22100 noun_phrases <> NP_CoordHa constr
-R22129:22132 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R22117:22125 noun_phrases <> render_np:121 def
-R22139:22142 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R22143:22151 noun_phrases <> render_np:121 def
-R22161:22172 noun_phrases <> NP_CoordTera constr
-R22201:22204 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R22189:22197 noun_phrases <> render_np:121 def
-R22215:22218 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R22219:22227 noun_phrases <> render_np:121 def
-R22462:22471 noun_phrases <> root_class ind
-scheme 22442:22472 <> root_class_eq_dec
-R22494:22505 noun_phrases <> poss_context ind
-scheme 22474:22506 <> poss_context_eq_dec
-R22528:22534 noun_phrases <> dem_set ind
-scheme 22508:22535 <> dem_set_eq_dec
-R22557:22569 noun_phrases <> dem_proximity ind
-scheme 22537:22570 <> dem_proximity_eq_dec
-R22592:22603 noun_phrases <> subj_pronoun ind
-scheme 22572:22604 <> subj_pronoun_eq_dec
-R22626:22635 noun_phrases <> indef_pron ind
-scheme 22606:22636 <> indef_pron_eq_dec
-R22658:22670 noun_phrases <> interrog_pron ind
-scheme 22638:22671 <> interrog_pron_eq_dec
-R22693:22700 noun_phrases <> neg_pron ind
-scheme 22673:22701 <> neg_pron_eq_dec
-R22723:22736 noun_phrases <> nominal_suffix ind
-scheme 22703:22737 <> nominal_suffix_eq_dec
-R22759:22770 noun_phrases <> postposition ind
-scheme 22739:22771 <> postposition_eq_dec
-prf 23055:23084 <> rule_NPA1_triform_nonposs_is_t
-R23124:23126 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R23092:23102 noun_phrases <> root_prefix def
-R23104:23110 noun_phrases <> Triform constr
-R23112:23123 noun_phrases <> PossCtx_None constr
-prf 23166:23199 <> rule_NPA2_triform_firstsecond_is_r
-R23246:23248 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R23207:23217 noun_phrases <> root_prefix def
-R23219:23225 noun_phrases <> Triform constr
-R23227:23245 noun_phrases <> PossCtx_FirstSecond constr
-prf 23288:23315 <> rule_NPA3_triform_third_is_h
-R23356:23358 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R23323:23333 noun_phrases <> root_prefix def
-R23335:23341 noun_phrases <> Triform constr
-R23343:23355 noun_phrases <> PossCtx_Third constr
-prf 23398:23427 <> rule_NPA4_triform_all_distinct
-R23510:23517 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
-R23467:23470 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
-R23435:23445 noun_phrases <> root_prefix def
-R23447:23453 noun_phrases <> Triform constr
-R23455:23466 noun_phrases <> PossCtx_None constr
-R23471:23481 noun_phrases <> root_prefix def
-R23483:23489 noun_phrases <> Triform constr
-R23491:23509 noun_phrases <> PossCtx_FirstSecond constr
-R23594:23601 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
-R23557:23560 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
-R23518:23528 noun_phrases <> root_prefix def
-R23530:23536 noun_phrases <> Triform constr
-R23538:23556 noun_phrases <> PossCtx_FirstSecond constr
-R23561:23571 noun_phrases <> root_prefix def
-R23573:23579 noun_phrases <> Triform constr
-R23581:23593 noun_phrases <> PossCtx_Third constr
-R23634:23637 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
-R23602:23612 noun_phrases <> root_prefix def
-R23614:23620 noun_phrases <> Triform constr
-R23622:23633 noun_phrases <> PossCtx_None constr
-R23638:23648 noun_phrases <> root_prefix def
-R23650:23656 noun_phrases <> Triform constr
-R23658:23670 noun_phrases <> PossCtx_Third constr
-prf 23729:23762 <> rule_NPA5_triformNoT_nonposs_empty
-R23805:23807 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R23770:23780 noun_phrases <> root_prefix def
-R23782:23791 noun_phrases <> TriformNoT constr
-R23793:23804 noun_phrases <> PossCtx_None constr
-prf 23846:23882 <> rule_NPA6_triformNoT_firstsecond_is_r
-R23932:23934 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R23890:23900 noun_phrases <> root_prefix def
-R23902:23911 noun_phrases <> TriformNoT constr
-R23913:23931 noun_phrases <> PossCtx_FirstSecond constr
-prf 23974:24004 <> rule_NPA6_triformNoT_third_is_h
-R24048:24050 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R24012:24022 noun_phrases <> root_prefix def
-R24024:24033 noun_phrases <> TriformNoT constr
-R24035:24047 noun_phrases <> PossCtx_Third constr
-prf 24090:24119 <> rule_NPA7_uniform_always_empty
-binder 24130:24132 <> ctx:124
-R24162:24164 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R24139:24149 noun_phrases <> root_prefix def
-R24151:24157 noun_phrases <> Uniform constr
-R24159:24161 noun_phrases <> ctx:124 var
-prf 24280:24296 <> rule_NPB1_bare_wf
-binder 24307:24307 <> n:125
-R24327:24329 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R24310:24314 noun_phrases <> wf_np def
-R24317:24323 noun_phrases <> NP_Bare constr
-R24325:24325 noun_phrases <> n:125 var
-R24330:24333 Corelib.Init.Datatypes <> true constr
-prf 24370:24385 <> rule_NPB1_dem_wf
-binder 24396:24399 <> prox:126
-binder 24401:24403 <> num:127
-binder 24405:24405 <> n:128
-R24437:24439 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R24412:24416 noun_phrases <> wf_np def
-R24419:24424 noun_phrases <> NP_Dem constr
-R24426:24429 noun_phrases <> prox:126 var
-R24431:24433 noun_phrases <> num:127 var
-R24435:24435 noun_phrases <> n:128 var
-R24440:24443 Corelib.Init.Datatypes <> true constr
-prf 24480:24495 <> rule_NPB1_adj_wf
-binder 24506:24506 <> n:129
-binder 24508:24508 <> a:130
-R24529:24531 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R24511:24515 noun_phrases <> wf_np def
-R24518:24523 noun_phrases <> NP_Adj constr
-R24525:24525 noun_phrases <> n:129 var
-R24527:24527 noun_phrases <> a:130 var
-R24532:24535 Corelib.Init.Datatypes <> true constr
-prf 24572:24588 <> rule_NPB1_poss_wf
-binder 24599:24600 <> pm:131
-binder 24602:24602 <> n:132
-R24625:24627 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R24605:24609 noun_phrases <> wf_np def
-R24612:24618 noun_phrases <> NP_Poss constr
-R24620:24621 noun_phrases <> pm:131 var
-R24623:24623 noun_phrases <> n:132 var
-R24628:24631 Corelib.Init.Datatypes <> true constr
-prf 24668:24683 <> rule_NPB1_num_wf
-binder 24694:24695 <> gn:133
-binder 24697:24697 <> n:134
-R24719:24721 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R24700:24704 noun_phrases <> wf_np def
-R24707:24712 noun_phrases <> NP_Num constr
-R24714:24715 noun_phrases <> gn:133 var
-R24717:24717 noun_phrases <> n:134 var
-R24722:24725 Corelib.Init.Datatypes <> true constr
-prf 24762:24787 <> rule_NPB2_single_suffix_wf
-binder 24798:24798 <> n:135
-binder 24800:24802 <> suf:136
-R24839:24841 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R24809:24813 noun_phrases <> wf_np def
-R24816:24821 noun_phrases <> NP_Suf constr
-R24824:24830 noun_phrases <> NP_Bare constr
-R24832:24832 noun_phrases <> n:135 var
-R24835:24837 noun_phrases <> suf:136 var
-R24842:24845 Corelib.Init.Datatypes <> true constr
-prf 24882:24914 <> rule_NPB3_double_suf_stacking_ill
-binder 24925:24925 <> n:137
-binder 24927:24928 <> s1:138
-binder 24930:24931 <> s2:139
-R24979:24981 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R24938:24942 noun_phrases <> wf_np def
-R24945:24950 noun_phrases <> NP_Suf constr
-R24953:24958 noun_phrases <> NP_Suf constr
-R24961:24967 noun_phrases <> NP_Bare constr
-R24969:24969 noun_phrases <> n:137 var
-R24972:24973 noun_phrases <> s1:138 var
-R24976:24977 noun_phrases <> s2:139 var
-R24982:24986 Corelib.Init.Datatypes <> false constr
-prf 25023:25053 <> rule_NPB4_suffix_on_pronoun_ill
-binder 25064:25064 <> p:140
-binder 25066:25068 <> suf:141
-R25109:25111 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R25075:25079 noun_phrases <> wf_np def
-R25082:25087 noun_phrases <> NP_Suf constr
-R25090:25100 noun_phrases <> NP_PronSubj constr
-R25102:25102 noun_phrases <> p:140 var
-R25105:25107 noun_phrases <> suf:141 var
-R25112:25116 Corelib.Init.Datatypes <> false constr
-prf 25153:25175 <> rule_NPB5_gen_preserves
-binder 25186:25189 <> poss:142
-binder 25191:25191 <> n:143
-R25215:25218 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R25208:25210 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R25198:25202 noun_phrases <> wf_np def
-R25204:25207 noun_phrases <> poss:142 var
-R25211:25214 Corelib.Init.Datatypes <> true constr
-R25240:25242 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R25219:25223 noun_phrases <> wf_np def
-R25226:25231 noun_phrases <> NP_Gen constr
-R25233:25236 noun_phrases <> poss:142 var
-R25238:25238 noun_phrases <> n:143 var
-R25243:25246 Corelib.Init.Datatypes <> true constr
-prf 25303:25324 <> rule_NPB6_subj_pron_wf
-binder 25335:25335 <> p:144
-R25359:25361 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R25338:25342 noun_phrases <> wf_np def
-R25345:25355 noun_phrases <> NP_PronSubj constr
-R25357:25357 noun_phrases <> p:144 var
-R25362:25365 Corelib.Init.Datatypes <> true constr
-prf 25402:25427 <> rule_NPB6_interrog_pron_wf
-binder 25438:25438 <> i:145
-R25466:25468 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R25441:25445 noun_phrases <> wf_np def
-R25448:25462 noun_phrases <> NP_PronInterrog constr
-R25464:25464 noun_phrases <> i:145 var
-R25469:25472 Corelib.Init.Datatypes <> true constr
-prf 25509:25529 <> rule_NPB6_neg_pron_wf
-binder 25540:25541 <> np:146
-R25565:25567 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R25544:25548 noun_phrases <> wf_np def
-R25551:25560 noun_phrases <> NP_PronNeg constr
-R25562:25563 noun_phrases <> np:146 var
-R25568:25571 Corelib.Init.Datatypes <> true constr
-prf 25723:25742 <> rule_NPB7_rel_wf_iff
-binder 25753:25753 <> n:147
-binder 25755:25756 <> cv:148
-R25782:25784 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R25763:25767 noun_phrases <> wf_np def
-R25770:25775 noun_phrases <> NP_Rel constr
-R25777:25777 noun_phrases <> n:147 var
-R25779:25780 noun_phrases <> cv:148 var
-R25806:25809 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R25785:25802 verb <> wf_conjugated_verb def
-R25804:25805 noun_phrases <> cv:148 var
-R25810:25822 noun_phrases <> is_rel_clause def
-R25824:25825 noun_phrases <> cv:148 var
-prf 25862:25882 <> rule_NPB7_comp_wf_iff
-binder 25893:25894 <> cv:149
-R25919:25921 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R25901:25905 noun_phrases <> wf_np def
-R25908:25914 noun_phrases <> NP_Comp constr
-R25916:25917 noun_phrases <> cv:149 var
-R25943:25946 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R25922:25939 verb <> wf_conjugated_verb def
-R25941:25942 noun_phrases <> cv:149 var
-R25947:25960 noun_phrases <> is_comp_clause def
-R25962:25963 noun_phrases <> cv:149 var
-prf 26063:26084 <> rule_NPB8_rel_needs_va
-binder 26095:26095 <> n:150
-binder 26097:26098 <> cv:151
-R26129:26136 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R26121:26123 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R26105:26117 noun_phrases <> is_rel_clause def
-R26119:26120 noun_phrases <> cv:151 var
-R26124:26128 Corelib.Init.Datatypes <> false constr
-R26156:26158 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R26137:26141 noun_phrases <> wf_np def
-R26144:26149 noun_phrases <> NP_Rel constr
-R26151:26151 noun_phrases <> n:150 var
-R26153:26154 noun_phrases <> cv:151 var
-R26159:26163 Corelib.Init.Datatypes <> false constr
-R26220:26237 verb <> wf_conjugated_verb def
-R26220:26237 verb <> wf_conjugated_verb def
-prf 26336:26358 <> rule_NPB8_comp_needs_ha
-binder 26369:26370 <> cv:152
-R26402:26409 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R26394:26396 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R26377:26390 noun_phrases <> is_comp_clause def
-R26392:26393 noun_phrases <> cv:152 var
-R26397:26401 Corelib.Init.Datatypes <> false constr
-R26428:26430 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R26410:26414 noun_phrases <> wf_np def
-R26417:26423 noun_phrases <> NP_Comp constr
-R26425:26426 noun_phrases <> cv:152 var
-R26431:26435 Corelib.Init.Datatypes <> false constr
-R26490:26507 verb <> wf_conjugated_verb def
-R26490:26507 verb <> wf_conjugated_verb def
-prf 26598:26624 <> rule_NPC1_ra_then_kue_valid
-binder 26635:26635 <> n:153
-R26692:26694 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R26642:26646 noun_phrases <> wf_np def
-R26649:26655 noun_phrases <> NP_Suf2 constr
-R26658:26664 noun_phrases <> NP_Bare constr
-R26666:26666 noun_phrases <> n:153 var
-R26669:26679 noun_phrases <> NS_FutureRa constr
-R26681:26690 noun_phrases <> NS_PastKue constr
-R26695:26698 Corelib.Init.Datatypes <> true constr
-prf 26735:26763 <> rule_NPC2_kue_then_ra_invalid
-binder 26774:26774 <> n:154
-R26831:26833 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R26781:26785 noun_phrases <> wf_np def
-R26788:26794 noun_phrases <> NP_Suf2 constr
-R26797:26803 noun_phrases <> NP_Bare constr
-R26805:26805 noun_phrases <> n:154 var
-R26808:26817 noun_phrases <> NS_PastKue constr
-R26819:26829 noun_phrases <> NS_FutureRa constr
-R26834:26838 Corelib.Init.Datatypes <> false constr
-prf 26875:26901 <> rule_NPC3_ha_then_kue_valid
-binder 26912:26912 <> n:155
-R26966:26968 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R26919:26923 noun_phrases <> wf_np def
-R26926:26932 noun_phrases <> NP_Suf2 constr
-R26935:26941 noun_phrases <> NP_Bare constr
-R26943:26943 noun_phrases <> n:155 var
-R26946:26953 noun_phrases <> NS_NomHA constr
-R26955:26964 noun_phrases <> NS_PastKue constr
-R26969:26972 Corelib.Init.Datatypes <> true constr
-prf 27009:27034 <> rule_NPC4_ha_then_ra_valid
-binder 27045:27045 <> n:156
-R27100:27102 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R27052:27056 noun_phrases <> wf_np def
-R27059:27065 noun_phrases <> NP_Suf2 constr
-R27068:27074 noun_phrases <> NP_Bare constr
-R27076:27076 noun_phrases <> n:156 var
-R27079:27086 noun_phrases <> NS_NomHA constr
-R27088:27098 noun_phrases <> NS_FutureRa constr
-R27103:27106 Corelib.Init.Datatypes <> true constr
-prf 27143:27169 <> rule_NPC5_py_then_kue_valid
-binder 27180:27180 <> n:157
-R27234:27236 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R27187:27191 noun_phrases <> wf_np def
-R27194:27200 noun_phrases <> NP_Suf2 constr
-R27203:27209 noun_phrases <> NP_Bare constr
-R27211:27211 noun_phrases <> n:157 var
-R27214:27221 noun_phrases <> NS_NomPY constr
-R27223:27232 noun_phrases <> NS_PastKue constr
-R27237:27240 Corelib.Init.Datatypes <> true constr
-prf 27277:27302 <> rule_NPC6_py_then_ra_valid
-binder 27313:27313 <> n:158
-R27368:27370 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R27320:27324 noun_phrases <> wf_np def
-R27327:27333 noun_phrases <> NP_Suf2 constr
-R27336:27342 noun_phrases <> NP_Bare constr
-R27344:27344 noun_phrases <> n:158 var
-R27347:27354 noun_phrases <> NS_NomPY constr
-R27356:27366 noun_phrases <> NS_FutureRa constr
-R27371:27374 Corelib.Init.Datatypes <> true constr
-prf 27411:27441 <> rule_NPC7_double_plural_invalid
-binder 27452:27452 <> n:159
-R27506:27508 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R27459:27463 noun_phrases <> wf_np def
-R27466:27472 noun_phrases <> NP_Suf2 constr
-R27475:27481 noun_phrases <> NP_Bare constr
-R27483:27483 noun_phrases <> n:159 var
-R27486:27494 noun_phrases <> NS_Plural constr
-R27496:27504 noun_phrases <> NS_Plural constr
-R27509:27513 Corelib.Init.Datatypes <> false constr
-prf 27632:27663 <> rule_NPD1_subj_person_consistent
-binder 27674:27674 <> p:160
-R27719:27721 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R27681:27689 noun_phrases <> np_person proj
-R27692:27701 noun_phrases <> np_meta_of def
-R27704:27714 noun_phrases <> NP_PronSubj constr
-R27716:27716 noun_phrases <> p:160 var
-R27722:27735 noun_phrases <> person_of_subj def
-R27737:27737 noun_phrases <> p:160 var
-prf 27796:27826 <> rule_NPD3_subj_pron_always_oral
-binder 27837:27837 <> p:161
-R27883:27885 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R27844:27853 noun_phrases <> np_orality proj
-R27856:27865 noun_phrases <> np_meta_of def
-R27868:27878 noun_phrases <> NP_PronSubj constr
-R27880:27880 noun_phrases <> p:161 var
-R27886:27889 Syntax <> Oral constr
-prf 27948:27974 <> rule_NPE1_bare_always_third
-binder 27985:27985 <> n:162
-R28026:28028 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R27992:28000 noun_phrases <> np_person proj
-R28003:28012 noun_phrases <> np_meta_of def
-R28015:28021 noun_phrases <> NP_Bare constr
-R28023:28023 noun_phrases <> n:162 var
-R28029:28033 Syntax <> Third constr
-prf 28070:28099 <> rule_NPE2_bare_always_singular
-binder 28110:28110 <> n:163
-R28151:28153 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R28117:28125 noun_phrases <> np_number proj
-R28128:28137 noun_phrases <> np_meta_of def
-R28140:28146 noun_phrases <> NP_Bare constr
-R28148:28148 noun_phrases <> n:163 var
-R28154:28161 Syntax <> Singular constr
-prf 28198:28229 <> rule_NPF1_nasal_noun_gets_nguera
-binder 28240:28240 <> n:164
-R28266:28269 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R28258:28260 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R28247:28255 noun_phrases <> n_orality proj
-R28257:28257 noun_phrases <> n:164 var
-R28261:28265 Syntax <> Nasal constr
-R28298:28300 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R28270:28285 noun_phrases <> np_plural_suffix def
-R28288:28294 noun_phrases <> NP_Bare constr
-R28296:28296 noun_phrases <> n:164 var
-R28340:28355 noun_phrases <> np_plural_suffix def
-prf 28403:28432 <> rule_NPF2_oral_noun_gets_kuera
-binder 28443:28443 <> n:165
-R28468:28471 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R28461:28463 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R28450:28458 noun_phrases <> n_orality proj
-R28460:28460 noun_phrases <> n:165 var
-R28464:28467 Syntax <> Oral constr
-R28500:28502 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R28472:28487 noun_phrases <> np_plural_suffix def
-R28490:28496 noun_phrases <> NP_Bare constr
-R28498:28498 noun_phrases <> n:165 var
-R28541:28556 noun_phrases <> np_plural_suffix def
-prf 28604:28626 <> rule_NPG1_prox_singular
-R28670:28672 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R28634:28645 noun_phrases <> dem_adj_form def
-R28647:28660 noun_phrases <> DemProxSpeaker constr
-R28662:28669 Syntax <> Singular constr
-prf 28713:28740 <> rule_NPG3_prox_plural_is_koa
-R28782:28784 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R28748:28759 noun_phrases <> dem_adj_form def
-R28761:28774 noun_phrases <> DemProxSpeaker constr
-R28776:28781 Syntax <> Plural constr
-prf 28828:28856 <> rule_NPG6_dem_np_always_third
-binder 28867:28870 <> prox:166
-binder 28872:28874 <> num:167
-binder 28876:28876 <> n:168
-R28925:28927 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R28883:28891 noun_phrases <> np_person proj
-R28894:28903 noun_phrases <> np_meta_of def
-R28906:28911 noun_phrases <> NP_Dem constr
-R28913:28916 noun_phrases <> prox:166 var
-R28918:28920 noun_phrases <> num:167 var
-R28922:28922 noun_phrases <> n:168 var
-R28928:28932 Syntax <> Third constr
-prf 28969:28998 <> rule_NPH1_plural_forces_plural
-binder 29009:29009 <> x:169
-R29059:29061 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R29016:29024 noun_phrases <> np_number proj
-R29027:29036 noun_phrases <> np_meta_of def
-R29039:29044 noun_phrases <> NP_Suf constr
-R29046:29046 noun_phrases <> x:169 var
-R29048:29056 noun_phrases <> NS_Plural constr
-R29062:29067 Syntax <> Plural constr
-prf 29104:29128 <> rule_NPH4_kue_transparent
-binder 29139:29139 <> x:170
-R29178:29180 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R29146:29155 noun_phrases <> np_meta_of def
-R29158:29163 noun_phrases <> NP_Suf constr
-R29165:29165 noun_phrases <> x:170 var
-R29167:29176 noun_phrases <> NS_PastKue constr
-R29181:29190 noun_phrases <> np_meta_of def
-R29192:29192 noun_phrases <> x:170 var
-prf 29229:29254 <> rule_NPI1_gen_always_third
-binder 29265:29268 <> poss:171
-binder 29270:29270 <> n:172
-R29315:29317 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R29277:29285 noun_phrases <> np_person proj
-R29288:29297 noun_phrases <> np_meta_of def
-R29300:29305 noun_phrases <> NP_Gen constr
-R29307:29310 noun_phrases <> poss:171 var
-R29312:29312 noun_phrases <> n:172 var
-R29318:29322 Syntax <> Third constr
-prf 29359:29391 <> rule_NPJ1_poss_person_from_marker
-binder 29402:29403 <> pm:173
-binder 29405:29405 <> n:174
-R29449:29451 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R29412:29420 noun_phrases <> np_person proj
-R29423:29432 noun_phrases <> np_meta_of def
-R29435:29441 noun_phrases <> NP_Poss constr
-R29443:29444 noun_phrases <> pm:173 var
-R29446:29446 noun_phrases <> n:174 var
-R29452:29465 noun_phrases <> person_of_poss def
-R29467:29468 noun_phrases <> pm:173 var
-prf 29531:29555 <> rule_NPK1_one_is_singular
-binder 29566:29567 <> gn:175
-binder 29569:29569 <> n:176
-R29592:29595 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R29585:29587 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R29576:29581 Numbers <> is_one def
-R29583:29584 noun_phrases <> gn:175 var
-R29588:29591 Corelib.Init.Datatypes <> true constr
-R29632:29634 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R29596:29604 noun_phrases <> np_number proj
-R29607:29616 noun_phrases <> np_meta_of def
-R29619:29624 noun_phrases <> NP_Num constr
-R29626:29627 noun_phrases <> gn:175 var
-R29629:29629 noun_phrases <> n:176 var
-R29635:29642 Syntax <> Singular constr
-prf 29712:29738 <> rule_NPK2_not_one_is_plural
-binder 29749:29750 <> gn:177
-binder 29752:29752 <> n:178
-R29776:29779 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R29768:29770 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R29759:29764 Numbers <> is_one def
-R29766:29767 noun_phrases <> gn:177 var
-R29771:29775 Corelib.Init.Datatypes <> false constr
-R29816:29818 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R29780:29788 noun_phrases <> np_number proj
-R29791:29800 noun_phrases <> np_meta_of def
-R29803:29808 noun_phrases <> NP_Num constr
-R29810:29811 noun_phrases <> gn:177 var
-R29813:29813 noun_phrases <> n:178 var
-R29819:29824 Syntax <> Plural constr
-prf 29894:29919 <> rule_NPL1_ha_always_plural
-binder 29930:29931 <> x1:179
-binder 29933:29934 <> x2:180
-R29982:29984 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R29941:29949 noun_phrases <> np_number proj
-R29952:29961 noun_phrases <> np_meta_of def
-R29964:29973 noun_phrases <> NP_CoordHa constr
-R29975:29976 noun_phrases <> x1:179 var
-R29978:29979 noun_phrases <> x2:180 var
-R29985:29990 Syntax <> Plural constr
-prf 30027:30053 <> rule_NPM1_merge_commutative
-binder 30064:30065 <> p1:181
-binder 30067:30068 <> p2:182
-R30093:30095 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R30075:30086 noun_phrases <> person_merge def
-R30088:30089 noun_phrases <> p1:181 var
-R30091:30092 noun_phrases <> p2:182 var
-R30096:30107 noun_phrases <> person_merge def
-R30109:30110 noun_phrases <> p2:182 var
-R30112:30113 noun_phrases <> p1:181 var
-prf 30190:30221 <> rule_NPM3_first_always_dominates
-binder 30232:30232 <> p:183
-R30267:30270 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
-R30259:30261 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R30239:30250 noun_phrases <> person_merge def
-R30252:30256 Syntax <> First constr
-R30258:30258 noun_phrases <> p:183 var
-R30262:30266 Syntax <> First constr
-R30291:30293 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R30271:30282 noun_phrases <> person_merge def
-R30284:30284 noun_phrases <> p:183 var
-R30286:30290 Syntax <> First constr
-R30294:30298 Syntax <> First constr
-prf 30364:30383 <> rule_NPN1_pe_me_oral
-R30421:30423 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R30391:30407 noun_phrases <> postposition_form def
-R30409:30412 Syntax <> Oral constr
-R30414:30420 noun_phrases <> Post_Pe constr
-prf 30464:30484 <> rule_NPN1_pe_me_nasal
-R30523:30525 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R30492:30508 noun_phrases <> postposition_form def
-R30510:30514 Syntax <> Nasal constr
-R30516:30522 noun_phrases <> Post_Pe constr
-prf 30566:30592 <> rule_NPO1_avave_is_negative
-R30628:30630 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R30600:30615 noun_phrases <> is_negative_pron def
-R30617:30627 noun_phrases <> Indef_Avave constr
-R30631:30634 Corelib.Init.Datatypes <> true constr
-prf 30671:30700 <> rule_NPO2_maymava_not_negative
-R30738:30740 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R30708:30723 noun_phrases <> is_negative_pron def
-R30725:30737 noun_phrases <> Indef_Maymava constr
-R30741:30745 Corelib.Init.Datatypes <> false constr
-prf 30782:30812 <> rule_NPP2_interrog_always_third
-binder 30823:30823 <> i:184
-R30872:30874 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R30830:30838 noun_phrases <> np_person proj
-R30841:30850 noun_phrases <> np_meta_of def
-R30853:30867 noun_phrases <> NP_PronInterrog constr
-R30869:30869 noun_phrases <> i:184 var
-R30875:30879 Syntax <> Third constr
-prf 30975:31004 <> rule_NPQ1_uniform_bare_is_root
-binder 31015:31015 <> n:185
-R31046:31053 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
-R31036:31038 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R31022:31033 noun_phrases <> n_root_class proj
-R31035:31035 noun_phrases <> n:185 var
-R31039:31045 noun_phrases <> Uniform constr
-R31075:31077 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R31054:31062 noun_phrases <> render_np def
-R31065:31071 noun_phrases <> NP_Bare constr
-R31073:31073 noun_phrases <> n:185 var
-R31078:31083 noun_phrases <> n_root proj
-R31085:31085 noun_phrases <> n:185 var
-R31116:31124 noun_phrases <> render_np def
-R31127:31138 noun_phrases <> noun_surface def
-prf 31188:31214 <> rule_NPQ2_art_drops_article
-binder 31225:31227 <> num:186
-binder 31229:31229 <> n:187
-R31260:31262 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R31236:31244 noun_phrases <> render_np def
-R31247:31252 noun_phrases <> NP_Art constr
-R31254:31256 noun_phrases <> num:186 var
-R31258:31258 noun_phrases <> n:187 var
-R31263:31271 noun_phrases <> render_np def
-R31274:31280 noun_phrases <> NP_Bare constr
-R31282:31282 noun_phrases <> n:187 var
-prf 31320:31346 <> rule_NPQ3_pron_subj_renders
-binder 31357:31357 <> p:188
-R31389:31391 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R31364:31372 noun_phrases <> render_np def
-R31375:31385 noun_phrases <> NP_PronSubj constr
-R31387:31387 noun_phrases <> p:188 var
-R31392:31410 noun_phrases <> render_subj_pronoun def
-R31412:31412 noun_phrases <> p:188 var
-prf 31471:31502 <> rule_NPQ4_coord_ha_joins_with_ha
-binder 31513:31514 <> x1:189
-binder 31516:31517 <> x2:190
-R31552:31558 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R31524:31532 noun_phrases <> render_np def
-R31535:31544 noun_phrases <> NP_CoordHa constr
-R31546:31547 noun_phrases <> x1:189 var
-R31549:31550 noun_phrases <> x2:190 var
-R31571:31574 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R31559:31567 noun_phrases <> render_np def
-R31569:31570 noun_phrases <> x1:189 var
-R31581:31584 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R31585:31593 noun_phrases <> render_np def
-R31595:31596 noun_phrases <> x2:190 var
-prf 31633:31663 <> rule_NPQ5_rel_concats_with_verb
-binder 31674:31674 <> n:191
-binder 31676:31677 <> cv:192
-R31707:31713 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R31684:31692 noun_phrases <> render_np def
-R31695:31700 noun_phrases <> NP_Rel constr
-R31702:31702 noun_phrases <> n:191 var
-R31704:31705 noun_phrases <> cv:192 var
-R31741:31744 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R31714:31725 noun_phrases <> noun_surface def
-R31727:31727 noun_phrases <> n:191 var
-R31729:31740 noun_phrases <> PossCtx_None constr
-R31748:31751 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
-R31752:31762 verb <> render_verb def
-R31764:31765 noun_phrases <> cv:192 var
-prf 31802:31823 <> rule_NPQ6_comp_is_verb
-binder 31834:31835 <> cv:193
-R31864:31866 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R31842:31850 noun_phrases <> render_np def
-R31853:31859 noun_phrases <> NP_Comp constr
-R31861:31862 noun_phrases <> cv:193 var
-R31867:31877 verb <> render_verb def
-R31879:31880 noun_phrases <> cv:193 var
+ind 797:806 <> root_class
+constr 822:828 <> Uniform
+constr 868:874 <> Triform
+constr 917:926 <> TriformNoT
+constr 970:975 <> Biform
+constr 1028:1037 <> Quadriform
+scheme 797:806 <> root_class_rect
+scheme 797:806 <> root_class_ind
+scheme 797:806 <> root_class_rec
+scheme 797:806 <> root_class_sind
+ind 1079:1090 <> poss_context
+constr 1106:1117 <> PossCtx_None
+constr 1157:1175 <> PossCtx_FirstSecond
+constr 1225:1237 <> PossCtx_Third
+scheme 1079:1090 <> poss_context_rect
+scheme 1079:1090 <> poss_context_ind
+scheme 1079:1090 <> poss_context_rec
+scheme 1079:1090 <> poss_context_sind
+def 1347:1357 <> root_prefix
+R1365:1374 noun_phrases <> root_class ind
+binder 1360:1361 <> rc:5
+R1384:1395 noun_phrases <> poss_context ind
+binder 1378:1380 <> ctx:6
+R1400:1405 Stdlib.Strings.String <> string ind
+R1422:1424 noun_phrases <> ctx:6 var
+R1418:1419 noun_phrases <> rc:5 var
+R1435:1441 noun_phrases <> Uniform constr
+R1477:1483 noun_phrases <> Triform constr
+R1489:1500 noun_phrases <> PossCtx_None constr
+R1520:1526 noun_phrases <> Triform constr
+R1532:1550 noun_phrases <> PossCtx_FirstSecond constr
+R1563:1569 noun_phrases <> Triform constr
+R1575:1587 noun_phrases <> PossCtx_Third constr
+R1606:1615 noun_phrases <> TriformNoT constr
+R1618:1629 noun_phrases <> PossCtx_None constr
+R1648:1657 noun_phrases <> TriformNoT constr
+R1660:1678 noun_phrases <> PossCtx_FirstSecond constr
+R1691:1700 noun_phrases <> TriformNoT constr
+R1703:1715 noun_phrases <> PossCtx_Third constr
+R1734:1739 noun_phrases <> Biform constr
+R1746:1757 noun_phrases <> PossCtx_None constr
+R1776:1781 noun_phrases <> Biform constr
+R1788:1806 noun_phrases <> PossCtx_FirstSecond constr
+R1819:1824 noun_phrases <> Biform constr
+R1831:1843 noun_phrases <> PossCtx_Third constr
+R1861:1870 noun_phrases <> Quadriform constr
+R1873:1884 noun_phrases <> PossCtx_None constr
+R1904:1913 noun_phrases <> Quadriform constr
+R1916:1934 noun_phrases <> PossCtx_FirstSecond constr
+R1947:1956 noun_phrases <> Quadriform constr
+R1959:1971 noun_phrases <> PossCtx_Third constr
+def 2131:2152 <> poss_context_of_marker
+R2160:2170 Syntax <> poss_marker ind
+binder 2155:2156 <> pm:9
+R2175:2186 noun_phrases <> poss_context ind
+R2199:2200 noun_phrases <> pm:9 var
+R2211:2215 Syntax <> Poss1 constr
+R2219:2227 Syntax <> Poss1Incl constr
+R2231:2239 Syntax <> Poss1Excl constr
+R2243:2247 Syntax <> Poss2 constr
+R2251:2257 Syntax <> Poss2Pl constr
+R2262:2280 noun_phrases <> PossCtx_FirstSecond constr
+R2262:2280 noun_phrases <> PossCtx_FirstSecond constr
+R2262:2280 noun_phrases <> PossCtx_FirstSecond constr
+R2262:2280 noun_phrases <> PossCtx_FirstSecond constr
+R2262:2280 noun_phrases <> PossCtx_FirstSecond constr
+R2286:2290 Syntax <> Poss3 constr
+R2294:2300 Syntax <> Poss3Pl constr
+R2305:2317 noun_phrases <> PossCtx_Third constr
+R2305:2317 noun_phrases <> PossCtx_Third constr
+rec 2605:2608 <> noun
+proj 2631:2636 <> n_root
+proj 2656:2664 <> n_orality
+proj 2682:2689 <> n_ending
+proj 2712:2723 <> n_root_class
+proj 2741:2747 <> n_human
+R2646:2651 Stdlib.Strings.String <> string ind
+R2671:2677 Syntax <> orality ind
+R2697:2707 Syntax <> word_ending ind
+R2727:2736 noun_phrases <> root_class ind
+R2756:2759 Corelib.Init.Datatypes <> bool ind
+def 2820:2831 <> noun_surface
+R2838:2841 noun_phrases <> noun rec
+binder 2834:2834 <> n:17
+R2851:2862 noun_phrases <> poss_context ind
+binder 2845:2847 <> ctx:18
+R2867:2872 Stdlib.Strings.String <> string ind
+R2911:2914 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R2879:2889 noun_phrases <> root_prefix def
+R2892:2903 noun_phrases <> n_root_class proj
+R2905:2905 noun_phrases <> n:17 var
+R2908:2910 noun_phrases <> ctx:18 var
+R2915:2920 noun_phrases <> n_root proj
+R2922:2922 noun_phrases <> n:17 var
+rec 3203:3211 <> adjective
+proj 3233:3238 <> a_form
+proj 3258:3266 <> a_orality
+proj 3284:3295 <> a_root_class
+R3248:3253 Stdlib.Strings.String <> string ind
+R3273:3279 Syntax <> orality ind
+R3299:3308 noun_phrases <> root_class ind
+ind 3594:3605 <> subj_pronoun
+constr 3621:3627 <> Subj1SG
+constr 3631:3637 <> Subj2SG
+constr 3641:3647 <> Subj3SG
+constr 3653:3664 <> Subj1PL_INCL
+constr 3668:3679 <> Subj1PL_EXCL
+constr 3683:3689 <> Subj2PL
+constr 3693:3699 <> Subj3PL
+scheme 3594:3605 <> subj_pronoun_rect
+scheme 3594:3605 <> subj_pronoun_ind
+scheme 3594:3605 <> subj_pronoun_rec
+scheme 3594:3605 <> subj_pronoun_sind
+def 3714:3732 <> render_subj_pronoun
+R3739:3750 noun_phrases <> subj_pronoun ind
+binder 3735:3735 <> p:25
+R3755:3760 Stdlib.Strings.String <> string ind
+R3773:3773 noun_phrases <> p:25 var
+R3784:3790 noun_phrases <> Subj1SG constr
+R3810:3816 noun_phrases <> Subj2SG constr
+R3836:3842 noun_phrases <> Subj3SG constr
+R3863:3874 noun_phrases <> Subj1PL_INCL constr
+R3892:3903 noun_phrases <> Subj1PL_EXCL constr
+R3918:3924 noun_phrases <> Subj2PL constr
+R3946:3952 noun_phrases <> Subj3PL constr
+ind 4263:4275 <> dem_proximity
+constr 4291:4304 <> DemProxSpeaker
+constr 4323:4335 <> DemProxHearer
+constr 4360:4368 <> DemDistal
+constr 4393:4407 <> DemSharedPerson
+constr 4425:4438 <> DemSharedEvent
+constr 4458:4467 <> DemHearsay
+scheme 4263:4275 <> dem_proximity_rect
+scheme 4263:4275 <> dem_proximity_ind
+scheme 4263:4275 <> dem_proximity_rec
+scheme 4263:4275 <> dem_proximity_sind
+def 4500:4511 <> dem_adj_form
+R4521:4533 noun_phrases <> dem_proximity ind
+binder 4514:4517 <> prox:29
+R4541:4546 Syntax <> number ind
+binder 4537:4537 <> n:30
+R4551:4556 Stdlib.Strings.String <> string ind
+R4575:4575 noun_phrases <> n:30 var
+R4569:4572 noun_phrases <> prox:29 var
+R4586:4599 noun_phrases <> DemProxSpeaker constr
+R4603:4610 Syntax <> Singular constr
+R4624:4637 noun_phrases <> DemProxSpeaker constr
+R4641:4646 Syntax <> Plural constr
+R4665:4677 noun_phrases <> DemProxHearer constr
+R4682:4689 Syntax <> Singular constr
+R4703:4715 noun_phrases <> DemProxHearer constr
+R4720:4725 Syntax <> Plural constr
+R4742:4750 noun_phrases <> DemDistal constr
+R4759:4766 Syntax <> Singular constr
+R4781:4789 noun_phrases <> DemDistal constr
+R4798:4803 Syntax <> Plural constr
+R4820:4834 noun_phrases <> DemSharedPerson constr
+R4837:4844 Syntax <> Singular constr
+R4858:4872 noun_phrases <> DemSharedPerson constr
+R4875:4880 Syntax <> Plural constr
+R4897:4910 noun_phrases <> DemSharedEvent constr
+R4914:4921 Syntax <> Singular constr
+R4936:4949 noun_phrases <> DemSharedEvent constr
+R4953:4958 Syntax <> Plural constr
+R4975:4984 noun_phrases <> DemHearsay constr
+R4992:4999 Syntax <> Singular constr
+R5015:5024 noun_phrases <> DemHearsay constr
+R5032:5037 Syntax <> Plural constr
+def 5129:5141 <> dem_pron_form
+R5151:5163 noun_phrases <> dem_proximity ind
+binder 5144:5147 <> prox:33
+R5171:5176 Syntax <> number ind
+binder 5167:5167 <> n:34
+R5181:5186 Stdlib.Strings.String <> string ind
+R5205:5205 noun_phrases <> n:34 var
+R5199:5202 noun_phrases <> prox:33 var
+R5216:5229 noun_phrases <> DemProxSpeaker constr
+R5233:5240 Syntax <> Singular constr
+R5257:5270 noun_phrases <> DemProxSpeaker constr
+R5274:5279 Syntax <> Plural constr
+R5300:5312 noun_phrases <> DemProxHearer constr
+R5317:5324 Syntax <> Singular constr
+R5341:5353 noun_phrases <> DemProxHearer constr
+R5358:5363 Syntax <> Plural constr
+R5383:5391 noun_phrases <> DemDistal constr
+R5400:5407 Syntax <> Singular constr
+R5425:5433 noun_phrases <> DemDistal constr
+R5442:5447 Syntax <> Plural constr
+R5467:5481 noun_phrases <> DemSharedPerson constr
+R5484:5491 Syntax <> Singular constr
+R5505:5519 noun_phrases <> DemSharedPerson constr
+R5522:5527 Syntax <> Plural constr
+R5547:5560 noun_phrases <> DemSharedEvent constr
+R5564:5571 Syntax <> Singular constr
+R5586:5599 noun_phrases <> DemSharedEvent constr
+R5603:5608 Syntax <> Plural constr
+R5628:5637 noun_phrases <> DemHearsay constr
+R5645:5652 Syntax <> Singular constr
+R5671:5680 noun_phrases <> DemHearsay constr
+R5688:5693 Syntax <> Plural constr
+ind 5997:6006 <> indef_pron
+constr 6022:6034 <> Indef_Maymava
+constr 6040:6050 <> Indef_Opava
+constr 6056:6066 <> Indef_Avave
+constr 6111:6122 <> Indef_Mbaeve
+constr 6166:6180 <> Indef_Oimeraeva
+constr 6186:6198 <> Indef_Mokoive
+constr 6204:6216 <> Indef_Ambueva
+constr 6222:6236 <> Indef_PeteiMbae
+scheme 5997:6006 <> indef_pron_rect
+scheme 5997:6006 <> indef_pron_ind
+scheme 5997:6006 <> indef_pron_rec
+scheme 5997:6006 <> indef_pron_sind
+def 6251:6267 <> render_indef_pron
+R6274:6283 noun_phrases <> indef_pron ind
+binder 6270:6270 <> i:39
+R6288:6293 Stdlib.Strings.String <> string ind
+R6306:6306 noun_phrases <> i:39 var
+R6317:6329 noun_phrases <> Indef_Maymava constr
+R6351:6361 noun_phrases <> Indef_Opava constr
+R6383:6393 noun_phrases <> Indef_Avave constr
+R6414:6425 noun_phrases <> Indef_Mbaeve constr
+R6447:6461 noun_phrases <> Indef_Oimeraeva constr
+R6484:6496 noun_phrases <> Indef_Mokoive constr
+R6518:6530 noun_phrases <> Indef_Ambueva constr
+R6552:6566 noun_phrases <> Indef_PeteiMbae constr
+def 6669:6684 <> is_negative_pron
+R6691:6700 noun_phrases <> indef_pron ind
+binder 6687:6687 <> i:41
+R6705:6708 Corelib.Init.Datatypes <> bool ind
+R6721:6721 noun_phrases <> i:41 var
+R6732:6742 noun_phrases <> Indef_Avave constr
+R6746:6757 noun_phrases <> Indef_Mbaeve constr
+R6762:6765 Corelib.Init.Datatypes <> true constr
+R6762:6765 Corelib.Init.Datatypes <> true constr
+R6776:6780 Corelib.Init.Datatypes <> false constr
+ind 7070:7082 <> interrog_pron
+constr 7098:7110 <> Interrog_Mbae
+constr 7116:7128 <> Interrog_Mava
+constr 7134:7150 <> Interrog_Mbaeicha
+constr 7156:7168 <> Interrog_Mamo
+constr 7174:7188 <> Interrog_Arakae
+constr 7194:7208 <> Interrog_Mbaera
+constr 7214:7228 <> Interrog_Mbaere
+constr 7234:7249 <> Interrog_Mbaegui
+constr 7255:7268 <> Interrog_Mbovy
+constr 7274:7289 <> Interrog_Avambae
+scheme 7070:7082 <> interrog_pron_rect
+scheme 7070:7082 <> interrog_pron_ind
+scheme 7070:7082 <> interrog_pron_rec
+scheme 7070:7082 <> interrog_pron_sind
+def 7304:7323 <> render_interrog_pron
+R7330:7342 noun_phrases <> interrog_pron ind
+binder 7326:7326 <> i:45
+R7347:7352 Stdlib.Strings.String <> string ind
+R7365:7365 noun_phrases <> i:45 var
+R7376:7388 noun_phrases <> Interrog_Mbae constr
+R7409:7421 noun_phrases <> Interrog_Mava constr
+R7442:7458 noun_phrases <> Interrog_Mbaeicha constr
+R7480:7492 noun_phrases <> Interrog_Mamo constr
+R7512:7526 noun_phrases <> Interrog_Arakae constr
+R7547:7561 noun_phrases <> Interrog_Mbaera constr
+R7583:7597 noun_phrases <> Interrog_Mbaere constr
+R7619:7634 noun_phrases <> Interrog_Mbaegui constr
+R7656:7669 noun_phrases <> Interrog_Mbovy constr
+R7689:7704 noun_phrases <> Interrog_Avambae constr
+ind 8009:8016 <> neg_pron
+constr 8032:8045 <> NegPron_Mbaeve
+constr 8051:8063 <> NegPron_Avave
+constr 8069:8083 <> NegPron_NiPetei
+constr 8089:8102 <> NegPron_Mamove
+constr 8108:8122 <> NegPron_Arakeve
+constr 8128:8141 <> NegPron_Maramo
+scheme 8009:8016 <> neg_pron_rect
+scheme 8009:8016 <> neg_pron_ind
+scheme 8009:8016 <> neg_pron_rec
+scheme 8009:8016 <> neg_pron_sind
+def 8156:8170 <> render_neg_pron
+R8178:8185 noun_phrases <> neg_pron ind
+binder 8173:8174 <> np:49
+R8190:8195 Stdlib.Strings.String <> string ind
+R8208:8209 noun_phrases <> np:49 var
+R8220:8233 noun_phrases <> NegPron_Mbaeve constr
+R8253:8265 noun_phrases <> NegPron_Avave constr
+R8284:8298 noun_phrases <> NegPron_NiPetei constr
+R8319:8332 noun_phrases <> NegPron_Mamove constr
+R8351:8365 noun_phrases <> NegPron_Arakeve constr
+R8386:8399 noun_phrases <> NegPron_Maramo constr
+ind 8774:8787 <> nominal_suffix
+constr 8819:8827 <> NS_Plural
+constr 8833:8844 <> NS_Multitude
+constr 8850:8862 <> NS_Collective
+constr 8882:8891 <> NS_PastKue
+constr 8897:8907 <> NS_FutureRa
+constr 8931:8941 <> NS_ComparVe
+constr 8947:8954 <> NS_Super
+constr 8985:8996 <> NS_Privative
+constr 9002:9014 <> NS_Diminutive
+constr 9020:9033 <> NS_Attenuative
+constr 9057:9064 <> NS_NomHA
+constr 9070:9077 <> NS_NomVA
+constr 9083:9090 <> NS_NomPY
+constr 9096:9104 <> NS_NomKue
+constr 9126:9137 <> NS_OrdinalHA
+scheme 8774:8787 <> nominal_suffix_rect
+scheme 8774:8787 <> nominal_suffix_ind
+scheme 8774:8787 <> nominal_suffix_rec
+scheme 8774:8787 <> nominal_suffix_sind
+def 9152:9168 <> render_nom_suffix
+R9175:9188 noun_phrases <> nominal_suffix ind
+binder 9171:9171 <> s:53
+R9196:9202 Syntax <> orality ind
+binder 9192:9192 <> o:54
+R9207:9212 Stdlib.Strings.String <> string ind
+R9225:9225 noun_phrases <> s:53 var
+R9236:9244 noun_phrases <> NS_Plural constr
+R9254:9270 Syntax <> plural_suffix_adj def
+R9272:9272 noun_phrases <> o:54 var
+R9278:9289 noun_phrases <> NS_Multitude constr
+R9306:9318 noun_phrases <> NS_Collective constr
+R9330:9330 noun_phrases <> o:54 var
+R9337:9340 Syntax <> Oral constr
+R9352:9356 Syntax <> Nasal constr
+R9375:9384 noun_phrases <> NS_PastKue constr
+R9399:9399 noun_phrases <> o:54 var
+R9406:9409 Syntax <> Oral constr
+R9422:9426 Syntax <> Nasal constr
+R9446:9456 noun_phrases <> NS_FutureRa constr
+R9474:9484 noun_phrases <> NS_ComparVe constr
+R9501:9508 noun_phrases <> NS_Super constr
+R9519:9530 Syntax <> super_suffix def
+R9532:9532 noun_phrases <> o:54 var
+R9538:9549 noun_phrases <> NS_Privative constr
+R9567:9579 noun_phrases <> NS_Diminutive constr
+R9594:9607 noun_phrases <> NS_Attenuative constr
+R9618:9618 noun_phrases <> o:54 var
+R9625:9628 Syntax <> Oral constr
+R9640:9644 Syntax <> Nasal constr
+R9663:9670 noun_phrases <> NS_NomHA constr
+R9690:9697 noun_phrases <> NS_NomVA constr
+R9717:9724 noun_phrases <> NS_NomPY constr
+R9741:9741 noun_phrases <> o:54 var
+R9748:9751 Syntax <> Oral constr
+R9763:9767 Syntax <> Nasal constr
+R9786:9794 noun_phrases <> NS_NomKue constr
+R9810:9810 noun_phrases <> o:54 var
+R9817:9820 Syntax <> Oral constr
+R9833:9837 Syntax <> Nasal constr
+R9857:9868 noun_phrases <> NS_OrdinalHA constr
+def 9952:9965 <> suffix_pair_ok
+R9976:9989 noun_phrases <> nominal_suffix ind
+binder 9968:9969 <> s1:61
+binder 9971:9972 <> s2:62
+R9994:9997 Corelib.Init.Datatypes <> bool ind
+R10014:10015 noun_phrases <> s2:62 var
+R10010:10011 noun_phrases <> s1:61 var
+R10026:10036 noun_phrases <> NS_FutureRa constr
+R10039:10048 noun_phrases <> NS_PastKue constr
+R10054:10057 Corelib.Init.Datatypes <> true constr
+R10099:10106 noun_phrases <> NS_NomPY constr
+R10112:10122 noun_phrases <> NS_FutureRa constr
+R10127:10130 Corelib.Init.Datatypes <> true constr
+R10170:10177 noun_phrases <> NS_NomPY constr
+R10183:10192 noun_phrases <> NS_PastKue constr
+R10198:10201 Corelib.Init.Datatypes <> true constr
+R10238:10245 noun_phrases <> NS_NomHA constr
+R10251:10260 noun_phrases <> NS_PastKue constr
+R10266:10269 Corelib.Init.Datatypes <> true constr
+R10307:10314 noun_phrases <> NS_NomHA constr
+R10320:10330 noun_phrases <> NS_FutureRa constr
+R10335:10338 Corelib.Init.Datatypes <> true constr
+R10387:10391 Corelib.Init.Datatypes <> false constr
+ind 10681:10692 <> postposition
+constr 10708:10714 <> Post_Pe
+constr 10718:10725 <> Post_Gui
+constr 10729:10736 <> Post_Gua
+constr 10740:10748 <> Post_Rehe
+constr 10752:10761 <> Post_Ndive
+constr 10767:10776 <> Post_Guive
+constr 10780:10788 <> Post_Peve
+constr 10792:10800 <> Post_Rupi
+constr 10804:10811 <> Post_Ari
+constr 10815:10822 <> Post_Guy
+constr 10828:10837 <> Post_Guara
+constr 10841:10850 <> Post_Hagua
+scheme 10681:10692 <> postposition_rect
+scheme 10681:10692 <> postposition_ind
+scheme 10681:10692 <> postposition_rec
+scheme 10681:10692 <> postposition_sind
+def 10865:10881 <> postposition_form
+R10888:10894 Syntax <> orality ind
+binder 10884:10884 <> o:67
+R10902:10913 noun_phrases <> postposition ind
+binder 10898:10898 <> p:68
+R10918:10923 Stdlib.Strings.String <> string ind
+R10936:10936 noun_phrases <> p:68 var
+R10947:10953 noun_phrases <> Post_Pe constr
+R10967:10967 noun_phrases <> o:67 var
+R10974:10977 Syntax <> Oral constr
+R10992:10996 Syntax <> Nasal constr
+R11017:11024 noun_phrases <> Post_Gui constr
+R11041:11048 noun_phrases <> Post_Gua constr
+R11065:11073 noun_phrases <> Post_Rehe constr
+R11090:11099 noun_phrases <> Post_Ndive constr
+R11110:11110 noun_phrases <> o:67 var
+R11117:11120 Syntax <> Oral constr
+R11135:11139 Syntax <> Nasal constr
+R11160:11169 noun_phrases <> Post_Guive constr
+R11186:11194 noun_phrases <> Post_Peve constr
+R11211:11219 noun_phrases <> Post_Rupi constr
+R11236:11243 noun_phrases <> Post_Ari constr
+R11262:11269 noun_phrases <> Post_Guy constr
+R11286:11295 noun_phrases <> Post_Guara constr
+R11313:11322 noun_phrases <> Post_Hagua constr
+rec 11553:11559 <> np_meta
+proj 11584:11593 <> np_orality
+proj 11612:11620 <> np_number
+proj 11639:11647 <> np_person
+proj 11666:11679 <> np_inclusivity
+R11601:11607 Syntax <> orality ind
+R11629:11634 Syntax <> number ind
+R11656:11661 Syntax <> person ind
+R11683:11688 Corelib.Init.Datatypes <> option ind
+R11690:11700 Syntax <> inclusivity ind
+def 12057:12071 <> embedded_clause
+R12083:12097 verb <> conjugated_verb rec
+def 12112:12124 <> is_rel_clause
+R12132:12146 verb <> conjugated_verb rec
+binder 12127:12128 <> cv:77
+R12151:12154 Corelib.Init.Datatypes <> bool ind
+R12161:12177 verb <> has_verbal_suffix def
+R12180:12190 verb <> cv_suffixes proj
+R12192:12193 noun_phrases <> cv:77 var
+R12196:12203 verb <> VS_NomVa constr
+def 12218:12231 <> is_comp_clause
+R12239:12253 verb <> conjugated_verb rec
+binder 12234:12235 <> cv:78
+R12258:12261 Corelib.Init.Datatypes <> bool ind
+R12268:12284 verb <> has_verbal_suffix def
+R12287:12297 verb <> cv_suffixes proj
+R12299:12300 noun_phrases <> cv:78 var
+R12303:12310 verb <> VS_NomHa constr
+ind 12728:12737 <> guarani_np
+constr 12781:12787 <> NP_Bare
+constr 12817:12822 <> NP_Dem
+constr 12880:12885 <> NP_Art
+constr 12955:12960 <> NP_Adj
+constr 13004:13010 <> NP_Poss
+constr 13055:13060 <> NP_Num
+constr 13105:13110 <> NP_Gen
+constr 13155:13164 <> NP_DemPoss
+constr 13223:13228 <> NP_Rel
+constr 13278:13284 <> NP_Comp
+constr 13360:13365 <> NP_Suf
+constr 13420:13426 <> NP_Suf2
+constr 13535:13545 <> NP_PronSubj
+constr 13585:13595 <> NP_PronPoss
+constr 13635:13644 <> NP_PronDem
+constr 13695:13706 <> NP_PronIndef
+constr 13745:13759 <> NP_PronInterrog
+constr 13795:13804 <> NP_PronNeg
+constr 13882:13891 <> NP_CoordHa
+constr 13940:13951 <> NP_CoordTera
+R12798:12801 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12794:12797 noun_phrases <> noun rec
+R12802:12811 noun_phrases <> guarani_np:79 ind
+R12843:12846 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12830:12842 noun_phrases <> dem_proximity ind
+R12853:12856 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12847:12852 Syntax <> number ind
+R12861:12864 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12857:12860 noun_phrases <> noun rec
+R12865:12874 noun_phrases <> guarani_np:79 ind
+R12899:12902 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12893:12898 Syntax <> number ind
+R12907:12910 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12903:12906 noun_phrases <> noun rec
+R12911:12920 noun_phrases <> guarani_np:79 ind
+R12972:12975 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12968:12971 noun_phrases <> noun rec
+R12985:12988 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R12976:12984 noun_phrases <> adjective rec
+R12989:12998 noun_phrases <> guarani_np:79 ind
+R13028:13031 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13017:13027 Syntax <> poss_marker ind
+R13036:13039 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13032:13035 noun_phrases <> noun rec
+R13040:13049 noun_phrases <> guarani_np:79 ind
+R13078:13081 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13068:13077 Numbers <> GuaraniNum ind
+R13086:13089 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13082:13085 noun_phrases <> noun rec
+R13090:13099 noun_phrases <> guarani_np:79 ind
+R13128:13131 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13118:13127 noun_phrases <> guarani_np:79 ind
+R13136:13139 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13132:13135 noun_phrases <> noun rec
+R13140:13149 noun_phrases <> guarani_np:79 ind
+R13181:13184 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13168:13180 noun_phrases <> dem_proximity ind
+R13196:13199 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13185:13195 Syntax <> poss_marker ind
+R13204:13207 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13200:13203 noun_phrases <> noun rec
+R13208:13217 noun_phrases <> guarani_np:79 ind
+R13240:13243 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13236:13239 noun_phrases <> noun rec
+R13259:13262 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13244:13258 noun_phrases <> embedded_clause def
+R13263:13272 noun_phrases <> guarani_np:79 ind
+R13306:13309 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13291:13305 noun_phrases <> embedded_clause def
+R13310:13319 noun_phrases <> guarani_np:79 ind
+R13383:13386 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13373:13382 noun_phrases <> guarani_np:79 ind
+R13401:13404 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13387:13400 noun_phrases <> nominal_suffix ind
+R13405:13414 noun_phrases <> guarani_np:79 ind
+R13443:13446 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13433:13442 noun_phrases <> guarani_np:79 ind
+R13461:13464 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13447:13460 noun_phrases <> nominal_suffix ind
+R13479:13482 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13465:13478 noun_phrases <> nominal_suffix ind
+R13483:13492 noun_phrases <> guarani_np:79 ind
+R13565:13569 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13553:13564 noun_phrases <> subj_pronoun ind
+R13570:13579 noun_phrases <> guarani_np:79 ind
+R13614:13619 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13603:13613 Syntax <> poss_marker ind
+R13620:13629 noun_phrases <> guarani_np:79 ind
+R13666:13669 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13653:13665 noun_phrases <> dem_proximity ind
+R13676:13679 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13670:13675 Syntax <> number ind
+R13680:13689 noun_phrases <> guarani_np:79 ind
+R13723:13729 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13713:13722 noun_phrases <> indef_pron ind
+R13730:13739 noun_phrases <> guarani_np:79 ind
+R13776:13779 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13763:13775 noun_phrases <> interrog_pron ind
+R13780:13789 noun_phrases <> guarani_np:79 ind
+R13821:13829 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13813:13820 noun_phrases <> neg_pron ind
+R13830:13839 noun_phrases <> guarani_np:79 ind
+R13907:13910 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13897:13906 noun_phrases <> guarani_np:79 ind
+R13921:13924 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13911:13920 noun_phrases <> guarani_np:79 ind
+R13925:13934 noun_phrases <> guarani_np:79 ind
+R13965:13968 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13955:13964 noun_phrases <> guarani_np:79 ind
+R13979:13982 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R13969:13978 noun_phrases <> guarani_np:79 ind
+R13983:13992 noun_phrases <> guarani_np:79 ind
+scheme 12728:12737 <> guarani_np_rect
+scheme 12728:12737 <> guarani_np_ind
+scheme 12728:12737 <> guarani_np_rec
+scheme 12728:12737 <> guarani_np_sind
+def 14207:14220 <> is_noun_headed
+R14227:14236 noun_phrases <> guarani_np ind
+binder 14223:14223 <> x:81
+R14241:14244 Corelib.Init.Datatypes <> bool ind
+R14257:14257 noun_phrases <> x:81 var
+R14268:14274 noun_phrases <> NP_Bare constr
+R14280:14285 noun_phrases <> NP_Dem constr
+R14295:14300 noun_phrases <> NP_Art constr
+R14308:14313 noun_phrases <> NP_Adj constr
+R14323:14329 noun_phrases <> NP_Poss constr
+R14337:14342 noun_phrases <> NP_Num constr
+R14350:14355 noun_phrases <> NP_Gen constr
+R14363:14372 noun_phrases <> NP_DemPoss constr
+R14384:14389 noun_phrases <> NP_Rel constr
+R14397:14403 noun_phrases <> NP_Comp constr
+R14410:14413 Corelib.Init.Datatypes <> true constr
+R14410:14413 Corelib.Init.Datatypes <> true constr
+R14410:14413 Corelib.Init.Datatypes <> true constr
+R14410:14413 Corelib.Init.Datatypes <> true constr
+R14410:14413 Corelib.Init.Datatypes <> true constr
+R14410:14413 Corelib.Init.Datatypes <> true constr
+R14410:14413 Corelib.Init.Datatypes <> true constr
+R14410:14413 Corelib.Init.Datatypes <> true constr
+R14410:14413 Corelib.Init.Datatypes <> true constr
+R14410:14413 Corelib.Init.Datatypes <> true constr
+R14419:14424 noun_phrases <> NP_Suf constr
+R14441:14454 noun_phrases <> is_noun_headed:82 def
+R14466:14472 noun_phrases <> NP_Suf2 constr
+R14488:14501 noun_phrases <> is_noun_headed:82 def
+R14518:14522 Corelib.Init.Datatypes <> false constr
+def 14543:14552 <> has_suffix
+R14559:14568 noun_phrases <> guarani_np ind
+binder 14555:14555 <> x:84
+R14573:14576 Corelib.Init.Datatypes <> bool ind
+R14589:14589 noun_phrases <> x:84 var
+R14600:14605 noun_phrases <> NP_Suf constr
+R14617:14620 Corelib.Init.Datatypes <> true constr
+R14626:14632 noun_phrases <> NP_Suf2 constr
+R14643:14646 Corelib.Init.Datatypes <> true constr
+R14669:14673 Corelib.Init.Datatypes <> false constr
+def 14930:14934 <> wf_np
+R14941:14950 noun_phrases <> guarani_np ind
+binder 14937:14937 <> x:86
+R14955:14958 Corelib.Init.Datatypes <> bool ind
+R14971:14971 noun_phrases <> x:86 var
+R14982:14988 noun_phrases <> NP_Bare constr
+R14994:14999 noun_phrases <> NP_Dem constr
+R15009:15014 noun_phrases <> NP_Art constr
+R15022:15027 noun_phrases <> NP_Adj constr
+R15037:15043 noun_phrases <> NP_Poss constr
+R15051:15056 noun_phrases <> NP_Num constr
+R15064:15073 noun_phrases <> NP_DemPoss constr
+R15084:15087 Corelib.Init.Datatypes <> true constr
+R15084:15087 Corelib.Init.Datatypes <> true constr
+R15084:15087 Corelib.Init.Datatypes <> true constr
+R15084:15087 Corelib.Init.Datatypes <> true constr
+R15084:15087 Corelib.Init.Datatypes <> true constr
+R15084:15087 Corelib.Init.Datatypes <> true constr
+R15084:15087 Corelib.Init.Datatypes <> true constr
+R15094:15099 noun_phrases <> NP_Gen constr
+R15111:15115 noun_phrases <> wf_np:87 def
+R15127:15132 noun_phrases <> NP_Rel constr
+R15164:15167 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R15143:15160 verb <> wf_conjugated_verb def
+R15168:15180 noun_phrases <> is_rel_clause def
+R15190:15196 noun_phrases <> NP_Comp constr
+R15227:15230 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R15206:15223 verb <> wf_conjugated_verb def
+R15231:15244 noun_phrases <> is_comp_clause def
+R15254:15259 noun_phrases <> NP_Suf constr
+R15325:15328 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R15298:15301 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R15278:15291 noun_phrases <> is_noun_headed def
+R15302:15305 Corelib.Init.Datatypes <> negb def
+R15308:15317 noun_phrases <> has_suffix def
+R15329:15333 noun_phrases <> wf_np:87 def
+R15346:15352 noun_phrases <> NP_Suf2 constr
+R15437:15446 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R15422:15425 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R15395:15398 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R15375:15388 noun_phrases <> is_noun_headed def
+R15399:15402 Corelib.Init.Datatypes <> negb def
+R15405:15414 noun_phrases <> has_suffix def
+R15426:15430 noun_phrases <> wf_np:87 def
+R15447:15460 noun_phrases <> suffix_pair_ok def
+R15473:15483 noun_phrases <> NP_PronSubj constr
+R15489:15499 noun_phrases <> NP_PronPoss constr
+R15505:15514 noun_phrases <> NP_PronDem constr
+R15524:15535 noun_phrases <> NP_PronIndef constr
+R15541:15555 noun_phrases <> NP_PronInterrog constr
+R15561:15570 noun_phrases <> NP_PronNeg constr
+R15577:15580 Corelib.Init.Datatypes <> true constr
+R15577:15580 Corelib.Init.Datatypes <> true constr
+R15577:15580 Corelib.Init.Datatypes <> true constr
+R15577:15580 Corelib.Init.Datatypes <> true constr
+R15577:15580 Corelib.Init.Datatypes <> true constr
+R15577:15580 Corelib.Init.Datatypes <> true constr
+R15587:15596 noun_phrases <> NP_CoordHa constr
+R15610:15621 noun_phrases <> NP_CoordTera constr
+R15640:15643 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R15632:15636 noun_phrases <> wf_np:87 def
+R15644:15648 noun_phrases <> wf_np:87 def
+R15640:15643 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R15632:15636 noun_phrases <> wf_np:87 def
+R15644:15648 noun_phrases <> wf_np:87 def
+def 15874:15892 <> inclusivity_of_poss
+R15899:15909 Syntax <> poss_marker ind
+binder 15895:15895 <> p:89
+R15914:15919 Corelib.Init.Datatypes <> option ind
+R15921:15931 Syntax <> inclusivity ind
+R15944:15944 noun_phrases <> p:89 var
+R15955:15963 Syntax <> Poss1Incl constr
+R15968:15971 Corelib.Init.Datatypes <> Some constr
+R15973:15981 Syntax <> Inclusive constr
+R15987:15995 Syntax <> Poss1Excl constr
+R16000:16003 Corelib.Init.Datatypes <> Some constr
+R16005:16013 Syntax <> Exclusive constr
+R16024:16027 Corelib.Init.Datatypes <> None constr
+def 16048:16066 <> inclusivity_of_subj
+R16073:16084 noun_phrases <> subj_pronoun ind
+binder 16069:16069 <> p:91
+R16089:16094 Corelib.Init.Datatypes <> option ind
+R16096:16106 Syntax <> inclusivity ind
+R16119:16119 noun_phrases <> p:91 var
+R16130:16141 noun_phrases <> Subj1PL_INCL constr
+R16146:16149 Corelib.Init.Datatypes <> Some constr
+R16151:16159 Syntax <> Inclusive constr
+R16165:16176 noun_phrases <> Subj1PL_EXCL constr
+R16181:16184 Corelib.Init.Datatypes <> Some constr
+R16186:16194 Syntax <> Exclusive constr
+R16205:16208 Corelib.Init.Datatypes <> None constr
+def 16229:16242 <> person_of_subj
+R16249:16260 noun_phrases <> subj_pronoun ind
+binder 16245:16245 <> p:93
+R16265:16270 Syntax <> person ind
+R16283:16283 noun_phrases <> p:93 var
+R16294:16300 noun_phrases <> Subj1SG constr
+R16304:16315 noun_phrases <> Subj1PL_INCL constr
+R16319:16330 noun_phrases <> Subj1PL_EXCL constr
+R16335:16339 Syntax <> First constr
+R16335:16339 Syntax <> First constr
+R16335:16339 Syntax <> First constr
+R16345:16351 noun_phrases <> Subj2SG constr
+R16355:16361 noun_phrases <> Subj2PL constr
+R16387:16392 Syntax <> Second constr
+R16387:16392 Syntax <> Second constr
+R16398:16404 noun_phrases <> Subj3SG constr
+R16408:16414 noun_phrases <> Subj3PL constr
+R16440:16444 Syntax <> Third constr
+R16440:16444 Syntax <> Third constr
+def 16465:16478 <> number_of_subj
+R16485:16496 noun_phrases <> subj_pronoun ind
+binder 16481:16481 <> p:95
+R16501:16506 Syntax <> number ind
+R16519:16519 noun_phrases <> p:95 var
+R16530:16536 noun_phrases <> Subj1SG constr
+R16540:16546 noun_phrases <> Subj2SG constr
+R16550:16556 noun_phrases <> Subj3SG constr
+R16561:16568 Syntax <> Singular constr
+R16561:16568 Syntax <> Singular constr
+R16561:16568 Syntax <> Singular constr
+R16606:16611 Syntax <> Plural constr
+def 16632:16645 <> person_of_poss
+R16652:16662 Syntax <> poss_marker ind
+binder 16648:16648 <> p:97
+R16667:16672 Syntax <> person ind
+R16685:16685 noun_phrases <> p:97 var
+R16696:16700 Syntax <> Poss1 constr
+R16704:16712 Syntax <> Poss1Incl constr
+R16716:16724 Syntax <> Poss1Excl constr
+R16729:16733 Syntax <> First constr
+R16729:16733 Syntax <> First constr
+R16729:16733 Syntax <> First constr
+R16739:16743 Syntax <> Poss2 constr
+R16747:16753 Syntax <> Poss2Pl constr
+R16772:16777 Syntax <> Second constr
+R16772:16777 Syntax <> Second constr
+R16783:16787 Syntax <> Poss3 constr
+R16791:16797 Syntax <> Poss3Pl constr
+R16816:16820 Syntax <> Third constr
+R16816:16820 Syntax <> Third constr
+def 16841:16854 <> number_of_poss
+R16861:16871 Syntax <> poss_marker ind
+binder 16857:16857 <> p:99
+R16876:16881 Syntax <> number ind
+R16894:16894 noun_phrases <> p:99 var
+R16905:16909 Syntax <> Poss1 constr
+R16913:16917 Syntax <> Poss2 constr
+R16921:16925 Syntax <> Poss3 constr
+R16930:16937 Syntax <> Singular constr
+R16930:16937 Syntax <> Singular constr
+R16930:16937 Syntax <> Singular constr
+R16968:16973 Syntax <> Plural constr
+def 16994:17008 <> number_of_indef
+R17015:17024 noun_phrases <> indef_pron ind
+binder 17011:17011 <> i:101
+R17029:17034 Syntax <> number ind
+R17047:17047 noun_phrases <> i:101 var
+R17058:17068 noun_phrases <> Indef_Avave constr
+R17072:17083 noun_phrases <> Indef_Mbaeve constr
+R17087:17101 noun_phrases <> Indef_PeteiMbae constr
+R17106:17113 Syntax <> Singular constr
+R17106:17113 Syntax <> Singular constr
+R17106:17113 Syntax <> Singular constr
+R17168:17173 Syntax <> Plural constr
+def 17194:17205 <> person_merge
+R17216:17221 Syntax <> person ind
+binder 17208:17209 <> p1:103
+binder 17211:17212 <> p2:104
+R17226:17231 Syntax <> person ind
+R17248:17249 noun_phrases <> p2:104 var
+R17244:17245 noun_phrases <> p1:103 var
+R17260:17264 Syntax <> First constr
+R17274:17278 Syntax <> First constr
+R17285:17289 Syntax <> First constr
+R17285:17289 Syntax <> First constr
+R17295:17300 Syntax <> Second constr
+R17310:17315 Syntax <> Second constr
+R17320:17325 Syntax <> Second constr
+R17320:17325 Syntax <> Second constr
+R17331:17335 Syntax <> Third constr
+R17338:17342 Syntax <> Third constr
+R17356:17360 Syntax <> Third constr
+def 17581:17590 <> np_meta_of
+R17597:17606 noun_phrases <> guarani_np ind
+binder 17593:17593 <> x:107
+R17611:17617 noun_phrases <> np_meta rec
+R17630:17630 noun_phrases <> x:107 var
+R17641:17647 noun_phrases <> NP_Bare constr
+R17660:17667 noun_phrases <> mkNPMeta constr
+R17670:17678 noun_phrases <> n_orality proj
+R17683:17690 Syntax <> Singular constr
+R17692:17696 Syntax <> Third constr
+R17698:17701 Corelib.Init.Datatypes <> None constr
+R17708:17713 noun_phrases <> NP_Dem constr
+R17732:17739 noun_phrases <> mkNPMeta constr
+R17742:17750 noun_phrases <> n_orality proj
+R17759:17763 Syntax <> Third constr
+R17765:17768 Corelib.Init.Datatypes <> None constr
+R17775:17780 noun_phrases <> NP_Art constr
+R17797:17804 noun_phrases <> mkNPMeta constr
+R17807:17815 noun_phrases <> n_orality proj
+R17824:17828 Syntax <> Third constr
+R17830:17833 Corelib.Init.Datatypes <> None constr
+R17840:17845 noun_phrases <> NP_Adj constr
+R17860:17867 noun_phrases <> mkNPMeta constr
+R17870:17878 noun_phrases <> n_orality proj
+R17883:17890 Syntax <> Singular constr
+R17892:17896 Syntax <> Third constr
+R17898:17901 Corelib.Init.Datatypes <> None constr
+R17908:17914 noun_phrases <> NP_Poss constr
+R17930:17937 noun_phrases <> mkNPMeta constr
+R17940:17948 noun_phrases <> n_orality proj
+R17954:17967 noun_phrases <> number_of_poss def
+R17974:17987 noun_phrases <> person_of_poss def
+R18009:18027 noun_phrases <> inclusivity_of_poss def
+R18038:18043 noun_phrases <> NP_Num constr
+R18073:18078 Numbers <> is_one def
+R18102:18107 Syntax <> Plural constr
+R18088:18095 Syntax <> Singular constr
+binder 18063:18065 <> num:110
+R18118:18125 noun_phrases <> mkNPMeta constr
+R18128:18136 noun_phrases <> n_orality proj
+R18141:18143 noun_phrases <> num:110 var
+R18145:18149 Syntax <> Third constr
+R18151:18154 Corelib.Init.Datatypes <> None constr
+R18161:18166 noun_phrases <> NP_Gen constr
+R18181:18188 noun_phrases <> mkNPMeta constr
+R18191:18199 noun_phrases <> n_orality proj
+R18204:18211 Syntax <> Singular constr
+R18213:18217 Syntax <> Third constr
+R18219:18222 Corelib.Init.Datatypes <> None constr
+R18229:18238 noun_phrases <> NP_DemPoss constr
+R18256:18263 noun_phrases <> mkNPMeta constr
+R18266:18274 noun_phrases <> n_orality proj
+R18280:18293 noun_phrases <> number_of_poss def
+R18300:18313 noun_phrases <> person_of_poss def
+R18335:18353 noun_phrases <> inclusivity_of_poss def
+R18364:18369 noun_phrases <> NP_Rel constr
+R18384:18391 noun_phrases <> mkNPMeta constr
+R18394:18402 noun_phrases <> n_orality proj
+R18407:18414 Syntax <> Singular constr
+R18416:18420 Syntax <> Third constr
+R18422:18425 Corelib.Init.Datatypes <> None constr
+R18432:18438 noun_phrases <> NP_Comp constr
+R18452:18459 noun_phrases <> mkNPMeta constr
+R18462:18471 verb <> cv_orality def
+R18477:18484 Syntax <> Singular constr
+R18486:18490 Syntax <> Third constr
+R18492:18495 Corelib.Init.Datatypes <> None constr
+R18502:18507 noun_phrases <> NP_Suf constr
+R18515:18523 noun_phrases <> NS_Plural constr
+R18543:18552 noun_phrases <> np_meta_of:108 def
+binder 18538:18538 <> m:111
+R18569:18576 noun_phrases <> mkNPMeta constr
+R18579:18588 noun_phrases <> np_orality proj
+R18590:18590 noun_phrases <> m:111 var
+R18593:18598 Syntax <> Plural constr
+R18601:18609 noun_phrases <> np_person proj
+R18611:18611 noun_phrases <> m:111 var
+R18615:18628 noun_phrases <> np_inclusivity proj
+R18630:18630 noun_phrases <> m:111 var
+R18637:18642 noun_phrases <> NP_Suf constr
+R18650:18661 noun_phrases <> NS_Multitude constr
+R18681:18690 noun_phrases <> np_meta_of:108 def
+binder 18676:18676 <> m:112
+R18707:18714 noun_phrases <> mkNPMeta constr
+R18717:18726 noun_phrases <> np_orality proj
+R18728:18728 noun_phrases <> m:112 var
+R18731:18736 Syntax <> Plural constr
+R18739:18747 noun_phrases <> np_person proj
+R18749:18749 noun_phrases <> m:112 var
+R18753:18766 noun_phrases <> np_inclusivity proj
+R18768:18768 noun_phrases <> m:112 var
+R18775:18780 noun_phrases <> NP_Suf constr
+R18799:18808 noun_phrases <> np_meta_of:108 def
+R18821:18827 noun_phrases <> NP_Suf2 constr
+R18848:18857 noun_phrases <> np_meta_of:108 def
+R18870:18880 noun_phrases <> NP_PronSubj constr
+R18893:18900 noun_phrases <> mkNPMeta constr
+R18902:18905 Syntax <> Oral constr
+R18908:18921 noun_phrases <> number_of_subj def
+R18927:18940 noun_phrases <> person_of_subj def
+R18961:18979 noun_phrases <> inclusivity_of_subj def
+R18989:18999 noun_phrases <> NP_PronPoss constr
+R19013:19020 noun_phrases <> mkNPMeta constr
+R19022:19025 Syntax <> Oral constr
+R19028:19041 noun_phrases <> number_of_poss def
+R19048:19061 noun_phrases <> person_of_poss def
+R19083:19101 noun_phrases <> inclusivity_of_poss def
+R19112:19121 noun_phrases <> NP_PronDem constr
+R19136:19143 noun_phrases <> mkNPMeta constr
+R19145:19148 Syntax <> Oral constr
+R19152:19156 Syntax <> Third constr
+R19158:19161 Corelib.Init.Datatypes <> None constr
+R19168:19179 noun_phrases <> NP_PronIndef constr
+R19192:19199 noun_phrases <> mkNPMeta constr
+R19201:19204 Syntax <> Oral constr
+R19207:19221 noun_phrases <> number_of_indef def
+R19226:19230 Syntax <> Third constr
+R19232:19235 Corelib.Init.Datatypes <> None constr
+R19242:19256 noun_phrases <> NP_PronInterrog constr
+R19269:19276 noun_phrases <> mkNPMeta constr
+R19278:19281 Syntax <> Oral constr
+R19283:19290 Syntax <> Singular constr
+R19292:19296 Syntax <> Third constr
+R19298:19301 Corelib.Init.Datatypes <> None constr
+R19308:19317 noun_phrases <> NP_PronNeg constr
+R19330:19337 noun_phrases <> mkNPMeta constr
+R19339:19342 Syntax <> Oral constr
+R19344:19351 Syntax <> Singular constr
+R19353:19357 Syntax <> Third constr
+R19359:19362 Corelib.Init.Datatypes <> None constr
+R19369:19378 noun_phrases <> NP_CoordHa constr
+R19405:19414 noun_phrases <> np_meta_of:108 def
+binder 19399:19400 <> m1:113
+R19438:19447 noun_phrases <> np_meta_of:108 def
+binder 19432:19433 <> m2:114
+R19461:19468 noun_phrases <> mkNPMeta constr
+R19471:19480 noun_phrases <> np_orality proj
+R19482:19483 noun_phrases <> m1:113 var
+R19486:19491 Syntax <> Plural constr
+R19509:19520 noun_phrases <> person_merge def
+R19523:19531 noun_phrases <> np_person proj
+R19533:19534 noun_phrases <> m1:113 var
+R19538:19546 noun_phrases <> np_person proj
+R19548:19549 noun_phrases <> m2:114 var
+R19568:19571 Corelib.Init.Datatypes <> None constr
+R19578:19589 noun_phrases <> NP_CoordTera constr
+R19605:19614 noun_phrases <> np_meta_of:108 def
+def 19638:19653 <> np_plural_suffix
+R19660:19669 noun_phrases <> guarani_np ind
+binder 19656:19656 <> x:115
+R19674:19679 Stdlib.Strings.String <> string ind
+R19686:19702 Syntax <> plural_suffix_adj def
+R19705:19714 noun_phrases <> np_orality proj
+R19717:19726 noun_phrases <> np_meta_of def
+R19728:19728 noun_phrases <> x:115 var
+def 19961:19969 <> render_np
+R19976:19985 noun_phrases <> guarani_np ind
+binder 19972:19972 <> x:116
+R19990:19995 Stdlib.Strings.String <> string ind
+R20008:20008 noun_phrases <> x:116 var
+R20019:20025 noun_phrases <> NP_Bare constr
+R20038:20049 noun_phrases <> noun_surface def
+R20053:20064 noun_phrases <> PossCtx_None constr
+R20071:20076 noun_phrases <> NP_Dem constr
+R20119:20122 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20098:20109 noun_phrases <> dem_adj_form def
+R20126:20129 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20130:20141 noun_phrases <> noun_surface def
+R20145:20156 noun_phrases <> PossCtx_None constr
+R20163:20168 noun_phrases <> NP_Art constr
+R20183:20194 noun_phrases <> noun_surface def
+R20198:20209 noun_phrases <> PossCtx_None constr
+R20216:20221 noun_phrases <> NP_Adj constr
+R20263:20266 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20236:20247 noun_phrases <> noun_surface def
+R20251:20262 noun_phrases <> PossCtx_None constr
+R20270:20273 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20274:20279 noun_phrases <> a_form proj
+R20288:20294 noun_phrases <> NP_Poss constr
+R20343:20352 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20310:20325 Syntax <> poss_marker_form def
+R20328:20336 noun_phrases <> n_orality proj
+R20356:20365 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20366:20377 noun_phrases <> noun_surface def
+R20382:20403 noun_phrases <> poss_context_of_marker def
+R20414:20419 noun_phrases <> NP_Num constr
+R20448:20451 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20435:20444 Numbers <> render_num def
+R20455:20458 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20459:20470 noun_phrases <> noun_surface def
+R20474:20485 noun_phrases <> PossCtx_None constr
+R20492:20497 noun_phrases <> NP_Gen constr
+R20529:20532 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20515:20523 noun_phrases <> render_np:117 def
+R20536:20539 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20540:20551 noun_phrases <> noun_surface def
+R20555:20573 noun_phrases <> PossCtx_FirstSecond constr
+R20580:20589 noun_phrases <> NP_DemPoss constr
+R20636:20645 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20610:20621 noun_phrases <> dem_adj_form def
+R20628:20635 Syntax <> Singular constr
+R20649:20658 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20692:20701 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20659:20674 Syntax <> poss_marker_form def
+R20677:20685 noun_phrases <> n_orality proj
+R20705:20714 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20715:20726 noun_phrases <> noun_surface def
+R20731:20752 noun_phrases <> poss_context_of_marker def
+R20763:20768 noun_phrases <> NP_Rel constr
+R20811:20814 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20784:20795 noun_phrases <> noun_surface def
+R20799:20810 noun_phrases <> PossCtx_None constr
+R20818:20821 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20822:20832 verb <> render_verb def
+R20842:20848 noun_phrases <> NP_Comp constr
+R20862:20872 verb <> render_verb def
+R20882:20887 noun_phrases <> NP_Suf constr
+R20923:20932 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R20908:20916 noun_phrases <> render_np:117 def
+R20933:20949 noun_phrases <> render_nom_suffix def
+R20956:20965 noun_phrases <> np_orality proj
+R20968:20977 noun_phrases <> np_meta_of def
+R20992:20998 noun_phrases <> NP_Suf2 constr
+R21030:21039 noun_phrases <> np_orality proj
+R21042:21051 noun_phrases <> np_meta_of def
+binder 21025:21025 <> o:119
+R21084:21093 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R21069:21077 noun_phrases <> render_np:117 def
+R21116:21125 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R21094:21110 noun_phrases <> render_nom_suffix def
+R21115:21115 noun_phrases <> o:119 var
+R21126:21142 noun_phrases <> render_nom_suffix def
+R21147:21147 noun_phrases <> o:119 var
+R21154:21164 noun_phrases <> NP_PronSubj constr
+R21177:21195 noun_phrases <> render_subj_pronoun def
+R21204:21214 noun_phrases <> NP_PronPoss constr
+R21323:21326 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R21299:21314 Syntax <> poss_marker_form def
+R21316:21319 Syntax <> Oral constr
+R21340:21349 noun_phrases <> NP_PronDem constr
+R21369:21381 noun_phrases <> dem_pron_form def
+R21397:21408 noun_phrases <> NP_PronIndef constr
+R21421:21437 noun_phrases <> render_indef_pron def
+R21446:21460 noun_phrases <> NP_PronInterrog constr
+R21473:21492 noun_phrases <> render_interrog_pron def
+R21501:21510 noun_phrases <> NP_PronNeg constr
+R21524:21538 noun_phrases <> render_neg_pron def
+R21548:21557 noun_phrases <> NP_CoordHa constr
+R21586:21589 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R21574:21582 noun_phrases <> render_np:117 def
+R21596:21599 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R21600:21608 noun_phrases <> render_np:117 def
+R21618:21629 noun_phrases <> NP_CoordTera constr
+R21658:21661 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R21646:21654 noun_phrases <> render_np:117 def
+R21672:21675 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R21676:21684 noun_phrases <> render_np:117 def
+prf 21978:22007 <> rule_NPA1_triform_nonposs_is_t
+R22047:22049 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R22015:22025 noun_phrases <> root_prefix def
+R22027:22033 noun_phrases <> Triform constr
+R22035:22046 noun_phrases <> PossCtx_None constr
+prf 22089:22122 <> rule_NPA2_triform_firstsecond_is_r
+R22169:22171 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R22130:22140 noun_phrases <> root_prefix def
+R22142:22148 noun_phrases <> Triform constr
+R22150:22168 noun_phrases <> PossCtx_FirstSecond constr
+prf 22211:22238 <> rule_NPA3_triform_third_is_h
+R22279:22281 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R22246:22256 noun_phrases <> root_prefix def
+R22258:22264 noun_phrases <> Triform constr
+R22266:22278 noun_phrases <> PossCtx_Third constr
+prf 22321:22350 <> rule_NPA4_triform_all_distinct
+R22433:22440 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R22390:22393 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R22358:22368 noun_phrases <> root_prefix def
+R22370:22376 noun_phrases <> Triform constr
+R22378:22389 noun_phrases <> PossCtx_None constr
+R22394:22404 noun_phrases <> root_prefix def
+R22406:22412 noun_phrases <> Triform constr
+R22414:22432 noun_phrases <> PossCtx_FirstSecond constr
+R22517:22524 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R22480:22483 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R22441:22451 noun_phrases <> root_prefix def
+R22453:22459 noun_phrases <> Triform constr
+R22461:22479 noun_phrases <> PossCtx_FirstSecond constr
+R22484:22494 noun_phrases <> root_prefix def
+R22496:22502 noun_phrases <> Triform constr
+R22504:22516 noun_phrases <> PossCtx_Third constr
+R22557:22560 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R22525:22535 noun_phrases <> root_prefix def
+R22537:22543 noun_phrases <> Triform constr
+R22545:22556 noun_phrases <> PossCtx_None constr
+R22561:22571 noun_phrases <> root_prefix def
+R22573:22579 noun_phrases <> Triform constr
+R22581:22593 noun_phrases <> PossCtx_Third constr
+prf 22652:22685 <> rule_NPA5_triformNoT_nonposs_empty
+R22728:22730 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R22693:22703 noun_phrases <> root_prefix def
+R22705:22714 noun_phrases <> TriformNoT constr
+R22716:22727 noun_phrases <> PossCtx_None constr
+prf 22769:22805 <> rule_NPA6_triformNoT_firstsecond_is_r
+R22855:22857 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R22813:22823 noun_phrases <> root_prefix def
+R22825:22834 noun_phrases <> TriformNoT constr
+R22836:22854 noun_phrases <> PossCtx_FirstSecond constr
+prf 22897:22927 <> rule_NPA6_triformNoT_third_is_h
+R22971:22973 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R22935:22945 noun_phrases <> root_prefix def
+R22947:22956 noun_phrases <> TriformNoT constr
+R22958:22970 noun_phrases <> PossCtx_Third constr
+prf 23013:23042 <> rule_NPA7_uniform_always_empty
+binder 23053:23055 <> ctx:120
+R23085:23087 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23062:23072 noun_phrases <> root_prefix def
+R23074:23080 noun_phrases <> Uniform constr
+R23082:23084 noun_phrases <> ctx:120 var
+prf 23203:23219 <> rule_NPB1_bare_wf
+binder 23230:23230 <> n:121
+R23250:23252 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23233:23237 noun_phrases <> wf_np def
+R23240:23246 noun_phrases <> NP_Bare constr
+R23248:23248 noun_phrases <> n:121 var
+R23253:23256 Corelib.Init.Datatypes <> true constr
+prf 23293:23308 <> rule_NPB1_dem_wf
+binder 23319:23322 <> prox:122
+binder 23324:23326 <> num:123
+binder 23328:23328 <> n:124
+R23360:23362 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23335:23339 noun_phrases <> wf_np def
+R23342:23347 noun_phrases <> NP_Dem constr
+R23349:23352 noun_phrases <> prox:122 var
+R23354:23356 noun_phrases <> num:123 var
+R23358:23358 noun_phrases <> n:124 var
+R23363:23366 Corelib.Init.Datatypes <> true constr
+prf 23403:23418 <> rule_NPB1_adj_wf
+binder 23429:23429 <> n:125
+binder 23431:23431 <> a:126
+R23452:23454 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23434:23438 noun_phrases <> wf_np def
+R23441:23446 noun_phrases <> NP_Adj constr
+R23448:23448 noun_phrases <> n:125 var
+R23450:23450 noun_phrases <> a:126 var
+R23455:23458 Corelib.Init.Datatypes <> true constr
+prf 23495:23511 <> rule_NPB1_poss_wf
+binder 23522:23523 <> pm:127
+binder 23525:23525 <> n:128
+R23548:23550 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23528:23532 noun_phrases <> wf_np def
+R23535:23541 noun_phrases <> NP_Poss constr
+R23543:23544 noun_phrases <> pm:127 var
+R23546:23546 noun_phrases <> n:128 var
+R23551:23554 Corelib.Init.Datatypes <> true constr
+prf 23591:23606 <> rule_NPB1_num_wf
+binder 23617:23618 <> gn:129
+binder 23620:23620 <> n:130
+R23642:23644 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23623:23627 noun_phrases <> wf_np def
+R23630:23635 noun_phrases <> NP_Num constr
+R23637:23638 noun_phrases <> gn:129 var
+R23640:23640 noun_phrases <> n:130 var
+R23645:23648 Corelib.Init.Datatypes <> true constr
+prf 23685:23710 <> rule_NPB2_single_suffix_wf
+binder 23721:23721 <> n:131
+binder 23723:23725 <> suf:132
+R23762:23764 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23732:23736 noun_phrases <> wf_np def
+R23739:23744 noun_phrases <> NP_Suf constr
+R23747:23753 noun_phrases <> NP_Bare constr
+R23755:23755 noun_phrases <> n:131 var
+R23758:23760 noun_phrases <> suf:132 var
+R23765:23768 Corelib.Init.Datatypes <> true constr
+prf 23805:23837 <> rule_NPB3_double_suf_stacking_ill
+binder 23848:23848 <> n:133
+binder 23850:23851 <> s1:134
+binder 23853:23854 <> s2:135
+R23902:23904 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23861:23865 noun_phrases <> wf_np def
+R23868:23873 noun_phrases <> NP_Suf constr
+R23876:23881 noun_phrases <> NP_Suf constr
+R23884:23890 noun_phrases <> NP_Bare constr
+R23892:23892 noun_phrases <> n:133 var
+R23895:23896 noun_phrases <> s1:134 var
+R23899:23900 noun_phrases <> s2:135 var
+R23905:23909 Corelib.Init.Datatypes <> false constr
+prf 23946:23976 <> rule_NPB4_suffix_on_pronoun_ill
+binder 23987:23987 <> p:136
+binder 23989:23991 <> suf:137
+R24032:24034 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R23998:24002 noun_phrases <> wf_np def
+R24005:24010 noun_phrases <> NP_Suf constr
+R24013:24023 noun_phrases <> NP_PronSubj constr
+R24025:24025 noun_phrases <> p:136 var
+R24028:24030 noun_phrases <> suf:137 var
+R24035:24039 Corelib.Init.Datatypes <> false constr
+prf 24076:24098 <> rule_NPB5_gen_preserves
+binder 24109:24112 <> poss:138
+binder 24114:24114 <> n:139
+R24138:24141 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R24131:24133 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24121:24125 noun_phrases <> wf_np def
+R24127:24130 noun_phrases <> poss:138 var
+R24134:24137 Corelib.Init.Datatypes <> true constr
+R24163:24165 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24142:24146 noun_phrases <> wf_np def
+R24149:24154 noun_phrases <> NP_Gen constr
+R24156:24159 noun_phrases <> poss:138 var
+R24161:24161 noun_phrases <> n:139 var
+R24166:24169 Corelib.Init.Datatypes <> true constr
+prf 24226:24247 <> rule_NPB6_subj_pron_wf
+binder 24258:24258 <> p:140
+R24282:24284 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24261:24265 noun_phrases <> wf_np def
+R24268:24278 noun_phrases <> NP_PronSubj constr
+R24280:24280 noun_phrases <> p:140 var
+R24285:24288 Corelib.Init.Datatypes <> true constr
+prf 24325:24350 <> rule_NPB6_interrog_pron_wf
+binder 24361:24361 <> i:141
+R24389:24391 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24364:24368 noun_phrases <> wf_np def
+R24371:24385 noun_phrases <> NP_PronInterrog constr
+R24387:24387 noun_phrases <> i:141 var
+R24392:24395 Corelib.Init.Datatypes <> true constr
+prf 24432:24452 <> rule_NPB6_neg_pron_wf
+binder 24463:24464 <> np:142
+R24488:24490 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24467:24471 noun_phrases <> wf_np def
+R24474:24483 noun_phrases <> NP_PronNeg constr
+R24485:24486 noun_phrases <> np:142 var
+R24491:24494 Corelib.Init.Datatypes <> true constr
+prf 24646:24665 <> rule_NPB7_rel_wf_iff
+binder 24676:24676 <> n:143
+binder 24678:24679 <> cv:144
+R24705:24707 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24686:24690 noun_phrases <> wf_np def
+R24693:24698 noun_phrases <> NP_Rel constr
+R24700:24700 noun_phrases <> n:143 var
+R24702:24703 noun_phrases <> cv:144 var
+R24729:24732 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R24708:24725 verb <> wf_conjugated_verb def
+R24727:24728 noun_phrases <> cv:144 var
+R24733:24745 noun_phrases <> is_rel_clause def
+R24747:24748 noun_phrases <> cv:144 var
+prf 24785:24805 <> rule_NPB7_comp_wf_iff
+binder 24816:24817 <> cv:145
+R24842:24844 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R24824:24828 noun_phrases <> wf_np def
+R24831:24837 noun_phrases <> NP_Comp constr
+R24839:24840 noun_phrases <> cv:145 var
+R24866:24869 Corelib.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R24845:24862 verb <> wf_conjugated_verb def
+R24864:24865 noun_phrases <> cv:145 var
+R24870:24883 noun_phrases <> is_comp_clause def
+R24885:24886 noun_phrases <> cv:145 var
+prf 24986:25007 <> rule_NPB8_rel_needs_va
+binder 25018:25018 <> n:146
+binder 25020:25021 <> cv:147
+R25052:25059 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R25044:25046 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R25028:25040 noun_phrases <> is_rel_clause def
+R25042:25043 noun_phrases <> cv:147 var
+R25047:25051 Corelib.Init.Datatypes <> false constr
+R25079:25081 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R25060:25064 noun_phrases <> wf_np def
+R25067:25072 noun_phrases <> NP_Rel constr
+R25074:25074 noun_phrases <> n:146 var
+R25076:25077 noun_phrases <> cv:147 var
+R25082:25086 Corelib.Init.Datatypes <> false constr
+R25143:25160 verb <> wf_conjugated_verb def
+R25143:25160 verb <> wf_conjugated_verb def
+prf 25259:25281 <> rule_NPB8_comp_needs_ha
+binder 25292:25293 <> cv:148
+R25325:25332 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R25317:25319 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R25300:25313 noun_phrases <> is_comp_clause def
+R25315:25316 noun_phrases <> cv:148 var
+R25320:25324 Corelib.Init.Datatypes <> false constr
+R25351:25353 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R25333:25337 noun_phrases <> wf_np def
+R25340:25346 noun_phrases <> NP_Comp constr
+R25348:25349 noun_phrases <> cv:148 var
+R25354:25358 Corelib.Init.Datatypes <> false constr
+R25413:25430 verb <> wf_conjugated_verb def
+R25413:25430 verb <> wf_conjugated_verb def
+prf 25521:25547 <> rule_NPC1_ra_then_kue_valid
+binder 25558:25558 <> n:149
+R25615:25617 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R25565:25569 noun_phrases <> wf_np def
+R25572:25578 noun_phrases <> NP_Suf2 constr
+R25581:25587 noun_phrases <> NP_Bare constr
+R25589:25589 noun_phrases <> n:149 var
+R25592:25602 noun_phrases <> NS_FutureRa constr
+R25604:25613 noun_phrases <> NS_PastKue constr
+R25618:25621 Corelib.Init.Datatypes <> true constr
+prf 25658:25686 <> rule_NPC2_kue_then_ra_invalid
+binder 25697:25697 <> n:150
+R25754:25756 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R25704:25708 noun_phrases <> wf_np def
+R25711:25717 noun_phrases <> NP_Suf2 constr
+R25720:25726 noun_phrases <> NP_Bare constr
+R25728:25728 noun_phrases <> n:150 var
+R25731:25740 noun_phrases <> NS_PastKue constr
+R25742:25752 noun_phrases <> NS_FutureRa constr
+R25757:25761 Corelib.Init.Datatypes <> false constr
+prf 25798:25824 <> rule_NPC3_ha_then_kue_valid
+binder 25835:25835 <> n:151
+R25889:25891 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R25842:25846 noun_phrases <> wf_np def
+R25849:25855 noun_phrases <> NP_Suf2 constr
+R25858:25864 noun_phrases <> NP_Bare constr
+R25866:25866 noun_phrases <> n:151 var
+R25869:25876 noun_phrases <> NS_NomHA constr
+R25878:25887 noun_phrases <> NS_PastKue constr
+R25892:25895 Corelib.Init.Datatypes <> true constr
+prf 25932:25957 <> rule_NPC4_ha_then_ra_valid
+binder 25968:25968 <> n:152
+R26023:26025 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R25975:25979 noun_phrases <> wf_np def
+R25982:25988 noun_phrases <> NP_Suf2 constr
+R25991:25997 noun_phrases <> NP_Bare constr
+R25999:25999 noun_phrases <> n:152 var
+R26002:26009 noun_phrases <> NS_NomHA constr
+R26011:26021 noun_phrases <> NS_FutureRa constr
+R26026:26029 Corelib.Init.Datatypes <> true constr
+prf 26066:26092 <> rule_NPC5_py_then_kue_valid
+binder 26103:26103 <> n:153
+R26157:26159 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R26110:26114 noun_phrases <> wf_np def
+R26117:26123 noun_phrases <> NP_Suf2 constr
+R26126:26132 noun_phrases <> NP_Bare constr
+R26134:26134 noun_phrases <> n:153 var
+R26137:26144 noun_phrases <> NS_NomPY constr
+R26146:26155 noun_phrases <> NS_PastKue constr
+R26160:26163 Corelib.Init.Datatypes <> true constr
+prf 26200:26225 <> rule_NPC6_py_then_ra_valid
+binder 26236:26236 <> n:154
+R26291:26293 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R26243:26247 noun_phrases <> wf_np def
+R26250:26256 noun_phrases <> NP_Suf2 constr
+R26259:26265 noun_phrases <> NP_Bare constr
+R26267:26267 noun_phrases <> n:154 var
+R26270:26277 noun_phrases <> NS_NomPY constr
+R26279:26289 noun_phrases <> NS_FutureRa constr
+R26294:26297 Corelib.Init.Datatypes <> true constr
+prf 26334:26364 <> rule_NPC7_double_plural_invalid
+binder 26375:26375 <> n:155
+R26429:26431 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R26382:26386 noun_phrases <> wf_np def
+R26389:26395 noun_phrases <> NP_Suf2 constr
+R26398:26404 noun_phrases <> NP_Bare constr
+R26406:26406 noun_phrases <> n:155 var
+R26409:26417 noun_phrases <> NS_Plural constr
+R26419:26427 noun_phrases <> NS_Plural constr
+R26432:26436 Corelib.Init.Datatypes <> false constr
+prf 26555:26586 <> rule_NPD1_subj_person_consistent
+binder 26597:26597 <> p:156
+R26642:26644 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R26604:26612 noun_phrases <> np_person proj
+R26615:26624 noun_phrases <> np_meta_of def
+R26627:26637 noun_phrases <> NP_PronSubj constr
+R26639:26639 noun_phrases <> p:156 var
+R26645:26658 noun_phrases <> person_of_subj def
+R26660:26660 noun_phrases <> p:156 var
+prf 26719:26749 <> rule_NPD3_subj_pron_always_oral
+binder 26760:26760 <> p:157
+R26806:26808 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R26767:26776 noun_phrases <> np_orality proj
+R26779:26788 noun_phrases <> np_meta_of def
+R26791:26801 noun_phrases <> NP_PronSubj constr
+R26803:26803 noun_phrases <> p:157 var
+R26809:26812 Syntax <> Oral constr
+prf 26871:26897 <> rule_NPE1_bare_always_third
+binder 26908:26908 <> n:158
+R26949:26951 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R26915:26923 noun_phrases <> np_person proj
+R26926:26935 noun_phrases <> np_meta_of def
+R26938:26944 noun_phrases <> NP_Bare constr
+R26946:26946 noun_phrases <> n:158 var
+R26952:26956 Syntax <> Third constr
+prf 26993:27022 <> rule_NPE2_bare_always_singular
+binder 27033:27033 <> n:159
+R27074:27076 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27040:27048 noun_phrases <> np_number proj
+R27051:27060 noun_phrases <> np_meta_of def
+R27063:27069 noun_phrases <> NP_Bare constr
+R27071:27071 noun_phrases <> n:159 var
+R27077:27084 Syntax <> Singular constr
+prf 27121:27152 <> rule_NPF1_nasal_noun_gets_nguera
+binder 27163:27163 <> n:160
+R27189:27192 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R27181:27183 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27170:27178 noun_phrases <> n_orality proj
+R27180:27180 noun_phrases <> n:160 var
+R27184:27188 Syntax <> Nasal constr
+R27221:27223 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27193:27208 noun_phrases <> np_plural_suffix def
+R27211:27217 noun_phrases <> NP_Bare constr
+R27219:27219 noun_phrases <> n:160 var
+R27263:27278 noun_phrases <> np_plural_suffix def
+prf 27326:27355 <> rule_NPF2_oral_noun_gets_kuera
+binder 27366:27366 <> n:161
+R27391:27394 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R27384:27386 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27373:27381 noun_phrases <> n_orality proj
+R27383:27383 noun_phrases <> n:161 var
+R27387:27390 Syntax <> Oral constr
+R27423:27425 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27395:27410 noun_phrases <> np_plural_suffix def
+R27413:27419 noun_phrases <> NP_Bare constr
+R27421:27421 noun_phrases <> n:161 var
+R27464:27479 noun_phrases <> np_plural_suffix def
+prf 27527:27549 <> rule_NPG1_prox_singular
+R27593:27595 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27557:27568 noun_phrases <> dem_adj_form def
+R27570:27583 noun_phrases <> DemProxSpeaker constr
+R27585:27592 Syntax <> Singular constr
+prf 27636:27663 <> rule_NPG3_prox_plural_is_koa
+R27705:27707 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27671:27682 noun_phrases <> dem_adj_form def
+R27684:27697 noun_phrases <> DemProxSpeaker constr
+R27699:27704 Syntax <> Plural constr
+prf 27751:27779 <> rule_NPG6_dem_np_always_third
+binder 27790:27793 <> prox:162
+binder 27795:27797 <> num:163
+binder 27799:27799 <> n:164
+R27848:27850 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27806:27814 noun_phrases <> np_person proj
+R27817:27826 noun_phrases <> np_meta_of def
+R27829:27834 noun_phrases <> NP_Dem constr
+R27836:27839 noun_phrases <> prox:162 var
+R27841:27843 noun_phrases <> num:163 var
+R27845:27845 noun_phrases <> n:164 var
+R27851:27855 Syntax <> Third constr
+prf 27892:27921 <> rule_NPH1_plural_forces_plural
+binder 27932:27932 <> x:165
+R27982:27984 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R27939:27947 noun_phrases <> np_number proj
+R27950:27959 noun_phrases <> np_meta_of def
+R27962:27967 noun_phrases <> NP_Suf constr
+R27969:27969 noun_phrases <> x:165 var
+R27971:27979 noun_phrases <> NS_Plural constr
+R27985:27990 Syntax <> Plural constr
+prf 28027:28051 <> rule_NPH4_kue_transparent
+binder 28062:28062 <> x:166
+R28101:28103 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28069:28078 noun_phrases <> np_meta_of def
+R28081:28086 noun_phrases <> NP_Suf constr
+R28088:28088 noun_phrases <> x:166 var
+R28090:28099 noun_phrases <> NS_PastKue constr
+R28104:28113 noun_phrases <> np_meta_of def
+R28115:28115 noun_phrases <> x:166 var
+prf 28152:28177 <> rule_NPI1_gen_always_third
+binder 28188:28191 <> poss:167
+binder 28193:28193 <> n:168
+R28238:28240 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28200:28208 noun_phrases <> np_person proj
+R28211:28220 noun_phrases <> np_meta_of def
+R28223:28228 noun_phrases <> NP_Gen constr
+R28230:28233 noun_phrases <> poss:167 var
+R28235:28235 noun_phrases <> n:168 var
+R28241:28245 Syntax <> Third constr
+prf 28282:28314 <> rule_NPJ1_poss_person_from_marker
+binder 28325:28326 <> pm:169
+binder 28328:28328 <> n:170
+R28372:28374 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28335:28343 noun_phrases <> np_person proj
+R28346:28355 noun_phrases <> np_meta_of def
+R28358:28364 noun_phrases <> NP_Poss constr
+R28366:28367 noun_phrases <> pm:169 var
+R28369:28369 noun_phrases <> n:170 var
+R28375:28388 noun_phrases <> person_of_poss def
+R28390:28391 noun_phrases <> pm:169 var
+prf 28454:28478 <> rule_NPK1_one_is_singular
+binder 28489:28490 <> gn:171
+binder 28492:28492 <> n:172
+R28515:28518 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R28508:28510 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28499:28504 Numbers <> is_one def
+R28506:28507 noun_phrases <> gn:171 var
+R28511:28514 Corelib.Init.Datatypes <> true constr
+R28555:28557 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28519:28527 noun_phrases <> np_number proj
+R28530:28539 noun_phrases <> np_meta_of def
+R28542:28547 noun_phrases <> NP_Num constr
+R28549:28550 noun_phrases <> gn:171 var
+R28552:28552 noun_phrases <> n:172 var
+R28558:28565 Syntax <> Singular constr
+prf 28635:28661 <> rule_NPK2_not_one_is_plural
+binder 28672:28673 <> gn:173
+binder 28675:28675 <> n:174
+R28699:28702 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R28691:28693 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28682:28687 Numbers <> is_one def
+R28689:28690 noun_phrases <> gn:173 var
+R28694:28698 Corelib.Init.Datatypes <> false constr
+R28739:28741 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28703:28711 noun_phrases <> np_number proj
+R28714:28723 noun_phrases <> np_meta_of def
+R28726:28731 noun_phrases <> NP_Num constr
+R28733:28734 noun_phrases <> gn:173 var
+R28736:28736 noun_phrases <> n:174 var
+R28742:28747 Syntax <> Plural constr
+prf 28817:28842 <> rule_NPL1_ha_always_plural
+binder 28853:28854 <> x1:175
+binder 28856:28857 <> x2:176
+R28905:28907 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28864:28872 noun_phrases <> np_number proj
+R28875:28884 noun_phrases <> np_meta_of def
+R28887:28896 noun_phrases <> NP_CoordHa constr
+R28898:28899 noun_phrases <> x1:175 var
+R28901:28902 noun_phrases <> x2:176 var
+R28908:28913 Syntax <> Plural constr
+prf 28950:28976 <> rule_NPM1_merge_commutative
+binder 28987:28988 <> p1:177
+binder 28990:28991 <> p2:178
+R29016:29018 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R28998:29009 noun_phrases <> person_merge def
+R29011:29012 noun_phrases <> p1:177 var
+R29014:29015 noun_phrases <> p2:178 var
+R29019:29030 noun_phrases <> person_merge def
+R29032:29033 noun_phrases <> p2:178 var
+R29035:29036 noun_phrases <> p1:177 var
+prf 29113:29144 <> rule_NPM3_first_always_dominates
+binder 29155:29155 <> p:179
+R29190:29193 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R29182:29184 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29162:29173 noun_phrases <> person_merge def
+R29175:29179 Syntax <> First constr
+R29181:29181 noun_phrases <> p:179 var
+R29185:29189 Syntax <> First constr
+R29214:29216 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29194:29205 noun_phrases <> person_merge def
+R29207:29207 noun_phrases <> p:179 var
+R29209:29213 Syntax <> First constr
+R29217:29221 Syntax <> First constr
+prf 29287:29306 <> rule_NPN1_pe_me_oral
+R29344:29346 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29314:29330 noun_phrases <> postposition_form def
+R29332:29335 Syntax <> Oral constr
+R29337:29343 noun_phrases <> Post_Pe constr
+prf 29387:29407 <> rule_NPN1_pe_me_nasal
+R29446:29448 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29415:29431 noun_phrases <> postposition_form def
+R29433:29437 Syntax <> Nasal constr
+R29439:29445 noun_phrases <> Post_Pe constr
+prf 29489:29515 <> rule_NPO1_avave_is_negative
+R29551:29553 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29523:29538 noun_phrases <> is_negative_pron def
+R29540:29550 noun_phrases <> Indef_Avave constr
+R29554:29557 Corelib.Init.Datatypes <> true constr
+prf 29594:29623 <> rule_NPO2_maymava_not_negative
+R29661:29663 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29631:29646 noun_phrases <> is_negative_pron def
+R29648:29660 noun_phrases <> Indef_Maymava constr
+R29664:29668 Corelib.Init.Datatypes <> false constr
+prf 29705:29735 <> rule_NPP2_interrog_always_third
+binder 29746:29746 <> i:180
+R29795:29797 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29753:29761 noun_phrases <> np_person proj
+R29764:29773 noun_phrases <> np_meta_of def
+R29776:29790 noun_phrases <> NP_PronInterrog constr
+R29792:29792 noun_phrases <> i:180 var
+R29798:29802 Syntax <> Third constr
+prf 29898:29927 <> rule_NPQ1_uniform_bare_is_root
+binder 29938:29938 <> n:181
+R29969:29976 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R29959:29961 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29945:29956 noun_phrases <> n_root_class proj
+R29958:29958 noun_phrases <> n:181 var
+R29962:29968 noun_phrases <> Uniform constr
+R29998:30000 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R29977:29985 noun_phrases <> render_np def
+R29988:29994 noun_phrases <> NP_Bare constr
+R29996:29996 noun_phrases <> n:181 var
+R30001:30006 noun_phrases <> n_root proj
+R30008:30008 noun_phrases <> n:181 var
+R30039:30047 noun_phrases <> render_np def
+R30050:30061 noun_phrases <> noun_surface def
+prf 30111:30137 <> rule_NPQ2_art_drops_article
+binder 30148:30150 <> num:182
+binder 30152:30152 <> n:183
+R30183:30185 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R30159:30167 noun_phrases <> render_np def
+R30170:30175 noun_phrases <> NP_Art constr
+R30177:30179 noun_phrases <> num:182 var
+R30181:30181 noun_phrases <> n:183 var
+R30186:30194 noun_phrases <> render_np def
+R30197:30203 noun_phrases <> NP_Bare constr
+R30205:30205 noun_phrases <> n:183 var
+prf 30243:30269 <> rule_NPQ3_pron_subj_renders
+binder 30280:30280 <> p:184
+R30312:30314 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R30287:30295 noun_phrases <> render_np def
+R30298:30308 noun_phrases <> NP_PronSubj constr
+R30310:30310 noun_phrases <> p:184 var
+R30315:30333 noun_phrases <> render_subj_pronoun def
+R30335:30335 noun_phrases <> p:184 var
+prf 30394:30425 <> rule_NPQ4_coord_ha_joins_with_ha
+binder 30436:30437 <> x1:185
+binder 30439:30440 <> x2:186
+R30475:30481 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R30447:30455 noun_phrases <> render_np def
+R30458:30467 noun_phrases <> NP_CoordHa constr
+R30469:30470 noun_phrases <> x1:185 var
+R30472:30473 noun_phrases <> x2:186 var
+R30494:30497 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R30482:30490 noun_phrases <> render_np def
+R30492:30493 noun_phrases <> x1:185 var
+R30504:30507 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R30508:30516 noun_phrases <> render_np def
+R30518:30519 noun_phrases <> x2:186 var
+prf 30556:30586 <> rule_NPQ5_rel_concats_with_verb
+binder 30597:30597 <> n:187
+binder 30599:30600 <> cv:188
+R30630:30636 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R30607:30615 noun_phrases <> render_np def
+R30618:30623 noun_phrases <> NP_Rel constr
+R30625:30625 noun_phrases <> n:187 var
+R30627:30628 noun_phrases <> cv:188 var
+R30664:30667 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R30637:30648 noun_phrases <> noun_surface def
+R30650:30650 noun_phrases <> n:187 var
+R30652:30663 noun_phrases <> PossCtx_None constr
+R30671:30674 Stdlib.Strings.String <> ::string_scope:x_'++'_x not
+R30675:30685 verb <> render_verb def
+R30687:30688 noun_phrases <> cv:188 var
+prf 30725:30746 <> rule_NPQ6_comp_is_verb
+binder 30757:30758 <> cv:189
+R30787:30789 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R30765:30773 noun_phrases <> render_np def
+R30776:30782 noun_phrases <> NP_Comp constr
+R30784:30785 noun_phrases <> cv:189 var
+R30790:30800 verb <> render_verb def
+R30802:30803 noun_phrases <> cv:189 var

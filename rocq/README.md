@@ -2,22 +2,8 @@
 
 A mechanically verified formalization of Paraguayan Guaraní grammar. Each file encodes specific grammatical rules as inductive types, computable functions, well-formedness predicates, and machine-checked theorems. Primary reference: *A Grammar of Paraguayan Guaraní* (Estigarribia 2020), cited by chapter and section throughout.
 
-## File structure and dependencies
 
-```
-Primitives.v
-    ↑
-    ├── Numbers.v
-    └── Verb.v
-         ↑
-    NounPhrases.v  (imports Primitives, Numbers, Verb)
-         ↑
-    Sentences.v    (imports NounPhrases, Verb)
-```
-
----
-
-## Primitives.v
+## Syntax.v
 
 Shared phonological and grammatical primitives used by every other file.
 
@@ -137,12 +123,10 @@ Full noun phrase grammar: root class alternation, noun and adjective types, all 
 |------|----------------|------|
 | `root_class` | 5 root alternation classes | §3.1.3 |
 | `poss_context` | 3 possessive contexts driving root prefix selection | §3.1.3 |
-| `noun_gender` | `GendNone`, `GendFem`, `GendMasc` — grammatical gender via *kuña/kuimba'e* modifier | §3.1.2 |
-| `noun` | Record: root string, `orality`, `word_ending`, `root_class`, `noun_gender`, `n_human : bool` | §3.1, §5.1 |
+| `noun` | Record: root string, `orality`, `word_ending`, `root_class`, `n_human : bool` | §3.1, §5.1 |
 | `adjective` | Record: surface form string, `orality`, `root_class` | §3.3 |
 | `subj_pronoun` | 7 subject pronouns: *che, nde, ha'e, ñande, ore, peẽ, ha'ekuéra* | §3.5.1 |
 | `dem_proximity` | 6 demonstrative proximity levels | §3.4.2 |
-| `dem_set` | `DemPresent` vs `DemRemoved` | §3.4.2 |
 | `indef_pron` | 8 indefinite pronouns | §3.5.3 |
 | `interrog_pron` | 10 interrogative pronouns | §3.5.2 |
 | `neg_pron` | 6 negative pronouns — all require double negation on verb | §3.5.3 |
@@ -151,7 +135,7 @@ Full noun phrase grammar: root class alternation, noun and adjective types, all 
 | `np_meta` | Record: `orality`, `number`, `person`, `inclusivity` — inferred from NP for verb agreement | — |
 | `embedded_clause` | Alias for `conjugated_verb`; used by `NP_Rel` and `NP_Comp` | §3.2.1.1, §12.2 |
 
-The `noun` record carries `n_human : bool` (§5.1: [+human] nouns require `=pe/=me` as postpositional complement marker) and `n_gender : noun_gender` (§3.1.2). `mkNoun'` is a backward-compatible constructor for non-human genderless nouns.
+The `noun` record carries `n_human : bool` (§5.1: [+human] nouns require `=pe/=me` as postpositional complement marker).
 
 `embedded_clause` is aliased directly to `conjugated_verb` from Verb.v. No duplication: `wf_np` for `NP_Rel` and `NP_Comp` delegates to `wf_conjugated_verb` plus a suffix-shape check (`VS_NomVa` for relatives, `VS_NomHa` for complements).
 
@@ -311,26 +295,26 @@ The `noun` record carries `n_human : bool` (§5.1: [+human] nouns require `=pe/=
 | `NP_CoordHa x1 x2` | `render_np x1 ++ " ha " ++ render_np x2` |
 | `NP_CoordTera x1 x2` | `render_np x1 ++ " térã " ++ render_np x2` |
 
-### Theorems (~90 total)
+### Theorems (60 total)
 
 | Rule group | Theorems | Grammar rule covered |
 |------------|----------|---------------------|
-| **NP-A** Root class prefixes | `rule_NPA1`–`rule_NPA7` (10) | t-/r-/h- for all 5 root classes; Uniform always empty; TriformNoT no t- §3.1.3 |
-| **NP-B** Well-formedness | `rule_NPB1`–`rule_NPB8` (12) | Base NPs wf; single suffix wf; stacking blocked; suffix on pronoun blocked; gen preserves wf; NP_Rel needs VS_NomVa; NP_Comp needs VS_NomHa §3.1, §3.7, §3.2.1.1 |
+| **NP-A** Root class prefixes | `rule_NPA1`–`rule_NPA7` (8) | t-/r-/h- for all 5 root classes; Uniform always empty; TriformNoT no t- §3.1.3 |
+| **NP-B** Well-formedness | `rule_NPB1`–`rule_NPB8` (16) | Base NPs wf; single suffix wf; stacking blocked; suffix on pronoun blocked; gen preserves wf; NP_Rel needs VS_NomVa; NP_Comp needs VS_NomHa §3.1, §3.7, §3.2.1.1 |
 | **NP-C** Suffix ordering | `rule_NPC1`–`rule_NPC7` (7) | -rã+kue valid; -kue+rã invalid; -ha+kue, -ha+rã, -py+kue, -py+rã valid; double plural invalid §3.7 |
-| **NP-D** Subject pronoun metadata | `rule_NPD1`–`rule_NPD4` (4) | Person/number consistent; always Oral; render injective §3.5.1 |
-| **NP-E** Bare noun metadata | `rule_NPE1`–`rule_NPE3` (3) | Always Third, Singular; orality from noun §3.1 |
+| **NP-D** Subject pronoun metadata | `rule_NPD1`, `rule_NPD3` (2) | Person consistent; subject pronoun NP always Oral §3.5.1 |
+| **NP-E** Bare noun metadata | `rule_NPE1`–`rule_NPE2` (2) | Bare noun NP always Third, Singular §3.1 |
 | **NP-F** Plural allomorphy | `rule_NPF1`–`rule_NPF2` (2) | Nasal noun → nguéra; oral noun → kuéra §3.1.1 |
-| **NP-G** Demonstrative system | `rule_NPG1`–`rule_NPG7` (9) | All 6 proximity levels; ko'ã not umi for proximal plural; -va pronoun forms §3.4.2 |
-| **NP-H** Suffix metadata effects | `rule_NPH1`–`rule_NPH5` (7) | Plural/multitude force Plural; temporal/degree suffixes metadata-transparent §3.1.1, §3.7 |
-| **NP-I** Genitive metadata | `rule_NPI1`–`rule_NPI4` (4) | Always Third, Singular; orality from head noun §3.6 |
-| **NP-J** Possessive NP metadata | `rule_NPJ1`–`rule_NPJ3` (3) | Person/number from poss_marker; orality from noun §3.6 |
-| **NP-K** Numeral NP metadata | `rule_NPK1`–`rule_NPK3` (3) | peteĩ → Singular; other numerals → Plural; always Third §3.4.3 |
-| **NP-L** Coordination metadata | `rule_NPL1`–`rule_NPL3` (4) | ha-coord always Plural; First dominates; tera inherits left §12.1 |
-| **NP-M** `person_merge` | `rule_NPM1`–`rule_NPM3` (4) | Commutative, idempotent, First always dominates |
-| **NP-N** Postposition allomorphy | `rule_NPN1`–`rule_NPN3` (6) | pe→me (nasal); ndive→ndie (nasal); gua invariant §5 |
-| **NP-O** Negative pronouns | `rule_NPO1`–`rule_NPO2` (4) | avave and mba'eve negative; maymáva not §3.5.3 |
-| **NP-P** Interrogative rendering | `rule_NPP1`–`rule_NPP2` (5) | Distinct surface forms; all Third, Singular for agreement §3.5.2 |
+| **NP-G** Demonstrative system | `rule_NPG1`, `rule_NPG3`, `rule_NPG6` (3) | ko proximal singular form; ko'ã not umi for proximal plural; demonstrative NP always Third §3.4.2 |
+| **NP-H** Suffix metadata effects | `rule_NPH1`, `rule_NPH4` (2) | NS_Plural forces Plural number; NS_PastKue is metadata-transparent §3.1.1, §3.7 |
+| **NP-I** Genitive metadata | `rule_NPI1` (1) | Genitive NP always Third person §3.6 |
+| **NP-J** Possessive NP metadata | `rule_NPJ1` (1) | Person from poss_marker §3.6 |
+| **NP-K** Numeral NP metadata | `rule_NPK1`–`rule_NPK2` (2) | peteĩ → Singular; other numerals → Plural §3.4.3 |
+| **NP-L** Coordination metadata | `rule_NPL1` (1) | ha-coordination NP always Plural §12.1 |
+| **NP-M** `person_merge` | `rule_NPM1`, `rule_NPM3` (2) | Commutative; First always dominates |
+| **NP-N** Postposition allomorphy | `rule_NPN1` (2) | pe (oral) / me (nasal) allomorphy of Post_Pe §5 |
+| **NP-O** Negative pronouns | `rule_NPO1`–`rule_NPO2` (2) | avave is negative; maymáva is not §3.5.3 |
+| **NP-P** Interrogative rendering | `rule_NPP2` (1) | Interrogative pronoun NP always Third person §3.5.2 |
 | **NP-Q** Rendering | `rule_NPQ1`–`rule_NPQ6` (6) | Uniform bare = root; NP_Art drops article; ha-coord uses "ha"; NP_Rel = noun + verb; NP_Comp = verb |
 
 ---
@@ -499,7 +483,7 @@ Conjunction of 12 named predicates:
 | `suffixes_ordered` | Suffix slots non-decreasing left to right | §14 |
 | `cv_evidential_ok` | `Ev_Kuri` requires Indicative mood | §7.3 |
 
-### Theorems (~90 total)
+### Theorems (100 total)
 
 | Rule group | Theorems | Grammar rule covered |
 |------------|----------|---------------------|
@@ -509,16 +493,16 @@ Conjunction of 12 named predicates:
 | **D** Imperative prefix | `rule_D1`–`rule_D3` (4) | e- for 2sg Areal/Aireal only §4.10.3.1.1 |
 | **E** Optative prefix | `rule_E1`–`rule_E3` (3) | ta/to/tape; Chendal gets ta+inactive §4.10.3.4.2 |
 | **F** Voice prefixes | `rule_F1`–`rule_F6`, `rule_F5b` (9) | All seven voices; guero- invariant; guero- ≠ ro- §6, §17.2 |
-| **G** Negation circumfix | `rule_G1`–`rule_G6` (6) | nd/n; eufonic vowels; Chendal always a; neg requires suffix §4.9 |
+| **G** Negation circumfix | `rule_G1`–`rule_G6` (7) | nd/n; eufonic vowels; Chendal always a; neg requires suffix §4.9 |
 | **H** Future negation | `rule_H1`–`rule_H3` (3) | -ta and -mo'ã exclusive; -mo'ã requires Negative §4.9 |
-| **I** Person hierarchy | `rule_I1`–`rule_I9` (8) | All `trans_prefix_selection` cases §4.2 |
-| **J** Relational root | `rule_J1`–`rule_J5` (5) | h- active/imp/portmanteau; r- inactive; plain empty §4.6 |
+| **I** Person hierarchy | `rule_I1`–`rule_I9` (5) | Selected `trans_prefix_selection` cases (active/inactive/portmanteau) §4.2 |
+| **J** Relational root | `rule_J1`–`rule_J5` (3) | h- relational active prefix; r- relational inactive prefix; plain root always empty §4.6 |
 | **K** Irregular verbs | `rule_K1`–`rule_K5` (5) | Selected forms of ju/ho/'e §4.5 |
 | **L** Inclusivity | `rule_L1`–`rule_L2` (2) | 1pl requires; non-1pl forbids §4.1.1 |
 | **M** Suffix exclusion | `rule_M1`–`rule_M3` (3) | No double future; -mi exclusive; -pa exclusive §4.10 |
 | **N** Prohibitive | `rule_N1`–`rule_N2` (2) | Requires Negative; cannot use -i §4.10.3.1.3 |
 | **O** Imperative modalizers | `rule_O1` (1) | Blocked in Indicative §4.10.3.1.2 |
-| **P** Affix ordering | `rule_P1`, `rule_P4`, `rule_P8`–`rule_P14` (9) | Valid/invalid orderings; -je last; -vo in slot 11 §14 |
+| **P** Affix ordering | `rule_P1`, `rule_P4`, `rule_P8`–`rule_P14` (8) | Valid/invalid orderings; -je last; -vo in slot 11 §14 |
 | **Q** Chendal structure | `rule_Q1`–`rule_Q3` (3) | No Transitive; Intransitive ok; Areal any §4.1.2 |
 | **R** Chendal mood | `rule_R1`–`rule_R4` (4) | No Imperative/Optative §4.1.2 |
 | **S** Future exclusivity | `rule_S1`–`rule_S2` (2) | No -ta+-pota; single future ok §4.10.1 |
@@ -602,7 +586,7 @@ Inductive sentence_type : Type :=
 
 Lightweight wrappers: `NVS_Equative`, `NVS_Predicative`, `NVS_Existential`, `NVS_Possessive`. `wf_nonverbal` delegates to `wf_np` on constituent NPs.
 
-### Theorems (~40 total)
+### Theorems (38 total)
 
 | Rule group | Theorems | Grammar rule covered |
 |------------|----------|---------------------|
@@ -611,23 +595,8 @@ Lightweight wrappers: `NVS_Equative`, `NVS_Predicative`, `NVS_Existential`, `NVS
 | **SH** Person hierarchy | `rule_SH1`–`rule_SH2` (2) | Partial args pass; intransitive skips §4.2 |
 | **SN** Double negation | `rule_SN1`–`rule_SN3` (3) | avave+pos bad; avave+neg ok; negative IO triggers neg-concord §4.9, §3.5.3 |
 | **SK** Hikuái placement | `rule_SK1`–`rule_SK2`, `rule_SK4` (3) | No hikuái always ok; 1sg+hikuái bad; VSO+3rd+hikuái ok §4.1.1 |
-| **SP** Human =pe/=me | `rule_SP1`–`rule_SP3` (3) | Human+Post_Pe ok; human+wrong pp bad; non-human any pp ok §5.1 |
+| **SP** Human =pe/=me | `rule_SP1`–`rule_SP2` (2) | Human NP + Post_Pe ok; human NP + wrong postposition bad §5.1 |
 | **SY** Sentence type/mood | `rule_SY1`, `rule_SY3` (2) | Declarative needs Indicative; YN needs particle §4.10.3 |
 | **AC** Adverbial clauses | `rule_AC1`–`rule_AC13` (13) | All 16 clause types; correct/incorrect morphemes; counterfactual needs va'erã-mo'ã §12.2.3 |
 | **CX** Complex sentences | `rule_CX1`–`rule_CX2`, `rule_TL1` (3) | Adverbial ok with correct morpheme; bad with wrong; simple lifts |
 
----
-
-## Not yet formalized
-
-| Feature | §ref |
-|---------|------|
-| Accent shift from tonic suffixes | §2.2.2 |
-| Full adverb placement | §4.12 |
-| Serial verb constructions | §12.2.2 |
-| Noun incorporation | §11 |
-| Information structure / topic-focus particles | §13 |
-| Switch-reference (-ramo conditioned on same/different subject) | §12.2.3 |
-| Full evidential co-occurrence rules | §7 |
-| =pe/=me on nominal (non-postpositional) direct objects | §5.1 |
-| Chendal 3rd-person allomorph selection rules (modeled but not enforced) | §4.1.2 |

@@ -53,13 +53,13 @@ Inductive GuaraniNum : Type :=
   | GN_MultSua     (m : Sub1000Su)
   | GN_MultSuaTail (m : Sub1000Su) (s : Sub1000Su).
 
-(* ------------------------------------------------------------ *)
-(*  is_one: true iff the numeral denotes peteĩ (1).             *)
+(* ============================================================ *)
+(*  is_one: true if the numeral denotes peteĩ (1).             *)
 (*  Used by NounPhrases.v to decide singular vs plural for      *)
 (*  NP_Num.  Peteĩ is the only digit with no Mult constructor,  *)
 (*  so the only path to "1" is the bare digit wrapped through   *)
 (*  all four Sub- layers.                                       *)
-(* ------------------------------------------------------------ *)
+(* ============================================================ *)
 
 Definition is_one (n : GuaraniNum) : bool :=
   match n with
@@ -67,9 +67,9 @@ Definition is_one (n : GuaraniNum) : bool :=
   | _ => false
   end.
 
-(* ------------------------------------------------------------ *)
+(* ============================================================ *)
 (*  Theorems                                                    *)
-(* ------------------------------------------------------------ *)
+(* ============================================================ *)
 
 Theorem peteĩ_not_mult : forall m : Mult,
     mult_to_digit m <> Peteĩ.
@@ -93,21 +93,17 @@ Proof. intros s H; discriminate. Qed.
 Theorem sua_ne_suatail : forall s, GN_Sua     <> GN_SuaTail s.
 Proof. intros s H; discriminate. Qed.
 
-(* is_one is true exactly for the peteĩ term *)
 Theorem is_one_petei :
     is_one (GN_Small (S1000Su_Small (S1000_Small (S100_Digit Peteĩ)))) = true.
 Proof. reflexivity. Qed.
 
-(* No multiplier numeral is one *)
 Theorem is_one_mult_false : forall m,
     is_one (GN_Small (S1000Su_Small (S1000_Small (S100_MultPa m)))) = false.
 Proof. intros m. reflexivity. Qed.
 
-(* Power words are not one *)
 Theorem is_one_sua_false : is_one GN_Sua = false.
 Proof. reflexivity. Qed.
 
-From Stdlib Require Import String.
 Open Scope string_scope.
 
 Definition render_digit (d : Digit) : string :=

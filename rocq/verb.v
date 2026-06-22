@@ -5,14 +5,8 @@ Open Scope string_scope.
 Require Import Syntax.
 
 
-(* ============================================================ *)
-(*  Verb.v                                                      *)
-(*  Guaraní verb morphology: types, conjugation, voice,         *)
-(*  negation, tense/aspect/mood, evidentiality, object pronouns,*)
-(*  transitivity, person hierarchy, relational verbs,           *)
-(*  imperative modalizers, affix ordering, well-formedness,     *)
-(*  and rendering.                                              *)
-(* ============================================================ *)
+(* Verb.v: Guaraní verb morphology, conjugation, voice, tense/aspect/mood,
+   evidentiality, transitivity, person hierarchy, and rendering. *)
 
 
 (* ============================================================ *)
@@ -140,10 +134,10 @@ Inductive polarity : Type :=
 
 (* Surface variants of the veridical emphatic clitic §7.1 *)
 Inductive niko_variant : Type :=
-  | NK_Niko    (* =niko (also pronounced nio) *)
-  | NK_Ko      (* =ko *)
-  | NK_Ngo     (* =ngo *)
-  | NK_Ningo.  (* =ningo *)
+  | NK_Niko  
+  | NK_Ko     
+  | NK_Ngo     
+  | NK_Ningo.  
 
 Inductive evidential_marker : Type :=
   | Ev_Voi          (* §7.1: emphatic "voi" *)
@@ -162,7 +156,7 @@ Inductive evidential_marker : Type :=
 (* Packed form: evidential + (for niko) its surface variant *)
 Record evidential : Type := mkEvidential {
   ev_marker  : evidential_marker;
-  ev_niko_v  : option niko_variant  (* Some v when ev_marker = Ev_Niko *)
+  ev_niko_v  : option niko_variant  
 }.
 
 Definition render_evidential (e : evidential) : string :=
@@ -244,34 +238,9 @@ Inductive verbal_suffix : Type :=
 (*  9a. Suffix classification predicates                        *)
 (* ============================================================ *)
 
-Definition is_neg_suffix (s : verbal_suffix) : bool :=
-  match s with
-  | VS_NegI | VS_NegRi | VS_NegTei | VS_Privative => true
-  | _ => false
-  end.
-
-Definition is_future_suffix (s : verbal_suffix) : bool :=
-  match s with
-  | VS_FutTa | VS_FutNe | VS_FutNegMoa | VS_ImmFutPota => true
-  | _ => false
-  end.
-
 Definition is_imp_modalizer (s : verbal_suffix) : bool :=
   match s with
   | VS_ImpForce | VS_ImpRequest | VS_ImpPlead | VS_ImpUrge => true
-  | _ => false
-  end.
-
-Definition is_tense_suffix (s : verbal_suffix) : bool :=
-  match s with
-  | VS_FutTa | VS_FutNe | VS_FutNegMoa | VS_ImmFutPota
-  | VS_ObligVaera | VS_PastVaekue => true
-  | _ => false
-  end.
-
-Definition is_nominalizer (s : verbal_suffix) : bool :=
-  match s with
-  | VS_NomVa | VS_NomHa => true
   | _ => false
   end.
 
@@ -368,18 +337,9 @@ Fixpoint suffixes_ordered (ss : list verbal_suffix) : bool :=
 (*  11. Person hierarchy for transitive verbs §4.2              *)
 (* ============================================================ *)
 
-Definition person_rank (p : person) : nat :=
-  match p with First => 1 | Second => 2 | Third => 3 end.
-
-Definition subj_outranks_obj (subj_p obj_p : person) : bool :=
-  Nat.leb (person_rank subj_p) (person_rank obj_p).
-
 Inductive portmanteau_config : Type :=
   | Port_1to2sg
   | Port_1to2pl.
-
-Definition render_portmanteau (pc : portmanteau_config) : string :=
-  match pc with Port_1to2sg => "ro" | Port_1to2pl => "po" end.
 
 Inductive trans_prefix_mode : Type :=
   | TPM_Active
@@ -410,21 +370,6 @@ Definition trans_prefix_selection (subj_p : person) (subj_n : number)
 (*  12. Object pronouns                                         *)
 (* ============================================================ *)
 
-Inductive obj_pron_post : Type :=
-  | ObjPost_Chupe | ObjPost_Ichupe
-  | ObjPost_ChupeKuera | ObjPost_IchupeKuera.
-
-Definition render_obj_post (p : obj_pron_post) : string :=
-  match p with
-  | ObjPost_Chupe       => "chupe"
-  | ObjPost_Ichupe      => "ichupe"
-  | ObjPost_ChupeKuera  => "chupe kuéra"
-  | ObjPost_IchupeKuera => "ichupe kuéra"
-  end.
-
-(* obj_indirect kept for backward compat in rendering; Sentences.v
-   now uses guarani_np for the IO slot, but we keep this for
-   stand-alone rendering utilities. *)
 Inductive obj_indirect : Type :=
   | ObjInd_Cheve | ObjInd_Ndeve | ObjInd_Chupe
   | ObjInd_Nandeve | ObjInd_Oreve | ObjInd_Peeme | ObjInd_ChupeKuera.
@@ -634,7 +579,7 @@ Record conjugated_verb : Type := mkConjVerb {
   cv_polarity   : polarity;
   cv_voice      : voice;
   cv_suffixes   : list verbal_suffix;
-  cv_evidential : option evidential    (* §7: optional evidential marker *)
+  cv_evidential : option evidential    
 }.
 
 Definition cv_orality (cv : conjugated_verb) : orality :=
@@ -692,10 +637,6 @@ Fixpoint has_verbal_suffix (ss : list verbal_suffix) (s : verbal_suffix) : bool 
 Definition has_any_neg (ss : list verbal_suffix) : bool :=
   has_verbal_suffix ss VS_NegI || has_verbal_suffix ss VS_NegRi
   || has_verbal_suffix ss VS_NegTei || has_verbal_suffix ss VS_Privative.
-
-Definition has_any_future (ss : list verbal_suffix) : bool :=
-  has_verbal_suffix ss VS_FutTa || has_verbal_suffix ss VS_FutNe
-  || has_verbal_suffix ss VS_FutNegMoa || has_verbal_suffix ss VS_ImmFutPota.
 
 Fixpoint no_dup_suffixes (ss : list verbal_suffix) : bool :=
   match ss with
@@ -835,12 +776,6 @@ Fixpoint render_suffixes (ss : list verbal_suffix) (o : orality) : string :=
   match ss with
   | nil => ""
   | s :: rest => render_verbal_suffix s o ++ render_suffixes rest o
-  end.
-
-Definition get_f3 (vf : verb_form) : chendal_3sg_form :=
-  match vf with
-  | VF_Regular v   => v_chendal_3sg v
-  | VF_Irregular _ => C3sg_I
   end.
 
 Definition render_regular_verb (cv : conjugated_verb) (v : verb) : string :=
@@ -1274,7 +1209,6 @@ Theorem rule_P9_wrong_order_rejected :
     suffixes_ordered (VS_NegI :: VS_TotalPa :: nil) = false.
 Proof. reflexivity. Qed.
 
-(* VS_HearsayJe must follow everything else *)
 Theorem rule_P11_hearsay_je_last :
     suffixes_ordered (VS_InterrogPa :: VS_HearsayJe :: nil) = true.
 Proof. reflexivity. Qed.
@@ -1283,7 +1217,6 @@ Theorem rule_P12_je_before_interrog_rejected :
     suffixes_ordered (VS_HearsayJe :: VS_InterrogPa :: nil) = false.
 Proof. reflexivity. Qed.
 
-(* VS_Simultaneous (-vo) is in the aspect slot *)
 Theorem rule_P13_simult_vo_renders : forall o,
     render_verbal_suffix VS_Simultaneous o = "vo".
 Proof. reflexivity. Qed.
@@ -1419,22 +1352,3 @@ Proof. reflexivity. Qed.
 Theorem rule_EV7_je_suffix_renders : forall o,
     render_verbal_suffix VS_HearsayJe o = "je".
 Proof. reflexivity. Qed.
-
-(*  Decidable equality *)
-
-Scheme Equality for verb_class.
-Scheme Equality for transitivity.
-Scheme Equality for verb_root_class.
-Scheme Equality for chendal_3sg_form.
-Scheme Equality for prefix_type.
-Scheme Equality for voice.
-Scheme Equality for mood.
-Scheme Equality for polarity.
-Scheme Equality for verbal_suffix.
-Scheme Equality for portmanteau_config.
-Scheme Equality for trans_prefix_mode.
-Scheme Equality for obj_pron_post.
-Scheme Equality for obj_indirect.
-Scheme Equality for irregular_verb.
-Scheme Equality for niko_variant.
-Scheme Equality for evidential_marker.
