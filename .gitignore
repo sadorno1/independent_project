@@ -5,4 +5,8 @@
 /suicidio
 LexiconGenerated.vo
 GuaraniLexiconTypes.v
-GuaraniLexiconTypes.vo
+GuaraniLexiconTypes.vo*.aux
+*.glob
+*.v0
+*.vok
+*.vos
