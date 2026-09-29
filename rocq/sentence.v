@@ -146,18 +146,22 @@ Definition ss_agree_ok (s : simple_sentence) : bool :=
           end)
   end.
 
-(* --- 5.2: Transitivity matching §4.1-§4.4 --- *)
+(* --- 5.2: Transitivity matching §4.1-§4.4 ---
+   The ss_postp_obj slot is left free for Intransitive and Transitive
+   verbs: it may hold a postpositional adjunct (e.g. locative
+   "oguata ka'aguy-pe"), which any verb can take. Only Ditransitive
+   forbids it and PostpComplement requires it. *)
 Definition ss_transitivity_ok (s : simple_sentence) : bool :=
   match cv_transitivity (ss_verb s) with
   | Intransitive =>
-      match ss_dir_obj s, ss_indir_obj s, ss_postp_obj s with
-      | None, None, None => true
-      | _, _, _ => false
-      end
-  | Transitive =>
-      match ss_indir_obj s, ss_postp_obj s with
+      match ss_dir_obj s, ss_indir_obj s with
       | None, None => true
       | _, _ => false
+      end
+  | Transitive =>
+      match ss_indir_obj s with
+      | None => true
+      | _ => false
       end
   | Ditransitive =>
       match ss_postp_obj s with
@@ -259,15 +263,15 @@ Definition ss_type_ok (s : simple_sentence) : bool :=
    complement is the [+human] direct object. Non-human objects use
    other postpositions freely. *)
 Definition ss_human_pe_ok (s : simple_sentence) : bool :=
-  match ss_postp_obj s with
-  | None => true
-  | Some (np, pp) =>
+  match cv_transitivity (ss_verb s), ss_postp_obj s with
+  | PostpComplement, Some (np, pp) =>
       if np_is_human np then
         match pp with
         | Post_Pe => true
         | _ => false
         end
       else true
+  | _, _ => true
   end.
 
 (* ============================================================ *)

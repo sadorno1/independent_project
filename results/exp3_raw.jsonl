@@ -1,0 +1,64 @@
+{"source_sentence": "El hombre ve la casa.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Kuimba'e ohecha pe óga."}
+{"source_sentence": "El hombre ve la casa.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Kuimba'e ohecha óga."}
+{"source_sentence": "La mujer come pan.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Kuñágua ojapo avati."}
+{"source_sentence": "La mujer come pan.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Kuñágua o'u mbujape."}
+{"source_sentence": "Nosotros trabajamos mucho.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Ñande romba’apo heta."}
+{"source_sentence": "Nosotros trabajamos mucho.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Ñande ñemba'apo heta."}
+{"source_sentence": "Tú caminas rápido.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Nde reiméta pyaʼe."}
+{"source_sentence": "Tú caminas rápido.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Reimba."}
+{"source_sentence": "Ellos hablan guaraní.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Ñe’ẽnguéra oñe’ẽ guaraníme."}
+{"source_sentence": "Ellos hablan guaraní.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Oñe'ẽ hikuái guaraníme."}
+{"source_sentence": "Yo compro un caballo.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Che ajogua peteĩ kavaju."}
+{"source_sentence": "Yo compro un caballo.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "aikuaa kavaju peteĩ."}
+{"source_sentence": "El niño juega en el patio.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Mitã omba’apóta okára gotyo."}
+{"source_sentence": "El niño juega en el patio.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Kunumi oñembosarái okára gotyo."}
+{"source_sentence": "Nosotras cantamos una canción.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Ñande jaipurahéi peteĩ purahéi."}
+{"source_sentence": "Nosotras cantamos una canción.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Ñande purahéi peteĩ."}
+{"source_sentence": "El perro corre en el campo.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Jagua osyry kokuepe."}
+{"source_sentence": "El perro corre en el campo.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Jagua oñani kokuepe."}
+{"source_sentence": "Vosotros escribís una carta.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Peẽ pehai peteĩ kuatiañeʼẽ."}
+{"source_sentence": "Vosotros escribís una carta.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Peẽ pehai peteĩ kuatia."}
+{"source_sentence": "Ella busca su libro.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Ha’e ojepovyvy iñaranduka."}
+{"source_sentence": "Ella busca su libro.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Oheka iñaranduka."}
+{"source_sentence": "Los hombres construyen una casa.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Kuimba’e kuéra omopu’ã peteĩ óga."}
+{"source_sentence": "Los hombres construyen una casa.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Kuimba'e kuéra omopu'ã peteĩ óga."}
+{"source_sentence": "Yo no como carne.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Che nda’úi so’o."}
+{"source_sentence": "Yo no como carne.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Che nda'u'i so'o."}
+{"source_sentence": "¿Tú vienes mañana?", "model_name": "deepseek-chat", "context_mode": "none", "output": "Reju pyaʼe koʼẽrõpa?"}
+{"source_sentence": "¿Tú vienes mañana?", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Reju ko'ẽrõ?"}
+{"source_sentence": "El profesor enseña a los estudiantes.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Mbo’ehára ombo’e temimbo’ekuérape."}
+{"source_sentence": "El profesor enseña a los estudiantes.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Mbo'ehára ombo'e temimbo'ekuérape."}
+{"source_sentence": "Nosotros comemos maíz todos los días.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Ñande jai’u avati ára ñavõ."}
+{"source_sentence": "Nosotros comemos maíz todos los días.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Ñande jaha avati opa ára."}
+{"source_sentence": "Ella le da un regalo a su madre.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Ha’e ome’ẽ jopói imembykuérape."}
+{"source_sentence": "Ella le da un regalo a su madre.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Ome'ẽ chupe peteĩ jopói imembykuérape."}
+{"source_sentence": "El pájaro vuela sobre el árbol.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Umi guyra oveve yvyra ári."}
+{"source_sentence": "El pájaro vuela sobre el árbol.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Yvytu guyra oveve yvyra ári."}
+{"source_sentence": "Los niños duermen en la tarde.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Mitãngue oke ka'aru."}
+{"source_sentence": "Los niños duermen en la tarde.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Ta'anga kuéra oke ka'aru."}
+{"source_sentence": "Yo te doy las gracias.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Aguyje ndéve."}
+{"source_sentence": "Yo te doy las gracias.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Aguyje ndéve."}
+{"source_sentence": "Cuando llueve, los niños no salen a jugar.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Ama oky aja, mitãngue ndosẽi ñembosarái."}
+{"source_sentence": "Cuando llueve, los niños no salen a jugar.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Ama oky jave, mitãnguéra ndosẽi oñembosarái."}
+{"source_sentence": "Si tú vienes mañana, yo preparo la comida.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Nde rejúramo ko’ẽro, che amboaje tembi’u."}
+{"source_sentence": "Si tú vienes mañana, yo preparo la comida.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Eñu nde ko'ẽro, che ambojehe'a tembi'u."}
+{"source_sentence": "Ella sabe que su hermano no trabaja los domingos.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Ha’e oikuaa iñermáno ndoñemba’apói arateĩme."}
+{"source_sentence": "Ella sabe que su hermano no trabaja los domingos.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Ha'e oikuaa iñermano ndoñemba'apói arateĩkuéra."}
+{"source_sentence": "El hombre que vive en la casa grande es mi tío.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Kuimba'e oikóva pe óga guasúpe ha'e che tío."}
+{"source_sentence": "El hombre que vive en la casa grande es mi tío.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "túva"}
+{"source_sentence": "Nosotros no compramos el caballo porque es muy caro.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Ñande ndajoguarói kavaju, ipu'akaeterei rupi."}
+{"source_sentence": "Nosotros no compramos el caballo porque es muy caro.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Ñande ndajoguaíri kavaju, iñeheterei rupi."}
+{"source_sentence": "¿Por qué no vienes a la fiesta esta noche?", "model_name": "deepseek-chat", "context_mode": "none", "output": "Mba’éicha reju’ỹ pukarã ko pyharépe?"}
+{"source_sentence": "¿Por qué no vienes a la fiesta esta noche?", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Nde reju poteĩva?"}
+{"source_sentence": "¿Qué le vas a dar a tu madre para su cumpleaños?", "model_name": "deepseek-chat", "context_mode": "none", "output": "Mba’épa reme’ẽta nde sype imbo’eha ára haguére?"}
+{"source_sentence": "¿Qué le vas a dar a tu madre para su cumpleaños?", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Mbaʼépa rejapóta nde sy ndéve imboʼe ára?"}
+{"source_sentence": "Yo le presto mi libro a mi amigo.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Che ame'ẽ che aranduka che irũme."}
+{"source_sentence": "Yo le presto mi libro a mi amigo.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Ame'ẽ che aranduka che irũme."}
+{"source_sentence": "Ellos no les dan agua a los animales.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Ndo'úi chupekuéra y'ỹ mymba kuérape."}
+{"source_sentence": "Ellos no les dan agua a los animales.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Ndohói chupekuéra yty mymba kuérape."}
+{"source_sentence": "El profesor le enseña gramática guaraní a los estudiantes nuevos.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Mbo’ehára ombo’e gramática guaraní umi temimbo’e pyahúpe."}
+{"source_sentence": "El profesor le enseña gramática guaraní a los estudiantes nuevos.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Mbo'ehára ombo'e gramática guaraní umi temimbo'e pyahúpe."}
+{"source_sentence": "Aunque llueve mucho, nosotros vamos a trabajar.", "model_name": "deepseek-chat", "context_mode": "none", "output": "Oiméramo jepe kuri ama, ñande roho mba’apóta."}
+{"source_sentence": "Aunque llueve mucho, nosotros vamos a trabajar.", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Aunque oky, ñande roho mba'apóta."}
+{"source_sentence": "¿Tú le dijiste la verdad a ella?", "model_name": "deepseek-chat", "context_mode": "none", "output": "Nde reñe'ẽpa chupe añetegua?"}
+{"source_sentence": "¿Tú le dijiste la verdad a ella?", "model_name": "deepseek-chat", "context_mode": "coq", "output": "Reju'uka chupe añetegua."}

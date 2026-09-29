@@ -262,7 +262,7 @@ The `noun` record carries `n_human : bool` (§5.1: [+human] nouns require `=pe/=
 |---------|--------|--------|---------|
 | `NP_Bare n` | Third | Singular | `n_orality n` |
 | `NP_Dem _ num n` | Third | `num` | `n_orality n` |
-| `NP_Poss pm n` | from `pm` | from `pm` | `n_orality n` |
+| `NP_Poss pm n` | Third | Singular | `n_orality n` |
 | `NP_Num gn n` | Third | Singular if `is_one gn`, else Plural | `n_orality n` |
 | `NP_Gen _ n` | Third | Singular | `n_orality n` |
 | `NP_Suf x NS_Plural` | from `x` | Plural | from `x` |
@@ -547,7 +547,7 @@ Inductive sentence_type : Type :=
 | Predicate | Rule | Constraint | §ref |
 |-----------|------|-----------|------|
 | `ss_agree_ok` | A | Subject NP person/number/inclusivity must match verb; null subject always ok | §8.1 |
-| `ss_transitivity_ok` | B | Arguments must match verb transitivity; IO without DO on Ditransitive is ill-formed | §4.1–4.4 |
+| `ss_transitivity_ok` | B | Arguments must match verb transitivity; IO without DO on Ditransitive is ill-formed. The postposition slot may hold an adjunct (e.g. locative) on Intransitive/Transitive verbs; it is required on PostpComplement and forbidden on Ditransitive | §4.1–4.4 |
 | `ss_hierarchy_ok` | C | When subject and object explicit on Transitive verb, prefix must follow 1 > 2 > 3 | §4.2 |
 | `ss_neg_concord_ok` | D | Negative pronoun in subject, DO, or IO requires Negative verb polarity | §4.9, §3.5.3 |
 | `ss_hikuai_ok` | E | *hikuái* flag requires 3rd person verb and V-initial word order | §4.1.1 |

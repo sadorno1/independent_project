@@ -1,0 +1,61 @@
+theorem,module,section,sentence,expected_verdict,expected_failing_predicate,pipeline_verdict,pipeline_failed_predicate,result,failure_category,has_unknown_tokens,num_candidates,elapsed_ms,feedback,notes
+rule_NPA1_triform_nonposs_is_t,NounPhrases,§3.1.3,tesa,wf,—,wf,—,PASS,—,False,2,0.2,,Triform non-possessed: t- prefix on 'esa' (eye)
+rule_NPA1_triform_nonposs_is_t,NounPhrases,§3.1.3,resa,ill,root_prefix,wf,—,FAIL,grammar_violation,False,2,0.2,,Triform non-possessed should be 'tesa' not 'resa'
+rule_NPA2_triform_firstsecond_is_r,NounPhrases,§3.1.3,che resa,wf,—,wf,—,PASS,—,False,9,0.5,,1st person possessor triggers r- prefix on Triform root
+rule_NPA2_triform_firstsecond_is_r,NounPhrases,§3.1.3,che tesa,ill,root_prefix,wf,—,FAIL,grammar_violation,False,9,1.2,,1st person possessor should give 'resa' not 'tesa'
+rule_NPA3_triform_third_is_h,NounPhrases,§3.1.3,i hesa,wf,—,ill,parse_error,FAIL,dictionary_gap,True,0,0.7,No candidates built — input outside analyser coverage.,3rd person pronominal possessor triggers h- prefix
+rule_NPA3_triform_third_is_h,NounPhrases,§3.1.3,i resa,ill,root_prefix,wf,—,FAIL,grammar_violation,False,4,0.6,,3rd person pronominal possessor should give 'hesa' not 'resa'
+rule_NPA4_triform_all_distinct,NounPhrases,§3.1.3,tesa,wf,—,wf,—,PASS,—,False,2,0.3,,Non-possessed t- form is distinct from r- and h- forms
+rule_NPA4_triform_all_distinct,NounPhrases,§3.1.3,resa,ill,root_prefix,wf,—,FAIL,grammar_violation,False,2,0.3,,In non-possessed context 'resa' is incorrect (should be 'tesa')
+rule_NPA5_triformNoT_nonposs_empty,NounPhrases,§3.1.3,ñe'ẽ,wf,—,wf,—,PASS,—,False,2,0.3,,TriformNoT non-possessed has no prefix on root
+rule_NPA5_triformNoT_nonposs_empty,NounPhrases,§3.1.3,rñe'ẽ,ill,root_prefix,ill,parse_error,PASS,dictionary_gap,True,0,0.1,No candidates built — input outside analyser coverage.,TriformNoT non-possessed must not carry r- prefix
+rule_NPA6_triformNoT_firstsecond_is_r,NounPhrases,§3.1.3,che rñe'ẽ,wf,—,ill,parse_error,FAIL,dictionary_gap,True,0,0.8,No candidates built — input outside analyser coverage.,1st person possessor gives r- on TriformNoT root
+rule_NPA6_triformNoT_firstsecond_is_r,NounPhrases,§3.1.3,che ñe'ẽ,ill,root_prefix,wf,—,FAIL,grammar_violation,False,9,0.9,,1st person possessor on TriformNoT should give 'rñe'ẽ' not bare 'ñe'ẽ'
+rule_NPA6_triformNoT_third_is_h,NounPhrases,§3.1.3,i hñe'ẽ,wf,—,ill,parse_error,FAIL,dictionary_gap,True,0,0.8,No candidates built — input outside analyser coverage.,3rd person pronominal gives h- on TriformNoT root
+rule_NPA6_triformNoT_third_is_h,NounPhrases,§3.1.3,i ñe'ẽ,ill,root_prefix,wf,—,FAIL,grammar_violation,False,4,0.7,,3rd person pronominal on TriformNoT should give 'hñe'ẽ' not bare 'ñe'ẽ'
+rule_NPA7_uniform_always_empty,NounPhrases,§3.1.3,oga,wf,—,ill,parse_error,FAIL,out_of_scope,False,0,0.4,No candidates built — input outside analyser coverage.,Uniform root 'oga' has no prefix in any possessive context
+rule_NPA7_uniform_always_empty,NounPhrases,§3.1.3,roga,ill,root_prefix,ill,parse_error,PASS,out_of_scope,False,0,0.3,No candidates built — input outside analyser coverage.,Uniform roots never take r- prefix (only relational Triform roots do)
+rule_NPB1_bare_wf,NounPhrases,§3.1,karai,wf,—,wf,—,PASS,—,False,2,0.4,,Bare noun NP is always well-formed
+rule_NPB1_bare_wf,NounPhrases,§3.1,karai kuéra kue,ill,wf_np,wf,—,FAIL,grammar_violation,False,5,1.3,,Double suffix on bare noun via stacked NP_Suf is ill-formed
+rule_NPB1_dem_wf,NounPhrases,§3.4.2,ko karai,wf,—,wf,—,PASS,—,False,2,0.4,,Proximal demonstrative + noun is well-formed
+rule_NPB1_dem_wf,NounPhrases,§3.4.2,ko ko karai,ill,wf_np,ill,parse_error,PASS,out_of_scope,False,0,0.7,No candidates built — input outside analyser coverage.,Repeated demonstrative is not a licensed NP structure
+rule_NPB1_adj_wf,NounPhrases,§3.3,karai tuichava,wf,—,wf,—,PASS,—,False,2,1.6,,Noun + adjective NP is well-formed
+rule_NPB1_adj_wf,NounPhrases,§3.3,tuichava karai,ill,wf_np,ill,parse_error,PASS,out_of_scope,False,0,0.6,No candidates built — input outside analyser coverage.,Adjective-before-noun order is ill-formed in Guaraní NP
+rule_NPB1_poss_wf,NounPhrases,§3.6,che resa,wf,—,wf,—,PASS,—,False,9,0.8,,Possessive NP (1SG + Triform noun) is well-formed
+rule_NPB1_poss_wf,NounPhrases,§3.6,che tesa,ill,root_prefix,wf,—,FAIL,grammar_violation,False,9,0.9,,Wrong root form: possessed Triform with 1st person should give r- not t-
+rule_NPB1_num_wf,NounPhrases,§3.1,mokõi karai,wf,—,wf,—,PASS,—,False,9,1.0,,Numeral (2) + noun is well-formed
+rule_NPB1_num_wf,NounPhrases,§3.1,karai mokõi,ill,wf_np,wf,—,FAIL,grammar_violation,False,7,1.6,,Noun before numeral is not the licensed NP_Num order
+rule_NPB2_single_suffix_wf,NounPhrases,§3.1.1,karai kuéra,wf,—,wf,—,PASS,—,False,2,1.0,,Bare noun + single plural suffix is well-formed
+rule_NPB2_single_suffix_wf,NounPhrases,§3.1.1,ha'e kuéra,ill,wf_np,ill,ss_transitivity_ok,PASS,grammar_violation,False,1,0.7,"Transitivity error: ''e (ha'e/ere/he'i, decir)' is Intransitive but the sentence object structure doesn't match.",Plural suffix on subject pronoun via NP_Suf is ill-formed
+rule_NPB3_double_suf_stacking_ill,NounPhrases,§3.1.1,karai kue rã,wf,—,ill,parse_error,FAIL,dictionary_gap,True,0,1.0,No candidates built — input outside analyser coverage.,NP_Suf2 with valid pair (kue + rã via frustrative) is well-formed
+rule_NPB3_double_suf_stacking_ill,NounPhrases,§3.1.1,karai kuéra kuéra,ill,wf_np,ill,parse_error,PASS,out_of_scope,False,0,1.1,No candidates built — input outside analyser coverage.,Stacked NP_Suf on NP_Suf (double suffix) is ill-formed
+rule_NPB4_suffix_on_pronoun_ill,NounPhrases,§3.1.1,karai kuéra,wf,—,wf,—,PASS,—,False,2,0.8,,Suffix on noun-headed NP is fine
+rule_NPB4_suffix_on_pronoun_ill,NounPhrases,§3.1.1,ha'e kuéra,ill,wf_np,ill,ss_transitivity_ok,PASS,grammar_violation,False,1,0.4,"Transitivity error: ''e (ha'e/ere/he'i, decir)' is Intransitive but the sentence object structure doesn't match.",NP_Suf on subject pronoun (NP_PronSubj) is always ill-formed
+rule_NPB5_gen_preserves,NounPhrases,§3.1,Pedro roga,wf,—,ill,parse_error,FAIL,out_of_scope,False,0,0.4,No candidates built — input outside analyser coverage.,Genitive NP with well-formed possessor is well-formed
+rule_NPB5_gen_preserves,NounPhrases,§3.1,ko ko Pedro roga,ill,wf_np,ill,parse_error,PASS,out_of_scope,False,0,0.4,No candidates built — input outside analyser coverage.,Genitive NP with ill-formed possessor inherits ill-formedness
+rule_NPB6_subj_pron_wf,NounPhrases,§3.5.1,che,wf,—,wf,—,PASS,—,False,2,0.1,,Subject pronoun 1SG 'che' is always well-formed
+rule_NPB6_subj_pron_wf,NounPhrases,§3.5.1,che kuéra,ill,wf_np,wf,—,FAIL,grammar_violation,False,1,1.1,,Suffix on subject pronoun is ill-formed
+rule_NPB6_interrog_pron_wf,NounPhrases,§3.5.2,mba'e oiko,wf,—,wf,—,PASS,—,False,4,0.9,,Interrogative pronoun 'mba'e' in subject position is well-formed
+rule_NPB6_interrog_pron_wf,NounPhrases,§3.5.2,mba'e kuéra,ill,wf_np,wf,—,FAIL,grammar_violation,False,2,0.5,,Suffix on interrogative pronoun is ill-formed
+rule_NPB6_neg_pron_wf,NounPhrases,§3.5.3,avave ndoúi,wf,—,wf,—,PASS,—,False,2,1.2,,Negative pronoun 'avave' with negative verb is well-formed
+rule_NPB6_neg_pron_wf,NounPhrases,§3.5.3,avave oú,ill,ss_neg_concord_ok,ill,ss_neg_concord_ok,PASS,grammar_violation,False,4,0.3,"Double negation error: if the verb is negative, no argument NP may also carry a negative pronoun. Remove one negation.",Negative pronoun with positive verb violates neg concord
+rule_NPB7_rel_wf_iff,NounPhrases,§3.2.1.1.3,kuimba'e oguapyva,wf,—,wf,—,PASS,—,False,8,2.5,,Relative clause with -va nominalizer is well-formed
+rule_NPB7_rel_wf_iff,NounPhrases,§3.2.1.1.3,kuimba'e oguapy,ill,is_rel_clause,wf,—,FAIL,grammar_violation,False,2,1.5,,Relative clause without -va is ill-formed
+rule_NPB7_comp_wf_iff,NounPhrases,§3.2.1.1.1,aikuaa oñe'ẽha,wf,—,wf,—,PASS,—,False,6,1.9,,Complement clause with -ha is well-formed
+rule_NPB7_comp_wf_iff,NounPhrases,§3.2.1.1.1,aikuaa oñe'ẽ,ill,is_comp_clause,wf,—,FAIL,grammar_violation,False,5,2.1,,Complement clause without -ha is ill-formed
+rule_NPB8_rel_needs_va,NounPhrases,§3.2.1.1.3,kuimba'e oguapyva,wf,—,wf,—,PASS,—,False,8,2.1,,Relative clause ending in -va is well-formed
+rule_NPB8_rel_needs_va,NounPhrases,§3.2.1.1.3,kuimba'e oguapy,ill,is_rel_clause,wf,—,FAIL,grammar_violation,False,2,1.0,,Relative clause without -va fails is_rel_clause check
+rule_NPB8_comp_needs_ha,NounPhrases,§3.2.1.1.1,oñe'ẽha,wf,—,wf,—,PASS,—,False,10,0.9,,Complement clause ending in -ha is well-formed
+rule_NPB8_comp_needs_ha,NounPhrases,§3.2.1.1.1,oñe'ẽ,ill,is_comp_clause,wf,—,FAIL,grammar_violation,False,2,0.8,,Verb without -ha cannot serve as complement clause
+rule_NPC1_ra_then_kue_valid,NounPhrases,§3.7,táva rãkue,wf,—,ill,parse_error,FAIL,dictionary_gap,True,0,1.5,No candidates built — input outside analyser coverage.,Frustrative -rã + -kue suffix pair is valid
+rule_NPC1_ra_then_kue_valid,NounPhrases,§3.7,táva kuera,ill,suffix_pair_ok,wf,—,FAIL,grammar_violation,False,2,1.1,,-kue before -rã is not a licensed pair
+rule_NPC2_kue_then_ra_invalid,NounPhrases,§3.7,táva rãkue,wf,—,ill,parse_error,FAIL,dictionary_gap,True,0,1.0,No candidates built — input outside analyser coverage.,Valid frustrative -rã + -kue order
+rule_NPC2_kue_then_ra_invalid,NounPhrases,§3.7,táva kuera,ill,suffix_pair_ok,wf,—,FAIL,grammar_violation,False,2,0.6,,-kue before -rã order is rejected by suffix_pair_ok
+rule_NPC3_ha_then_kue_valid,NounPhrases,§3.7,guahuhare,wf,—,ill,parse_error,FAIL,out_of_scope,False,0,0.3,No candidates built — input outside analyser coverage.,Past agentive: -ha + -kue (= -hare) is valid
+rule_NPC3_ha_then_kue_valid,NounPhrases,§3.7,guahurehá,ill,suffix_pair_ok,ill,parse_error,PASS,dictionary_gap,True,0,0.2,No candidates built — input outside analyser coverage.,-kue before -ha is not a licensed pair
+rule_NPC4_ha_then_ra_valid,NounPhrases,§3.7,guahuharã,wf,—,wf,—,PASS,—,False,2,0.3,,Future agentive: -ha + -rã is valid
+rule_NPC4_ha_then_ra_valid,NounPhrases,§3.7,guahurãhá,ill,suffix_pair_ok,ill,parse_error,PASS,dictionary_gap,True,0,0.3,No candidates built — input outside analyser coverage.,-rã before -ha is not a licensed pair
+rule_NPC5_py_then_kue_valid,NounPhrases,§3.7,mo'ãpyre,wf,—,ill,parse_error,FAIL,out_of_scope,False,0,0.2,No candidates built — input outside analyser coverage.,Past passive: -py + -kue (= -pyre) is valid
+rule_NPC5_py_then_kue_valid,NounPhrases,§3.7,mo'ãkuepy,ill,suffix_pair_ok,ill,parse_error,PASS,dictionary_gap,True,0,0.3,No candidates built — input outside analyser coverage.,-kue before -py is not a licensed pair
+rule_NPC6_py_then_ra_valid,NounPhrases,§3.7,mo'ãpyrã,wf,—,ill,parse_error,FAIL,dictionary_gap,True,0,0.3,No candidates built — input outside analyser coverage.,Future passive: -py + -rã is valid
+rule_NPC6_py_then_ra_valid,NounPhrases,§3.7,mo'ãrãpy,ill,suffix_pair_ok,ill,parse_error,PASS,dictionary_gap,True,0,0.3,No candidates built — input outside analyser coverage.,-rã before -py is not a licensed pair

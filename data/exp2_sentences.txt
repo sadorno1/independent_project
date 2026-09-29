@@ -1,0 +1,34 @@
+# Experiment 2: the original 20 smoke-test sentences plus 12 longer/more
+# complex ones (subordinate clauses, questions, negation, ditransitives).
+El hombre ve la casa.
+La mujer come pan.
+Nosotros trabajamos mucho.
+Tú caminas rápido.
+Ellos hablan guaraní.
+Yo compro un caballo.
+El niño juega en el patio.
+Nosotras cantamos una canción.
+El perro corre en el campo.
+Vosotros escribís una carta.
+Ella busca su libro.
+Los hombres construyen una casa.
+Yo no como carne.
+¿Tú vienes mañana?
+El profesor enseña a los estudiantes.
+Nosotros comemos maíz todos los días.
+Ella le da un regalo a su madre.
+El pájaro vuela sobre el árbol.
+Los niños duermen en la tarde.
+Yo te doy las gracias.
+Cuando llueve, los niños no salen a jugar.
+Si tú vienes mañana, yo preparo la comida.
+Ella sabe que su hermano no trabaja los domingos.
+El hombre que vive en la casa grande es mi tío.
+Nosotros no compramos el caballo porque es muy caro.
+¿Por qué no vienes a la fiesta esta noche?
+¿Qué le vas a dar a tu madre para su cumpleaños?
+Yo le presto mi libro a mi amigo.
+Ellos no les dan agua a los animales.
+El profesor le enseña gramática guaraní a los estudiantes nuevos.
+Aunque llueve mucho, nosotros vamos a trabajar.
+¿Tú le dijiste la verdad a ella?

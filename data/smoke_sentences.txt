@@ -1,0 +1,21 @@
+# 20 simple Spanish sentences for smoke-testing the context-mode ablation.
+El hombre ve la casa.
+La mujer come pan.
+Nosotros trabajamos mucho.
+Tú caminas rápido.
+Ellos hablan guaraní.
+Yo compro un caballo.
+El niño juega en el patio.
+Nosotras cantamos una canción.
+El perro corre en el campo.
+Vosotros escribís una carta.
+Ella busca su libro.
+Los hombres construyen una casa.
+Yo no como carne.
+¿Tú vienes mañana?
+El profesor enseña a los estudiantes.
+Nosotros comemos maíz todos los días.
+Ella le da un regalo a su madre.
+El pájaro vuela sobre el árbol.
+Los niños duermen en la tarde.
+Yo te doy las gracias.

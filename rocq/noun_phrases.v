@@ -306,7 +306,7 @@ Definition suffix_pair_ok (s1 s2 : nominal_suffix) : bool :=
 Inductive postposition : Type :=
   | Post_Pe | Post_Gui | Post_Gua | Post_Rehe | Post_Ndive
   | Post_Guive | Post_Peve | Post_Rupi | Post_Ari | Post_Guy
-  | Post_Guara | Post_Hagua.
+  | Post_Guara | Post_Hagua | Post_Kue.
 
 Definition postposition_form (o : orality) (p : postposition) : string :=
   match p with
@@ -322,6 +322,7 @@ Definition postposition_form (o : orality) (p : postposition) : string :=
   | Post_Guy   => "guy"
   | Post_Guara => "guarã"
   | Post_Hagua => "haguã"
+  | Post_Kue   => match o with Oral => "kue"   | Nasal => "ngue"  end
   end.
 
 (* ============================================================ *)
@@ -511,9 +512,8 @@ Fixpoint np_meta_of (x : guarani_np) : np_meta :=
   | NP_Adj n _ =>
       mkNPMeta (n_orality n) Singular Third None
 
-  | NP_Poss pm n =>
-      mkNPMeta (n_orality n) (number_of_poss pm) (person_of_poss pm)
-               (inclusivity_of_poss pm)
+  | NP_Poss _ n =>
+      mkNPMeta (n_orality n) Singular Third None
 
   | NP_Num gn n =>
       let num := if is_one gn then Singular else Plural in
@@ -522,9 +522,8 @@ Fixpoint np_meta_of (x : guarani_np) : np_meta :=
   | NP_Gen _ n =>
       mkNPMeta (n_orality n) Singular Third None
 
-  | NP_DemPoss _ pm n =>
-      mkNPMeta (n_orality n) (number_of_poss pm) (person_of_poss pm)
-               (inclusivity_of_poss pm)
+  | NP_DemPoss _ _ n =>
+      mkNPMeta (n_orality n) Singular Third None
 
   | NP_Rel n _ =>
       mkNPMeta (n_orality n) Singular Third None
@@ -851,9 +850,9 @@ Theorem rule_NPI1_gen_always_third : forall poss n,
     np_person (np_meta_of (NP_Gen poss n)) = Third.
 Proof. reflexivity. Qed.
 
-Theorem rule_NPJ1_poss_person_from_marker : forall pm n,
-    np_person (np_meta_of (NP_Poss pm n)) = person_of_poss pm.
-Proof. intros pm n; destruct pm; reflexivity. Qed.
+Theorem rule_NPJ1_poss_always_third : forall pm n,
+    np_person (np_meta_of (NP_Poss pm n)) = Third.
+Proof. reflexivity. Qed.
 
 Theorem rule_NPK1_one_is_singular : forall gn n,
     is_one gn = true -> np_number (np_meta_of (NP_Num gn n)) = Singular.

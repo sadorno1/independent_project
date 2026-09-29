@@ -269,6 +269,7 @@ L000236,araity,noun,,,,,Uniform,GendNone,Oral,,,s.
 L000237,araka,noun,,,,,Uniform,GendNone,Oral,,,s.
 L000238,araka'e,adv,,,,,,,Oral,,,adv.
 L000239,araka'eve,adv,,,,,,,Oral,,,adv.
+L000239,araka'eve,neg_pron,,,,,,,Oral,,,adv.|pron. ind.
 L000240,arakõi,noun,,,,,Uniform,GendNone,Nasal,,,neol.|s.
 L000241,aramboha,noun,,,,,Uniform,GendNone,Nasal,,,h.|s.
 L000242,aramboty,noun,,,,,Uniform,GendNone,Nasal,,,s.
@@ -372,7 +373,7 @@ L000336,avatity,noun,,,,,Uniform,GendNone,Oral,,,s.
 L000337,avati'y,noun,,,,,Uniform,GendNone,Oral,,,s.
 L000338,avausu,noun,,,,,Uniform,GendNone,Oral,,,s.
 L000339,avave,adj,,,,,,,Oral,,,adj. ind.|pron. ind.
-L000339,avave,pron,,,,,,,Oral,,,adj. ind.|pron. ind.
+L000339,avave,neg_pron,,,,,,,Oral,,,adj. ind.|pron. ind.
 L000340,avavusu,adj,,,,,,,Oral,,,adj.
 L000341,avei,adv,,,,,,,Oral,,,adv.
 L000342,avevo,adj,,,,,,,Oral,,,adj.
@@ -2011,6 +2012,7 @@ L001754,mamo,noun,,,,,Uniform,GendNone,Oral,,,s.|adv.
 L001754,mamo,adv,,,,,,,Oral,,,s.|adv.
 L001755,mamorei,adv,,,,,,,Oral,,,adv.
 L001756,mamove,adv,,,,,,,Oral,,,adv.
+L001756,mamove,neg_pron,,,,,,,Oral,,,adv.|pron. ind.
 L001757,mandi,adv,,,,,,,Nasal,,,adv.
 L001758,mandi'i,noun,,,,,Uniform,GendNone,Nasal,,,s.
 L001759,mandi'o,noun,,,,,Uniform,GendNone,Nasal,,,s.
@@ -2034,6 +2036,7 @@ L001773,marã'ỹ,noun,,,,,Uniform,GendNone,Nasal,,,adj.|s.
 L001774,marae'ỹ,adj,,,,,,,Nasal,,,adj.
 L001775,marãiko,adv,,,,,,,Nasal,,CHECK_NASAL_COMPOUND,adv.
 L001776,máramo,adv,,,,,,,Oral,,,adv.
+L001776,máramo,neg_pron,,,,,,,Oral,,,adv.|pron. ind.
 L001777,marandova,noun,,,,,Uniform,GendNone,Nasal,,,s.
 L001778,marandu,noun,,,,,Uniform,GendNone,Nasal,,,s.
 L001779,marane'ỹ,adj,,,,,,,Nasal,,,adj.
@@ -2184,7 +2187,7 @@ L001910,mba'erei,noun,,,,,Uniform,GendNone,Nasal,,,s.
 L001911,mba'erepy,noun,,,,,Uniform,GendNone,Nasal,,,s.
 L001912,mba'ereko,verb,Areal,,false,,,,Nasal,,CHECK_VERB_CLASS|CHECK_TRANSITIVITY,v. pr.
 L001913,mba'esyvo,noun,,,,,Uniform,GendNone,Nasal,,,s.
-L001914,mba'eve,pron,,,,,,,Nasal,,,pron. ind.
+L001914,mba'eve,neg_pron,,,,,,,Nasal,,,pron. ind.
 L001915,mbaipy,noun,,,,,Uniform,GendNone,Nasal,,,s.
 L001916,mbaite,suf,,,,,,,Nasal,,,suf. a. v.
 L001916,mbaite,verb,Areal,,false,,,,Nasal,,CHECK_TRANSITIVITY,suf. a. v.

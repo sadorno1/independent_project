@@ -1,0 +1,41 @@
+spanish,context_mode,initial_output,final_output,accepted,iterations_used,semantic_flag
+El hombre ve la casa.,none,Kuimba'e ohecha pe óga.,Kuimba'e ohecha pe óga.,True,1,False
+La mujer come pan.,none,Kuñágui ojapo’i mbujape.,Kuñágui ojapo mbujape.,True,2,False
+Tú caminas rápido.,none,Nde reiméta pyaʼe.,Nde reime pyaʼe.,True,2,False
+Yo compro un caballo.,none,Che ajogua peteĩ kavaju.,Che ajogua peteĩ kavaju.,True,1,False
+El niño juega en el patio.,none,Mitã omba’apóta okára gotyo.,Mitã omba’apóta okárape.,False,3,True
+Nosotros trabajamos mucho.,none,Ñande romba’apo heta.,Ñande jamba’apo heta.,True,2,False
+El perro corre en el campo.,none,Jagua okakuaa kokuepe.,Jagua okakuaa kokuepe.,False,3,False
+Ellos hablan guaraní.,none,Ñe’ẽnguéra oñe’ẽ guaraníme.,Che guaraníme aipota ñe’ẽnguéra.,False,3,True
+Vosotros escribís una carta.,none,Peẽ pehai peteĩ kuatia.,Peẽ pehai peteĩ kuatía rehe.,True,3,False
+Nosotras cantamos una canción.,none,Ñande jaipurahéi peteĩ purahéi.,Ñande jaipurahéi peteĩ purahéi.,False,3,False
+Los hombres construyen una casa.,none,Kuimba’e kuéra omopu’ã peteĩ óga.,Kuimba’e kuéra omopu’ã peteĩ óga.,True,1,False
+Yo no como carne.,none,Che nda’úi so’o.,Che nda’úi so’o.,True,1,False
+El profesor enseña a los estudiantes.,none,Mbo’ehára ombo’e mitãnguérape.,Mbo’ehára ombo’e mitãnguérape.,True,1,False
+Nosotros comemos maíz todos los días.,none,Ñande ja'u avati opa ára.,Ñande ja'u avati opa ára.,True,1,False
+Ella le da un regalo a su madre.,none,Ha’e ome’ẽ jopói imembykue kuñágui.,Ha’e ome’ẽ jopói imembykue kuñágui.,True,1,False
+El pájaro vuela sobre el árbol.,none,Yvytu guyra yvyra ári.,Guyra oveve yvytu ári.,True,2,False
+Ella busca su libro.,none,Ha'e ohayhu iñaranduka.,Ha'e he'i iñarandukápe.,False,3,True
+Yo te doy las gracias.,none,Aguyje ndéve.,Che ndéve aguyje.,False,3,False
+Los niños duermen en la tarde.,none,Mitãngue oke ka'aru.,Mitãngue oke ka'aru.,True,1,False
+¿Tú vienes mañana?,none,Reju pyaʼe koʼẽrõpa?,Reju pyaʼe koʼẽrõpa?,False,3,False
+El hombre ve la casa.,coq,Kuimba'e ohecha óga.,Kuimba'e ohecha óga.,True,1,False
+Nosotros trabajamos mucho.,coq,Ñande ñemba'apo heta.,Ñande ñemba'apo heta.,True,1,False
+Tú caminas rápido.,coq,Reike.,Reike.,True,1,False
+Ellos hablan guaraní.,coq,Oñe'ẽ hikuái guaraníme.,Oñe'ẽ hikuái guaraníme.,True,1,False
+Yo compro un caballo.,coq,aikuaa peteĩ kavaju,aikuaa peteĩ kavaju,True,1,False
+El niño juega en el patio.,coq,Kunumi oñembosarái okára gotyo.,Kunumi oñembosarái okára gotyo.,True,1,False
+El perro corre en el campo.,coq,Jagua oñani kokuepe.,Jagua oñani kokuepe.,True,1,False
+La mujer come pan.,coq,Kuñataĩ okaru pan.,Kuñataĩ okaru.,True,2,False
+Ella busca su libro.,coq,Oheka iñaranduka.,Oheka iñaranduka.,True,1,False
+Los hombres construyen una casa.,coq,Kuimba'e kuéra omopu'ã peteĩ óga.,Kuimba'e kuéra omopu'ã peteĩ óga.,True,1,False
+Yo no como carne.,coq,Che nda'úi so'o.,Che nda'úi so'o.,True,1,False
+Nosotras cantamos una canción.,coq,Ñande purahéi peteĩ.,Ñande purahéi peteĩ.,True,1,False
+El profesor enseña a los estudiantes.,coq,Mbo'ehára ombo'e temimbo'ekuérape.,Mbo'ehára ombo'e temimbo'ekuérape.,True,1,False
+Nosotros comemos maíz todos los días.,coq,Ñande jajapo avati opa ára.,Ñande jajapo avati opa ára.,True,1,False
+Vosotros escribís una carta.,coq,Peẽ pehai peteĩ kuatia.,Peẽ pehai peteĩ kuatía rehe.,True,3,False
+Ella le da un regalo a su madre.,coq,Ome'ẽ chupe peteĩ jopói imembykuérape.,Ome'ẽ chupe peteĩ jopói imembykuérape.,True,1,False
+El pájaro vuela sobre el árbol.,coq,Yvoty oveve yvyra ári.,Yvoty oveve yvyra ári.,True,1,False
+¿Tú vienes mañana?,coq,Reju ko'ẽrõ?,Eju ko'ẽrõ.,False,3,True
+Yo te doy las gracias.,coq,aguyje,Che aguyje peteĩ mba'e.,False,3,True
+Los niños duermen en la tarde.,coq,Ta'anga kuéra oke ka'aru.,Ta'anga kuéra oke ka'aru.,True,1,False

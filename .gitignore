@@ -10,3 +10,6 @@ GuaraniLexiconTypes.vo*.aux
 *.v0
 *.vok
 *.vos
+*.pyc
+.env
+.venv

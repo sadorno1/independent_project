@@ -1,0 +1,65 @@
+spanish,context_mode,initial_output,final_output,accepted,iterations_used,semantic_flag
+El hombre ve la casa.,none,Kuimba'e ohecha pe óga.,Kuimba'e ohecha pe óga.,True,1,False
+La mujer come pan.,none,Kuñágui ojapo ava.,Kuñágui ojapo ava.,True,1,False
+Tú caminas rápido.,none,Nde reiméta pyaʼe.,Nde reime pyaʼe.,True,2,False
+Yo compro un caballo.,none,Che ajogua peteĩ kavaju.,Che ajogua peteĩ kavaju.,True,1,False
+El niño juega en el patio.,none,Mitã omba’apóta okára gotyo.,Mitã omba’apo okápe.,False,3,True
+Nosotros trabajamos mucho.,none,Ñande romba’apo heta.,Ñande jamba’apo heta.,True,2,False
+El perro corre en el campo.,none,Jagua omýi kokuepe.,Jagua omýi kokuepe.,False,3,False
+Vosotros escribís una carta.,none,Peẽ pehai peteĩ kuatia.,Peẽ pehai peteĩ kuatia rehe.,True,2,False
+Ellos hablan guaraní.,none,Ñe’ẽnguéra oñe’ẽ guaraníme.,Che guaraní ñe’ẽnguéra rehe oñe’ẽ.,False,3,True
+Los hombres construyen una casa.,none,Kuimba’e kuéra omopu’ã peteĩ óga.,Kuimba’e kuéra omopu’ã peteĩ óga.,True,1,False
+Yo no como carne.,none,Che nda’úi so’o.,Che nda’úi so’o.,True,1,False
+Nosotras cantamos una canción.,none,Ñande jaipurahéi peteĩ purahéi.,Ñande jaipurahéi peteĩ purahéi.,False,3,False
+El profesor enseña a los estudiantes.,none,Mbo’ehára ombo’e mitãnguérape.,Mbo’ehára ombo’e mitãnguérape.,True,1,False
+Ella busca su libro.,none,Ha’e ojepovyvy iñaranduka.,Ha’e he’i iñarandukápe chupe.,False,3,True
+¿Tú vienes mañana?,none,Reju pyaʼe koʼẽrõpa?,Reju pyaʼe koʼẽrõpa?,False,3,False
+El pájaro vuela sobre el árbol.,none,Yvytu guyra yvyra ári.,Guyra oveve yvytu ári.,True,2,False
+Nosotros comemos maíz todos los días.,none,Ñande jaha avati ára ñavõ.,Ñande jaha avati ára ñavõme.,False,3,False
+Yo te doy las gracias.,none,Aguyje ndéve.,Che aguyje ndéve.,False,3,False
+Los niños duermen en la tarde.,none,Mitãngue oke ka'aru.,Mitãngue oke ka'aru.,True,1,False
+"Cuando llueve, los niños no salen a jugar.",none,"Amano jave, mitãngue ndosẽi ñembosarái.","Amano jave, mitãngue ndosẽi ñembosarái.",True,1,False
+Ella le da un regalo a su madre.,none,Ha’e ome’ẽ jopói imembykuéra (or: isýpe).,Ha’e he’i jopói imembykuérape (or: isýpe).,False,3,False
+"Si tú vienes mañana, yo preparo la comida.",none,"Ñande ko'ẽrõ reju, che amboaje tembi'u.","Ñande ko'ẽrõ jaju, che amboaje tembi'u rehe.",False,3,False
+Nosotros no compramos el caballo porque es muy caro.,none,"Ñande ndajoguarói kavaju, ipyterei rupi.",Ñande ndajoguerói kavaju.,False,3,True
+Ella sabe que su hermano no trabaja los domingos.,none,Ha’e oikuaa iñermáno ndoñemba’apói arateĩme.,Ha’e he’i iñermáno ndoñemba’apói arateĩme.,False,3,False
+¿Por qué no vienes a la fiesta esta noche?,none,Mba’éichapa nderejúi ko pyhare pe vy’a guasúpe?,Che ndajúi ko pyhare pe vy’a guasúpe.,True,2,True
+El hombre que vive en la casa grande es mi tío.,none,Kuimba'e oikóva pe óga guasúpe ha'e che tío.,Kuimba'e oikóva pe óga guasúpe ha'e che tío.,False,3,False
+¿Qué le vas a dar a tu madre para su cumpleaños?,none,Mbaʼépa reimeʼéta nde sype imemarãrã?,Nde sy oñeʼẽta ndéve nde memarã.,False,3,True
+El profesor le enseña gramática guaraní a los estudiantes nuevos.,none,Mbo’ehára ombo’e mbo’esyry ñe’ẽkuaa guaraní umi temimbo’e pyahúpe.,Mbo’ehára ombo’e mbo’esyry ñe’ẽkuaa guaraní umi temimbo’e pyahúpe.,True,1,False
+Ellos no les dan agua a los animales.,none,Ndoikuái chupekuéra yvytýra mymba kuérape.,Che ha’e chupekuéra mymba yvytýra.,False,3,True
+¿Tú le dijiste la verdad a ella?,none,Nde reñe'ẽpa chupe añetegua?,Nde reñe'ẽpa chupe añetegua?,True,1,False
+Yo le presto mi libro a mi amigo.,none,Che ame'ẽ che aranduka che irũme.,Rome'ẽ ndeve che aranduka.,False,3,True
+"Aunque llueve mucho, nosotros vamos a trabajar.",none,"Ore roho rembiapo, jepémo ama guasu.","Ore roho rembiapo, jepémo ama guasu.",False,3,False
+El hombre ve la casa.,coq,Kuimba'e ohecha óga.,Kuimba'e ohecha óga.,True,1,False
+Tú caminas rápido.,coq,Reimba.,Reimba nde.,False,3,False
+Ellos hablan guaraní.,coq,Oñe'ẽ hikuái guaraníme.,Oñe'ẽ hikuái guaraníme.,True,1,False
+Yo compro un caballo.,coq,aikuaa kavaju peteĩ.,aikuaa kavaju peteĩ.,True,1,False
+El niño juega en el patio.,coq,Kunumi oñembosarái okára gotyo.,Kunumi oñembosarái okára gotyo.,True,1,False
+La mujer come pan.,coq,Kuñataĩ okaru pan.,Kuñataĩ okaru.,True,2,False
+El perro corre en el campo.,coq,Jagua oñani kokuepe.,Jagua oñani kokuepe.,True,1,False
+Nosotros trabajamos mucho.,coq,Ñande mba'apopaite.,Ñande japopaite mba'e.,False,3,True
+Ella busca su libro.,coq,Oheka iñaranduka.,Oheka iñaranduka.,True,1,False
+Los hombres construyen una casa.,coq,ogua kuéra omopu'ã peteĩ óga.,ogua kuéra omopu'ã peteĩ óga.,True,1,False
+Yo no como carne.,coq,Che nda'úi so'o.,Che nda'úi so'o.,True,1,False
+Nosotras cantamos una canción.,coq,Ñande purahéi peteĩ.,Ñande purahéi peteĩ.,True,1,False
+El profesor enseña a los estudiantes.,coq,Mbo'ehára ombo'e temimbo'ekuérape.,Mbo'ehára ombo'e temimbo'ekuérape.,True,1,False
+Nosotros comemos maíz todos los días.,coq,Ñande jajapo avati ára ñavõ.,Ñande jajapo avati ára ñavõ.,True,1,False
+¿Tú vienes mañana?,coq,Reju ko'ẽrõ?,Che ha'u ko'ẽrõ.,False,3,True
+Vosotros escribís una carta.,coq,Peẽ pehai peteĩ kuatia.,Peẽ pejapo peteĩ kuatia rehegua.,False,3,False
+Los niños duermen en la tarde.,coq,Ta'anga kuéra oke ka'aru.,Ta'anga kuéra oke ka'aru.,True,1,False
+Yo te doy las gracias.,coq,Aguyje ndéve.,Che ndéve aguyje.,False,3,False
+"Cuando llueve, los niños no salen a jugar.",coq,"Ama oky jave, mitãnguéra ndosẽi oñembosarái.","Ama oky jave, mitãnguéra ndosẽi oñembosarái.",True,1,False
+"Si tú vienes mañana, yo preparo la comida.",coq,"Eñu nderai, che ajapóta tembi’u.",Che ajapóta tembi’u.,False,3,False
+Ella le da un regalo a su madre.,coq,Ha'e ombovy'a imembykuérape peteĩ jopói.,Ha'e he'i imembykuérape peteĩ jopói.,False,3,False
+El hombre que vive en la casa grande es mi tío.,coq,tahýi che rymba'i,Che tahýi rymba'i.,False,3,False
+El pájaro vuela sobre el árbol.,coq,yvyra ári oveve guyra,yvyra ári oveve guyra,False,3,False
+¿Por qué no vienes a la fiesta esta noche?,coq,Ereko mba'érepa nderejúi fiestápe ko pyhare?,Nde rejapo mba'e fiestápe ko pyhare.,True,2,True
+Ella sabe que su hermano no trabaja los domingos.,coq,Ha'e oikuaa iñermano ndoñemba'apói arateĩkuéra.,Ha'e he'i iñermano ndoñemba'apói arateĩkuéra rehe.,False,3,False
+Nosotros no compramos el caballo porque es muy caro.,coq,"ñande ndajoguaí pe kavaju, iñehetéva rupi.","ñande ndajoguaí pe kavaju, iñehetéva rupi.",False,3,False
+¿Qué le vas a dar a tu madre para su cumpleaños?,coq,Mbaʼépa rejapóta nde sy ndéve imboʼe ára?,Nde sy omboʼe ndéve mbaʼépa rejapóta.,False,3,False
+El profesor le enseña gramática guaraní a los estudiantes nuevos.,coq,Mbo'ehára ombo'e peteĩ mba'e ñe'ẽkuaa guaraní umi temimbo'e pyahúpe.,Mbo'ehára ombo'e peteĩ mba'e ñe'ẽkuaa guaraní umi temimbo'e pyahúpe.,True,1,False
+Ellos no les dan agua a los animales.,coq,Ha'ekuéra ndoiku'i y rehegua mymba kuérape.,Ha'ekuéra ndoikuaái mymba kuéra rehegua.,False,3,True
+Yo le presto mi libro a mi amigo.,coq,Che ame'ẽ che aranduka che angirũme.,Ame'ẽ ndeve che aranduka.,False,3,False
+"Aunque llueve mucho, nosotros vamos a trabajar.",coq,"Aunque oky, ñande roho ta rembiapo.","Aunque oky, ñande rohóta ñande rembiapo.",False,3,False
+¿Tú le dijiste la verdad a ella?,coq,Re ndéve he'i piko ñe'ẽ añetegua chupe?,Re ndéve he'i piko ñe'ẽ añetegua?,False,3,False

@@ -1,0 +1,409 @@
+theorem,module,section,sentence,expected_verdict,expected_failing_predicate,notes
+rule_NPA1_triform_nonposs_is_t,NounPhrases,§3.1.3,tesa,wf,—,Triform non-possessed: t- prefix on 'esa' (eye)
+rule_NPA1_triform_nonposs_is_t,NounPhrases,§3.1.3,resa,ill,root_prefix,Triform non-possessed should be 'tesa' not 'resa'
+rule_NPA2_triform_firstsecond_is_r,NounPhrases,§3.1.3,che resa,wf,—,1st person possessor triggers r- prefix on Triform root
+rule_NPA2_triform_firstsecond_is_r,NounPhrases,§3.1.3,che tesa,ill,root_prefix,1st person possessor should give 'resa' not 'tesa'
+rule_NPA3_triform_third_is_h,NounPhrases,§3.1.3,i hesa,wf,—,3rd person pronominal possessor triggers h- prefix
+rule_NPA3_triform_third_is_h,NounPhrases,§3.1.3,i resa,ill,root_prefix,3rd person pronominal possessor should give 'hesa' not 'resa'
+rule_NPA4_triform_all_distinct,NounPhrases,§3.1.3,tesa,wf,—,Non-possessed t- form is distinct from r- and h- forms
+rule_NPA4_triform_all_distinct,NounPhrases,§3.1.3,resa,ill,root_prefix,In non-possessed context 'resa' is incorrect (should be 'tesa')
+rule_NPA5_triformNoT_nonposs_empty,NounPhrases,§3.1.3,ñe'ẽ,wf,—,TriformNoT non-possessed has no prefix on root
+rule_NPA5_triformNoT_nonposs_empty,NounPhrases,§3.1.3,rñe'ẽ,ill,root_prefix,TriformNoT non-possessed must not carry r- prefix
+rule_NPA6_triformNoT_firstsecond_is_r,NounPhrases,§3.1.3,che rñe'ẽ,wf,—,1st person possessor gives r- on TriformNoT root
+rule_NPA6_triformNoT_firstsecond_is_r,NounPhrases,§3.1.3,che ñe'ẽ,ill,root_prefix,1st person possessor on TriformNoT should give 'rñe'ẽ' not bare 'ñe'ẽ'
+rule_NPA6_triformNoT_third_is_h,NounPhrases,§3.1.3,i hñe'ẽ,wf,—,3rd person pronominal gives h- on TriformNoT root
+rule_NPA6_triformNoT_third_is_h,NounPhrases,§3.1.3,i ñe'ẽ,ill,root_prefix,3rd person pronominal on TriformNoT should give 'hñe'ẽ' not bare 'ñe'ẽ'
+rule_NPA7_uniform_always_empty,NounPhrases,§3.1.3,oga,wf,—,Uniform root 'oga' has no prefix in any possessive context
+rule_NPA7_uniform_always_empty,NounPhrases,§3.1.3,roga,ill,root_prefix,Uniform roots never take r- prefix (only relational Triform roots do)
+rule_NPB1_bare_wf,NounPhrases,§3.1,karai,wf,—,Bare noun NP is always well-formed
+rule_NPB1_bare_wf,NounPhrases,§3.1,karai kuéra kue,ill,wf_np,Double suffix on bare noun via stacked NP_Suf is ill-formed
+rule_NPB1_dem_wf,NounPhrases,§3.4.2,ko karai,wf,—,Proximal demonstrative + noun is well-formed
+rule_NPB1_dem_wf,NounPhrases,§3.4.2,ko ko karai,ill,wf_np,Repeated demonstrative is not a licensed NP structure
+rule_NPB1_adj_wf,NounPhrases,§3.3,karai tuichava,wf,—,Noun + adjective NP is well-formed
+rule_NPB1_adj_wf,NounPhrases,§3.3,tuichava karai,ill,wf_np,Adjective-before-noun order is ill-formed in Guaraní NP
+rule_NPB1_poss_wf,NounPhrases,§3.6,che resa,wf,—,Possessive NP (1SG + Triform noun) is well-formed
+rule_NPB1_poss_wf,NounPhrases,§3.6,che tesa,ill,root_prefix,Wrong root form: possessed Triform with 1st person should give r- not t-
+rule_NPB1_num_wf,NounPhrases,§3.1,mokõi karai,wf,—,Numeral (2) + noun is well-formed
+rule_NPB1_num_wf,NounPhrases,§3.1,karai mokõi,ill,wf_np,Noun before numeral is not the licensed NP_Num order
+rule_NPB2_single_suffix_wf,NounPhrases,§3.1.1,karai kuéra,wf,—,Bare noun + single plural suffix is well-formed
+rule_NPB2_single_suffix_wf,NounPhrases,§3.1.1,ha'e kuéra,ill,wf_np,Plural suffix on subject pronoun via NP_Suf is ill-formed
+rule_NPB3_double_suf_stacking_ill,NounPhrases,§3.1.1,karai kue rã,wf,—,NP_Suf2 with valid pair (kue + rã via frustrative) is well-formed
+rule_NPB3_double_suf_stacking_ill,NounPhrases,§3.1.1,karai kuéra kuéra,ill,wf_np,Stacked NP_Suf on NP_Suf (double suffix) is ill-formed
+rule_NPB4_suffix_on_pronoun_ill,NounPhrases,§3.1.1,karai kuéra,wf,—,Suffix on noun-headed NP is fine
+rule_NPB4_suffix_on_pronoun_ill,NounPhrases,§3.1.1,ha'e kuéra,ill,wf_np,NP_Suf on subject pronoun (NP_PronSubj) is always ill-formed
+rule_NPB5_gen_preserves,NounPhrases,§3.1,Pedro roga,wf,—,Genitive NP with well-formed possessor is well-formed
+rule_NPB5_gen_preserves,NounPhrases,§3.1,ko ko Pedro roga,ill,wf_np,Genitive NP with ill-formed possessor inherits ill-formedness
+rule_NPB6_subj_pron_wf,NounPhrases,§3.5.1,che,wf,—,Subject pronoun 1SG 'che' is always well-formed
+rule_NPB6_subj_pron_wf,NounPhrases,§3.5.1,che kuéra,ill,wf_np,Suffix on subject pronoun is ill-formed
+rule_NPB6_interrog_pron_wf,NounPhrases,§3.5.2,mba'e oiko,wf,—,Interrogative pronoun 'mba'e' in subject position is well-formed
+rule_NPB6_interrog_pron_wf,NounPhrases,§3.5.2,mba'e kuéra,ill,wf_np,Suffix on interrogative pronoun is ill-formed
+rule_NPB6_neg_pron_wf,NounPhrases,§3.5.3,avave ndoúi,wf,—,Negative pronoun 'avave' with negative verb is well-formed
+rule_NPB6_neg_pron_wf,NounPhrases,§3.5.3,avave oú,ill,ss_neg_concord_ok,Negative pronoun with positive verb violates neg concord
+rule_NPB7_rel_wf_iff,NounPhrases,§3.2.1.1.3,kuimba'e oguapyva,wf,—,Relative clause with -va nominalizer is well-formed
+rule_NPB7_rel_wf_iff,NounPhrases,§3.2.1.1.3,kuimba'e oguapy,ill,is_rel_clause,Relative clause without -va is ill-formed
+rule_NPB7_comp_wf_iff,NounPhrases,§3.2.1.1.1,aikuaa oñe'ẽha,wf,—,Complement clause with -ha is well-formed
+rule_NPB7_comp_wf_iff,NounPhrases,§3.2.1.1.1,aikuaa oñe'ẽ,ill,is_comp_clause,Complement clause without -ha is ill-formed
+rule_NPB8_rel_needs_va,NounPhrases,§3.2.1.1.3,kuimba'e oguapyva,wf,—,Relative clause ending in -va is well-formed
+rule_NPB8_rel_needs_va,NounPhrases,§3.2.1.1.3,kuimba'e oguapy,ill,is_rel_clause,Relative clause without -va fails is_rel_clause check
+rule_NPB8_comp_needs_ha,NounPhrases,§3.2.1.1.1,oñe'ẽha,wf,—,Complement clause ending in -ha is well-formed
+rule_NPB8_comp_needs_ha,NounPhrases,§3.2.1.1.1,oñe'ẽ,ill,is_comp_clause,Verb without -ha cannot serve as complement clause
+rule_NPC1_ra_then_kue_valid,NounPhrases,§3.7,táva rãkue,wf,—,Frustrative -rã + -kue suffix pair is valid
+rule_NPC1_ra_then_kue_valid,NounPhrases,§3.7,táva kuera,ill,suffix_pair_ok,-kue before -rã is not a licensed pair
+rule_NPC2_kue_then_ra_invalid,NounPhrases,§3.7,táva rãkue,wf,—,Valid frustrative -rã + -kue order
+rule_NPC2_kue_then_ra_invalid,NounPhrases,§3.7,táva kuera,ill,suffix_pair_ok,-kue before -rã order is rejected by suffix_pair_ok
+rule_NPC3_ha_then_kue_valid,NounPhrases,§3.7,guahuhare,wf,—,Past agentive: -ha + -kue (= -hare) is valid
+rule_NPC3_ha_then_kue_valid,NounPhrases,§3.7,guahurehá,ill,suffix_pair_ok,-kue before -ha is not a licensed pair
+rule_NPC4_ha_then_ra_valid,NounPhrases,§3.7,guahuharã,wf,—,Future agentive: -ha + -rã is valid
+rule_NPC4_ha_then_ra_valid,NounPhrases,§3.7,guahurãhá,ill,suffix_pair_ok,-rã before -ha is not a licensed pair
+rule_NPC5_py_then_kue_valid,NounPhrases,§3.7,mo'ãpyre,wf,—,Past passive: -py + -kue (= -pyre) is valid
+rule_NPC5_py_then_kue_valid,NounPhrases,§3.7,mo'ãkuepy,ill,suffix_pair_ok,-kue before -py is not a licensed pair
+rule_NPC6_py_then_ra_valid,NounPhrases,§3.7,mo'ãpyrã,wf,—,Future passive: -py + -rã is valid
+rule_NPC6_py_then_ra_valid,NounPhrases,§3.7,mo'ãrãpy,ill,suffix_pair_ok,-rã before -py is not a licensed pair
+rule_NPC7_double_plural_invalid,NounPhrases,§3.7,karai kuéra,wf,—,Single plural suffix is valid
+rule_NPC7_double_plural_invalid,NounPhrases,§3.7,karai kuéra kuéra,ill,suffix_pair_ok,Same suffix twice is rejected by suffix_pair_ok
+rule_NPD1_subj_person_consistent,NounPhrases,§3.5.1,che ahá,wf,—,Subject pronoun 'che' (1SG) agrees with 1SG verb: person metadata is consistent
+rule_NPD1_subj_person_consistent,NounPhrases,§3.5.1,che reháta,ill,ss_agree_ok,Pronoun 'che' (First) vs verb 2SG (Second): person mismatch
+rule_NPD3_subj_pron_always_oral,NounPhrases,§3.5.1,che ahá,wf,—,Subject pronoun carries Oral orality; verb agreement is correct
+rule_NPD3_subj_pron_always_oral,NounPhrases,§3.5.1,nde ahá,ill,ss_agree_ok,Subject 'nde' (2SG) with 1SG verb 'ahá': person mismatch
+rule_NPE1_bare_always_third,NounPhrases,§3.1,oho karai,wf,—,Bare noun subject is 3rd person; 3rd person verb agrees
+rule_NPE1_bare_always_third,NounPhrases,§3.1,ahá karai,ill,ss_agree_ok,Bare noun subject is 3rd person but verb is 1SG: mismatch
+rule_NPE2_bare_always_singular,NounPhrases,§3.1,oho karai,wf,—,Bare noun is singular; singular 3rd person verb agrees
+rule_NPE2_bare_always_singular,NounPhrases,§3.1,oho karai kuéra,ill,ss_agree_ok,Bare noun plural subject requires plural 3rd person verb agreement
+rule_NPF1_nasal_noun_gets_nguera,NounPhrases,§3.1.1,mitãnguéra,wf,—,Nasal noun 'mitã' takes -nguéra plural
+rule_NPF1_nasal_noun_gets_nguera,NounPhrases,§3.1.1,mitã kuéra,ill,render_nom_suffix,Nasal noun 'mitã' must take -nguéra not -kuéra
+rule_NPF2_oral_noun_gets_kuera,NounPhrases,§3.1.1,karai kuéra,wf,—,Oral noun 'karai' takes -kuéra plural
+rule_NPF2_oral_noun_gets_kuera,NounPhrases,§3.1.1,karai nguéra,ill,render_nom_suffix,Oral noun 'karai' must take -kuéra not -nguéra
+rule_NPG1_prox_singular,NounPhrases,§3.4.2,ko karai,wf,—,DemProxSpeaker singular = 'ko'
+rule_NPG1_prox_singular,NounPhrases,§3.4.2,ko'ã karai,ill,dem_adj_form,Plural demonstrative 'ko'ã' used with singular head
+rule_NPG3_prox_plural_is_koa,NounPhrases,§3.4.2,ko'ã karai kuéra,wf,—,DemProxSpeaker plural = 'ko'ã' with plural noun
+rule_NPG3_prox_plural_is_koa,NounPhrases,§3.4.2,ko karai kuéra,ill,dem_adj_form,Singular demonstrative 'ko' used with plural noun
+rule_NPG6_dem_np_always_third,NounPhrases,§3.4.2,oho ko karai,wf,—,Demonstrative NP subject is 3rd person; 3rd verb agrees
+rule_NPG6_dem_np_always_third,NounPhrases,§3.4.2,ahá ko karai,ill,ss_agree_ok,Demonstrative NP subject is 3rd person but verb is 1SG
+rule_NPH1_plural_forces_plural,NounPhrases,§3.1.1,oho karai kuéra,wf,—,Plural-marked noun forces plural metadata; 3rd verb agrees
+rule_NPH1_plural_forces_plural,NounPhrases,§3.1.1,ahá karai kuéra,ill,ss_agree_ok,Plural subject metadata requires plural verb but 'ahá' is 1SG
+rule_NPH4_kue_transparent,NounPhrases,§3.7,oho karai kue,wf,—,-kue is metadata-transparent; base metadata still drives verb agreement
+rule_NPH4_kue_transparent,NounPhrases,§3.7,ahá karai kue,ill,ss_agree_ok,-kue doesn't change person; 3rd person subject with 1SG verb
+rule_NPI1_gen_always_third,NounPhrases,§3.1,oho Pedro roga,wf,—,Genitive NP subject is 3rd person; 3rd verb agrees
+rule_NPI1_gen_always_third,NounPhrases,§3.1,ahá Pedro roga,ill,ss_agree_ok,Genitive NP is 3rd person but verb is 1SG
+rule_NPJ1_poss_always_third,NounPhrases,§3.6,oho che roga,wf,—,Possessed NP subject has 3rd person metadata (the noun not the possessor)
+rule_NPJ1_poss_always_third,NounPhrases,§3.6,ahá che roga,ill,ss_agree_ok,Possessed NP is 3rd person but verb is 1SG
+rule_NPK1_one_is_singular,NounPhrases,§3.1,oho peteĩ karai,wf,—,Numeral peteĩ (1) gives singular metadata; 3rd SG verb agrees
+rule_NPK1_one_is_singular,NounPhrases,§3.1,ahá peteĩ karai,ill,ss_agree_ok,Peteĩ NP is singular 3rd person but verb is 1SG
+rule_NPK2_not_one_is_plural,NounPhrases,§3.1,oho mokõi karai,wf,—,Numeral mokõi (2) gives plural metadata; 3rd verb agrees
+rule_NPK2_not_one_is_plural,NounPhrases,§3.1,ahá mokõi karai,ill,ss_agree_ok,Mokõi NP is plural 3rd person but verb is 1SG
+rule_NPL1_ha_always_plural,NounPhrases,§12.1,oho Pedro ha María,wf,—,Coordinated NP subject is plural; 3rd verb agrees
+rule_NPL1_ha_always_plural,NounPhrases,§12.1,ahá Pedro ha María,ill,ss_agree_ok,Coordinated NP is plural 3rd person but verb is 1SG
+rule_NPM1_merge_commutative,NounPhrases,§12.1,oho che ha Pedro,wf,—,Coordination: person_merge is commutative; 1st dominates
+rule_NPM1_merge_commutative,NounPhrases,§12.1,reho che ha Pedro,ill,ss_agree_ok,Coordinated NP including 1st person should give First-person verb not 2SG
+rule_NPM3_first_always_dominates,NounPhrases,§12.1,jaha che ha Pedro,wf,—,1st person always dominates in coord; 1PL-INCL verb agrees
+rule_NPM3_first_always_dominates,NounPhrases,§12.1,reho che ha Pedro,ill,ss_agree_ok,First person dominates so 2SG verb cannot agree with this coord NP
+rule_NPN1_pe_me_oral,NounPhrases,§5,oho oga pe,wf,—,Oral noun 'oga' takes -pe postposition
+rule_NPN1_pe_me_oral,NounPhrases,§5,oho oga me,ill,postposition_form,Oral noun must take -pe not -me
+rule_NPN1_pe_me_nasal,NounPhrases,§5,oho táva me,wf,—,Nasal noun 'táva' takes -me postposition
+rule_NPN1_pe_me_nasal,NounPhrases,§5,oho táva pe,ill,postposition_form,Nasal noun must take -me not -pe
+rule_NPO1_avave_is_negative,NounPhrases,§3.5.3,avave ndoúi,wf,—,avave requires double negation: negative verb satisfies it
+rule_NPO1_avave_is_negative,NounPhrases,§3.5.3,avave oú,ill,ss_neg_concord_ok,avave requires negative verb for double-negation concord
+rule_NPO2_maymava_not_negative,NounPhrases,§3.5.3,maymáva oú,wf,—,maymáva is universal (not negative); positive verb is fine
+rule_NPO2_maymava_not_negative,NounPhrases,§3.5.3,maymáva ndoúi,ill,ss_neg_concord_ok,maymáva doesn't require neg concord; negative verb is unwarranted here
+rule_NPP2_interrog_always_third,NounPhrases,§3.5.2,mba'e oiko,wf,—,Interrogative 'mba'e' is 3rd person; 3rd verb agrees
+rule_NPP2_interrog_always_third,NounPhrases,§3.5.2,mba'e aiko,ill,ss_agree_ok,Interrogative pronoun is 3rd person but verb is 1SG
+rule_NPQ1_uniform_bare_is_root,NounPhrases,§3.1,oho oga,wf,—,Uniform root 'oga' renders as bare root string
+rule_NPQ1_uniform_bare_is_root,NounPhrases,§3.1,oho roga,ill,render_np,Uniform root must render without prefix; 'roga' is wrong for bare context
+rule_NPQ2_art_drops_article,NounPhrases,§3.1,oho oga,wf,—,NP_Art drops article; renders same as bare noun
+rule_NPQ2_art_drops_article,NounPhrases,§3.1,oho la oga,ill,render_np,'la' article is not rendered in Guaraní NP surface form
+rule_NPQ3_pron_subj_renders,NounPhrases,§3.5.1,che ahá,wf,—,Subject pronoun 'che' renders to its canonical surface form
+rule_NPQ3_pron_subj_renders,NounPhrases,§3.5.1,yo ahá,ill,render_np,'yo' is Spanish; the Guaraní 1SG pronoun is 'che'
+rule_NPQ4_coord_ha_joins_with_ha,NounPhrases,§12.1,oho Pedro ha María,wf,—,NP_CoordHa renders with ' ha ' conjunction
+rule_NPQ4_coord_ha_joins_with_ha,NounPhrases,§12.1,oho Pedro y María,ill,render_np,'y' is Spanish conjunction; Guaraní uses 'ha'
+rule_NPQ5_rel_concats_with_verb,NounPhrases,§3.2.1.1.3,aikuaa kuimba'e oguapyva,wf,—,Relative clause renders as noun surface + space + verb
+rule_NPQ5_rel_concats_with_verb,NounPhrases,§3.2.1.1.3,aikuaa kuimba'e oguapy,ill,is_rel_clause,Relative clause without -va suffix cannot be a valid NP_Rel
+rule_NPQ6_comp_is_verb,NounPhrases,§3.2.1.1.1,aikuaa oñe'ẽha,wf,—,NP_Comp renders as the verb alone (with -ha)
+rule_NPQ6_comp_is_verb,NounPhrases,§3.2.1.1.1,aikuaa oñe'ẽ,ill,is_comp_clause,Complement clause without -ha fails is_comp_clause
+rule_A1_areal_1sg,Verb,§4.1,ahá,wf,—,Areal 1SG prefix 'a-' on root 'há' (go)
+rule_A1_areal_1sg,Verb,§4.1,rehá,ill,areal_ind_prefix,2SG prefix 're-' used where 1SG 'a-' is required
+rule_A2_areal_2sg,Verb,§4.1,reháta,wf,—,Areal 2SG prefix 're-' + future suffix -ta
+rule_A2_areal_2sg,Verb,§4.1,aháta,ill,areal_ind_prefix,1SG prefix 'a-' used where 2SG 're-' is required
+rule_A3_areal_3rd,Verb,§4.1,oho,wf,—,Areal 3rd prefix 'o-' on irregular ho
+rule_A3_areal_3rd,Verb,§4.1,reho,ill,areal_ind_prefix,2SG prefix 're-' used where 3rd 'o-' is required
+rule_A4_areal_1pl_incl_oral,Verb,§4.1,jaha,wf,—,Areal 1PL-INCL oral prefix 'ja-'
+rule_A4_areal_1pl_incl_oral,Verb,§4.1,roha,ill,areal_ind_prefix,Exclusive prefix 'ro-' used where inclusive 'ja-' is required
+rule_A4_areal_1pl_incl_nasal,Verb,§4.1,ñamomba'e,wf,—,Areal 1PL-INCL nasal prefix 'ña-' on nasal root 'momba'e'
+rule_A4_areal_1pl_incl_nasal,Verb,§4.1,jamomba'e,ill,areal_ind_prefix,Oral prefix 'ja-' used on nasal root that requires 'ña-'
+rule_A5_areal_1pl_excl,Verb,§4.1,roháta,wf,—,Areal 1PL-EXCL prefix 'ro-' + future -ta
+rule_A5_areal_1pl_excl,Verb,§4.1,jaháta,ill,areal_ind_prefix,Inclusive prefix 'ja-' used where exclusive 'ro-' is required
+rule_A6_areal_2pl,Verb,§4.1,peho,wf,—,Areal 2PL prefix 'pe-' on irregular ho
+rule_A6_areal_2pl,Verb,§4.1,oho,ill,areal_ind_prefix,3rd prefix 'o-' used where 2PL 'pe-' is required
+rule_B1_aireal_1sg,Verb,§4.1,aipota,wf,—,Aireal 1SG prefix 'ai-' on root 'pota'
+rule_B1_aireal_1sg,Verb,§4.1,reipota,ill,aireal_ind_prefix,2SG 'rei-' used where 1SG 'ai-' is required
+rule_B2_aireal_3rd,Verb,§4.1,oipota,wf,—,Aireal 3rd prefix 'oi-'
+rule_B2_aireal_3rd,Verb,§4.1,aipota,ill,aireal_ind_prefix,1SG 'ai-' used where 3rd 'oi-' is required
+rule_B3_aireal_2sg,Verb,§4.1,reipota,wf,—,Aireal 2SG prefix 'rei-'
+rule_B3_aireal_2sg,Verb,§4.1,oipota,ill,aireal_ind_prefix,3rd 'oi-' used where 2SG 'rei-' is required
+rule_B4_aireal_1pl_incl_oral,Verb,§4.1,jaipota,wf,—,Aireal 1PL-INCL oral prefix 'jai-'
+rule_B4_aireal_1pl_incl_oral,Verb,§4.1,roipota,ill,aireal_ind_prefix,Exclusive 'roi-' used where inclusive 'jai-' is required
+rule_B4_aireal_1pl_incl_nasal,Verb,§4.1,ñaimo'ã,wf,—,Aireal 1PL-INCL nasal prefix 'ñai-' on nasal root 'mo'ã'
+rule_B4_aireal_1pl_incl_nasal,Verb,§4.1,jaimo'ã,ill,aireal_ind_prefix,Oral 'jai-' used on nasal root requiring 'ñai-'
+rule_B5_aireal_1pl_excl,Verb,§4.1,roipota,wf,—,Aireal 1PL-EXCL prefix 'roi-'
+rule_B5_aireal_1pl_excl,Verb,§4.1,jaipota,ill,aireal_ind_prefix,Inclusive 'jai-' used where exclusive 'roi-' is required
+rule_B6_aireal_2pl,Verb,§4.1,peipota,wf,—,Aireal 2PL prefix 'pei-'
+rule_B6_aireal_2pl,Verb,§4.1,oipota,ill,aireal_ind_prefix,3rd 'oi-' used where 2PL 'pei-' is required
+rule_C1_chendal_1sg,Verb,§4.1.2,che py'aguapy,wf,—,Chendal 1SG prefix 'che-' on stative root
+rule_C1_chendal_1sg,Verb,§4.1.2,nde py'aguapy,ill,chendal_ind_prefix,2SG 'nde-' used where 1SG 'che-' is required
+rule_C2_chendal_2sg_oral,Verb,§4.1.2,nde py'aguapy,wf,—,Chendal 2SG oral prefix 'nde-'
+rule_C2_chendal_2sg_oral,Verb,§4.1.2,ne py'aguapy,ill,chendal_ind_prefix,Nasal form 'ne-' used on oral root requiring 'nde-'
+rule_C2_chendal_2sg_nasal,Verb,§4.1.2,ne ñe'ẽ,wf,—,Chendal 2SG nasal prefix 'ne-' on nasal root
+rule_C2_chendal_2sg_nasal,Verb,§4.1.2,nde ñe'ẽ,ill,chendal_ind_prefix,Oral 'nde-' used on nasal root requiring 'ne-'
+rule_C3_chendal_3rd_i_oral,Verb,§4.1.2,i py'aguapy,wf,—,Chendal 3rd C3sg_I oral prefix 'i-'
+rule_C3_chendal_3rd_i_oral,Verb,§4.1.2,hi py'aguapy,ill,chendal_ind_prefix,hi- form used where plain i- (C3sg_I) is specified
+rule_C3_chendal_3rd_i_nasal,Verb,§4.1.2,iñ ñe'ẽ,wf,—,Chendal 3rd C3sg_I nasal prefix 'iñ-'
+rule_C3_chendal_3rd_i_nasal,Verb,§4.1.2,i ñe'ẽ,ill,chendal_ind_prefix,Oral form 'i-' used on nasal root requiring 'iñ-'
+rule_C3b_chendal_3rd_hi_oral,Verb,§4.1.2,hi'ã,wf,—,Chendal 3rd C3sg_Hi oral prefix 'hi-'
+rule_C3b_chendal_3rd_hi_oral,Verb,§4.1.2,i'ã,ill,chendal_ind_prefix,Plain 'i-' used where C3sg_Hi requires 'hi-'
+rule_C3b_chendal_3rd_hi_nasal,Verb,§4.1.2,hiñ ñe'ẽ,wf,—,Chendal 3rd C3sg_Hi nasal prefix 'hiñ-'
+rule_C3b_chendal_3rd_hi_nasal,Verb,§4.1.2,iñ ñe'ẽ,ill,chendal_ind_prefix,Plain nasal 'iñ-' used where C3sg_Hi nasal requires 'hiñ-'
+rule_C3c_chendal_3rd_ij_oral,Verb,§4.1.2,ij exa,wf,—,Chendal 3rd C3sg_Ij oral prefix 'ij-' before vowel-initial root
+rule_C3c_chendal_3rd_ij_oral,Verb,§4.1.2,i exa,ill,chendal_ind_prefix,Plain 'i-' used where C3sg_Ij requires 'ij-' before vowel
+rule_C3c_chendal_3rd_ij_nasal,Verb,§4.1.2,iñ ñe'ẽ,wf,—,Chendal C3sg_Ij nasal = 'iñ-' (same surface as C3sg_I nasal)
+rule_C3c_chendal_3rd_ij_nasal,Verb,§4.1.2,hiñ ñe'ẽ,ill,chendal_ind_prefix,C3sg_Hi nasal form used where C3sg_Ij nasal should give 'iñ-'
+rule_C4_chendal_1pl_incl_oral,Verb,§4.1.2,ñande py'aguapy,wf,—,Chendal 1PL-INCL oral prefix 'ñande-'
+rule_C4_chendal_1pl_incl_oral,Verb,§4.1.2,ore py'aguapy,ill,chendal_ind_prefix,Exclusive 'ore-' used where inclusive 'ñande-' is required
+rule_C5_chendal_1pl_excl,Verb,§4.1.2,ore py'aguapy,wf,—,Chendal 1PL-EXCL prefix 'ore-'
+rule_C5_chendal_1pl_excl,Verb,§4.1.2,ñande py'aguapy,ill,chendal_ind_prefix,Inclusive 'ñande-' used where exclusive 'ore-' is required
+rule_C6_chendal_2pl_oral,Verb,§4.1.2,pende py'aguapy,wf,—,Chendal 2PL oral prefix 'pende-'
+rule_C6_chendal_2pl_oral,Verb,§4.1.2,pene py'aguapy,ill,chendal_ind_prefix,Nasal 'pene-' used where oral 'pende-' is required
+rule_D1_imp_2sg_areal,Verb,§4.1,eho,wf,—,Areal imperative 2SG prefix 'e-'
+rule_D1_imp_2sg_areal,Verb,§4.1,aho,ill,imp_prefix,1SG form 'a-' used in imperative where 'e-' is required
+rule_D1_imp_2sg_aireal,Verb,§4.1,e iporavo,wf,—,Aireal imperative 2SG prefix 'e-'
+rule_D1_imp_2sg_aireal,Verb,§4.1,rei iporavo,ill,imp_prefix,Indicative 2SG prefix 'rei-' used in imperative context
+rule_D2_imp_chendal_no_e,Verb,§4.1.2,nde py'aguapyke,wf,—,Chendal imperative keeps 'nde-' not 'e-'
+rule_D2_imp_chendal_no_e,Verb,§4.1.2,e py'aguapyke,ill,imp_prefix,Areal-style 'e-' used on Chendal imperative; Chendal keeps 'nde-'
+rule_D3_imp_2pl_areal,Verb,§4.1,peho,wf,—,Areal imperative 2PL prefix 'pe-'
+rule_D3_imp_2pl_areal,Verb,§4.1,eho,ill,imp_prefix,2SG imperative 'e-' used where 2PL 'pe-' is required
+rule_E1_opt_1sg_active,Verb,§4.1,taha,wf,—,Areal optative 1SG prefix 'ta-'
+rule_E1_opt_1sg_active,Verb,§4.1,toho,ill,opt_prefix,3rd optative 'to-' used where 1SG 'ta-' is required
+rule_E2_opt_3rd_active,Verb,§4.1,toho,wf,—,Areal optative 3rd prefix 'to-'
+rule_E2_opt_3rd_active,Verb,§4.1,taha,ill,opt_prefix,1SG optative 'ta-' used where 3rd 'to-' is required
+rule_E3_opt_2pl_active,Verb,§4.1,tapeho,wf,—,Areal optative 2PL prefix 'tape-'
+rule_E3_opt_2pl_active,Verb,§4.1,toho,ill,opt_prefix,3rd optative 'to-' used where 2PL 'tape-' is required
+rule_F1_active_no_prefix,Verb,§6,ahá,wf,—,Active voice produces no voice prefix
+rule_F1_active_no_prefix,Verb,§6,ajejuka,ill,voice_prefix,Reflexive passive 'je-' prefix on verb where active (no prefix) is required
+rule_F2_passive_je_oral,Verb,§6,ojejuka,wf,—,Oral passive prefix 'je-'
+rule_F2_passive_je_oral,Verb,§6,oñejuka,ill,voice_prefix,Nasal passive 'ñe-' used on oral root requiring 'je-'
+rule_F2_passive_ne_nasal,Verb,§6,oñemoñe'ẽ,wf,—,Nasal passive prefix 'ñe-' on nasal root
+rule_F2_passive_ne_nasal,Verb,§6,ojemoñe'ẽ,ill,voice_prefix,Oral passive 'je-' used on nasal root requiring 'ñe-'
+rule_F3_reciprocal_jo_oral,Verb,§6,ojojuka,wf,—,Oral reciprocal prefix 'jo-'
+rule_F3_reciprocal_jo_oral,Verb,§6,oñojuka,ill,voice_prefix,Nasal reciprocal 'ño-' used on oral root requiring 'jo-'
+rule_F4_coactive_mbo_oral,Verb,§6,ambojuka,wf,—,Oral coactive prefix 'mbo-'
+rule_F4_coactive_mbo_oral,Verb,§6,amojuka,ill,voice_prefix,Nasal coactive 'mo-' used on oral root requiring 'mbo-'
+rule_F5_objective_invariant,Verb,§6,roayvu,wf,—,Objective (sociative causative) prefix 'ro-' is invariant
+rule_F5_objective_invariant,Verb,§6,gueroayvu,ill,voice_prefix,guero- is a different voice (Obj_Guero) not the base Objective
+rule_F5b_obj_guero_invariant,Verb,§17.2,ogueroayvu,wf,—,Obj_Guero prefix 'guero-' is invariant across orality
+rule_F5b_obj_guero_invariant,Verb,§17.2,ogueroñe'ẽ,ill,voice_prefix,guero- is oral-only; nasal root requires checking
+rule_F5b_obj_guero_ne_objective,Verb,§17.2,ogueroayvu,wf,—,guero- and ro- are distinct voice prefixes
+rule_F5b_obj_guero_ne_objective,Verb,§17.2,roayvu,ill,voice_prefix,ro- (Objective) ≠ guero- (Obj_Guero): wrong prefix for Obj_Guero context
+rule_F6_subsuntive_invariant,Verb,§6,aporombo'e,wf,—,Subsuntive 'poro-' prefix is invariant
+rule_F6_subsuntive_invariant,Verb,§6,aporonñe'ẽ,ill,voice_prefix,Nasal subsuntive 'poro-' check — poro is invariant so nasal form is wrong
+rule_G1_neg_prefix_oral,Verb,§4.9,ndahái,wf,—,Oral negation prefix 'nd-' before eufonic 'a-' + root + -i
+rule_G1_neg_prefix_oral,Verb,§4.9,nahái,ill,neg_prefix_for,Nasal prefix 'n-' used on oral root requiring 'nd-'
+rule_G1_neg_prefix_nasal,Verb,§4.9,namomba'éi,wf,—,Nasal negation prefix 'n-' before 'a-' + root + -i
+rule_G1_neg_prefix_nasal,Verb,§4.9,ndamomba'éi,ill,neg_prefix_for,Oral prefix 'nd-' used on nasal root requiring 'n-'
+rule_G2_neg_prefix_distinct,Verb,§4.9,ndahái,wf,—,Oral 'nd-' is distinct from nasal 'n-'
+rule_G2_neg_prefix_distinct,Verb,§4.9,nahái,ill,neg_prefix_for,Nasal prefix used on oral root; should be 'nd-'
+rule_G3_neg_prefix_nonempty,Verb,§4.9,ndahái,wf,—,Negation prefix is never empty; 'nd-' is correctly present
+rule_G3_neg_prefix_nonempty,Verb,§4.9,ahái,ill,cv_neg_ok,Negative polarity with no negation prefix/suffix is ill-formed
+rule_G4_eufonic_2pl_is_a,Verb,§4.9,ndapehái,wf,—,Areal 2PL negative: eufonic vowel 'a' → ndape-hái
+rule_G4_eufonic_2pl_is_a,Verb,§4.9,ndepehái,ill,neg_eufonic,Wrong eufonic vowel 'e' used; 2PL requires 'a'
+rule_G5_eufonic_chendal_always_a,Verb,§4.9,ndache py'aguapyi,wf,—,Chendal negative eufonic vowel is always 'a'
+rule_G5_eufonic_chendal_always_a,Verb,§4.9,ndche py'aguapyi,ill,neg_eufonic,Missing eufonic vowel; Chendal negation needs nd + a + che-root
+rule_G6_neg_requires_suffix,Verb,§4.9,ndahái,wf,—,Negative polarity has required -i suffix; well-formed
+rule_G6_neg_requires_suffix,Verb,§4.9,ndahá,ill,cv_neg_ok,Negative prefix present but no neg suffix (-i/-ri/-tei): ill-formed
+rule_H1_ta_and_moa_exclusive,Verb,§14,ndahamo'ãi,wf,—,-mo'ã alone (with neg polarity) is fine; no -ta conflict
+rule_H1_ta_and_moa_exclusive,Verb,§14,ndaháta mo'ã i,ill,cv_tense_ok,-ta and -mo'ã cannot co-occur (two tense markers)
+rule_H2_moa_requires_negative,Verb,§14,ndahamo'ãi,wf,—,-mo'ã with Negative polarity is correct
+rule_H2_moa_requires_negative,Verb,§14,ahamo'ã,ill,cv_tense_ok,-mo'ã on positive verb requires Negative polarity
+rule_H3_moa_renders,Verb,§14,ndahamo'ãi,wf,—,-mo'ã renders as 'mo'ã' in surface form
+rule_H3_moa_renders,Verb,§14,ndahámo'i,ill,cv_tense_ok,Wrong suffix order: neg suffix before tense marker
+rule_I1_first_subj_third_obj_active,Verb,§4.2,ajuka ha'e,wf,—,1SG subj + 3rd obj → Active mode: a- prefix indexes subject
+rule_I1_first_subj_third_obj_active,Verb,§4.2,chejuka ha'e,ill,ss_hierarchy_ok,Inactive prefix 'che-' used where Active mode (a-) is required
+rule_I2_third_subj_first_obj_inactive,Verb,§4.2,chejuka,wf,—,3rd subj + 1st obj → Inactive: che- prefix indexes object
+rule_I2_third_subj_first_obj_inactive,Verb,§4.2,ha'e ajuka,ill,ss_hierarchy_ok,Active 'a-' used where Inactive (che-) is required for 3rd→1st
+rule_I4_first_to_2sg_portmanteau,Verb,§4.2,rojuka nde,wf,—,1SG→2SG portmanteau prefix 'ro-'
+rule_I4_first_to_2sg_portmanteau,Verb,§4.2,ajuka nde,ill,ss_hierarchy_ok,Active 'a-' used where portmanteau 'ro-' is required for 1→2SG
+rule_I5_first_to_2pl_portmanteau,Verb,§4.2,rojuka pende,wf,—,1SG→2PL portmanteau prefix 'ro-'
+rule_I5_first_to_2pl_portmanteau,Verb,§4.2,ajuka pende,ill,ss_hierarchy_ok,Active 'a-' used where portmanteau 'ro-' is required for 1→2PL
+rule_I9_same_person_reflexive,Verb,§4.2,ajejuka,wf,—,1SG→1SG same-person triggers Reflexive mode with je- voice
+rule_I9_same_person_reflexive,Verb,§4.2,ajuka che,ill,ss_hierarchy_ok,Same person S+O without reflexive voice: hierarchy violation
+rule_J1_relational_active_h,Verb,§4.1,oheka,wf,—,Relational root 'eka' with active h- prefix: o-h-eka
+rule_J1_relational_active_h,Verb,§4.1,oreka,ill,verb_relational_prefix,Inactive r- prefix used in active context for relational root
+rule_J2_relational_inactive_r,Verb,§4.1,chereka,wf,—,Relational root inactive: che-r-eka (3rd seeks me)
+rule_J2_relational_inactive_r,Verb,§4.1,cheheka,ill,verb_relational_prefix,Active h- prefix used in inactive context for relational root
+rule_J5_plain_always_empty,Verb,§4.1,ojuka,wf,—,Plain root: no relational prefix in any context
+rule_J5_plain_always_empty,Verb,§4.1,ohjuka,ill,verb_relational_prefix,Spurious h- relational prefix on plain (non-relational) root
+rule_K1_ju_3sg,Verb,§4.5,ou,wf,—,Irregular 'ju': 3rd person form = 'ou'
+rule_K1_ju_3sg,Verb,§4.5,ohou,ill,irreg_form,Irregular 'ho' 3rd form is 'oho' not 'ohou'; different irregular verb
+rule_K2_ho_3sg,Verb,§4.5,oho,wf,—,Irregular 'ho': 3rd person form = 'oho'
+rule_K2_ho_3sg,Verb,§4.5,aho,ill,irreg_form,1SG form 'aha' used where 3rd form 'oho' is required
+rule_K3_ho_1sg,Verb,§4.5,aha,wf,—,Irregular 'ho': 1SG form = 'aha'
+rule_K3_ho_1sg,Verb,§4.5,oho,ill,irreg_form,3rd form 'oho' used where 1SG 'aha' is required
+rule_K4_e_2sg,Verb,§4.5,ere mba'e,wf,—,Irregular 'e': 2SG form = 'ere'
+rule_K4_e_2sg,Verb,§4.5,he'i,ill,irreg_form,3rd form 'he'i' used where 2SG 'ere' is required
+rule_K5_e_3sg,Verb,§4.5,he'i,wf,—,Irregular 'e': 3rd form = 'he'i'
+rule_K5_e_3sg,Verb,§4.5,ere,ill,irreg_form,2SG form 'ere' used where 3rd 'he'i' is required
+rule_L1_1pl_requires_inclusivity,Verb,§4.1.1,jaha,wf,—,1PL-INCL must carry Some Inclusive; 'ja-' prefix is correct
+rule_L1_1pl_requires_inclusivity,Verb,§4.1.1,rohako,ill,cv_incl_ok,1PL without inclusivity specification: cv_incl = None is ill-formed
+rule_L2_non_1pl_forbids_inclusivity,Verb,§4.1.1,ahá,wf,—,1SG verb correctly has no inclusivity marker
+rule_L2_non_1pl_forbids_inclusivity,Verb,§4.1.1,ahá (Some Inclusive),ill,cv_incl_ok,Non-1PL verb carrying inclusivity marker is ill-formed
+rule_M1_no_double_future,Verb,§14,aháta,wf,—,Single -ta future suffix is well-formed
+rule_M1_no_double_future,Verb,§14,aháta ne,ill,cv_tense_ok,-ta and -ne are both future tense markers; cannot co-occur
+rule_M2_habit_mi_plead_mi_exclusive,Verb,§14,eho mi,wf,—,Single VS_ImpPlead (-mi) on imperative: fine
+rule_M2_habit_mi_plead_mi_exclusive,Verb,§14,oho miva,ill,cv_homophone_ok,VS_HabitMi + VS_HabitVa together triggers homophone conflict check
+rule_M3_interrog_total_exclusive,Verb,§14,ohopa,wf,—,Single -pa (interrogative) suffix; no conflict
+rule_M3_interrog_total_exclusive,Verb,§14,ohopapa,ill,cv_homophone_ok,VS_TotalPa + VS_InterrogPa both render 'pa': homophone conflict
+rule_N1_prohibitive_requires_negative,Verb,§4.9,ani reho,wf,—,Prohibitive 'ani' with correct negative polarity
+rule_N1_prohibitive_requires_negative,Verb,§4.9,ani reho (Positive),ill,cv_mood_neg_ok,Prohibitive mood requires Negative polarity; positive verb is ill-formed
+rule_N2_prohibitive_no_regular_neg,Verb,§4.9,ani reho,wf,—,Prohibitive uses 'ani' particle; no -i/-ri suffix needed
+rule_N2_prohibitive_no_regular_neg,Verb,§4.9,ani ndrehoi,ill,cv_mood_neg_ok,Prohibitive cannot use regular neg suffix -i; uses 'ani' particle only
+rule_O1_modalizer_only_imp_opt,Verb,§14,eho ke,wf,—,Imperative modalizer -ke on imperative mood: well-formed
+rule_O1_modalizer_only_imp_opt,Verb,§14,aháke,ill,cv_modalizer_ok,Imperative modalizer -ke on indicative mood is ill-formed
+rule_P1_total_before_modalizer,Verb,§14,eho pa ke,wf,—,-pa (slot 3) before -ke (slot 4): correct order
+rule_P1_total_before_modalizer,Verb,§14,eho ke pa,ill,suffixes_ordered,-ke (slot 4) before -pa (slot 3): wrong suffix order
+rule_P4_future_before_neg,Verb,§14,ndahamo'ãi,wf,—,-mo'ã (slot 7) before -i (slot 8): correct order
+rule_P4_future_before_neg,Verb,§14,ndahái mo'ã,ill,suffixes_ordered,-i (slot 8) before -mo'ã (slot 7): wrong order
+rule_P8_interrog_rightmost,Verb,§14,ohomapa,wf,—,-ma (slot 11) before -pa (slot 12): correct
+rule_P8_interrog_rightmost,Verb,§14,ohopama,ill,suffixes_ordered,-pa (slot 12) before -ma (slot 11): wrong order
+rule_P9_wrong_order_rejected,Verb,§14,ohoipa,wf,—,Wait — -i then -pa: slot 8 then 12 is actually correct order; cf slot constraint
+rule_P9_wrong_order_rejected,Verb,§14,ohopai,ill,suffixes_ordered,-pa (slot 12) before -i (slot 8): wrong order rejected
+rule_P11_hearsay_je_last,Verb,§17.3,ohopaje,wf,—,-pa (slot 12) before -je (slot 13): correct order
+rule_P11_hearsay_je_last,Verb,§17.3,ohojepaje,ill,suffixes_ordered,-je (slot 13) before -pa (slot 12): wrong order
+rule_P12_je_before_interrog_rejected,Verb,§17.3,ohopaje,wf,—,-pa then -je: slot 12 then 13 is correct
+rule_P12_je_before_interrog_rejected,Verb,§17.3,ohojepaje,ill,suffixes_ordered,-je (slot 13) before -pa (slot 12): rejected by suffixes_ordered
+rule_P13_simult_vo_renders,Verb,§12.2.3.1,ohovo,wf,—,-vo simultaneous suffix renders as 'vo'
+rule_P13_simult_vo_renders,Verb,§12.2.3.1,oho vo ki,ill,suffixes_ordered,'ki' is not a licensed verbal suffix after -vo
+rule_P14_neg_before_simult,Verb,§14,ohovo,wf,—,-vo alone (slot 11): well-formed
+rule_P14_neg_before_simult,Verb,§14,ndahavoi,ill,suffixes_ordered,-vo (slot 11) before -i (slot 8) in wrong order
+rule_Q1_chendal_no_transitive,Verb,§4.1.2,hi'ã,wf,—,Chendal intransitive verb: well-formed
+rule_Q1_chendal_no_transitive,Verb,§4.1.2,hi'ã oga,ill,cv_structure_ok,Chendal verb with direct object (Transitive) is structurally ill-formed
+rule_Q2_chendal_intrans_ok,Verb,§4.1.2,hi'ã,wf,—,Chendal + Intransitive is cv_structure_ok true
+rule_Q2_chendal_intrans_ok,Verb,§4.1.2,hi'ã oga,ill,cv_structure_ok,Chendal verb cannot take transitive object
+rule_Q3_areal_any_transitivity,Verb,§4.1,ajuka,wf,—,Areal transitive verb: well-formed
+rule_Q3_areal_any_transitivity,Verb,§4.1,ahá oga,ill,ss_transitivity_ok,Intransitive 'há' given a direct object: transitivity mismatch
+rule_R1_chendal_no_imperative,Verb,§4.1.2,hi'ã,wf,—,Chendal indicative: well-formed
+rule_R1_chendal_no_imperative,Verb,§4.1.2,e py'aguapyke,ill,cv_class_mood_ok,Chendal verb cannot take Imperative mood
+rule_R2_chendal_no_optative,Verb,§4.1.2,hi'ã,wf,—,Chendal indicative is fine
+rule_R2_chendal_no_optative,Verb,§4.1.2,tachi py'aguapy,ill,cv_class_mood_ok,Chendal verb cannot take Optative mood
+rule_R3_chendal_indicative_ok,Verb,§4.1.2,hi'ã,wf,—,Chendal + Indicative = cv_class_mood_ok true
+rule_R3_chendal_indicative_ok,Verb,§4.1.2,che kane'o,wf,—,Chendal stative 'kane'o' (be tired) in indicative: also well-formed
+rule_R4_chendal_imperative_fails_wf,Verb,§4.1.2,hi'ã,wf,—,Chendal indicative passes full wf check
+rule_R4_chendal_imperative_fails_wf,Verb,§4.1.2,e py'aguapyke,ill,wf_conjugated_verb,Full wf_conjugated_verb fails for Chendal + Imperative
+rule_S1_no_ta_and_pota,Verb,§14,aháta,wf,—,Single -ta future suffix: fine
+rule_S1_no_ta_and_pota,Verb,§14,aháta pota,ill,cv_tense_ok,-ta and -pota are both tense markers; cannot co-occur
+rule_S2_single_future_ok,Verb,§14,aháta,wf,—,Single -ta is well-formed
+rule_S2_single_future_ok,Verb,§14,aháta ne,ill,cv_tense_ok,Two future suffixes -ta and -ne: cv_tense_ok fails
+rule_T1_no_duplicate_suffixes,Verb,§14,aháta,wf,—,Single -ta: no duplicates
+rule_T1_no_duplicate_suffixes,Verb,§14,aháta ta,ill,no_dup_suffixes,-ta appearing twice: no_dup_suffixes rejects
+rule_T2_bare_positive_verb_wf,Verb,§4.1,ahá,wf,—,Bare positive Areal verb: minimal well-formed form
+rule_T2_bare_positive_verb_wf,Verb,§4.1,ndahái,wf,—,Bare negative Areal verb: also well-formed (has -i suffix)
+rule_T3_no_suffixes_empty_render,Verb,§14,ahá,wf,—,No suffixes: render_suffixes nil = empty string appended
+rule_T3_no_suffixes_empty_render,Verb,§14,ndahái,wf,—,Negated verb with required -i suffix: render_suffixes produces 'i'
+rule_EV1_kuri_requires_indicative,Verb,§7.3,oho kuri,wf,—,Kuri (direct evidence) with Indicative mood: well-formed
+rule_EV1_kuri_requires_indicative,Verb,§7.3,eho kuri,ill,cv_evidential_ok,Kuri on Imperative mood: cv_evidential_ok fails
+rule_EV2_voi_any_mood,Verb,§7.1,oho voi,wf,—,Voi emphatic with Indicative: well-formed
+rule_EV2_voi_any_mood,Verb,§7.1,eho voi,wf,—,Voi emphatic with Imperative: also well-formed (voi is mood-agnostic)
+rule_EV3_niko_variants_distinct,Verb,§7.1,oho niko,wf,—,Veridical emphatic 'niko' variant: well-formed
+rule_EV3_niko_variants_distinct,Verb,§7.1,oho ko,wf,—,'ko' variant of niko: also well-formed
+rule_EV4_kuri_renders,Verb,§7.3,oho kuri,wf,—,Ev_Kuri renders as surface form 'kuri'
+rule_EV4_kuri_renders,Verb,§7.3,oho ra'e,wf,—,Ra'e is a different evidential (mirative); 'kuri' and 'ra'e' are distinct
+rule_EV5_rae_renders,Verb,§7.4,oho ra'e,wf,—,Ev_Rae renders as 'ra'e'
+rule_EV5_rae_renders,Verb,§7.4,oho kuri,wf,—,Kuri is direct evidence not mirative; distinct from ra'e
+rule_EV6_rakae_renders,Verb,§7.4,oho raka'e,wf,—,Ev_Rakae renders as 'raka'e'
+rule_EV6_rakae_renders,Verb,§7.4,oho ra'e,wf,—,Ra'e (recent) ≠ raka'e (distant): different inferential evidentials
+rule_EV7_je_suffix_renders,Verb,§17.3,ohoje,wf,—,-je hearsay suffix renders as 'je'
+rule_EV7_je_suffix_renders,Verb,§17.3,ohojepaje,ill,suffixes_ordered,-je before -pa violates suffix slot order (13 before 12)
+rule_SA1_null_subject_ok,Sentences,§8.1,oho,wf,—,Null subject: agreement trivially satisfied
+rule_SA1_null_subject_ok,Sentences,§8.1,che oho,ill,ss_agree_ok,Subject 'che' (1SG) with 3rd person verb 'oho': agreement fails
+rule_SA2_che_agrees_1sg,Sentences,§8.1,che ahá,wf,—,Subject 'che' matches 1SG verb: agreement holds
+rule_SA2_che_agrees_1sg,Sentences,§8.1,che reháta,ill,ss_agree_ok,'che' is 1SG but verb is 2SG: person mismatch
+rule_SA3_che_2sg_disagree,Sentences,§8.1,nde reháta,wf,—,Subject 'nde' (2SG) with 2SG verb: agreement holds
+rule_SA3_che_2sg_disagree,Sentences,§8.1,che reháta,ill,ss_agree_ok,'che' (First) with 2SG verb (Second): agreement fails
+rule_SA4_incl_excl_disagree,Sentences,§8.1,ñande jaha,wf,—,Inclusive subject 'ñande' with inclusive 1PL verb: agreement holds
+rule_SA4_incl_excl_disagree,Sentences,§8.1,ñande roháta,ill,ss_agree_ok,Inclusive subject 'ñande' with exclusive 'ro-' verb: inclusivity mismatch
+rule_ST1_intrans_no_args_ok,Sentences,§4.1,oho,wf,—,Intransitive verb with no objects: well-formed
+rule_ST1_intrans_no_args_ok,Sentences,§4.1,oho oga,ill,ss_transitivity_ok,Intransitive verb 'ho' given a direct object 'oga': ill-formed
+rule_ST2_intrans_with_obj_bad,Sentences,§4.1,oho,wf,—,Intransitive with no object: fine
+rule_ST2_intrans_with_obj_bad,Sentences,§4.1,oho oga,ill,ss_transitivity_ok,Intransitive verb cannot take direct object
+rule_ST3_trans_with_obj_ok,Sentences,§4.2,ajuka ha'e,wf,—,Transitive verb with direct object: well-formed
+rule_ST3_trans_with_obj_ok,Sentences,§4.2,ajuka,wf,—,Transitive verb with no object (object dropped): also well-formed
+rule_ST7_ditrans_iobj_without_dobj_bad,Sentences,§4.3,ame'ẽ peteĩ vaka chupe,wf,—,Ditransitive: DO + IO present: well-formed
+rule_ST7_ditrans_iobj_without_dobj_bad,Sentences,§4.3,ame'ẽ chupe,ill,ss_transitivity_ok,Ditransitive: IO without DO is ill-formed
+rule_ST8_ditrans_both_ok,Sentences,§4.3,ame'ẽ peteĩ vaka chupe,wf,—,Ditransitive with DO + IO: well-formed
+rule_ST8_ditrans_both_ok,Sentences,§4.3,ame'ẽ chupe,ill,ss_transitivity_ok,Ditransitive IO without DO: transitivity check fails
+rule_SH1_partial_args_ok,Sentences,§4.2,ajuka,wf,—,Transitive with no object: hierarchy check skipped (only subject)
+rule_SH1_partial_args_ok,Sentences,§4.2,chejuka ha'e,ill,ss_hierarchy_ok,3rd→1st: Inactive mode required but not used
+rule_SH2_intrans_skips_check,Sentences,§4.2,oho,wf,—,Intransitive: hierarchy check not applicable
+rule_SH2_intrans_skips_check,Sentences,§4.2,oho karai pe,ill,ss_transitivity_ok,Intransitive verb with postpositional object: transitivity mismatch
+rule_SN1_avave_subj_pos_bad,Sentences,§4.9,avave ndoúi,wf,—,avave + negative verb: double negation satisfied
+rule_SN1_avave_subj_pos_bad,Sentences,§4.9,avave oú,ill,ss_neg_concord_ok,Negative subject 'avave' with positive verb: neg concord violated
+rule_SN2_avave_subj_neg_ok,Sentences,§4.9,avave ndoúi,wf,—,avave + negative verb: neg concord satisfied
+rule_SN2_avave_subj_neg_ok,Sentences,§4.9,maymáva ndoúi,ill,ss_neg_concord_ok,maymáva is not a negative pronoun; negative verb here is unwarranted
+rule_SN3_neg_iobj_pos_bad,Sentences,§4.9,ndame'ẽi mba'eve chupe,wf,—,Negative IO 'mba'eve' with negative verb: concord satisfied
+rule_SN3_neg_iobj_pos_bad,Sentences,§4.9,ame'ẽ mba'eve chupe,ill,ss_neg_concord_ok,Negative IO 'mba'eve' with positive verb: concord violated
+rule_SK1_no_hikuai_ok,Sentences,§4.1.1,oho,wf,—,No hikuái: always well-formed
+rule_SK1_no_hikuai_ok,Sentences,§4.1.1,ahá hikuái,ill,ss_hikuai_ok,Hikuái on 1SG verb (First person): ill-formed
+rule_SK2_hikuai_1sg_bad,Sentences,§4.1.1,oho hikuái Pedro,wf,—,Hikuái on 3rd person verb in V-initial order: well-formed
+rule_SK2_hikuai_1sg_bad,Sentences,§4.1.1,ahá hikuái,ill,ss_hikuai_ok,Hikuái on 1SG (First) verb: fails ss_hikuai_ok
+rule_SK4_hikuai_vso_ok,Sentences,§4.1.1,oho hikuái Pedro,wf,—,3rd person VSO + hikuái: well-formed
+rule_SK4_hikuai_vso_ok,Sentences,§4.1.1,oho hikuái Pedro María,ill,ss_agree_ok,Hikuái with two post-verb NPs: word order ambiguity / agreement issue
+rule_SP1_human_pe_ok,Sentences,§5.1,aheka nde pe,wf,—,Human DO (nde = 2SG pronoun) marked with Post_Pe: well-formed
+rule_SP1_human_pe_ok,Sentences,§5.1,aheka nde rehe,ill,ss_human_pe_ok,Human DO marked with Post_Rehe: ss_human_pe_ok fails
+rule_SP2_human_wrong_pp_bad,Sentences,§5.1,aheka nde pe,wf,—,Human DO with Post_Pe: correct
+rule_SP2_human_wrong_pp_bad,Sentences,§5.1,aheka nde rehe,ill,ss_human_pe_ok,Human DO with Post_Rehe: wrong postposition for human DO
+rule_SY1_decl_needs_indicative,Sentences,§8.5,oho,wf,—,Indicative mood in declarative: well-formed
+rule_SY1_decl_needs_indicative,Sentences,§8.5,eho,ill,ss_type_ok,Imperative mood in declarative sentence type: ill-formed
+rule_SY3_yn_needs_particle,Sentences,§8.5,ohopa,wf,—,Y/N question with -pa particle: well-formed
+rule_SY3_yn_needs_particle,Sentences,§8.5,oho,ill,ss_type_ok,Y/N question type without interrogative particle: ill-formed
+rule_AC1_purposive_hagua_ok,Sentences,§12.2.3.1,oho oñe'ẽ haguã,wf,—,Purposive 'haguã': wf_adv_clause true
+rule_AC1_purposive_hagua_ok,Sentences,§12.2.3.1,oho oñe'ẽ ramo,ill,adv_morpheme_ok,Wrong morpheme 'ramo' for purposive: adv_morpheme_ok fails
+rule_AC2_purposive_wrong_morpheme_bad,Sentences,§12.2.3.1,oho oñe'ẽ haguã,wf,—,Purposive with correct morpheme: well-formed
+rule_AC2_purposive_wrong_morpheme_bad,Sentences,§12.2.3.1,oho oñe'ẽ ramo,ill,adv_morpheme_ok,Purposive with 'ramo': morpheme mismatch
+rule_AC3_cond_hyp_ro_ok,Sentences,§12.2.3.4,ohoro jajuhu,wf,—,Hypothetical conditional with -rõ: well-formed
+rule_AC3_cond_hyp_ro_ok,Sentences,§12.2.3.4,oho haguã jajuhu,ill,adv_morpheme_ok,'haguã' used for conditional context: wrong morpheme
+rule_AC4_cond_hyp_ramo_ok,Sentences,§12.2.3.4,ohoramo jajuhu,wf,—,Hypothetical conditional with -ramo: well-formed (free variant of -rõ)
+rule_AC4_cond_hyp_ramo_ok,Sentences,§12.2.3.4,oho jave jajuhu,ill,adv_morpheme_ok,'jave' is temporal not conditional: wrong morpheme
+rule_AC5_temp_simult_jave_ok,Sentences,§12.2.3.6,oho jave apyta,wf,—,Simultaneous temporal 'jave': well-formed
+rule_AC5_temp_simult_jave_ok,Sentences,§12.2.3.6,oho rire apyta,ill,adv_morpheme_ok,'rire' is posterior temporal not simultaneous
+rule_AC6_temp_ant_mboyve_ok,Sentences,§12.2.3.6,oho mboyve apyta,wf,—,Anterior temporal 'mboyve': well-formed
+rule_AC6_temp_ant_mboyve_ok,Sentences,§12.2.3.6,oho rire apyta,ill,adv_morpheme_ok,'rire' is posterior; 'mboyve' required for anterior
+rule_AC7_temp_post_rire_ok,Sentences,§12.2.3.6,oho rire apyta,wf,—,Posterior temporal 'rire': well-formed
+rule_AC7_temp_post_rire_ok,Sentences,§12.2.3.6,oho mboyve apyta,ill,adv_morpheme_ok,'mboyve' is anterior temporal; 'rire' required for posterior
+rule_AC8_concessive_ramo_jepe_ok,Sentences,§12.2.3.2,ohoro jepe apyta,wf,—,Concessive 'ramo jepe': well-formed
+rule_AC8_concessive_ramo_jepe_ok,Sentences,§12.2.3.2,oho haguã jepe apyta,ill,adv_morpheme_ok,'haguã jepe' is not the licensed concessive form 'ramo jepe'
+rule_AC9_manner_ha_icha_ok,Sentences,§12.2.3.5,ohoha icha,wf,—,Manner clause 'ha-icha': well-formed
+rule_AC9_manner_ha_icha_ok,Sentences,§12.2.3.5,oho ramo icha,ill,adv_morpheme_ok,'ramo icha' is not the licensed manner form 'ha-icha'
+rule_AC10_manner_hague_icha_ok,Sentences,§12.2.3.5,ohohague icha,wf,—,Past manner clause 'hague-icha': well-formed
+rule_AC10_manner_hague_icha_ok,Sentences,§12.2.3.5,ohoha icha,ill,adv_morpheme_ok,'ha-icha' is non-past manner; 'hague-icha' required for past manner
+rule_AC11_causal_gui_ok,Sentences,§12.2.3.3,oho gui apyta,wf,—,Causal =gui: well-formed
+rule_AC11_causal_gui_ok,Sentences,§12.2.3.3,oho rehe apyta,ill,adv_morpheme_ok,'rehe' is not a licensed causal subordinator (use 'gui' or 'rehe' per type)
+rule_AC12_causal_porque_ok,Sentences,§12.2.3.3,oho porque apyta,wf,—,Causal 'porque' (Spanish borrowing): well-formed
+rule_AC12_causal_porque_ok,Sentences,§12.2.3.3,oho haguã apyta,ill,adv_morpheme_ok,'haguã' is purposive not causal
+rule_AC13_counterfactual_needs_main_marking,Sentences,§12.2.3.4,ajuka va'erã mo'ã oho rire,wf,—,Counterfactual main with va'erã + mo'ã: well-formed
+rule_AC13_counterfactual_needs_main_marking,Sentences,§12.2.3.4,ajuka oho rire,ill,wf_counterfactual_main,Counterfactual main clause missing va'erã-mo'ã marking
+rule_NV1_equative_wf,Sentences,§8.2,ha'e peteĩ karai,wf,—,Equative non-verbal sentence: both NPs well-formed
+rule_NV1_equative_wf,Sentences,§8.2,ha'e la oga,ill,wf_nonverbal,Spanish article 'la' in Guaraní NP makes the NP ill-formed
+rule_CX1_adverbial_purposive_ok,Sentences,§12.2.3.1,oho oñe'ẽ haguã,wf,—,CS_Adverbial + AC_Purposive 'haguã': well-formed
+rule_CX1_adverbial_purposive_ok,Sentences,§12.2.3.1,oho oñe'ẽ ramo,ill,wf_adv_clause,Wrong morpheme 'ramo' for purposive: wf_adv_clause fails
+rule_CX2_adverbial_wrong_morpheme_bad,Sentences,§12.2.3.1,oho oñe'ẽ haguã,wf,—,CS_Adverbial with correct morpheme: well-formed
+rule_CX2_adverbial_wrong_morpheme_bad,Sentences,§12.2.3.1,oho oñe'ẽ ramo,ill,wf_adv_clause,CS_Adverbial fails when wf_adv_clause fails
+rule_TL1_simple_lifts,Sentences,—,oho,wf,—,wf simple sentence lifts to wf_any_sentence true
+rule_TL1_simple_lifts,Sentences,—,che oho,ill,ss_agree_ok,Ill-formed simple sentence also fails at wf_any_sentence level
+plural_adj_distinct,Primitives,§3.1.1,karai kuéra,wf,—,Oral noun takes -kuéra; confirms oral ≠ nasal plural form
+plural_adj_distinct,Primitives,§3.1.1,karai nguéra,ill,render_nom_suffix,Oral noun cannot take nasal -nguéra plural
+plural_noun_distinct,Primitives,§3.1.1,oga ita,wf,—,EndAEO noun takes -ita plural
+plural_noun_distinct,Primitives,§3.1.1,oga eta,ill,render_nom_suffix,EndAEO noun takes -ita not -eta
+neg_prefix_distinct,Primitives,§1.2,ndahái,wf,—,Oral negation uses 'nd-'
+neg_prefix_distinct,Primitives,§1.2,namomba'éi,wf,—,Nasal negation uses 'n-'; confirms nd- ≠ n-
+poss1_always_che,Primitives,§3.6,che resa,wf,—,Poss1 is always 'che' regardless of orality
+poss1_always_che,Primitives,§3.6,ne resa,ill,poss_marker_form,'ne' is Poss2 nasal form; Poss1 must be 'che'
+poss1excl_always_ore,Primitives,§3.6,ore roga,wf,—,Poss1Excl is always 'ore'
+poss1excl_always_ore,Primitives,§3.6,ñánde roga,ill,poss_marker_form,'ñánde' is Poss1Incl not Poss1Excl
+poss2_forms_distinct,Primitives,§3.6,nde juru,wf,—,Poss2 oral = 'nde'
+poss2_forms_distinct,Primitives,§3.6,ne juru,wf,—,Poss2 nasal = 'ne'; confirms nde ≠ ne (both wf in correct contexts)

@@ -1,0 +1,361 @@
+<title>Guaraní Grammar Audit</title>
+<style>
+  :root {
+    --bg: #f5f6f2;
+    --surface: #ffffff;
+    --surface-2: #edefe8;
+    --ink: #15181a;
+    --ink-muted: #5b6266;
+    --border: #dee2da;
+    --accent: #3b3486;
+    --accent-soft: #ecebf8;
+    --good: #1e7a4c;
+    --good-soft: #e6f3ec;
+    --bad: #ac3f2a;
+    --bad-soft: #fbeae4;
+    --warn: #93630f;
+    --warn-soft: #fbf1dc;
+    --mono-bg: #14171b;
+    --mono-ink: #e7e9e6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16191c;
+      --surface: #1d2125;
+      --surface-2: #23282c;
+      --ink: #ecedea;
+      --ink-muted: #9aa1a6;
+      --border: #2d3338;
+      --accent: #9089e6;
+      --accent-soft: #27234a;
+      --good: #4fbe84;
+      --good-soft: #16301f;
+      --bad: #e28870;
+      --bad-soft: #3a1e17;
+      --warn: #dcae54;
+      --warn-soft: #3a2c10;
+      --mono-bg: #0c0e10;
+      --mono-ink: #d9dbd8;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16191c;
+    --surface: #1d2125;
+    --surface-2: #23282c;
+    --ink: #ecedea;
+    --ink-muted: #9aa1a6;
+    --border: #2d3338;
+    --accent: #9089e6;
+    --accent-soft: #27234a;
+    --good: #4fbe84;
+    --good-soft: #16301f;
+    --bad: #e28870;
+    --bad-soft: #3a1e17;
+    --warn: #dcae54;
+    --warn-soft: #3a2c10;
+    --mono-bg: #0c0e10;
+    --mono-ink: #d9dbd8;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    line-height: 1.5;
+  }
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  header.top {
+    margin-bottom: 36px;
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  .dek {
+    color: var(--ink-muted);
+    font-size: 15.5px;
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  section { margin-top: 40px; }
+  h2 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--ink-muted);
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* scorecard */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .stat {
+    background: var(--surface);
+    padding: 18px 16px;
+  }
+  .stat .n {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 24px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .stat .n .arrow { color: var(--ink-muted); font-weight: 400; margin: 0 3px; }
+  .stat .n.good { color: var(--good); }
+  .stat .label {
+    margin-top: 4px;
+    font-size: 12.5px;
+    color: var(--ink-muted);
+  }
+
+  /* fix table */
+  table.fixes {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  table.fixes th {
+    text-align: left;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    font-weight: 600;
+    padding: 0 12px 8px;
+  }
+  table.fixes td {
+    padding: 12px;
+    vertical-align: top;
+    border-top: 1px solid var(--border);
+  }
+  table.fixes tr:first-of-type td { border-top: none; }
+  table.fixes td.construct { font-weight: 600; white-space: nowrap; }
+  table.fixes td.evidence {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    color: var(--good);
+    white-space: nowrap;
+  }
+  .overflow-wrap { overflow-x: auto; }
+
+  /* before/after example table */
+  .examples { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .ex-row {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1fr;
+    gap: 0;
+    background: var(--surface);
+  }
+  .ex-row + .ex-row { border-top: 1px solid var(--border); }
+  .ex-row.head {
+    background: var(--surface-2);
+  }
+  .ex-row.head > div {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+    font-weight: 600;
+  }
+  .ex-row > div { padding: 13px 14px; }
+  .ex-row > div + div { border-left: 1px solid var(--border); }
+  .ex-sentence {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+  }
+  .ex-sentence .gloss { display: block; font-family: "IBM Plex Sans", sans-serif; color: var(--ink-muted); font-size: 12px; margin-top: 3px; }
+  .verdict { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; display: flex; align-items: baseline; gap: 6px; }
+  .verdict .tag {
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .tag.bad { background: var(--bad-soft); color: var(--bad); }
+  .tag.good { background: var(--good-soft); color: var(--good); }
+  .verdict .note { color: var(--ink-muted); font-family: "IBM Plex Sans", sans-serif; font-size: 12px; }
+
+  /* open items */
+  .open-groups { display: grid; gap: 14px; }
+  .open-group {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .open-group .gh {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .open-group .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .dot.warn { background: var(--warn); }
+  .dot.mute { background: var(--ink-muted); }
+  .open-group .gt { font-weight: 600; font-size: 14px; }
+  .open-group .gc { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--ink-muted); margin-left: auto; }
+  .open-group ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--ink); }
+  .open-group li { margin: 4px 0; }
+  .open-group li .why { color: var(--ink-muted); }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 12.5px;
+    color: var(--ink-muted);
+  }
+  footer code {
+    font-family: "IBM Plex Mono", monospace;
+    background: var(--surface-2);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  @media (max-width: 640px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .ex-row { grid-template-columns: 1fr; }
+    .ex-row > div + div { border-left: none; border-top: 1px solid var(--border); }
+  }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<div class="page">
+
+  <header class="top">
+    <p class="eyebrow">Engineering status — 2026‑09‑08</p>
+    <h1>Coq grammar ↔ Python coverage audit</h1>
+    <p class="dek">The project verifies Guaraní translations against a formal Coq grammar. We audited whether everything the grammar defines is actually reachable in the Python analyzer that feeds it — found 10 gaps, fixed 3, and confirmed the fixes against the project's own gold-standard test suite.</p>
+  </header>
+
+  <section class="stats">
+    <div class="stat"><div class="n">10</div><div class="label">grammar constructs audited</div></div>
+    <div class="stat"><div class="n good">3</div><div class="label">fixed &amp; verified</div></div>
+    <div class="stat"><div class="n">3<span class="arrow">→</span>13<span class="arrow">/</span>14</div><div class="label">evidential test cases passing</div></div>
+    <div class="stat"><div class="n">0</div><div class="label">regressions (60-case spot check)</div></div>
+  </section>
+
+  <section>
+    <h2>What we fixed</h2>
+    <div class="overflow-wrap">
+    <table class="fixes">
+      <thead>
+        <tr><th>Construct</th><th>Was</th><th>Now</th><th>Proof</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="construct">Relative &amp; complement clauses<br><span style="font-weight:400;color:var(--ink-muted);font-size:12.5px;">"the man who lives…"</span></td>
+          <td>Could not be parsed at all — grammar defined it, analyzer never built it</td>
+          <td>Fully parses and verifies</td>
+          <td class="evidence">0/6 → 6/6 gold cases</td>
+        </tr>
+        <tr>
+          <td class="construct">Evidential markers<br><span style="font-weight:400;color:var(--ink-muted);font-size:12.5px;">kuri, niko, voi, ndaje, ra'e…</span></td>
+          <td>Silently ignored — the well-formedness check always passed regardless of what was said</td>
+          <td>Correctly parsed and checked, incl. mood restrictions</td>
+          <td class="evidence">3/14 → 13/14 gold cases</td>
+        </tr>
+        <tr>
+          <td class="construct">Irregular-verb suffixes<br><span style="font-weight:400;color:var(--ink-muted);font-size:12.5px;">ahaje, ahávo, ohomavo…</span></td>
+          <td>Zero parses for any suffixed irregular verb form</td>
+          <td>Parses and verifies correctly</td>
+          <td class="evidence">0 → correct parses</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Before / after, real sentences</h2>
+    <div class="examples">
+      <div class="ex-row head">
+        <div>Sentence</div><div>Before this work</div><div>After this work</div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-sentence">Kuimba'e oikóva ohecha peteĩ óga.<span class="gloss">"the man who lives sees a house"</span></div>
+        <div class="verdict"><span class="tag bad">error</span><span class="note">unparseable</span></div>
+        <div class="verdict"><span class="tag good">pass</span><span class="note">well-formed</span></div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-sentence">oho kuri<span class="gloss">"he went" (direct evidence)</span></div>
+        <div class="verdict"><span class="tag bad">fail</span><span class="note">wrongly rejected</span></div>
+        <div class="verdict"><span class="tag good">pass</span><span class="note">correctly accepted</span></div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-sentence">eho kuri<span class="gloss">"go!" + direct-evidence marker — invalid combination</span></div>
+        <div class="verdict"><span class="tag bad">fail</span><span class="note">rejected, but for the wrong reason</span></div>
+        <div class="verdict"><span class="tag good">pass</span><span class="note">rejected — "kuri requires indicative mood"</span></div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-sentence">ahaje<span class="gloss">"I go" (hearsay)</span></div>
+        <div class="verdict"><span class="tag bad">error</span><span class="note">unparseable</span></div>
+        <div class="verdict"><span class="tag good">pass</span><span class="note">well-formed</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Still open</h2>
+    <div class="open-groups">
+      <div class="open-group">
+        <div class="gh"><span class="dot warn"></span><span class="gt">Not fixed yet</span><span class="gc">5 items</span></div>
+        <ul>
+          <li>Counterfactual sentences <span class="why">— "if it had rained, we would have gone"</span></li>
+          <li>Standalone possessive pronouns <span class="why">— "chemba'e" ("mine") is currently misread as a made-up noun, not just unsupported</span></li>
+          <li>Demonstrative + possessive combinations</li>
+          <li>Relational noun prefix tagging <span class="why">— h-/r- alternation parses but is mislabeled</span></li>
+          <li>One rare voice prefix <span class="why">— guero-, the newest of seven</span></li>
+        </ul>
+      </div>
+      <div class="open-group">
+        <div class="gh"><span class="dot mute"></span><span class="gt">Blocked</span><span class="gc">1 item</span></div>
+        <ul>
+          <li>hi-/ij- noun allomorph <span class="why">— the code path exists, but no word in the dictionary is tagged to use it; fixing it means editing the word list, which is out of scope by standing agreement</span></li>
+        </ul>
+      </div>
+      <div class="open-group">
+        <div class="gh"><span class="dot mute"></span><span class="gt">Not actually an issue</span><span class="gc">1 item</span></div>
+        <ul>
+          <li>The "article" placeholder construct <span class="why">— Guaraní has no articles, so there's nothing to build</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Files touched: <code>types.py</code>, <code>analyzer.py</code>, <code>loop.py</code>, <code>verifier.py</code>, <code>check.py</code>. Every fix above was checked against the real Coq compiler, not just constructed and eyeballed. Also fixed along the way: the project's own benchmark tool had a stale, out-of-sync copy of the sentence parser and wasn't actually testing current code — that's now patched too, so future test runs can be trusted.
+  </footer>
+
+</div>
